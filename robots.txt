@@ -1,0 +1,24 @@
+     User-agent: *
+    Disallow: /catalog/view/theme/default/
+    Disallow: /catalog/view/javascript/
+    Disallow: /*?
+    Allow: /index.php?route=feed/sitemap_pro
+    Allow: /index.php?route=product/category&path=*
+    Allow: /*?path=*
+    Allow: /index.php?route=product/product&product_id=*
+    Allow: /index.php?route=product/product&path=*
+    Allow: /*?product_id=*
+    Allow: /index.php?route=information/information&information_id=*
+    Allow: /index.php?route=product/special 
+
+    User-agent: YandexImages
+    Disallow: /
+    Allow: /image/cache/ 
+
+    User-agent: Googlebot-Image
+    Disallow: /
+    Allow: /image/cache/ 
+
+    User-agent: msnbot-media
+    Disallow: /
+    Allow: /image/cache/

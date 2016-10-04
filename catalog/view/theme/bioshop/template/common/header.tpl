@@ -37,7 +37,7 @@
 <?php echo $analytic; ?>
 <?php } ?>
 </head>
-   <body> 
+   <body>
       <header class="header container">
 	     <div class="row top-header">
 		 <div class="col-lg-3 col-lg-offset-9 col-xs-3 col-xs-offset-9 top-navigation">
@@ -77,7 +77,7 @@
 				<div class="col-lg-5 col-xs-5 call-back">
                                     <p>
 					<span><?php echo $telephone; ?></span>
-					<a href="<?php echo $contact; ?>">мы перезвоним</a>
+					<a href="<?php echo $contact; ?>">мы перезвоним2</a>
                                     </p>
 				</div>
 				<div class="col-lg-2 col-xs-2 basket">
@@ -132,7 +132,6 @@
 				</nav>
                             </div>
 			</div>
-                       <?php } ?> 
+                       <?php } ?>
                       </header>
                       <!--<div class="container break-stripe"></div>-->
-                

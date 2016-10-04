@@ -35,8 +35,8 @@ class ControllerModuleFilter extends Controller {
 			}
 
 			$data['action'] = str_replace('&amp;', '&', $this->url->link('product/category', 'path=' . $this->request->get['path'] . $url));
-			
-                        if (isset($this->request->get['filter'])) {
+
+			if (isset($this->request->get['filter'])) {
 				$data['filter_category'] = explode(',', $this->request->get['filter']);
 			} else {
 				$data['filter_category'] = array();
@@ -47,7 +47,6 @@ class ControllerModuleFilter extends Controller {
 			$data['filter_groups'] = array();
 
 			$filter_groups = $this->model_catalog_category->getCategoryFilters($category_id);
-                      
 
 			if ($filter_groups) {
 				foreach ($filter_groups as $filter_group) {

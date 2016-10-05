@@ -39,6 +39,7 @@ class ModelShippingNovaPoshta extends Model
             if ($this->config->get('novaposhta_api_key') && $this->config->get('novaposhta_sender_city') && isset($address['city']) && !empty($address['city'])) {
                 $shippingPriceData = array();
                 $warehouseResponse = $this->getDocumentPrice($address['city']);
+                $listhouses = $this->getWarehouses($address['city']);
                 if ($warehouseResponse) {
                     $cost = (string)$warehouseResponse->data->item->Cost;
                     $shippingPriceData['warehouse'] = array(
@@ -55,6 +56,7 @@ class ModelShippingNovaPoshta extends Model
                         'code' => 'novaposhta',
                         'title' => $this->language->get('text_title'),
                         'quote' => $shippingPriceData,
+                        'houses' => $listhouses,
                         'sort_order' => $this->config->get('novaposhta_sort_order'),
                         'error' => false
                     );
@@ -115,6 +117,44 @@ class ModelShippingNovaPoshta extends Model
             }
         }
         return '';
+    }
+    
+    public function getWarehouses($city)
+    {
+        $json = array();
+        if (isset($city) && $this->config->get('novaposhta_api_key')) {
+            $xml = '<?xml version="1.0" encoding="utf-8" ?>';
+            $xml .= '<file>';
+            $xml .= '<apiKey>' . $this->config->get('novaposhta_api_key') . '</apiKey>';
+            $xml .= '<modelName>Address</modelName>';
+            $xml .= '<calledMethod>getWarehouses</calledMethod>';
+            $xml .= '<methodProperties>';
+            $xml .= '<CityRef>' . $this->getCityRefByName(trim($city)) . '</CityRef>';
+            $xml .= '</methodProperties>';
+            $xml .= '</file>';
+
+            $response = $this->getResult($xml);
+
+            if ($response) {
+                $xml = simplexml_load_string($response);
+
+                foreach ($xml->data->item as $warehouse) {
+                    if ($this->language->get('code') == 'ru') {
+                        $json[] = array(
+                            'warehouse' => (string)str_replace(array('"', "'"), '', $warehouse->DescriptionRu),
+                            'number' => (string)str_replace(array('"', "'"), '', $warehouse->Number),
+                        );
+                    } else {
+                        $json[] = array(
+                            'warehouse' => (string)str_replace(array('"', "'"), '', $warehouse->Description),
+                            'number' => (string)str_replace(array('"', "'"), '', $warehouse->Number),
+                        );
+                    }
+                }
+            }
+        }
+
+        return $json;
     }
 
     private function getResult($request)

@@ -34,7 +34,6 @@ header{
     width: 1280px;
     margin:0 auto;
     height: 100%;
-    border: 1px solid blue;
     background-image:url('../image/backgraund_header.png');
 }
 
@@ -80,16 +79,109 @@ header{
     line-height:100px;
 }
 
+.header_logo{
+    padding-left: 50px;
+}
+
 #search{
     width: 260px;
+
     float: right;
 }
 
 .header_search_input{
-    margin-top:30px;
+    margin-top:40px;
+    height: 30px !important;
     background-color: rgb(195,195,197);
+    border-radius: 15px;
+    border-bottom-right-radius:15px !important;
+    border-top-right-radius:15px !important;
+}
+
+.header_search_button{
+    bottom: 6px;
+    right: 25px;
+    width: 0px !important;
+    height: 0px !important;
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+.header_tel{
+    line-height:100px;
+    max-height: 100px;
+    bottom:7px;
+    padding-left: 30px;
+}
 
 
+.header_tel_text_number{
+    display: block;
+    max-height: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    color:rgb(0,30,150);
+    margin-left: 30px;
+
+}
+
+.header_tel_text_we{
+    font-family: "Tahoma";
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(242,23,23);
+    margin-left: 30px;
+    text-decoration: underline;
+}
+
+.header_pay{
+    padding-left: 50px;
+}
+
+.header_pay p{
+    font-size: 10px;
+    font-weight: bold;
+    color: rgb(136,136,136);
+    text-transform: uppercase;
+}
+
+.header_pay img{
+    position: absolute;
+    top: 25;
+    right: 48px;
+    bottom: 37px;
+    left: 114px;
+}
+
+.header_bottom{
+    padding-left: 50px;
+}
+
+.hrader_menu{
+    display: inline;
+}
+
+.hrader_menu li{
+    display: inline;
+    font-size: 16px;
+    color: rgb(113,113,113);
+}
+
+.hrader_menu li:hover{
+    color: rgb(161,176,211);
+}
+
+.hrader_menu_start{
+    padding-right: 46px;
+    border-right: 2px solid rgb(161,176,211);
+}
+.hrader_menu_center{
+    padding: 0 46px 0 46px;
+    border-right: 2px solid rgb(161,176,211);
+}
+.hrader_menu_fin{
+    padding-left: 40px;
+    //border-right: 2px solid rgb(161,176,211);
 }
 
 }

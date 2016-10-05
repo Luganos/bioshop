@@ -57,7 +57,7 @@
         </a>
       </div>
       <div class="header_search col-lg-5">
-
+         <div><?php echo $search; ?></div>
       </div>
       <div class="header_tel col-lg-2">
 

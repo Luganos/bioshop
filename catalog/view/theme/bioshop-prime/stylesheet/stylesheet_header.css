@@ -56,6 +56,14 @@ body {
     height: 100px;
     line-height: 100px;
   }
+  #search {
+    width: 260px;
+    float: right;
+  }
+  .header_search_input {
+    margin-top: 30px;
+    background-color: #c3c3c5;
+  }
 }
 
 /* This beautiful CSS-File has been crafted with LESS (lesscss.org) and compiled by simpLESS (wearekiss.com/simpless) */

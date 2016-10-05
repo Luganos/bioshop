@@ -1,0 +1,61 @@
+* {
+  font-family: 'Tahoma';
+  margin: 0px;
+  padding: 0px;
+}
+a {
+  text-decoration: none !important;
+}
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  min-height: 100%;
+}
+@media (min-width: 1280px) {
+  header {
+    height: 185px;
+  }
+  .container_header {
+    width: 1280px;
+    margin: 0 auto;
+    height: 100%;
+    border: 1px solid blue;
+    background-image: url('../image/backgraund_header.png');
+  }
+  .header_top {
+    height: 40px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: #8ea9e8;
+    margin: 0 26px 0 26px;
+    line-height: 40px;
+    margin-bottom: 0px;
+  }
+  .header_top_text {
+    text-align: right;
+  }
+  .header_top_text li {
+    display: inline;
+    color: white;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+  .header_top_text_servic {
+    padding-right: 40px;
+    border-right: 2px solid white;
+  }
+  .header_top_text_enter {
+    margin-left: 40px;
+  }
+  .header_top_text_reg {
+    margin-right: 20px;
+  }
+  .header_center {
+    height: 100px;
+    line-height: 100px;
+  }
+}
+
+/* This beautiful CSS-File has been crafted with LESS (lesscss.org) and compiled by simpLESS (wearekiss.com/simpless) */

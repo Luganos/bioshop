@@ -19,7 +19,7 @@
     <?php if (strtolower(strval($shipping_method['title'])) == strtolower("Новая Почта")) { ?>
     <select name="name-of-warehouse">
     <?php foreach($shipping_method['houses'] as $house) { ?>
-    <option value="<?php echo $house['warehouse']; ?>"><?php echo $house['warehouse']; ?></option>
+    <option value="<?php echo $house['warehouse']; ?>"><?php echo $house['warehouse']; ?> - <?php echo $house['number']; ?></option>
     <?php } ?>
     </select>
     <?php } ?>

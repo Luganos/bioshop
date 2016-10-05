@@ -16,6 +16,13 @@
     <input type="radio" name="shipping_method" value="<?php echo $quote['code']; ?>" />
     <?php } ?>
     <?php echo $quote['title']; ?> - <?php echo $quote['text']; ?></label>
+    <?php if (strtolower(strval($shipping_method['title'])) == strtolower("Новая Почта")) { ?>
+    <select name="name-of-warehouse">
+    <?php foreach($shipping_method['houses'] as $house) { ?>
+    <option value="<?php echo $house['warehouse']; ?>"><?php echo $house['warehouse']; ?></option>
+    <?php } ?>
+    </select>
+    <?php } ?>
 </div>
 <?php } ?>
 <?php } else { ?>

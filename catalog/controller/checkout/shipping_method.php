@@ -22,6 +22,7 @@ class ControllerCheckoutShippingMethod extends Controller {
 							'title'      => $quote['title'],
 							'quote'      => $quote['quote'],
 							'sort_order' => $quote['sort_order'],
+                                                        'houses'     => (empty($quote['houses']))? array(): $quote['houses'],
 							'error'      => $quote['error']
 						);
 					}

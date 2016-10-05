@@ -24,10 +24,12 @@
 <link href="catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <link href="//fonts.googleapis.com/css?family=Open+Sans:400,400i,300,700" rel="stylesheet" type="text/css" />
 <link href="catalog/view/theme/bioshop-prime/stylesheet/stylesheet.css" rel="stylesheet">
+<link href="catalog/view/theme/bioshop-prime/stylesheet/stylesheet_header.css" rel="stylesheet">
 <?php foreach ($styles as $style) { ?>
 <link href="<?php echo $style['href']; ?>" type="text/css" rel="<?php echo $style['rel']; ?>" media="<?php echo $style['media']; ?>" />
 <?php } ?>
 <script src="catalog/view/javascript/common.js" type="text/javascript"></script>
+<script src="catalog/view/javascript/js.js" type="text/javascript"></script>
 <?php foreach ($links as $link) { ?>
 <link href="<?php echo $link['href']; ?>" rel="<?php echo $link['rel']; ?>" />
 <?php } ?>
@@ -39,7 +41,34 @@
 <?php } ?>
 </head>
 <body class="<?php echo $class; ?>">
-<nav id="top">
+<header>
+  <div class="container_header">
+    <div class="header_top">
+       <ul class="header_top_text">
+         <li class="header_top_text_servic">Сервис</li>
+         <li class="header_top_text_enter">Вход /</li>
+         <li class="header_top_text_reg"> Регистрация</li>
+        </ul>
+    </div>
+    <div class="header_center">
+      <div class="header_logo col-lg-3">
+        <a href="">
+          <img src="catalog/view/theme/bioshop-prime/image/logo.png" alt="">
+        </a>
+      </div>
+      <div class="header_search col-lg-5">
+         <div><?php echo $search; ?></div>
+      </div>
+      <div class="header_tel col-lg-2">
+
+      </div>
+      <div class="header_pay col-lg-2">
+
+      </div>
+    </div>
+  </div>
+</header>
+<!--<nav id="top">
   <div class="container">
     <?php echo $currency; ?>
     <?php echo $language; ?>
@@ -115,5 +144,5 @@
       </ul>
     </div>
   </nav>
-</div>
+</div>-->
 <?php } ?>

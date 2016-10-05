@@ -2,7 +2,7 @@
 
 class ModelShippingNovaPoshta extends Model
 {
-    private $productWeight = 0.1;
+    private $productWeight = 0.0;
     private $width = 1;
     private $height = 1;
     private $length = 1;
@@ -22,6 +22,12 @@ class ModelShippingNovaPoshta extends Model
                     $this->length += $product['length'];
                 }
             }
+        }
+        
+        //Check correctness of weight
+        if ($this->productWeight < 0.1) {
+            
+            $this->productWeight = 0.1;
         }
 
         $this->load->language('shipping/novaposhta');

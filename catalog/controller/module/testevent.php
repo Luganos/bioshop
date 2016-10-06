@@ -2,7 +2,8 @@
         //Catalog
 	class ControllerModuleTestEvent extends Controller {
 	
-	
+	  static private $twice = FALSE;
+            
 	   public function index() {
 	   
 	   
@@ -30,8 +31,13 @@
             
             
             public function on_store_delete($store_id) {
+                
+                    if (!$this->twice) {
+                        
+                       $this->twice = TRUE;
+                    }
 
-	             echo "$store_id";
+	             
                    
 
 	    }

@@ -68,9 +68,9 @@
          <div><?php echo $search; ?></div>
       </div>
       <div class="header_tel col-lg-2 col-xs-2">
-          <a href ="tel:<?php echo $contact; ?>" ><span class="header_tel_text_number"><?php echo $telephone; ?></span></a>
+          <a href ="tel:<?php echo $telephone; ?>" ><span class="header_tel_text_number"><?php echo $telephone; ?></span></a>
           </a>
-          <a href="">
+          <a href="<?php echo $contact; ?>">
           <span class="header_tel_text_we">Мы перезвоним</span>
           </a>
       </div>
@@ -81,112 +81,29 @@
           </a>
       </div>
     </div>
+    <?php if ($categories) { ?>  
     <div class="header_bottom col-lg-12">
       <ul class="hrader_menu_big">
+       <?php foreach ($categories as $category) { ?> 
+       <?php if ($category['children']) { ?>
+       <a href="" class="menu_link dropdown-toggle" data-toggle="dropdown"><span><?php echo $category['name']; ?></span></a>
+       <?php foreach (array_chunk($category['children'], ceil(count($category['children']) / $category['column'])) as $children) { ?>
         <li class="hrader_menu_start dropdown">
-          <a href="" class="menu_link dropdown-toggle" data-toggle="dropdown">
-          <span>Уход за волосами</span>
           <!--<b class="caret"></b>-->
-          </a>
           <ul class="dropdown-menu">
-                  <li>
-                    <a href=""></a>11
-                  </li>
-                  <li>
-                    <a href=""></a>22
-                  </li>
-                  <li>
-                    <a href=""></a>33
-                  </li>
-                </ul>
-        </li>
-        <li class="hrader_menu_center dropdown">
-        <a href="" class="menu_link dropdown-toggle" data-toggle="dropdown">
-          <span>Уход за лицом</span>
-          <!--<b class="caret"></b>-->
-          </a>
-          <ul class="dropdown-menu">
-                  <li>
-                    <a href=""></a>11
-                  </li>
-                  <li>
-                    <a href=""></a>22
-                  </li>
-                  <li>
-                    <a href=""></a>33
-                  </li>
-                </ul>
-        </li>
-        <li class="hrader_menu_center dropdown">
-        <a href="" class="menu_link dropdown-toggle" data-toggle="dropdown">
-          <span>Уход за телом</span>
-          <!--<b class="caret"></b>-->
-          </a>
-          <ul class="dropdown-menu">
-                  <li>
-                    <a href=""></a>11
-                  </li>
-                  <li>
-                    <a href=""></a>22
-                  </li>
-                  <li>
-                    <a href=""></a>33
-                  </li>
-                </ul>
-        </li>
-        <li class="hrader_menu_center dropdown">
-        <a href="" class="menu_link dropdown-toggle" data-toggle="dropdown">
-          <span>Для мам и детей</span>
-          <!--<b class="caret"></b>-->
-          </a>
-          <ul class="dropdown-menu">
-                  <li>
-                    <a href=""></a>11
-                  </li>
-                  <li>
-                    <a href=""></a>22
-                  </li>
-                  <li>
-                    <a href=""></a>33
-                  </li>
-                </ul>
-        </li>
-        <li class="hrader_menu_center dropdown">
-        <a href="" class="menu_link dropdown-toggle" data-toggle="dropdown">
-          <span>Товары для дома</span>
-          <!--<b class="caret"></b>-->
-          </a>
-          <ul class="dropdown-menu">
-                  <li>
-                    <a href=""></a>11
-                  </li>
-                  <li>
-                    <a href=""></a>22
-                  </li>
-                  <li>
-                    <a href=""></a>33
-                  </li>
-                </ul>
-        </li>
-        <li class="hrader_menu_fin dropdown">
-        <a href="" class="menu_link dropdown-toggle" data-toggle="dropdown">
-          <span>Акции и скидки</span>
-          <!--<b class="caret"></b>-->
-          </a>
-          <ul class="dropdown-menu">
-                  <li>
-                    <a href=""></a>11
-                  </li>
-                  <li>
-                    <a href=""></a>22
-                  </li>
-                  <li>
-                    <a href=""></a>33
-                  </li>
-                </ul>
-        </li>
-      </ul>
+          <?php foreach ($children as $child) { ?> 
+           <li><a href="<?php echo $child['href']; ?>"><?php echo $child['name']; ?></a></li>
+          <?php } ?>        
+         </ul>
+       </li>
+        <?php } ?>
+       <?php } else { ?>
+       <a href="<?php echo $category['href']; ?>" class="menu_link dropdown-toggle" data-toggle="dropdown"><span><?php echo $category['name']; ?></span></a>
+       <?php } ?> 
+       <?php } ?>
+	</ul>
     </div>
+	<?php } ?>
     <div class="hrader_menu_small">
       <img id="open_small_menu" src="catalog/view/theme/bioshop-prime/image/menu_small.png" alt="">
       <div class="open_header_menu_small">
@@ -201,81 +118,5 @@
     </div>
   </div>
 </header>
-<!--<nav id="top">
-  <div class="container">
-    <?php echo $currency; ?>
-    <?php echo $language; ?>
-    <div id="top-links" class="nav pull-right">
-      <ul class="list-inline">
-        <li><a href="<?php echo $contact; ?>"><i class="fa fa-phone"></i></a> <span class="hidden-xs hidden-sm hidden-md"><?php echo $telephone; ?></span></li>
-        <li class="dropdown"><a href="<?php echo $account; ?>" title="<?php echo $text_account; ?>" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_account; ?></span> <span class="caret"></span></a>
-          <ul class="dropdown-menu dropdown-menu-right">
-            <?php if ($logged) { ?>
-            <li><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a></li>
-            <li><a href="<?php echo $order; ?>"><?php echo $text_order; ?></a></li>
-            <li><a href="<?php echo $transaction; ?>"><?php echo $text_transaction; ?></a></li>
-            <li><a href="<?php echo $download; ?>"><?php echo $text_download; ?></a></li>
-            <li><a href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
-            <?php } else { ?>
-            <li><a href="<?php echo $register; ?>"><?php echo $text_register; ?></a></li>
-            <li><a href="<?php echo $login; ?>"><?php echo $text_login; ?></a></li>
-            <?php } ?>
-          </ul>
-        </li>
-        <li><a href="<?php echo $wishlist; ?>" id="wishlist-total" title="<?php echo $text_wishlist; ?>"><i class="fa fa-heart"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_wishlist; ?></span></a></li>
-        <li><a href="<?php echo $shopping_cart; ?>" title="<?php echo $text_shopping_cart; ?>"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_shopping_cart; ?></span></a></li>
-        <li><a href="<?php echo $checkout; ?>" title="<?php echo $text_checkout; ?>"><i class="fa fa-share"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_checkout; ?></span></a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-<header>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-4">
-        <div id="logo">
-          <?php if ($logo) { ?>
-          <a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" class="img-responsive" /></a>
-          <?php } else { ?>
-          <h1><a href="<?php echo $home; ?>"><?php echo $name; ?></a></h1>
-          <?php } ?>
-        </div>
-      </div>
-      <div class="col-sm-5"><?php echo $search; ?>
-      </div>
-      <div class="col-sm-3"><?php echo $cart; ?></div>
-    </div>
-  </div>
-</header>
-<?php if ($categories) { ?>
-<div class="container">
-  <nav id="menu" class="navbar">
-    <div class="navbar-header"><span id="category" class="visible-xs"><?php echo $text_category; ?></span>
-      <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>
-    </div>
-    <div class="collapse navbar-collapse navbar-ex1-collapse">
-      <ul class="nav navbar-nav">
-        <?php foreach ($categories as $category) { ?>
-        <?php if ($category['children']) { ?>
-        <li class="dropdown"><a href="<?php echo $category['href']; ?>" class="dropdown-toggle" data-toggle="dropdown"><?php echo $category['name']; ?></a>
-          <div class="dropdown-menu">
-            <div class="dropdown-inner">
-              <?php foreach (array_chunk($category['children'], ceil(count($category['children']) / $category['column'])) as $children) { ?>
-              <ul class="list-unstyled">
-                <?php foreach ($children as $child) { ?>
-                <li><a href="<?php echo $child['href']; ?>"><?php echo $child['name']; ?></a></li>
-                <?php } ?>
-              </ul>
-              <?php } ?>
-            </div>
-            <a href="<?php echo $category['href']; ?>" class="see-all"><?php echo $text_all; ?> <?php echo $category['name']; ?></a> </div>
-        </li>
-        <?php } else { ?>
-        <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></li>
-        <?php } ?>
-        <?php } ?>
-      </ul>
-    </div>
-  </nav>
-</div>-->
-<?php } ?>
+
+

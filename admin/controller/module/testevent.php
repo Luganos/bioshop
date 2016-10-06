@@ -27,14 +27,5 @@
             $this->model_extension_event->deleteEvent('testevent');
 
 	    }
-            
-            
-            public function on_store_delete($store_id) {
-
-	             echo "$store_id";
-                   
-
-	    }
-
-            
+          
         }

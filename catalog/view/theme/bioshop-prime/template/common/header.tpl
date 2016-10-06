@@ -51,16 +51,18 @@
         </ul>
     </div>
     <div class="header_center">
-      <div class="header_logo col-lg-3">
-        <a href="">
-          <img src="catalog/view/theme/bioshop-prime/image/logo.png" alt="">
-        </a>
-      </div>
+    <div class="header_logo col-lg-3">    
+    <?php if ($logo) { ?>    
+        <a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>"></a>
+     <?php } else { ?>
+        <a href="<?php echo $home; ?>"><?php echo $name; ?></a> 
+     <?php } ?>
+     </div>
       <div class="header_search col-lg-5">
          <div><?php echo $search; ?></div>
       </div>
       <div class="header_tel col-lg-2">
-          <span class="header_tel_text_number">08009004060</span>
+          <a href ="<?php echo $contact; ?>" ><span class="header_tel_text_number"><?php echo $telephone; ?></span></a>
           <span class="header_tel_text_we">Мы перезвоним</span>
       </div>
       <div class="header_pay col-lg-2">

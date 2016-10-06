@@ -1,3 +1,4 @@
+/*----footer-----*/
 * {
   font-family: 'Tahoma';
   margin: 0px;
@@ -293,6 +294,89 @@ body {
   .open_header_menu_small_ul li {
     color: white;
   }
+}
+/*----footer-----*/
+@media (min-width: 1280px) {
+  footer {
+    height: 272px;
+    background-color: white;
+    margin-top: 0px;
+    padding-top: 0px;
+  }
+  .container_footer {
+    width: 1280px;
+    margin: 0 auto;
+    height: 100%;
+  }
+  .footer_top {
+    height: 215px;
+    background-image: url('../image/backgraund_footer.png');
+  }
+  .footer_c_net {
+    height: 100%;
+    margin: 30px 0 0 60px;
+  }
+  .footer_c_net span {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  .footer_c_net_img {
+    margin-top: 15px;
+  }
+  .footer_c_net_img img {
+    margin: 0 8px 0 0;
+  }
+  .footer_tel {
+    height: 100%;
+    margin: 30px 0 0 60px;
+  }
+  .footer_tel_text {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  .footer_tel_tel {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .footer_tel_we_recall {
+    color: #a1b0d3;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  .footer_news {
+    height: 100%;
+    margin: 30px 0 0 60px;
+  }
+  .footer_news_text {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  .footer_news_pole {
+    width: 250px;
+    height: 50;
+    border: 2px solid #bcbec2;
+  }
+  .footer_news_pole input {
+    border: 0px;
+    width: 250px;
+    height: 50 !important;
+    background-image: url('../image/backgraund_footer.png');
+  }
+  .footer_news_sec {
+    color: #bcbec2;
+    font-size: 14px;
+    text-decoration: underline;
+  }
+}
+@media (max-width: 1279px) {
+  
 }
 
 /* This beautiful CSS-File has been crafted with LESS (lesscss.org) and compiled by simpLESS (wearekiss.com/simpless) */

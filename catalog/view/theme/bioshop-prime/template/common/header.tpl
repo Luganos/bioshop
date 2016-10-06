@@ -60,11 +60,35 @@
          <div><?php echo $search; ?></div>
       </div>
       <div class="header_tel col-lg-2">
-
+          <span class="header_tel_text_number">08009004060</span>
+          <span class="header_tel_text_we">Мы перезвоним</span>
       </div>
       <div class="header_pay col-lg-2">
-
+          <p>покупки</p>
+          <img src="catalog/view/theme/bioshop-prime/image/basket_bg.png" alt="">
       </div>
+    </div>
+    <div class="header_bottom col-lg-12">
+      <ul class="hrader_menu">
+        <a href="">
+        <li class="hrader_menu_start">Уход за волосами</li>
+        </a>
+        <a href="">
+        <li class="hrader_menu_center">Уход за лицом</li>
+        </a>
+        <a href="">
+        <li class="hrader_menu_center">Уход за телом</li>
+        </a>
+        <a href="">
+        <li class="hrader_menu_center">Для мам и детей</li>
+        </a>
+        <a href="">
+        <li class="hrader_menu_center">Товары для дома</li>
+        </a>
+        <a href="">
+        <li class="hrader_menu_fin">Акции и скидки</li>
+        </a>
+      </ul>
     </div>
   </div>
 </header>

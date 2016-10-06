@@ -47,16 +47,17 @@
        <ul class="header_top_text">
          <a href="">
          <li class="header_top_text_servic">Сервис</li>
-         </a>
-         <a href="">
-         <li class="header_top_text_enter">Вход /</li>
-         </a>
-         <a href="">
-         <li class="header_top_text_reg"> Регистрация</li>
-         </a>
+         <?php if ($logged) { ?>
+         <a href ="<?php echo $logout; ?>"><li class="header_top_text_enter"><?php echo $text_logout; ?>/</li></a>
+         <a href ="<?php echo $account; ?>"><li class="header_top_text_reg"><?php echo $text_account; ?></li></a>
+         <?php } else { ?>
+         <a href ="<?php echo $login; ?>"><li class="header_top_text_enter"><?php echo $text_login; ?>/</li></a>
+         <a href ="<?php echo $register; ?>"><li class="header_top_text_reg"><?php echo $text_register; ?></li></a>
+         <?php } ?>
         </ul>
     </div>
     <div class="header_center">
+<<<<<<< HEAD
 <!--
       <div class="header_logo col-lg-3 col-xs-5">
         <a href="">
@@ -72,6 +73,10 @@
 -->
     <div class="header_logo col-lg-3 col-xs-5">
     <?php if ($logo) { ?>
+=======
+    <div class="header_logo col-lg-3">    
+    <?php if ($logo) { ?>    
+>>>>>>> 03893a30b4d2a9a4341102657abeb8830c7139ee
         <a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>"></a>
      <?php } else { ?>
         <a href="<?php echo $home; ?>"><?php echo $name; ?></a>
@@ -80,10 +85,16 @@
       <div class="header_search col-lg-5 col-xs-2">
          <div><?php echo $search; ?></div>
       </div>
+<<<<<<< HEAD
       <div class="header_tel col-lg-2 col-xs-2">
           <a href ="tel:<?php echo $contact; ?>" ><span class="header_tel_text_number"><?php echo $telephone; ?></span></a>
           <span class="header_tel_text_we">Мы перезвоним</span>
           </a>
+=======
+      <div class="header_tel col-lg-2">
+          <a href ="<?php echo $contact; ?>" ><span class="header_tel_text_number"><?php echo $telephone; ?></span></a>
+          <a href="<?php echo $contact; ?>"><span class="header_tel_text_we">Мы перезвоним</span></a>
+>>>>>>> 03893a30b4d2a9a4341102657abeb8830c7139ee
       </div>
       <div class="header_pay col-lg-2 col-xs-3">
           <p>покупки</p>

@@ -40,36 +40,44 @@
 <?php echo $analytic; ?>
 <?php } ?>
 </head>
-<body class="<?php echo $class; ?>">
+<body>
 <header>
   <div class="container_header">
     <div class="header_top">
        <ul class="header_top_text">
+         <a href="">
          <li class="header_top_text_servic">Сервис</li>
+         </a>
+         <a href="">
          <li class="header_top_text_enter">Вход /</li>
+         </a>
+         <a href="">
          <li class="header_top_text_reg"> Регистрация</li>
+         </a>
         </ul>
     </div>
     <div class="header_center">
-      <div class="header_logo col-lg-3">
+      <div class="header_logo col-lg-3 col-xs-5">
         <a href="">
           <img src="catalog/view/theme/bioshop-prime/image/logo.png" alt="">
         </a>
       </div>
-      <div class="header_search col-lg-5">
+      <div class="header_search col-lg-5 col-xs-2">
          <div><?php echo $search; ?></div>
       </div>
-      <div class="header_tel col-lg-2">
+      <div class="header_tel col-lg-2 col-xs-2">
           <span class="header_tel_text_number">08009004060</span>
+          <a href="">
           <span class="header_tel_text_we">Мы перезвоним</span>
+          </a>
       </div>
-      <div class="header_pay col-lg-2">
+      <div class="header_pay col-lg-2 col-xs-3">
           <p>покупки</p>
           <img src="catalog/view/theme/bioshop-prime/image/basket_bg.png" alt="">
       </div>
     </div>
     <div class="header_bottom col-lg-12">
-      <ul class="hrader_menu">
+      <ul class="hrader_menu_big">
         <a href="">
         <li class="hrader_menu_start">Уход за волосами</li>
         </a>
@@ -89,6 +97,18 @@
         <li class="hrader_menu_fin">Акции и скидки</li>
         </a>
       </ul>
+    </div>
+    <div class="hrader_menu_small">
+      <img id="open_small_menu" src="catalog/view/theme/bioshop-prime/image/menu_small.png" alt="">
+      <div class="open_header_menu_small">
+        <ul class="open_header_menu_small_ul">
+          <li>1</li>
+          <li>2</li>
+          <li>2</li>
+          <li>2</li>
+          <li>2</li>
+        </ul>
+      </div>
     </div>
   </div>
 </header>

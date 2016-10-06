@@ -46,8 +46,13 @@
     <div class="header_top">
        <ul class="header_top_text">
          <li class="header_top_text_servic">Сервис</li>
-         <li class="header_top_text_enter">Вход /</li>
-         <li class="header_top_text_reg"> Регистрация</li>
+         <?php if ($logged) { ?>
+         <a href ="<?php echo $logout; ?>"><li class="header_top_text_enter"><?php echo $text_logout; ?>/</li></a>
+         <a href ="<?php echo $account; ?>"><li class="header_top_text_reg"><?php echo $text_account; ?></li></a>
+         <?php } else { ?>
+         <a href ="<?php echo $login; ?>"><li class="header_top_text_enter"><?php echo $text_login; ?>/</li></a>
+         <a href ="<?php echo $register; ?>"><li class="header_top_text_reg"><?php echo $text_register; ?></li></a>
+         <?php } ?>
         </ul>
     </div>
     <div class="header_center">
@@ -63,7 +68,7 @@
       </div>
       <div class="header_tel col-lg-2">
           <a href ="<?php echo $contact; ?>" ><span class="header_tel_text_number"><?php echo $telephone; ?></span></a>
-          <span class="header_tel_text_we">Мы перезвоним</span>
+          <a href="<?php echo $contact; ?>"><span class="header_tel_text_we">Мы перезвоним</span></a>
       </div>
       <div class="header_pay col-lg-2">
           <p>покупки</p>

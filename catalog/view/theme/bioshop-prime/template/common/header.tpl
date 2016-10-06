@@ -57,19 +57,6 @@
         </ul>
     </div>
     <div class="header_center">
-<!--
-      <div class="header_logo col-lg-3 col-xs-5">
-        <a href="">
-          <img src="catalog/view/theme/bioshop-prime/image/logo.png" alt="">
-        </a>
-      </div>
-      <div class="header_search col-lg-5 col-xs-2">
-         <div><?php echo $search; ?></div>
-      </div>
-      <div class="header_tel col-lg-2 col-xs-2">
-          <span class="header_tel_text_number">08009004060</span>
-          <a href="">
--->
     <div class="header_logo col-lg-3 col-xs-5">
     <?php if ($logo) { ?>
         <a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>"></a>
@@ -82,34 +69,122 @@
       </div>
       <div class="header_tel col-lg-2 col-xs-2">
           <a href ="tel:<?php echo $contact; ?>" ><span class="header_tel_text_number"><?php echo $telephone; ?></span></a>
+          </a>
+          <a href="">
           <span class="header_tel_text_we">Мы перезвоним</span>
           </a>
       </div>
       <div class="header_pay col-lg-2 col-xs-3">
           <p>покупки</p>
+          <a href="">
           <img src="catalog/view/theme/bioshop-prime/image/basket_bg.png" alt="">
+          </a>
       </div>
     </div>
     <div class="header_bottom col-lg-12">
       <ul class="hrader_menu_big">
-        <a href="">
-        <li class="hrader_menu_start">Уход за волосами</li>
-        </a>
-        <a href="">
-        <li class="hrader_menu_center">Уход за лицом</li>
-        </a>
-        <a href="">
-        <li class="hrader_menu_center">Уход за телом</li>
-        </a>
-        <a href="">
-        <li class="hrader_menu_center">Для мам и детей</li>
-        </a>
-        <a href="">
-        <li class="hrader_menu_center">Товары для дома</li>
-        </a>
-        <a href="">
-        <li class="hrader_menu_fin">Акции и скидки</li>
-        </a>
+        <li class="hrader_menu_start dropdown">
+          <a href="" class="menu_link dropdown-toggle" data-toggle="dropdown">
+          <span>Уход за волосами</span>
+          <!--<b class="caret"></b>-->
+          </a>
+          <ul class="dropdown-menu">
+                  <li>
+                    <a href=""></a>11
+                  </li>
+                  <li>
+                    <a href=""></a>22
+                  </li>
+                  <li>
+                    <a href=""></a>33
+                  </li>
+                </ul>
+        </li>
+        <li class="hrader_menu_center dropdown">
+        <a href="" class="menu_link dropdown-toggle" data-toggle="dropdown">
+          <span>Уход за лицом</span>
+          <!--<b class="caret"></b>-->
+          </a>
+          <ul class="dropdown-menu">
+                  <li>
+                    <a href=""></a>11
+                  </li>
+                  <li>
+                    <a href=""></a>22
+                  </li>
+                  <li>
+                    <a href=""></a>33
+                  </li>
+                </ul>
+        </li>
+        <li class="hrader_menu_center dropdown">
+        <a href="" class="menu_link dropdown-toggle" data-toggle="dropdown">
+          <span>Уход за телом</span>
+          <!--<b class="caret"></b>-->
+          </a>
+          <ul class="dropdown-menu">
+                  <li>
+                    <a href=""></a>11
+                  </li>
+                  <li>
+                    <a href=""></a>22
+                  </li>
+                  <li>
+                    <a href=""></a>33
+                  </li>
+                </ul>
+        </li>
+        <li class="hrader_menu_center dropdown">
+        <a href="" class="menu_link dropdown-toggle" data-toggle="dropdown">
+          <span>Для мам и детей</span>
+          <!--<b class="caret"></b>-->
+          </a>
+          <ul class="dropdown-menu">
+                  <li>
+                    <a href=""></a>11
+                  </li>
+                  <li>
+                    <a href=""></a>22
+                  </li>
+                  <li>
+                    <a href=""></a>33
+                  </li>
+                </ul>
+        </li>
+        <li class="hrader_menu_center dropdown">
+        <a href="" class="menu_link dropdown-toggle" data-toggle="dropdown">
+          <span>Товары для дома</span>
+          <!--<b class="caret"></b>-->
+          </a>
+          <ul class="dropdown-menu">
+                  <li>
+                    <a href=""></a>11
+                  </li>
+                  <li>
+                    <a href=""></a>22
+                  </li>
+                  <li>
+                    <a href=""></a>33
+                  </li>
+                </ul>
+        </li>
+        <li class="hrader_menu_fin dropdown">
+        <a href="" class="menu_link dropdown-toggle" data-toggle="dropdown">
+          <span>Акции и скидки</span>
+          <!--<b class="caret"></b>-->
+          </a>
+          <ul class="dropdown-menu">
+                  <li>
+                    <a href=""></a>11
+                  </li>
+                  <li>
+                    <a href=""></a>22
+                  </li>
+                  <li>
+                    <a href=""></a>33
+                  </li>
+                </ul>
+        </li>
       </ul>
     </div>
     <div class="hrader_menu_small">

@@ -130,7 +130,12 @@ body {
     font-size: 16px;
     color: #717171;
   }
-  .hrader_menu_big li:hover {
+  .hrader_menu_big span {
+    display: inline;
+    font-size: 16px;
+    color: #717171;
+  }
+  .hrader_menu_big span:hover {
     color: #a1b0d3;
   }
   .hrader_menu_start {

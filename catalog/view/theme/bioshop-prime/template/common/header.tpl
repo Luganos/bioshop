@@ -47,7 +47,6 @@
        <ul class="header_top_text">
          <a href="">
          <li class="header_top_text_servic">Сервис</li>
-<<<<<<< HEAD
          <?php if ($logged) { ?>
          <a href ="<?php echo $logout; ?>"><li class="header_top_text_enter"><?php echo $text_logout; ?>/</li></a>
          <a href ="<?php echo $account; ?>"><li class="header_top_text_reg"><?php echo $text_account; ?></li></a>
@@ -55,31 +54,9 @@
          <a href ="<?php echo $login; ?>"><li class="header_top_text_enter"><?php echo $text_login; ?>/</li></a>
          <a href ="<?php echo $register; ?>"><li class="header_top_text_reg"><?php echo $text_register; ?></li></a>
          <?php } ?>
-=======
-         </a>
-         <a href="">
-         <li class="header_top_text_enter">Вход /</li>
-         </a>
-         <a href="">
-         <li class="header_top_text_reg"> Регистрация</li>
-         </a>
->>>>>>> 627e97a7a0409aaac8a48ed3689fa4a2feeb5064
         </ul>
     </div>
     <div class="header_center">
-<<<<<<< HEAD
-      <div class="header_logo col-lg-3 col-xs-5">
-        <a href="">
-          <img src="catalog/view/theme/bioshop-prime/image/logo.png" alt="">
-        </a>
-      </div>
-      <div class="header_search col-lg-5 col-xs-2">
-         <div><?php echo $search; ?></div>
-      </div>
-      <div class="header_tel col-lg-2 col-xs-2">
-          <span class="header_tel_text_number">08009004060</span>
-          <a href="">
-=======
     <div class="header_logo col-lg-3">    
     <?php if ($logo) { ?>    
         <a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>"></a>
@@ -92,13 +69,7 @@
       </div>
       <div class="header_tel col-lg-2">
           <a href ="<?php echo $contact; ?>" ><span class="header_tel_text_number"><?php echo $telephone; ?></span></a>
-<<<<<<< HEAD
           <a href="<?php echo $contact; ?>"><span class="header_tel_text_we">Мы перезвоним</span></a>
-=======
->>>>>>> 22855e63805b8321bb2df0cad82dc0d3b17094f9
-          <span class="header_tel_text_we">Мы перезвоним</span>
-          </a>
->>>>>>> 627e97a7a0409aaac8a48ed3689fa4a2feeb5064
       </div>
       <div class="header_pay col-lg-2 col-xs-3">
           <p>покупки</p>

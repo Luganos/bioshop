@@ -1,5 +1,5 @@
 <?php
-        //admin
+        //Catalog
 	class ControllerModuleTestEvent extends Controller {
 	
 	

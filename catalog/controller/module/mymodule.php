@@ -7,7 +7,8 @@
                   
                     $test = 'It is work';
 	            $this->event->trigger('my.module.event', $test);
-
+                    
+                return $customer_id;
 	    }
             
 	}

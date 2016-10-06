@@ -17,14 +17,14 @@
                 $this->event->register('my.module.event', 'module/mymodule/on_customer_add');
 
 	        $this->model_extension_event->addEvent('mymodule', 'pre.customer.login', 'module/mymodule/on_customer_add');
-
-	    }
+               
+            }
 
 	     
 
 	    public function uninstall() {
 
-	        $this->load->model('extension/event');
+	    $this->load->model('extension/event');
 
             $this->model_extension_event->deleteEvent('mymodule');
 
@@ -42,8 +42,7 @@
 
 	        $admin_mail = $this->config->get('config_email');
 
-	        mail($admin_mail, "A store has been deleted", "The store " . $store_info['url'] . " was deleted.");
+	        //mail($admin_mail, "A store has been deleted", "The store " . $store_info['url'] . " was deleted.");
 
-	    }
-
+            }           
 	}

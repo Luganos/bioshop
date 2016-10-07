@@ -22,7 +22,7 @@
           <p>Подписка на новости</p>
         </div>
         <div class="footer_news_pole">
-            <input type="text">
+            <input class="footer_news_pole_input"  type="text">
         </div>
         <div class="footer_news_butten">
             <p>подпишитесь</p>

@@ -105,8 +105,13 @@
        <?php } ?>
        <?php } ?>
        <li class="hrader_menu_start_<?php echo $n + 1; ?> dropdown">
+<<<<<<< HEAD
        <a href="<?php echo $category['href']; ?>" class="menu_link_<?php echo $n + 1; ?> dropdown-toggle" data-toggle="dropdown"><span>Акции и скидки</span></a>
        </li>
+=======
+       <a href="<?php echo $category['href']; ?>" class="menu_link_<?php echo $n + 1; ?>"><span>Акции и скидки</span></a>
+       </li>       
+>>>>>>> 00f817ce2280b277891292d3cfc9b13bf0337ac7
   	</ul>
     </div>
     <div class="hrader_menu_small">

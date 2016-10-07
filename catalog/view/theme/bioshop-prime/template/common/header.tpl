@@ -98,15 +98,15 @@
        </li>
         <?php } ?>
        <?php } else { ?>
-       <li class="hrader_menu_start_<?php echo $n; ?> dropdown">
-       <a href="<?php echo $category['href']; ?>" class="menu_link_<?php echo $n; ?> dropdown-toggle" data-toggle="dropdown"><span><?php echo $category['name']; ?></span></a>
+       <li class="hrader_menu_start_<?php echo $n; ?>">
+       <a href="<?php echo $category['href']; ?>" class="menu_link_<?php echo $n; ?>"><span><?php echo $category['name']; ?></span></a>
        </li>
        <?php } ?>
        <?php $n++; ?>
        <?php } ?>
        <?php } ?>
        <li class="hrader_menu_start_<?php echo $n + 1; ?> dropdown">
-       <a href="<?php echo $category['href']; ?>" class="menu_link_<?php echo $n + 1; ?> dropdown-toggle" data-toggle="dropdown"><span>Акции и скидки</span></a>
+       <a href="<?php echo $category['href']; ?>" class="menu_link_<?php echo $n + 1; ?>"><span>Акции и скидки</span></a>
        </li>       
   	</ul>
     </div>      

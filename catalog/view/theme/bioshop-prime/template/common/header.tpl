@@ -80,25 +80,27 @@
           </a>
       </div>
     </div>
-    <?php if ($categories) { ?>  
+    <?php if ($categories) { ?>
     <div class="header_bottom col-lg-12">
       <ul class="hrader_menu_big">
-       <?php foreach ($categories as $category) { ?> 
+       <?php $n = 0; ?>
+       <?php foreach ($categories as $category) { ?>
        <?php if ($category['children']) { ?>
-       <a href="" class="menu_link dropdown-toggle" data-toggle="dropdown"><span><?php echo $category['name']; ?></span></a>
+       <li class="hrader_menu_start dropdown">
+       <a href="" class="menu_link_<?php echo $n; ?> dropdown-toggle" data-toggle="dropdown"><span><?php echo $category['name']; ?></span></a>
        <?php foreach (array_chunk($category['children'], ceil(count($category['children']) / $category['column'])) as $children) { ?>
-        <li class="hrader_menu_start dropdown">
-          <!--<b class="caret"></b>-->
+          <b class="caret"></b>
           <ul class="dropdown-menu">
-          <?php foreach ($children as $child) { ?> 
+          <?php foreach ($children as $child) { ?>
            <li><a href="<?php echo $child['href']; ?>"><?php echo $child['name']; ?></a></li>
-          <?php } ?>        
+          <?php } ?>
          </ul>
        </li>
         <?php } ?>
        <?php } else { ?>
-       <a href="<?php echo $category['href']; ?>" class="menu_link dropdown-toggle"><span><?php echo $category['name']; ?></span></a>
-       <?php } ?> 
+       <a href="<?php echo $category['href']; ?>" class="menu_link_<?php echo $n; ?> dropdown-toggle" data-toggle="dropdown"><span><?php echo $category['name']; ?></span></a>
+       <?php } ?>
+       <?php $n++; ?>
        <?php } ?>
 	</ul>
     </div>

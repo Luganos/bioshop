@@ -30,16 +30,28 @@
         <div class="footer_news_sec">
             <p>Соглашение о конфиденциальности</p>
         </div>
-
-
-
-    <div class="footer_bottom">
-    </div>
     </div>
    </div>
+
   </div>
 </footer>
-
+<div class="footer_bottom">
+      <div class="footer_bottom_text">
+        <ul class="footer_bottom_text_ul">
+          <li>Доставка</li>
+          <li>Оплата</li>
+          <li>Блог</li>
+          <li>Вакансии</li>
+          <li>Вопрос-ответ</li>
+          <li>Контакты</li>
+          <li>Сотрудничество</li>
+          <li>О компании</li>
+        </ul>
+      </div>
+      <div class="footer_bottom_log">
+        <p>Naturele Boutique &#169 2016</p>
+      </div>
+    </div>
 <!--
 <footer>
   <div class="container">

@@ -89,7 +89,6 @@
        <li class="hrader_menu_start_<?php echo $n; ?> dropdown">
        <a href="" class="menu_link_<?php echo $n; ?> dropdown-toggle" data-toggle="dropdown"><span><?php echo $category['name']; ?></span></a>
        <?php foreach (array_chunk($category['children'], ceil(count($category['children']) / $category['column'])) as $children) { ?>
-          <b class="caret"></b>
           <ul class="dropdown-menu">
           <?php foreach ($children as $child) { ?>
            <li><a href="<?php echo $child['href']; ?>"><?php echo $child['name']; ?></a></li>
@@ -106,10 +105,15 @@
        <?php } ?>
        <?php } ?>
        <li class="hrader_menu_start_<?php echo $n + 1; ?> dropdown">
+<<<<<<< HEAD
+       <a href="<?php echo $category['href']; ?>" class="menu_link_<?php echo $n + 1; ?> dropdown-toggle" data-toggle="dropdown"><span>Акции и скидки</span></a>
+       </li>
+=======
        <a href="<?php echo $category['href']; ?>" class="menu_link_<?php echo $n + 1; ?>"><span>Акции и скидки</span></a>
        </li>       
+>>>>>>> 00f817ce2280b277891292d3cfc9b13bf0337ac7
   	</ul>
-    </div>      
+    </div>
     <div class="hrader_menu_small">
       <img id="open_small_menu" src="catalog/view/theme/bioshop-prime/image/menu_small.png" alt="">
       <div class="open_header_menu_small">

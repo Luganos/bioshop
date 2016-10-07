@@ -16,7 +16,9 @@ body {
 }
 @media (min-width: 1280px) {
   header {
+    width: 100%;
     height: 185px;
+    background-image: url('../image/backgraund_header.png');
   }
   .container_header {
     width: 1280px;
@@ -139,21 +141,26 @@ body {
   .hrader_menu_big span:hover {
     color: #a1b0d3;
   }
-  .hrader_menu_start {
+  .hrader_menu_start_0 {
     padding-right: 46px;
     border-right: 2px solid #a1b0d3;
   }
-  .hrader_menu_center {
+  .hrader_menu_start_1,
+  .hrader_menu_start_2,
+  .hrader_menu_start_3,
+  .hrader_menu_start_4 {
     padding: 0 46px 0 46px;
     border-right: 2px solid #a1b0d3;
   }
-  .hrader_menu_fin {
+  .hrader_menu_start_6 {
     padding-left: 40px;
   }
 }
 @media (max-width: 1279px) {
   header {
+    width: 100%;
     height: 185px;
+    background-image: url('../image/backgraund_header.png');
   }
   .container_header {
     width: 768px;

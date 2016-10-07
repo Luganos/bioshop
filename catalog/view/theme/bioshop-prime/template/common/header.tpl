@@ -89,7 +89,6 @@
        <li class="hrader_menu_start_<?php echo $n; ?> dropdown">
        <a href="" class="menu_link_<?php echo $n; ?> dropdown-toggle" data-toggle="dropdown"><span><?php echo $category['name']; ?></span></a>
        <?php foreach (array_chunk($category['children'], ceil(count($category['children']) / $category['column'])) as $children) { ?>
-          <b class="caret"></b>
           <ul class="dropdown-menu">
           <?php foreach ($children as $child) { ?>
            <li><a href="<?php echo $child['href']; ?>"><?php echo $child['name']; ?></a></li>
@@ -98,8 +97,8 @@
        </li>
         <?php } ?>
        <?php } else { ?>
-       <li class="hrader_menu_start_<?php echo $n; ?> dropdown">
-       <a href="<?php echo $category['href']; ?>" class="menu_link_<?php echo $n; ?> dropdown-toggle" data-toggle="dropdown"><span><?php echo $category['name']; ?></span></a>
+       <li class="hrader_menu_start_<?php echo $n; ?>">
+       <a href="<?php echo $category['href']; ?>" class="menu_link_<?php echo $n; ?>"><span><?php echo $category['name']; ?></span></a>
        </li>
        <?php } ?>
        <?php $n++; ?>
@@ -107,9 +106,9 @@
        <?php } ?>
        <li class="hrader_menu_start_<?php echo $n + 1; ?> dropdown">
        <a href="<?php echo $category['href']; ?>" class="menu_link_<?php echo $n + 1; ?> dropdown-toggle" data-toggle="dropdown"><span>Акции и скидки</span></a>
-       </li>       
+       </li>
   	</ul>
-    </div>      
+    </div>
     <div class="hrader_menu_small">
       <img id="open_small_menu" src="catalog/view/theme/bioshop-prime/image/menu_small.png" alt="">
       <div class="open_header_menu_small">

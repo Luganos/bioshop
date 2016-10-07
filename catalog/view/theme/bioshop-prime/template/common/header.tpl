@@ -104,9 +104,12 @@
        <?php } ?>
        <?php $n++; ?>
        <?php } ?>
-	</ul>
-    </div>
-	<?php } ?>
+       <?php } ?>
+       <li class="hrader_menu_start_<?php echo $n + 1; ?> dropdown">
+       <a href="<?php echo $category['href']; ?>" class="menu_link_<?php echo $n + 1; ?> dropdown-toggle" data-toggle="dropdown"><span>Акции и скидки</span></a>
+       </li>       
+  	</ul>
+    </div>      
     <div class="hrader_menu_small">
       <img id="open_small_menu" src="catalog/view/theme/bioshop-prime/image/menu_small.png" alt="">
       <div class="open_header_menu_small">

@@ -68,7 +68,7 @@
          <div><?php echo $search; ?></div>
       </div>
       <div class="header_tel col-lg-2 col-xs-2">
-          <a href ="tel:<?php echo $telephone; ?>" ><span class="header_tel_text_number"><?php echo $telephone; ?></span></a>
+          <a href ="tel:<?php echo $telephone; ?>" ><span class="header_tel_text_number"><?php echo $telephone; ?></span>
           </a>
           <a href="<?php echo $contact; ?>">
           <span class="header_tel_text_we">Мы перезвоним</span>
@@ -81,25 +81,25 @@
           </a>
       </div>
     </div>
-    <?php if ($categories) { ?>  
+    <?php if ($categories) { ?>
     <div class="header_bottom col-lg-12">
       <ul class="hrader_menu_big">
-       <?php foreach ($categories as $category) { ?> 
+       <?php foreach ($categories as $category) { ?>
        <?php if ($category['children']) { ?>
+       <li class="hrader_menu_start dropdown">
        <a href="" class="menu_link dropdown-toggle" data-toggle="dropdown"><span><?php echo $category['name']; ?></span></a>
        <?php foreach (array_chunk($category['children'], ceil(count($category['children']) / $category['column'])) as $children) { ?>
-        <li class="hrader_menu_start dropdown">
-          <!--<b class="caret"></b>-->
+          <b class="caret"></b>
           <ul class="dropdown-menu">
-          <?php foreach ($children as $child) { ?> 
+          <?php foreach ($children as $child) { ?>
            <li><a href="<?php echo $child['href']; ?>"><?php echo $child['name']; ?></a></li>
-          <?php } ?>        
+          <?php } ?>
          </ul>
        </li>
         <?php } ?>
        <?php } else { ?>
        <a href="<?php echo $category['href']; ?>" class="menu_link dropdown-toggle" data-toggle="dropdown"><span><?php echo $category['name']; ?></span></a>
-       <?php } ?> 
+       <?php } ?>
        <?php } ?>
 	</ul>
     </div>

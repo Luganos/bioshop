@@ -86,7 +86,7 @@
        <?php $n = 0; ?>
        <?php foreach ($categories as $category) { ?>
        <?php if ($category['children']) { ?>
-       <li class="hrader_menu_start dropdown">
+       <li class="hrader_menu_start_<?php echo $n; ?> dropdown">
        <a href="" class="menu_link_<?php echo $n; ?> dropdown-toggle" data-toggle="dropdown"><span><?php echo $category['name']; ?></span></a>
        <?php foreach (array_chunk($category['children'], ceil(count($category['children']) / $category['column'])) as $children) { ?>
           <b class="caret"></b>
@@ -98,7 +98,9 @@
        </li>
         <?php } ?>
        <?php } else { ?>
+       <li class="hrader_menu_start_<?php echo $n; ?> dropdown">
        <a href="<?php echo $category['href']; ?>" class="menu_link_<?php echo $n; ?> dropdown-toggle" data-toggle="dropdown"><span><?php echo $category['name']; ?></span></a>
+       </li>
        <?php } ?>
        <?php $n++; ?>
        <?php } ?>

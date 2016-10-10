@@ -1,6 +1,6 @@
 <div class="buy-item">
     <p class="buy-header">Новые товары:</p>
-    <div id="srcoll" class="sl" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
+    <div id="srcoll_newgoods" class="sl" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
         <div class="sl_slide_1">
             <div class="cart_product">
                 <div class="cart_product_img">
@@ -89,7 +89,7 @@ console.log(width);
 
     if(width < 1280){
     console.log("small");
-    teg = document.getElementById('srcoll');
+    teg = document.getElementById('srcoll_newgoods');
     teg.setAttribute('data-slick','{"slidesToShow": 3, "slidesToScroll": 3}')
 }
 </script>

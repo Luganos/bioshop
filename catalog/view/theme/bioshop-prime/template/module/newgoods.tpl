@@ -1,4 +1,100 @@
-<?php $size = count($products); ?>
+<div class="buy-item">
+    <p class="buy-header">Новые товары:</p>
+    <div id="srcoll" class="sl" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
+        <div class="sl_slide_1">
+            <div class="cart_product">
+                <div class="cart_product_img">
+                    <img src="catalog/view/theme/bioshop-prime/image/image1.png" alt="">
+                </div>
+                <div class="cart_product_price">
+                    <span class="cart_product_price_pay">90 грн.</span>
+                    <span class="cart_product_price_discont">100 грн.</span>
+                    <span class="cart_product_price_text">Масло-шампунь</span>
+                </div>
+                <div class="cart_product_price_button">
+                    <img src="catalog/view/theme/bioshop-prime/image/577845.png" alt="">
+                    <span>в корзину</span>
+                </div>
+            </div>
+        </div>
+        <div class="sl_slide_2">
+            <div class="cart_product">
+                <div class="cart_product_img">
+                    <img src="catalog/view/theme/bioshop-prime/image/image1.png" alt="">
+                </div>
+                <div class="cart_product_price">
+                    <span class="cart_product_price_pay">90 грн.</span>
+                    <span class="cart_product_price_discont">100 грн.</span>
+                    <span class="cart_product_price_text">Масло-шампунь</span>
+                </div>
+                <div class="cart_product_price_button">
+                    <img src="catalog/view/theme/bioshop-prime/image/577845.png" alt="">
+                <span>в корзину</span>
+                </div>
+            </div>
+        </div>
+        <div class="sl_slide_3">
+            <div class="cart_product">
+                <div class="cart_product_img">
+                    <img src="catalog/view/theme/bioshop-prime/image/image1.png" alt="">
+                </div>
+                <div class="cart_product_price">
+                    <span class="cart_product_price_pay">90 грн.</span>
+                    <span class="cart_product_price_discont">100 грн.</span>
+                    <span class="cart_product_price_text">Масло-шампунь</span>
+                </div>
+                <div class="cart_product_price_button">
+                    <img src="catalog/view/theme/bioshop-prime/image/577845.png" alt="">
+                <span>в корзину</span>
+                </div>
+            </div>
+        </div>
+        <div class="sl_slide_4">
+            <div class="cart_product">
+                <div class="cart_product_img">
+                    <img src="catalog/view/theme/bioshop-prime/image/image1.png" alt="">
+                </div>
+                <div class="cart_product_price">
+                    <span class="cart_product_price_pay">90 грн.</span>
+                    <span class="cart_product_price_discont">100 грн.</span>
+                    <span class="cart_product_price_text">Масло-шампунь</span>
+                </div>
+                <div class="cart_product_price_button">
+                    <img src="catalog/view/theme/bioshop-prime/image/577845.png" alt="">
+                <span>в корзину</span>
+                </div>
+            </div>
+        </div>
+         <div class="sl_slide_5">
+            <div class="cart_product">
+                <div class="cart_product_img">
+                    <img src="catalog/view/theme/bioshop-prime/image/image1.png" alt="">
+                </div>
+                <div class="cart_product_price">
+                    <span class="cart_product_price_pay">90 грн.</span>
+                    <span class="cart_product_price_discont">100 грн.</span>
+                    <span class="cart_product_price_text">Масло-шампунь</span>
+                </div>
+                <div class="cart_product_price_button">
+                    <img src="catalog/view/theme/bioshop-prime/image/577845.png" alt="">
+                <span>в корзину</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+var width = document.documentElement.clientWidth;
+console.log(width);
+
+    if(width < 1280){
+    console.log("small");
+    teg = document.getElementById('srcoll');
+    teg.setAttribute('data-slick','{"slidesToShow": 3, "slidesToScroll": 3}')
+}
+</script>
+
+<!--<?php $size = count($products); ?>
 <?php if ($size > 0) { ?>
 <div class="buy-item">
     <p class="buy-header">Новые товары:</p>
@@ -94,5 +190,5 @@
 					  </div>
 				     </div>
                                 </div>
-                            <?php } ?>
+                            <?php } ?>-->
 

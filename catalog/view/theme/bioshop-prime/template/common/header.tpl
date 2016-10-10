@@ -27,6 +27,8 @@
 <link href="catalog/view/theme/bioshop-prime/stylesheet/stylesheet_header.css" rel="stylesheet">
 <?php foreach ($styles as $style) { ?>
 <link href="<?php echo $style['href']; ?>" type="text/css" rel="<?php echo $style['rel']; ?>" media="<?php echo $style['media']; ?>" />
+<link href="catalog/view/javascript/slick/slick.css" rel="stylesheet">
+<link href="catalog/view/javascript/slick/slick-theme.css" rel="stylesheet" >
 <?php } ?>
 <script src="catalog/view/javascript/common.js" type="text/javascript"></script>
 <script src="catalog/view/javascript/js.js" type="text/javascript"></script>

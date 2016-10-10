@@ -1,5 +1,15 @@
 $(function(){
 
+
+$('.sl').slick({
+    /*vertical:true,
+    verticalSwiping:true,
+    autoplaySpeed:3000,
+    autoplay:true*/
+});
+
+
+
 $('.idTop').click(function(){
        $('html, body').animate({scrollTop:0}, 'slow');
    });

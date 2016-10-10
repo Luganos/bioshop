@@ -1,4 +1,100 @@
-				   <?php $size = count($products); ?>
+<div class="buy-item">
+    <p class="buy-header">больше всего покупают:</p>
+    <div id="srcoll" class="sl" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
+        <div class="sl_slide_1">
+            <div class="cart_product">
+                <div class="cart_product_img">
+                    <img src="catalog/view/theme/bioshop-prime/image/image1.png" alt="">
+                </div>
+                <div class="cart_product_price">
+                    <span class="cart_product_price_pay">90 грн.</span>
+                    <span class="cart_product_price_discont">100 грн.</span>
+                    <span class="cart_product_price_text">Масло-шампунь</span>
+                </div>
+                <div class="cart_product_price_button">
+                    <img src="catalog/view/theme/bioshop-prime/image/577845.png" alt="">
+                    <span>в корзину</span>
+                </div>
+            </div>
+        </div>
+        <div class="sl_slide_2">
+            <div class="cart_product">
+                <div class="cart_product_img">
+                    <img src="catalog/view/theme/bioshop-prime/image/image1.png" alt="">
+                </div>
+                <div class="cart_product_price">
+                    <span class="cart_product_price_pay">90 грн.</span>
+                    <span class="cart_product_price_discont">100 грн.</span>
+                    <span class="cart_product_price_text">Масло-шампунь</span>
+                </div>
+                <div class="cart_product_price_button">
+                    <img src="catalog/view/theme/bioshop-prime/image/577845.png" alt="">
+                <span>в корзину</span>
+                </div>
+            </div>
+        </div>
+        <div class="sl_slide_3">
+            <div class="cart_product">
+                <div class="cart_product_img">
+                    <img src="catalog/view/theme/bioshop-prime/image/image1.png" alt="">
+                </div>
+                <div class="cart_product_price">
+                    <span class="cart_product_price_pay">90 грн.</span>
+                    <span class="cart_product_price_discont">100 грн.</span>
+                    <span class="cart_product_price_text">Масло-шампунь</span>
+                </div>
+                <div class="cart_product_price_button">
+                    <img src="catalog/view/theme/bioshop-prime/image/577845.png" alt="">
+                <span>в корзину</span>
+                </div>
+            </div>
+        </div>
+        <div class="sl_slide_4">
+            <div class="cart_product">
+                <div class="cart_product_img">
+                    <img src="catalog/view/theme/bioshop-prime/image/image1.png" alt="">
+                </div>
+                <div class="cart_product_price">
+                    <span class="cart_product_price_pay">90 грн.</span>
+                    <span class="cart_product_price_discont">100 грн.</span>
+                    <span class="cart_product_price_text">Масло-шампунь</span>
+                </div>
+                <div class="cart_product_price_button">
+                    <img src="catalog/view/theme/bioshop-prime/image/577845.png" alt="">
+                <span>в корзину</span>
+                </div>
+            </div>
+        </div>
+         <div class="sl_slide_5">
+            <div class="cart_product">
+                <div class="cart_product_img">
+                    <img src="catalog/view/theme/bioshop-prime/image/image1.png" alt="">
+                </div>
+                <div class="cart_product_price">
+                    <span class="cart_product_price_pay">90 грн.</span>
+                    <span class="cart_product_price_discont">100 грн.</span>
+                    <span class="cart_product_price_text">Масло-шампунь</span>
+                </div>
+                <div class="cart_product_price_button">
+                    <img src="catalog/view/theme/bioshop-prime/image/577845.png" alt="">
+                <span>в корзину</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+var width = document.documentElement.clientWidth;
+console.log(width);
+
+    if(width < 1280){
+    console.log("small");
+    teg = document.getElementById('srcoll');
+    teg.setAttribute('data-slick','{"slidesToShow": 3, "slidesToScroll": 3}')
+}
+</script>
+
+<!--				   <?php $size = count($products); ?>
                                    <?php if ($size > 0) { ?>
                                     <div class="buy-item">
 					<p class="buy-header">Больше всего покупают:</p>
@@ -7,10 +103,10 @@
 							<div class="carousel-inner" role="listbox">
 								<div class="item active">
 									<div class="wrapper-item">
-                                                                        <?php  
+                                                                        <?php
                                                                              $rows = 1;
                                                                              $active_item = ($size >= 3)? 3 : $size;
-                                                                         ?>                   
+                                                                         ?>
                                                                          <?php for ($m = 1; $m <= $active_item; $m++) { ?>
                                                                                     <div>
 											<div class="item-content">
@@ -38,15 +134,15 @@
 										   </div>
                                                                              <?php $rows++; ?>
                                                                              <?php } ?>
-                                                                        </div>  
+                                                                        </div>
 								</div>
-                                                                <?php $number_row = intval(ceil(($size - 3)/3));?> 
+                                                                <?php $number_row = intval(ceil(($size - 3)/3));?>
                                                                 <?php if ($number_row > 0) { ?>
                                                                      <?php for($rows = 4; $rows < $size + 1; $rows) { ?>
                                                                          <div class="item">
 									     <div class="wrapper-item">
 								          <?php $item = $rows; ?>
-                                                                               <?php  for ($k = $item; $k < $item + 3; $k++) { ?> 
+                                                                               <?php  for ($k = $item; $k < $item + 3; $k++) { ?>
                                                                                      <?php  if ($rows > $size) { ?>
                                                                                           <?php break; ?>
                                                                                      <?php } ?>
@@ -74,7 +170,7 @@
 											     <a onclick="cart.add('<?php echo $products[$rows]['product_id']; ?>');"><span class="hidden-xs hidden-sm hidden-md"><?php echo $button_cart; ?></span></a>
 											</div>
 										   </div>
-                                                                                   <?php $rows++; ?>  
+                                                                                   <?php $rows++; ?>
                                                                                <?php } ?>
                                                                                	</div>
 								             </div>
@@ -89,9 +185,9 @@
 					        </a>
 					        <a class="right carousel-control" href="#carousel-example-generic-<?php echo $topsale; ?>" role="button" data-slide="next">
 								<img src="catalog/view/theme/bioshop/image/arrow-right.png" alt="right">
-					       </a>    
+					       </a>
 					  </div>
 				     </div>
                                 </div>
-                            <?php } ?>
- 
+                            <?php } ?>-->
+

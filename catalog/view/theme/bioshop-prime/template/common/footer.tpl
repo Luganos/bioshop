@@ -4,10 +4,18 @@
       <div class="footer_c_net col-lg-3 col-xs-6">
         <span>Мы в социальных сетях:</span>
         <div class="footer_c_net_img">
+        <a href="">
         <img class="footer_twitter" src="catalog/view/theme/bioshop-prime/image/Twitter.png" alt="">
+        </a>
+        <a href="">
         <img class="footer_fb" src="catalog/view/theme/bioshop-prime/image/fb.png" alt="">
+        </a>
+        <a href="">
         <img class="footer_vk" src="catalog/view/theme/bioshop-prime/image/vk.png" alt="">
+        </a>
+        <a href="">
         <img class="footer_t" src="catalog/view/theme/bioshop-prime/image/t.png" alt="">
+        </a>
         </div>
       </div>
       <div class="footer_tel col-lg-3 col-xs-6">
@@ -38,14 +46,30 @@
 <div class="footer_bottom">
       <div class="footer_bottom_text">
         <ul class="footer_bottom_text_ul">
+          <a href="">
           <li>Доставка</li>
+          </a>
+          <a href="">
           <li>Оплата</li>
+          </a>
+          <a href="">
           <li>Блог</li>
+          </a>
+          <a href="">
           <li>Вакансии</li>
+          </a>
+          <a href="">
           <li>Вопрос-ответ</li>
+          </a>
+          <a href="">
           <li>Контакты</li>
+          </a>
+          <a href="">
           <li>Сотрудничество</li>
+          </a>
+          <a href="">
           <li>О компании</li>
+          </a>
         </ul>
       </div>
       <div class="footer_bottom_log">
@@ -104,5 +128,5 @@ Please donate via PayPal to donate@opencart.com
 //-->
 
 <!-- Theme created by Welford Media for OpenCart 2.0 www.welfordmedia.co.uk -->
-
+<script src="catalog/view/javascript/slick/slick.js"></script>
 </body></html>

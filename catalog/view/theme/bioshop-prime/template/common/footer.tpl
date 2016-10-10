@@ -20,8 +20,8 @@
       </div>
       <div class="footer_tel col-lg-3 col-xs-6">
         <p class="footer_tel_text">Есть вопросы? Звоните!</p>
-        <p class="footer_tel_tel">08009004060</p>
-        <a href="">
+        <a href ="tel:<?php echo $telephone; ?>" ><p class="footer_tel_tel"><?php echo $telephone; ?></p></a>
+        <a href="<?php echo $contact; ?>">
         <p class="footer_tel_we_recall">Мы перезвоним</p>
         </a>
       </div>
@@ -40,88 +40,30 @@
         </div>
     </div>
    </div>
-
   </div>
 </footer>
 <div class="footer_bottom">
       <div class="footer_bottom_text">
         <ul class="footer_bottom_text_ul">
-          <a href="">
-          <li>Доставка</li>
-          </a>
-          <a href="">
-          <li>Оплата</li>
-          </a>
-          <a href="">
-          <li>Блог</li>
-          </a>
-          <a href="">
-          <li>Вакансии</li>
-          </a>
-          <a href="">
-          <li>Вопрос-ответ</li>
-          </a>
-          <a href="">
-          <li>Контакты</li>
-          </a>
-          <a href="">
-          <li>Сотрудничество</li>
-          </a>
-          <a href="">
-          <li>О компании</li>
-          </a>
+            <?php foreach ($informations as $information) { ?>
+               <?php if (strtolower($information['title']) !== strtolower("Соглашение о конфиденциальности")) { ?>
+                  <?php if (strtolower($information['title']) !== strtolower("Контакты")) { ?>
+                      <a href="<?php echo $information['href']; ?>">
+                         <li><?php echo $information['title']; ?></li>
+                      </a>
+                  <?php } else if (strtolower($information['title']) == strtolower("Контакты")) { ?>
+                      <a href="<?php echo $contact; ?>">
+                         <li>Контакты</li>
+                      </a>
+                  <?php } ?>
+               <?php } ?>
+        <?php } ?>
         </ul>
       </div>
       <div class="footer_bottom_log">
         <p>Naturele Boutique &#169 2016</p>
       </div>
     </div>
-<!--
-<footer>
-  <div class="container">
-    <div class="row">
-      <?php if ($informations) { ?>
-      <div class="col-sm-3">
-        <h5><?php echo $text_information; ?></h5>
-        <ul class="list-unstyled">
-          <?php foreach ($informations as $information) { ?>
-          <li><a href="<?php echo $information['href']; ?>"><?php echo $information['title']; ?></a></li>
-          <?php } ?>
-        </ul>
-      </div>
-      <?php } ?>
-      <div class="col-sm-3">
-        <h5><?php echo $text_service; ?></h5>
-        <ul class="list-unstyled">
-          <li><a href="<?php echo $contact; ?>"><?php echo $text_contact; ?></a></li>
-          <li><a href="<?php echo $return; ?>"><?php echo $text_return; ?></a></li>
-          <li><a href="<?php echo $sitemap; ?>"><?php echo $text_sitemap; ?></a></li>
-        </ul>
-      </div>
-      <div class="col-sm-3">
-        <h5><?php echo $text_extra; ?></h5>
-        <ul class="list-unstyled">
-          <li><a href="<?php echo $manufacturer; ?>"><?php echo $text_manufacturer; ?></a></li>
-          <li><a href="<?php echo $voucher; ?>"><?php echo $text_voucher; ?></a></li>
-          <li><a href="<?php echo $affiliate; ?>"><?php echo $text_affiliate; ?></a></li>
-          <li><a href="<?php echo $special; ?>"><?php echo $text_special; ?></a></li>
-        </ul>
-      </div>
-      <div class="col-sm-3">
-        <h5><?php echo $text_account; ?></h5>
-        <ul class="list-unstyled">
-          <li><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a></li>
-          <li><a href="<?php echo $order; ?>"><?php echo $text_order; ?></a></li>
-          <li><a href="<?php echo $wishlist; ?>"><?php echo $text_wishlist; ?></a></li>
-          <li><a href="<?php echo $newsletter; ?>"><?php echo $text_newsletter; ?></a></li>
-        </ul>
-      </div>
-    </div>
-    <hr>
-    <p><?php echo $powered; ?></p>
-  </div>
-</footer>-->
-
 <!--
 OpenCart is open source software and you are free to remove the powered by OpenCart if you want, but its generally accepted practise to make a small donation.
 Please donate via PayPal to donate@opencart.com

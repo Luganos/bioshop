@@ -36,7 +36,13 @@
             <p>подпишитесь</p>
         </div>
         <div class="footer_news_sec">
-            <p>Соглашение о конфиденциальности</p>
+            <?php foreach ($informations as $information) { ?>
+            <?php if (strtolower($information['title']) == strtolower("Соглашение о конфиденциальности")) { ?>
+             <a href="<?php echo $information['href']; ?>">
+             <p><?php echo $information['title']; ?></p>
+             </a>
+             <?php } ?>
+             <?php } ?>
         </div>
     </div>
    </div>

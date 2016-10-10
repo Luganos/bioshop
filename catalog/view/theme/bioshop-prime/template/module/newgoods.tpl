@@ -1,194 +1,44 @@
 <div class="buy-item">
     <p class="buy-header">Новые товары:</p>
+    <?php $size = count($products); ?>
+    <?php if ($size > 0) { ?>
     <div id="srcoll_newgoods" class="sl" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
+        <?php foreach ($products as $product) { ?>
         <div class="sl_slide_1">
             <div class="cart_product">
                 <div class="cart_product_img">
-                    <img src="catalog/view/theme/bioshop-prime/image/image1.png" alt="">
+                    <a href ="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>"></a>
                 </div>
                 <div class="cart_product_price">
-                    <span class="cart_product_price_pay">90 грн.</span>
-                    <span class="cart_product_price_discont">100 грн.</span>
-                    <span class="cart_product_price_text">Масло-шампунь</span>
+                       <?php if ($product['price']) { ?>
+                           <?php if (!$product['special']) { ?>
+                           <span class="cart_product_price_discont"><?php echo $product['price']; ?></span>
+                           <?php } else { ?>
+                           <span class="cart_product_price_pay"><?php echo $product['special']; ?></span>
+                           <span class="cart_product_price_discont"><?php echo $product['price']; ?></span>
+                           <?php } ?>
+                        <?php } ?>
+                    <span class="cart_product_price_text"><?php echo $product['name']; ?></span>
                 </div>
                 <div class="cart_product_price_button">
                     <img src="catalog/view/theme/bioshop-prime/image/577845.png" alt="">
-                    <span>в корзину</span>
+                        <span onclick="cart.add('<?php echo $product['product_id']; ?>');"><?php echo $button_cart; ?></span>
+                    </img>
                 </div>
             </div>
         </div>
-        <div class="sl_slide_2">
-            <div class="cart_product">
-                <div class="cart_product_img">
-                    <img src="catalog/view/theme/bioshop-prime/image/image1.png" alt="">
-                </div>
-                <div class="cart_product_price">
-                    <span class="cart_product_price_pay">90 грн.</span>
-                    <span class="cart_product_price_discont">100 грн.</span>
-                    <span class="cart_product_price_text">Масло-шампунь</span>
-                </div>
-                <div class="cart_product_price_button">
-                    <img src="catalog/view/theme/bioshop-prime/image/577845.png" alt="">
-                <span>в корзину</span>
-                </div>
-            </div>
-        </div>
-        <div class="sl_slide_3">
-            <div class="cart_product">
-                <div class="cart_product_img">
-                    <img src="catalog/view/theme/bioshop-prime/image/image1.png" alt="">
-                </div>
-                <div class="cart_product_price">
-                    <span class="cart_product_price_pay">90 грн.</span>
-                    <span class="cart_product_price_discont">100 грн.</span>
-                    <span class="cart_product_price_text">Масло-шампунь</span>
-                </div>
-                <div class="cart_product_price_button">
-                    <img src="catalog/view/theme/bioshop-prime/image/577845.png" alt="">
-                <span>в корзину</span>
-                </div>
-            </div>
-        </div>
-        <div class="sl_slide_4">
-            <div class="cart_product">
-                <div class="cart_product_img">
-                    <img src="catalog/view/theme/bioshop-prime/image/image1.png" alt="">
-                </div>
-                <div class="cart_product_price">
-                    <span class="cart_product_price_pay">90 грн.</span>
-                    <span class="cart_product_price_discont">100 грн.</span>
-                    <span class="cart_product_price_text">Масло-шампунь</span>
-                </div>
-                <div class="cart_product_price_button">
-                    <img src="catalog/view/theme/bioshop-prime/image/577845.png" alt="">
-                <span>в корзину</span>
-                </div>
-            </div>
-        </div>
-         <div class="sl_slide_5">
-            <div class="cart_product">
-                <div class="cart_product_img">
-                    <img src="catalog/view/theme/bioshop-prime/image/image1.png" alt="">
-                </div>
-                <div class="cart_product_price">
-                    <span class="cart_product_price_pay">90 грн.</span>
-                    <span class="cart_product_price_discont">100 грн.</span>
-                    <span class="cart_product_price_text">Масло-шампунь</span>
-                </div>
-                <div class="cart_product_price_button">
-                    <img src="catalog/view/theme/bioshop-prime/image/577845.png" alt="">
-                <span>в корзину</span>
-                </div>
-            </div>
-        </div>
+    <?php } ?>
     </div>
+    <?php } ?> 
 </div>
 <script>
 var width = document.documentElement.clientWidth;
-console.log(width);
 
     if(width < 1280){
-    console.log("small");
-    teg = document.getElementById('srcoll_newgoods');
-    teg.setAttribute('data-slick','{"slidesToShow": 3, "slidesToScroll": 3}')
-}
+ 
+       teg = document.getElementById('srcoll_newgoods');
+       teg.setAttribute('data-slick','{"slidesToShow": 3, "slidesToScroll": 3}')
+    }
 </script>
 
-<!--<?php $size = count($products); ?>
-<?php if ($size > 0) { ?>
-<div class="buy-item">
-    <p class="buy-header">Новые товары:</p>
-	<div class="slider-wrapper">
-						<div id="carousel-example-generic-<?php echo $newgoods; ?>" class="carousel slide" data-ride="carousel">
-							<div class="carousel-inner" role="listbox">
-								<div class="item active">
-									<div class="wrapper-item">
-                                    <?php
-                                          $rows = 1;
-                                          $active_item = ($size >= 3)? 3 : $size;
-                                    ?>
-                                    <?php for ($m = 1; $m <= $active_item; $m++) { ?>
-                                        <div>
-											<div class="item-content">
-												<div class="item-image">
-                                                <img src="<?php echo $products[$rows]['thumb']; ?>" alt="<?php echo $products[$rows]['name']; ?>" title="<?php echo $products[$rows]['name']; ?>" />
-												</div>
-												<div class="item-discription">
-													<?php echo $products[$rows]['name']; ?>
-													<p>
-													 <?php echo $products[$rows]['description']; ?>
-													</p>
-                                                    <p>Test</p>
-                                                    <?php if ($products[$rows]['price']) { ?>
-                                                    <p class="price">
-                                                    <?php if (!$products[$rows]['special']) { ?>
-                                                    <?php echo $products[$rows]['price']; ?>
-                                                    <?php } else { ?>
-                                                    <span class="price-new"><?php echo $products[$rows]['special']; ?></span> <span class="price-old"><?php echo $products[$rows]['price']; ?></span>
-                                                    <?php } ?>
-                                                    <?php } ?>
-											         </div>
-											</div>
-											<div class="buy-action">
-										              <a onclick="cart.add('<?php echo $products[$rows]['product_id']; ?>');"><span class="hidden-xs hidden-sm hidden-md"><?php echo $button_cart; ?></span></a>
-											</div>
-										   </div>
-                                           <?php $rows++; ?>
-                                            <?php } ?>
-                                                                        </div>
-								</div>
-                                                                <?php $number_row = intval(ceil(($size - 3)/3));?>
-                                                                <?php if ($number_row > 0) { ?>
-                                                                     <?php for($rows = 4; $rows < $size + 1; $rows) { ?>
-                                                                         <div class="item">
-									     <div class="wrapper-item">
-								          <?php $item = $rows; ?>
-                                                                               <?php  for ($k = $item; $k < $item + 3; $k++) { ?>
-                                                                                     <?php  if ($rows > $size) { ?>
-                                                                                          <?php break; ?>
-                                                                                     <?php } ?>
-										      <div>
-                                                                                            <div class="item-content">
-												<div class="item-image">
-											            <img src="<?php echo $products[$rows]['thumb']; ?>" alt="<?php echo $products[$rows]['name']; ?>" title="<?php echo $products[$rows]['name']; ?>" />
-												</div>
-												<div class="item-discription">
-													<?php echo $products[$rows]['name']; ?>
-													<p>
-													 <?php echo $products[$rows]['description']; ?>
-													</p>
-													   <?php if ($products[$rows]['price']) { ?>
-                                                                                                                <p class="price">
-                                                                                                                <?php if (!$products[$rows]['special']) { ?>
-                                                                                                                <?php echo $products[$rows]['price']; ?>
-                                                                                                                <?php } else { ?>
-                                                                                                                <span class="price-new"><?php echo $products[$rows]['special']; ?></span> <span class="price-old"><?php echo $products[$rows]['price']; ?></span>
-                                                                                                                <?php } ?>
-                                                                                                                <?php } ?>
-												</div>
-											    </div>
-											<div class="buy-action">
-											     <a onclick="cart.add('<?php echo $products[$rows]['product_id']; ?>');"><span class="hidden-xs hidden-sm hidden-md"><?php echo $button_cart; ?></span></a>
-											</div>
-										   </div>
-                                                                                   <?php $rows++; ?>
-                                                                               <?php } ?>
-                                                                               	</div>
-								             </div>
-                                                                               <?php  if ($rows > $size) { ?>
-                                                                                      <?php break; ?>
-                                                                                <?php } ?>
-			                                                  <?php } ?>
-                                                                 <?php } ?>
-						</div>
-                                                <a class="left carousel-control" href="#carousel-example-generic-<?php echo $newgoods; ?>" role="button" data-slide="prev">
-								<img src="catalog/view/theme/bioshop/image/arrow-left.png" alt="left">
-					        </a>
-					        <a class="right carousel-control" href="#carousel-example-generic-<?php echo $newgoods; ?>" role="button" data-slide="next">
-								<img src="catalog/view/theme/bioshop/image/arrow-right.png" alt="right">
-					       </a>
-					  </div>
-				     </div>
-                                </div>
-                            <?php } ?>-->
 

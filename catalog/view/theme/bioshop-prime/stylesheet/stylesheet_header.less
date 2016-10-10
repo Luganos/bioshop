@@ -426,6 +426,26 @@ header{
 /*-----small_slider_and_card_product-------*/
 
 @media (min-width: 1280px) {
+ .container{
+    z-index: 5 !important;
+}
+
+.row{
+ z-index: 5 !important;
+}
+#content{
+    z-index: 5 !important;
+}
+ .container:before{
+    z-index: 5 !important;
+}
+
+.row:before{
+ z-index: 5 !important;
+}
+#content:before{
+    z-index: 5 !important;
+}
     .buy-item{
         padding-top: 50px !important;
     }
@@ -496,19 +516,32 @@ header{
         color: rgb(253,252,252);
         text-transform: uppercase;
     }
+    .slick-prev{
+        line-height: 50% !important;
+        top: 105% !important;
+        left: 580px !important;
+        z-index: 999 !important;
+    }
     .slick-prev::before{
         position: absolute;
-        top: 250px;
-        left: 610px;
+        top: 0px !important;
+        left: 0px !important;
+        color: rgb(81,98,111) !important;
+        font-size: 30px !important;
+        z-index: 999 !important;
+    }
+
+    .slick-next::before{
+        position: absolute;
+        top: 0px !important;
+        right: 0px !important;
         color: rgb(81,98,111) !important;
         font-size: 30px !important;
     }
-    .slick-next::before{
-        position: absolute;
-        top: 250px;
-        right: 620px;
-        color: rgb(81,98,111) !important;
-        font-size: 30px !important;
+    .slick-next{
+        line-height: 50% !important;
+        top: 105% !important;
+        right: 590px !important;
     }
 }
 

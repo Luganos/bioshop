@@ -41,6 +41,9 @@
 <?php } ?>
 </head>
 <body>
+<div>
+  <a class="idTop"><img src='catalog/view/theme/bioshop-prime/image/to_up.png'/></a>
+</div>
 <header>
   <div class="container_header">
     <div class="header_top">
@@ -106,18 +109,28 @@
        <?php } ?>
        <li class="hrader_menu_start_<?php echo $n + 1; ?> dropdown">
        <a href="<?php echo $category['href']; ?>" class="menu_link_<?php echo $n + 1; ?>"><span>Акции и скидки</span></a>
-       </li>       
+       </li>
   	</ul>
     </div>
     <div class="hrader_menu_small">
       <img id="open_small_menu" src="catalog/view/theme/bioshop-prime/image/menu_small.png" alt="">
       <div class="open_header_menu_small">
         <ul class="open_header_menu_small_ul">
+          <a href="">
           <li>1</li>
+          </a>
+          <a href="">
           <li>2</li>
-          <li>2</li>
-          <li>2</li>
-          <li>2</li>
+          </a>
+          <a href="">
+          <li>3</li>
+          </a>
+          <a href="">
+          <li>4</li>
+          </a>
+          <a href="">
+          <li>5</li>
+          </a>
         </ul>
       </div>
     </div>

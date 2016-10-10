@@ -1,6 +1,10 @@
 $(function(){
-var open_small_menu = 0;
 
+$('.idTop').click(function(){
+       $('html, body').animate({scrollTop:0}, 'slow');
+   });
+
+var open_small_menu = 0;
 
 $("#open_small_menu").on("click", function(){
     if(!open_small_menu){

@@ -1,16 +1,16 @@
-				   <?php $size = count($products); ?>
-                   <?php if ($size > 0) { ?>
-                   <div class="buy-item">
-					<p class="buy-header">Новые товары:</p>
-					<div class="slider-wrapper">
+<?php $size = count($products); ?>
+<?php if ($size > 0) { ?>
+<div class="buy-item">
+    <p class="buy-header">Новые товары:</p>
+	<div class="slider-wrapper">
 						<div id="carousel-example-generic-<?php echo $newgoods; ?>" class="carousel slide" data-ride="carousel">
 							<div class="carousel-inner" role="listbox">
 								<div class="item active">
 									<div class="wrapper-item">
-                                    <?php  
+                                    <?php
                                           $rows = 1;
                                           $active_item = ($size >= 3)? 3 : $size;
-                                    ?>                   
+                                    ?>
                                     <?php for ($m = 1; $m <= $active_item; $m++) { ?>
                                         <div>
 											<div class="item-content">
@@ -39,15 +39,15 @@
 										   </div>
                                            <?php $rows++; ?>
                                             <?php } ?>
-                                                                        </div>  
+                                                                        </div>
 								</div>
-                                                                <?php $number_row = intval(ceil(($size - 3)/3));?> 
+                                                                <?php $number_row = intval(ceil(($size - 3)/3));?>
                                                                 <?php if ($number_row > 0) { ?>
                                                                      <?php for($rows = 4; $rows < $size + 1; $rows) { ?>
                                                                          <div class="item">
 									     <div class="wrapper-item">
 								          <?php $item = $rows; ?>
-                                                                               <?php  for ($k = $item; $k < $item + 3; $k++) { ?> 
+                                                                               <?php  for ($k = $item; $k < $item + 3; $k++) { ?>
                                                                                      <?php  if ($rows > $size) { ?>
                                                                                           <?php break; ?>
                                                                                      <?php } ?>
@@ -75,7 +75,7 @@
 											     <a onclick="cart.add('<?php echo $products[$rows]['product_id']; ?>');"><span class="hidden-xs hidden-sm hidden-md"><?php echo $button_cart; ?></span></a>
 											</div>
 										   </div>
-                                                                                   <?php $rows++; ?>  
+                                                                                   <?php $rows++; ?>
                                                                                <?php } ?>
                                                                                	</div>
 								             </div>
@@ -90,9 +90,9 @@
 					        </a>
 					        <a class="right carousel-control" href="#carousel-example-generic-<?php echo $newgoods; ?>" role="button" data-slide="next">
 								<img src="catalog/view/theme/bioshop/image/arrow-right.png" alt="right">
-					       </a>    
+					       </a>
 					  </div>
 				     </div>
                                 </div>
                             <?php } ?>
- 
+

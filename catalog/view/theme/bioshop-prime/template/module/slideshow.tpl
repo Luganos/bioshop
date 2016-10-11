@@ -1,3 +1,4 @@
+<div class="blue_line"></div>
 <div id="slideshow<?php echo $module; ?>" class="owl-carousel" style="opacity: 1;">
   <?php foreach ($banners as $banner) { ?>
   <div class="item">

@@ -14,17 +14,17 @@
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?><div id="mfilter-content-container">
-      <h2><?php echo $heading_title; ?></h2>
+      <h2 class="category_name_product col-lg-3"><?php echo $heading_title; ?></h2>
       <?php if ($thumb || $description) { ?>
-      <div class="row">
+     <!-- <div class="row">
         <?php if ($thumb) { ?>
         <div class="col-sm-2"><img src="<?php echo $thumb; ?>" alt="<?php echo $heading_title; ?>" title="<?php echo $heading_title; ?>" class="img-thumbnail" /></div>
         <?php } ?>
         <?php if ($description) { ?>
         <div class="col-sm-10"><?php echo $description; ?></div>
         <?php } ?>
-      </div>
-      <hr>
+      </div>-->
+
       <?php } ?>
       <?php if ($categories) { ?>
       <h3><?php echo $text_refine; ?></h3>
@@ -53,18 +53,18 @@
       <?php } ?>
       <?php } ?>
       <?php if ($products) { ?>
-      <p><a href="<?php echo $compare; ?>" id="compare-total"><?php echo $text_compare; ?></a></p>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="btn-group hidden-xs">
+     <!-- <p><a href="<?php echo $compare; ?>" id="compare-total"><?php echo $text_compare; ?></a></p>-->
+      <div class="row col-lg-9 category_cort">
+        <div class="col-lg-0 col-md-1">
+          <div class="btn-group hidden-xs " style="visibility: hidden">
             <button type="button" id="list-view" class="btn btn-default" data-toggle="tooltip" title="<?php echo $button_list; ?>"><i class="fa fa-th-list"></i></button>
             <button type="button" id="grid-view" class="btn btn-default" data-toggle="tooltip" title="<?php echo $button_grid; ?>"><i class="fa fa-th"></i></button>
           </div>
         </div>
-        <div class="col-md-2 text-right">
-          <label class="control-label" for="input-sort"><?php echo $text_sort; ?></label>
+        <div class="col-lg-2 col-md-4 text-right">
+          <label class="control-label control-label_category" for="input-sort"><?php echo $text_sort; ?></label>
         </div>
-        <div class="col-md-3 text-right">
+        <div class="col-lg-3 col-md-3 text-right">
           <select id="input-sort" class="form-control" onchange="location = this.value;">
             <?php foreach ($sorts as $sorts) { ?>
             <?php if ($sorts['value'] == $sort . '-' . $order) { ?>
@@ -75,10 +75,10 @@
             <?php } ?>
           </select>
         </div>
-        <div class="col-md-1 text-right">
-          <label class="control-label" for="input-limit"><?php echo $text_limit; ?></label>
+        <div class="col-lg-3 col-md-1 text-right">
+          <label class="control-label control-label_category" for="input-limit"><?php echo $text_limit; ?></label>
         </div>
-        <div class="col-md-2 text-right">
+        <div class="col-lg-2 col-md-2 text-right">
           <select id="input-limit" class="form-control" onchange="location = this.value;">
             <?php foreach ($limits as $limits) { ?>
             <?php if ($limits['value'] == $limit) { ?>
@@ -147,5 +147,6 @@
       <?php } ?>
       </div><?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
+
 </div>
 <?php echo $footer; ?>

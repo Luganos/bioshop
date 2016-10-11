@@ -33,7 +33,9 @@
             <input class="footer_news_pole_input"  type="text">
         </div>
         <div class="footer_news_butten">
+            <a href="">
             <p>подпишитесь</p>
+            </a>
         </div>
         <div class="footer_news_sec">
             <?php foreach ($informations as $information) { ?>
@@ -43,6 +45,11 @@
              </a>
              <?php } ?>
              <?php } ?>
+
+        </div>
+        <div class="footer_geeker_logo">
+             <span>Разработано в</span>
+             <img src="catalog/view/theme/bioshop-prime/image/geeker.png" alt="">
         </div>
     </div>
    </div>

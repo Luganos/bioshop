@@ -29,13 +29,13 @@
         </div>
     <?php } ?>
     </div>
-    <?php } ?> 
+    <?php } ?>
 </div>
 <script>
 var width = document.documentElement.clientWidth;
 
     if(width < 1280){
- 
+
        teg = document.getElementById('srcoll_newgoods');
        teg.setAttribute('data-slick','{"slidesToShow": 3, "slidesToScroll": 3}')
     }

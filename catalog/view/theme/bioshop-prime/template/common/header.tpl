@@ -79,13 +79,13 @@
           </a>
       </div>
       <div class="header_pay col-lg-2 col-xs-3">
-          <div class="header_pay_circle">
+          <!--<div class="header_pay_circle">
             <span></span>
-          </div>
+          </div>-->
           <p><?php echo $cart; ?></p>
-          <a href="">
+          <!--<a href="">
           <img src="catalog/view/theme/bioshop-prime/image/basket_bg.png" alt="">
-          </a>
+          </a>-->
       </div>
     </div>
     <?php if ($categories) { ?>

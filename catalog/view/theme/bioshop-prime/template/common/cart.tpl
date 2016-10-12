@@ -1,5 +1,5 @@
-<div id="cart" class="btn-group btn-block">
-  <button type="button" data-toggle="dropdown" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-inverse btn-block btn-lg dropdown-toggle cart_small"><i class="fa fa-shopping-cart"></i> <span id="cart-total"><?php echo $text_items; ?></span></button>
+<div id="cart" class="">
+  <button id="tr" type="button" data-toggle="dropdown" data-loading-text="<?php echo $text_loading; ?>" class="button_smaoll_cart dropdown-toggle"><i><img src="catalog/view/theme/bioshop-prime/image/basket_bg.png" alt=""></i><div class="header_pay_circle"><span ><?php echo $cart_value; ?></span></div> <span id="cart-total"><?php echo $text_items; ?></span></button>
   <ul class="dropdown-menu pull-right">
     <?php if ($products || $vouchers) { ?>
     <li>
@@ -21,7 +21,7 @@
             - <small><?php echo $text_recurring; ?> <?php echo $product['recurring']; ?></small>
             <?php } ?></td>
           <td class="text-right">x <?php echo $product['quantity']; ?></td>
-          <td class="text-right"><?php echo $product['total']; ?></td>
+          <td class="text-right text-right_price"><?php echo $product['total']; ?></td>
           <td class="text-center"><button type="button" onclick="cart.remove('<?php echo $product['cart_id']; ?>');" title="<?php echo $button_remove; ?>" class="btn btn-danger btn-xs"><i class="fa fa-times"></i></button></td>
         </tr>
         <?php } ?>
@@ -38,15 +38,13 @@
     </li>
     <li>
       <div>
-        <table class="table table-bordered">
-          <?php foreach ($totals as $total) { ?>
+        <table class="table_sum table table-bordered">
           <tr>
-            <td class="text-right"><strong><?php echo $total['title']; ?></strong></td>
-            <td class="text-right"><?php echo $total['text']; ?></td>
+            <td class="text-right"><strong>Итого:</strong></td>
+            <td class="text-right"><?php echo $text_items; ?></td>
           </tr>
-          <?php } ?>
         </table>
-        <p class="text-right"><a href="<?php echo $cart; ?>"><strong><i class="fa fa-shopping-cart"></i> <?php echo $text_cart; ?></strong></a>&nbsp;&nbsp;&nbsp;<a href="<?php echo $checkout; ?>"><strong><i class="fa fa-share"></i> <?php echo $text_checkout; ?></strong></a></p>
+        <p class="text-right"><a href="<?php echo $cart; ?>"><strong><i><img src="catalog/view/theme/meggy/image/noun.png" alt=""></i> <?php echo $text_cart; ?></strong></a>&nbsp;&nbsp;&nbsp;<a href="<?php echo $checkout; ?>"><strong><i class="fa fa-share"></i> <?php echo $text_checkout; ?></strong></a></p>
       </div>
     </li>
     <?php } else { ?>
@@ -55,4 +53,5 @@
     </li>
     <?php } ?>
   </ul>
+
 </div>

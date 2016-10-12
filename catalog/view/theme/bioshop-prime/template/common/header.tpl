@@ -82,7 +82,7 @@
           <!--<div class="header_pay_circle">
             <span></span>
           </div>-->
-          <p><?php echo $cart; ?></p>
+          <!--<p>--><?php echo $cart; ?><!--</p>-->
           <!--<a href="">
           <img src="catalog/view/theme/bioshop-prime/image/basket_bg.png" alt="">
           </a>-->

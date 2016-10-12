@@ -80,9 +80,9 @@
       </div>
       <div class="header_pay col-lg-2 col-xs-3">
           <div class="header_pay_circle">
-            <span>1</span>
+            <span></span>
           </div>
-          <p>покупки</p>
+          <p><?php echo $cart; ?></p>
           <a href="">
           <img src="catalog/view/theme/bioshop-prime/image/basket_bg.png" alt="">
           </a>

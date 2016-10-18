@@ -30,9 +30,6 @@
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
       <h1 class="cart_big_text_header"><?php echo $heading_title; ?>
-        <?php if ($weight) { ?>
-        &nbsp;(<?php echo $weight; ?>)
-        <?php } ?>
       </h1>
       <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
         <div class="table-responsive">
@@ -99,8 +96,6 @@
         </div>
       </form>
       <?php if ($coupon || $voucher || $reward || $shipping) { ?>
-     <!-- <h2><?php echo $text_next; ?></h2>-->
-      <!--<p><?php echo $text_next_choice; ?></p>-->
       <div class="panel-group" id="accordion">
       <p class="cart_p">применить промо-код</p>
       <?php echo $coupon; ?>

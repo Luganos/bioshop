@@ -1053,9 +1053,11 @@ header{
         text-align: left;
     }
     .text_center_img{
+        width: 165px;
         text-align: left;
     }
     .text_left_text{
+        width: 200px;
         color: rgb(51,51,51) !important;
         font-size: 16px;
         line-height: 58px !important;
@@ -1097,6 +1099,7 @@ header{
         border:0px;
     }
     .text_right_cart{
+        width: 150px;
         color: black;
         font-size: 14px;
         font-weight: bold;
@@ -1105,12 +1108,21 @@ header{
     }
     .cart_del{
         position: absolute;
-        left: 430px;
+        left: 420px;
         background-color: transparent;
         background-image: none !important;
         border-color: none !important;
         border:0px !important;
-
+        box-shadow: none;
+    }
+    .cart_del:focus{
+        background-color: transparent;
+        border-color: transparent;
+    }
+    .cart_del:hover{
+        background-color: transparent;
+        border-color: transparent;
+        box-shadow: none;
     }
     .cart_del i{
         color: black;
@@ -1455,6 +1467,152 @@ header{
 }
 
 /*-----END_cart_big-------*/
+
+/*------login.tpl---------*/
+@media (min-width: 1280px) {
+    .well_login{
+        background-color: transparent;
+        border: 0px;
+    }
+    .button_blue_input{
+        width: 215px;
+        height: 40px;
+        background-color: @text_blue;
+        text-align: center;
+        color: white;
+        font-size: 13px;
+        font-weight: bold;
+        text-transform: uppercase;
+        border: 0px;
+    }
+}
+
+@media (max-width: 1279px) {
+    .well_login{
+        background-color: transparent;
+        border: 0px;
+    }
+    .button_blue_input{
+        width: 215px;
+        height: 40px;
+        background-color: @text_blue;
+        text-align: center;
+        color: white;
+        font-size: 13px;
+        font-weight: bold;
+        text-transform: uppercase;
+        border: 0px;
+    }
+}
+
+/*------END_login.tpl---------*/
+
+/*------account.tpl---------*/
+@media (min-width: 1280px) {
+    .h2_account{
+        color: @text_blue;
+        font-size: 22px;
+        font-weight: bold;
+    }
+    .list-unstyled a {
+        color: rgb(125,125,125);
+        font-size: 14px;
+        text-decoration: underline !important;
+    }
+}
+
+@media (max-width: 1279px) {
+    .h2_account{
+        color: @text_blue;
+        font-size: 22px;
+        font-weight: bold;
+    }
+    .list-unstyled a {
+        color: rgb(125,125,125);
+        font-size: 14px;
+        text-decoration: underline !important;
+    }
+}
+
+/*------END_account.tpl---------*/
+
+/*------edit.tpl---------*/
+@media (min-width: 1280px) {
+    .edit_content{
+        margin-left: 125px;
+        margin-bottom: 150px;
+    }
+    .h1_edit{
+        color: @text_blue;
+        font-size:18px;
+        font-weight: bold;
+        border-left: 2px solid rgb(255,0,36);
+        padding-left: 15px;
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+    .legend_edit{
+        color: @text_blue;
+        font-size: 22px;
+        font-weight: bold;
+        border-bottom:0px;
+    }
+    fieldset{
+        width: 45%;
+    }
+    .edit_input{
+        clear: both;
+    }
+    .control-label{
+        width: 200px;
+        padding: 0px;
+        margin-left: 15px;
+        text-align: left !important;
+        color: black;
+        font-size: 14px;
+        font-weight: bold;
+    }
+}
+
+@media (max-width: 1279px) {
+    .edit_content{
+       // margin-left: 125px;
+        margin-bottom: 150px;
+    }
+    .h1_edit{
+        color: @text_blue;
+        font-size:18px;
+        font-weight: bold;
+        border-left: 2px solid rgb(255,0,36);
+        padding-left: 15px;
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+    .legend_edit{
+        color: @text_blue;
+        font-size: 22px;
+        font-weight: bold;
+        border-bottom:0px;
+    }
+    fieldset{
+        width: 45%;
+    }
+    .edit_input{
+        clear: both;
+    }
+    .control-label{
+        width: 200px;
+        padding: 0px;
+        margin-left: 15px;
+        text-align: left !important;
+        color: black;
+        font-size: 14px;
+        font-weight: bold;
+    }
+}
+
+/*------END_edit.tpl---------*/
+
 /*----footer-----*/
 
 @media (min-width: 1280px) {

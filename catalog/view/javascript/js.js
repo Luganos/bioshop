@@ -1,6 +1,6 @@
 $(function(){
 
-
+$("#spin").on("click",function(){console.log("ttt")});
 $('.sl').slick({
     /*vertical:true,
     verticalSwiping:true,
@@ -26,4 +26,8 @@ $("#open_small_menu").on("click", function(){
 }
 });
 
+
+
 });
+
+

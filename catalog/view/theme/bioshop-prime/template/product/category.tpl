@@ -13,8 +13,8 @@
     <?php } else { ?>
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
-    <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?><div id="mfilter-content-container">
-      <h2 class="category_name_product col-lg-3"><?php echo $heading_title; ?></h2>
+    <div id="content" class="<?php echo $class; ?> category_content"><?php echo $content_top; ?><div id="mfilter-content-container">
+      <h2 class="category_name_product col-lg-3 col-sx-3"><?php echo $heading_title; ?></h2>
       <?php if ($categories) { ?>
       <h3><?php echo $text_refine; ?></h3>
       <?php if (count($categories) <= 5) { ?>
@@ -42,17 +42,17 @@
       <?php } ?>
       <?php } ?>
       <?php if ($products) { ?>
-      <div class="row col-lg-9 category_cort">
+      <div class="row col-lg-9 col-md-3 category_cort">
         <div class="col-lg-0 col-md-1">
           <div class="btn-group hidden-xs " style="visibility: hidden">
             <button type="button" id="list-view" class="btn btn-default" data-toggle="tooltip" title="<?php echo $button_list; ?>"><i class="fa fa-th-list"></i></button>
             <button type="button" id="grid-view" class="btn btn-default" data-toggle="tooltip" title="<?php echo $button_grid; ?>"><i class="fa fa-th"></i></button>
           </div>
         </div>
-        <div class="col-lg-2 col-md-4 text-right">
-          <label class="control-label control-label_category" for="input-sort"><?php echo $text_sort; ?></label>
+        <div class="col-lg-2 col-md-2 text-right category_text-right">
+          <label class="control-label control-label_category hidden-md" for="input-sort"><?php echo $text_sort; ?></label>
         </div>
-        <div class="col-lg-3 col-md-3 text-right">
+        <div class="col-lg-3 col-md-3 text-right category_text-right_two">
           <select id="input-sort" class="form-control" onchange="location = this.value;">
             <?php foreach ($sorts as $sorts) { ?>
             <?php if ($sorts['value'] == $sort . '-' . $order) { ?>
@@ -63,10 +63,10 @@
             <?php } ?>
           </select>
         </div>
-        <div class="col-lg-3 col-md-1 text-right">
+        <div class="col-lg-3 col-md-1 hidden-md text-right xxx">
           <label class="control-label control-label_category" for="input-limit"><?php echo $text_limit; ?></label>
         </div>
-        <div class="col-lg-2 col-md-2 text-right">
+        <div class="col-lg-2 col-md-2 text-right category_text-right_three">
           <select id="input-limit" class="form-control" onchange="location = this.value;">
             <?php foreach ($limits as $limits) { ?>
             <?php if ($limits['value'] == $limit) { ?>
@@ -81,7 +81,7 @@
       <br />
        <!--Begin of loop-->
        <?php if ($products) { ?>
-        <div class="row">
+        <div class="row category_row">
         <?php foreach ($products as $product) { ?>
           <div class="product-layout product-grid col-lg-4 col-md-4 col-sm-4 col-xs-12">
             <div class="cart_product">
@@ -104,8 +104,8 @@
                         <span><?php echo $button_cart; ?></span>
                     </img>
                 </div>
-            </div> 
-          </div>    
+            </div>
+          </div>
         <?php } ?>
       </div>
 	  <?php } ?>

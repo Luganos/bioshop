@@ -1,4 +1,12 @@
-<div class="panel panel-default">
+
+<div class="input-group">
+        <input type="text" name="coupon" value="<?php echo $coupon; ?>" placeholder="<?php echo $entry_coupon; ?>" id="input-coupon" class="form-control" />
+        <span class="input-group-btn cart_input-group-btn">
+        <input type="button" value="<?php echo $button_coupon; ?>" id="button-coupon" data-loading-text="<?php echo $text_loading; ?>"  class="cart_coupon" />
+        </span>
+</div>
+
+<div class="panel panel-default hidden">
   <div class="panel-heading">
     <h4 class="panel-title"><a href="#collapse-coupon" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"><?php echo $heading_title; ?> <i class="fa fa-caret-down"></i></a></h4>
   </div>

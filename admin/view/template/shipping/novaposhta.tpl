@@ -146,10 +146,11 @@
                 for (i = 0; i < json.length; i++) {
                     if (json[i]['city'] == '<?php echo $novaposhta_sender_city_name; ?>') {
                         html += '<option selected="selected" value="' + json[i]['ref'] + '">' + json[i]['city'] + '</option>';
+                        inputHTMl = '<input name="novaposhta_sender_city_name" type="hidden" value="' + json[i]['city'] + '">';
                     } else {
                         html += '<option value="' + json[i]['ref'] + '">' + json[i]['city'] + '</option>';
                     }
-                    inputHTMl = '<input name="novaposhta_sender_city_name" type="hidden" value="' + json[i]['city'] + '">';
+                    
                 }
                 html += '</select>';
 

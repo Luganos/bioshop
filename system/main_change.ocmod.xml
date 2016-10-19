@@ -336,6 +336,34 @@
          </add>  
       </operation>
   </file>
+  <file path="catalog/language/russian/account/account.php">
+      <operation>
+	 <search>
+         <![CDATA[$_['text_account']       = 'Личный Кабинет';]]>
+         </search>
+         <add position ="after">
+          <![CDATA[$_['text_voucher']       = 'Купить подарочный сертификат';]]>
+         </add>  
+      </operation>
+  </file>
+  <file path="catalog/controller/account/account.php">
+      <operation>
+	 <search>
+         <![CDATA[$data['text_recurring'] = $this->language->get('text_recurring');]]>
+         </search>
+         <add position ="after">
+          <![CDATA[$data['text_voucher'] = $this->language->get('text_voucher');]]>
+         </add>  
+      </operation>
+      <operation>
+	 <search>
+         <![CDATA[$data['recurring'] = $this->url->link('account/recurring', '', 'SSL');]]>
+         </search>
+         <add position ="after">
+          <![CDATA[$data['voucher'] = $this->url->link('account/voucher', '', 'SSL');]]>
+         </add>  
+      </operation>
+  </file>
     <file path="catalog/controller/product/product.php">
       <operation>
 	 <search>

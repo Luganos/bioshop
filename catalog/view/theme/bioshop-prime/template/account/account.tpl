@@ -28,6 +28,7 @@
       <ul class="list-unstyled">
         <li><a href="<?php echo $order; ?>"><?php echo $text_order; ?></a></li>
         <li><a href="<?php echo $download; ?>"><?php echo $text_download; ?></a></li>
+        <li><a href="<?php echo $voucher; ?>"><?php echo $text_voucher; ?></a></li> 
         <?php if ($reward) { ?>
         <li><a href="<?php echo $reward; ?>"><?php echo $text_reward; ?></a></li>
         <?php } ?>

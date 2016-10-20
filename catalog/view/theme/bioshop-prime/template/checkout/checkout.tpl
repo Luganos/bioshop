@@ -103,7 +103,8 @@ $(document).on('change', 'input[name=\'account\']', function() {
 	}
 });
 
-<?php if (!$logged) { ?>
+//Is user login?
+<?php if (!$logged) { ?>                      //No
 $(document).ready(function() {
     $.ajax({
         url: 'index.php?route=checkout/login',
@@ -120,7 +121,7 @@ $(document).ready(function() {
         }
     });
 });
-<?php } else { ?>
+<?php } else { ?>                                        //Yes
 $(document).ready(function() {
     $.ajax({
         url: 'index.php?route=checkout/payment_address',

@@ -258,7 +258,7 @@
          <![CDATA[$data['text_loading'] = $this->language->get('text_loading');]]>
          </search>
          <add position ="after">
-          <![CDATA[ $data['entry_sku'] = $this->language->get('entry_sku');]]>
+          <![CDATA[ $data['text_sku'] = $this->language->get('text_sku');]]>
          </add>  
       </operation>
   </file>
@@ -289,6 +289,41 @@
          </search>
          <add position ="replace">
           <![CDATA[$_['text_reviews']                            = '(%s) Отзывов';]]>
+         </add>  
+      </operation>
+      <operation>
+	 <search>
+         <![CDATA[$_['text_manufacturer']                       = 'Производитель:';]]>
+         </search>
+         <add position ="replace">
+          <![CDATA[
+             $_['text_manufacturer']                       = 'БРЕНД:';
+             $_['text_sku']                                = 'АРТИКУЛ:';
+]]>
+         </add>  
+      </operation>
+      <operation>
+	 <search>
+          <![CDATA[$_['text_stock']                              = 'Наличие:';]]>
+         </search>
+         <add position ="replace">
+          <![CDATA[$_['text_stock']                              = 'НАЛИЧИЕ:';]]>
+         </add>  
+      </operation>
+      <operation>
+	 <search>
+          <![CDATA[$_['text_instock']                            = 'Есть в наличии';]]>
+         </search>
+         <add position ="replace">
+          <![CDATA[$_['text_instock']                            = 'Есть на складе';]]>
+         </add>  
+      </operation>
+      <operation>
+	 <search>
+          <![CDATA[$_['text_reward']                             = 'Бонусные баллы:';]]>
+         </search>
+         <add position ="replace">
+          <![CDATA[$_['text_reward']                             = 'БОНУСНЫЕ БАЛЛЫ:';]]>
          </add>  
       </operation>
   </file>
@@ -855,7 +890,7 @@
   </modification>
   
   
-  
+
   
   
   

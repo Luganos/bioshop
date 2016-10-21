@@ -20,14 +20,68 @@
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
       <h1><?php echo $heading_title; ?></h1>
-      <div class ="col-sm-8">
-          <div class ="for-customer-type"></div>
-          <div class ="for-shipping-method"></div>
-          <div class ="for-shipping-address"></div>
-          <div class ="for-payment-method"></div>
-      </div>
-      <div class ="col-sm-4">
-         <div class ="for-customer-cart"></div> 
+      <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title"><?php echo $text_checkout_option; ?></h4>
+          </div>
+          <div class="panel-collapse collapse" id="collapse-checkout-option">
+            <div class="panel-body"></div>
+          </div>
+        </div>
+        <?php if (!$logged && $account != 'guest') { ?>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title"><?php echo $text_checkout_account; ?></h4>
+          </div>
+          <div class="panel-collapse collapse" id="collapse-payment-address">
+            <div class="panel-body"></div>
+          </div>
+        </div>
+        <?php } else { ?>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title"><?php echo $text_checkout_payment_address; ?></h4>
+          </div>
+          <div class="panel-collapse collapse" id="collapse-payment-address">
+            <div class="panel-body"></div>
+          </div>
+        </div>
+        <?php } ?>
+        <?php if ($shipping_required) { ?>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title"><?php echo $text_checkout_shipping_address; ?></h4>
+          </div>
+          <div class="panel-collapse collapse" id="collapse-shipping-address">
+            <div class="panel-body"></div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title"><?php echo $text_checkout_shipping_method; ?></h4>
+          </div>
+          <div class="panel-collapse collapse" id="collapse-shipping-method">
+            <div class="panel-body"></div>
+          </div>
+        </div>
+        <?php } ?>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title"><?php echo $text_checkout_payment_method; ?></h4>
+          </div>
+          <div class="panel-collapse collapse" id="collapse-payment-method">
+            <div class="panel-body"></div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title"><?php echo $text_checkout_confirm; ?></h4>
+          </div>
+          <div class="panel-collapse collapse" id="collapse-checkout-confirm">
+            <div class="panel-body"></div>
+          </div>
+        </div>
       </div>
       <?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>

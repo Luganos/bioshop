@@ -21,10 +21,10 @@
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
       <h1><?php echo $heading_title; ?></h1>
       <div class ="col-sm-8">
-          <div class ="for-customer-type"></div>
-          <div class ="for-shipping-method"></div>
-          <div class ="for-shipping-address"></div>
-          <div class ="for-payment-method"></div>
+          <div id ="for-customer-type"></div>
+          <div id ="for-shipping-method"></div>
+          <div id ="for-shipping-address"></div>
+          <div id ="for-payment-method"></div>
       </div>
       <div class ="col-sm-4">
          <div class ="for-customer-cart"></div> 
@@ -33,7 +33,163 @@
     <?php echo $column_right; ?></div>
 </div>
 <script type="text/javascript"><!--
-$(document).on('change', 'input[name=\'account\']', function() {
+ $(function(){
+     
+    //Is user login?
+    <?php if (!$logged) { ?>                      //No
+
+       checkout.MainCase(0);
+    
+    <?php } else { ?>                             //Yes
+    
+       checkout.MainCase(1);
+       
+    <?php } ?>
+   
+});  
+
+//Main object
+var checkout = {
+    
+        //Common variables
+	data:{
+	      SwitchState: 0,
+	      url: 0,
+              value: null,
+              id: null
+	},
+        
+        //It is main execute switch
+   
+   MainCase:function(step) {
+       
+      var step;
+       
+      switch (step) {
+          
+            //User is not logged
+	     case 0:
+		     checkout.data.url = 'index.php?route=checkout/login_1';
+                     checkout.data.id = '#for-customer-type';
+                     checkout.ajaxHtml(checkout.data.url, 2, checkout.data.id);
+                     
+	     break;
+             
+             //User is logged
+	     case 1:
+		    alert('User is logged');
+	     break;
+             
+             //Hook event on buttons "Login" and "Register"
+	     case 2:
+		   checkout.loginSave();
+                   checkout.registerSave();
+                
+	     break;
+             
+             //Hook event on buttons "Login" and "Register"
+	     case 3:
+
+                alert('Register done');
+	     break;
+
+             
+             default: break;
+		 
+      }
+  },
+  
+  loginSave: function() {
+
+        $('#button-login').on('click', function() {
+            alert('Login happened');
+        });
+
+  },
+  
+  registerSave: function() {
+
+        $('#button-register').on('click', function() {
+            
+            checkout.data.url = 'index.php?route=checkout/register_1/save';
+            checkout.data.id = '#register-done';
+            checkout.data.value = $('#new-customer :input');
+            checkout.ajaxJson(checkout.data.url, checkout.data.value, 3, checkout.data.id);
+            
+        });
+
+  },
+  
+  showHtml: function(id, html) {
+      
+      $(id).html(html);
+  },
+  
+  ajaxHtml: function(url, callback, id) {
+      
+      var url, callback, id;
+      
+     $.ajax({
+           url: url,
+           dataType: 'html',
+           success: function(html) {
+               
+                         if(id !== null) {
+                             
+                            checkout.showHtml(id, html); 
+                         }
+                         
+                         if(html !== undefined) {
+                             
+                             checkout.MainCase(callback);
+                         }
+           },
+           error: function(xhr, ajaxOptions, thrownError) {
+                alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+           }
+    });
+  },
+  
+    ajaxJson: function(url, data, callback, id) {
+      
+      var url, data, callback, id;
+      
+          $.ajax({
+               url: url,
+               type: 'post',
+               data: data,
+               dataType: 'json',
+               beforeSend: function() {
+        	      $('#button-register').button('loading');
+               },
+               complete: function() {
+                      $('#button-register').button('reset');
+               },
+              success: function(json) {
+                  
+                        if(id !== null) {
+                             
+                            checkout.showHtml(id, json); 
+                         }
+                         
+                         if(json !== undefined) {
+                             
+                             checkout.MainCase(callback);
+                         }
+
+              },
+              error: function(xhr, ajaxOptions, thrownError) {
+                     alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+              }
+    });
+      
+  }
+  
+  
+    
+    
+};
+/*$(document).on('change', 'input[name=\'account\']', function() {
 	if ($('#collapse-payment-address').parent().find('.panel-heading .panel-title > *').is('a')) {
 		if (this.value == 'register') {
 			$('#collapse-payment-address').parent().find('.panel-heading .panel-title').html('<a href="#collapse-payment-address" data-toggle="collapse" data-parent="#accordion" class="accordion-toggle"><?php echo $text_checkout_account; ?> <i class="fa fa-caret-down"></i></a>');
@@ -738,6 +894,6 @@ $(document).delegate('#button-payment-method', 'click', function() {
             alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
         }
     });
-});
+});*/
 //--></script>
 <?php echo $footer; ?>

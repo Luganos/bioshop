@@ -1,8 +1,8 @@
         <div id ="container-new-customer">
             <ul class="nav nav-tabs product_nav-tabs">
-                <li class="active product_nav-tabs_one"><a href="#new-customer" data-toggle="tab">Я новый покупатель</a></li>
-                <li class="product_nav-tabs_one"><a href="#old-customer" data-toggle="tab">Я постоянный клиент</a></li>
-                <li class="product_nav-tabs_one"><a href="#easy-customer" data-toggle="tab">Быстрый заказ</a></li>
+                <li class="active product_nav-tabs_one" id ="show-new-customer"><a href="#new-customer" data-toggle="tab">Я новый покупатель</a></li>
+                <li class="product_nav-tabs_one" id ="show-old-customer"><a href="#old-customer" data-toggle="tab">Я постоянный клиент</a></li>
+                <li class="product_nav-tabs_one" id ="show-easy-customer"><a href="#easy-customer" data-toggle="tab">Быстрый заказ</a></li>
             </ul>
           <div class="tab-content product_tab-content"> 
               <div class="tab-pane active" id="new-customer">

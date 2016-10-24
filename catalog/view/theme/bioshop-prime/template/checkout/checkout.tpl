@@ -21,10 +21,10 @@
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
       <h1><?php echo $heading_title; ?></h1>
       <div class ="col-sm-8">
-          <div class ="for-customer-type"></div>
-          <div class ="for-shipping-method"></div>
-          <div class ="for-shipping-address"></div>
-          <div class ="for-payment-method"></div>
+          <div id ="for-customer-type"></div>
+          <div id ="for-shipping-method"></div>
+          <div id ="for-shipping-address"></div>
+          <div id ="for-payment-method"></div>
       </div>
       <div class ="col-sm-4">
          <div class ="for-customer-cart"></div> 
@@ -56,7 +56,7 @@ $(document).ready(function() {
         url: 'index.php?route=checkout/login',
         dataType: 'html',
         success: function(html) {
-           $('#collapse-checkout-option .panel-body').html(html);
+           $('#for-customer-type').html(html);
 
 			$('#collapse-checkout-option').parent().find('.panel-heading .panel-title').html('<a href="#collapse-checkout-option" data-toggle="collapse" data-parent="#accordion" class="accordion-toggle"><?php echo $text_checkout_option; ?> <i class="fa fa-caret-down"></i></a>');
 
@@ -73,7 +73,7 @@ $(document).ready(function() {
         url: 'index.php?route=checkout/payment_address',
         dataType: 'html',
         success: function(html) {
-            $('#collapse-payment-address .panel-body').html(html);
+            $('#for-shipping-address').html(html);
 
 			$('#collapse-payment-address').parent().find('.panel-heading .panel-title').html('<a href="#collapse-payment-address" data-toggle="collapse" data-parent="#accordion" class="accordion-toggle"><?php echo $text_checkout_payment_address; ?> <i class="fa fa-caret-down"></i></a>');
 

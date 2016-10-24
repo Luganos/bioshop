@@ -17,4 +17,8 @@
 <?php } ?>
 <?php } ?>
 </select>
+<?php } else { ?>
+<p>Способ доставки</p>
+<select name="shipping_method" class="form-control">   
+</select>
 <?php } ?>

@@ -239,7 +239,7 @@ var checkout = {
 
   hiddenField: function() {
 
-      $('#new-customer').on('click', function() {
+      $('#show-new-customer').on('click', function() {
 
           $('#for-shipping-method').show();
           $('#for-shipping-address').show();
@@ -247,7 +247,7 @@ var checkout = {
 
       });
 
-      $('#old-customer').on('click', function() {
+      $('#show-old-customer').on('click', function() {
 
           $('#for-shipping-method').show();
           $('#for-shipping-address').show();
@@ -255,7 +255,7 @@ var checkout = {
 
       });
 
-      $('#easy-customer').on('click', function() {
+      $('#show-easy-customer').on('click', function() {
 
           $('#for-shipping-method').hide();
           $('#for-shipping-address').hide();

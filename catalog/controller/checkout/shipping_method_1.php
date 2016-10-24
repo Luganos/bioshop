@@ -1,5 +1,5 @@
 <?php
-class ControllerCheckoutShippingMethod extends Controller {
+class ControllerCheckoutShippingMethod1 extends Controller {
 	public function index() {
 		$this->load->language('checkout/checkout');
 

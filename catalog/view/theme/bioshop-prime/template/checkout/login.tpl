@@ -81,8 +81,13 @@
                           <input type="text" name="password" value="" placeholder="" id="input-phone" class="form-control" />
                       </div>
                   </div> 
-                     <div class ="row" >   
-                         <button type="button" style ="margin-top: 20px !important; margin-left: 25px !important" id="button-login" data-loading-text="Загрузка" class="button_red_input">Войти</button>
+                  <div class="form-group">
+                      <div class="col-sm-10" style ="margin-top: 20px !important;">
+                         <a href="<?php echo $forgotten; ?>"><?php echo $text_forgotten; ?></a>
+                      </div>
+                  </div>    
+                  <div class ="row" > 
+                         <button type="button" style ="margin-top: 40px !important; margin-left: 25px !important" id="button-login" data-loading-text="Загрузка" class="button_red_input">Войти</button>
                      </div>
               </div>
               <div class="tab-pane" id="easy-customer">

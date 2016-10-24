@@ -1,5 +1,6 @@
 <?php if ($shipping_methods) { ?>
-<p>Способ доставки</p>
+<h1 class="checkout_login_h1">Доставка</h1>
+<p class="control-label">Способ доставки</p>
 <select name="shipping_method" class="form-control">
 <?php foreach ($shipping_methods as $shipping_method) { ?>
 <p><strong><?php echo $shipping_method['title']; ?></strong></p>
@@ -18,7 +19,8 @@
 <?php } ?>
 </select>
 <?php } else { ?>
-<p>Способ доставки</p>
-<select name="shipping_method" class="form-control">   
+<h1 class="checkout_login_h1">Доставка</h1>
+<p class="control-label">Способ доставки</p>
+<select name="shipping_method" class="form-control">
 </select>
 <?php } ?>

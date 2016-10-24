@@ -87,12 +87,8 @@ var checkout = {
                    checkout.hiddenField();
 		   checkout.loginSave();
                    checkout.registerSave();
-<<<<<<< HEAD
                    checkout.MainCase(3);
-                
-=======
 
->>>>>>> cdbf15c05fcf6507b5a6cc42f4ea8a9281d53c69
 	     break;
 
              //Load data for payment address

@@ -1686,6 +1686,32 @@ body {
     color: #0c76bb !important;
     border-left: 2px solid #ff0024;
     padding-left: 20px;
+    color: #8ea9e8;
+    font-size: 18px !important;
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+    margin-bottom: 60px !important;
+  }
+  .checkout_login_h1 {
+    color: #0c76bb;
+    font-size: 21px;
+    font-weight: bold;
+    margin-bottom: 25px;
+  }
+  .show-new-customer {
+    width: 100% !important;
+    padding: 0px;
+    margin-bottom: 30px;
+  }
+  .checkout_nav-tabs_one a {
+    padding-left: 31px !important;
+    padding-right: 25px !important;
+  }
+  .checkout_tab-content {
+    width: 100% !important;
+  }
+  .checkout_login_input {
+    float: none;
   }
 }
 @media (max-width: 1279px) {

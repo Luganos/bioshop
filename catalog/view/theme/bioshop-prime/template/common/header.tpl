@@ -32,6 +32,7 @@
 <?php } ?>
 <script src="catalog/view/javascript/common.js" type="text/javascript"></script>
 <script src="catalog/view/javascript/js.js" type="text/javascript"></script>
+<script src="catalog/view/javascript/maskedinput.js" type="text/javascript"></script>
 <?php foreach ($links as $link) { ?>
 <link href="<?php echo $link['href']; ?>" rel="<?php echo $link['rel']; ?>" />
 <?php } ?>

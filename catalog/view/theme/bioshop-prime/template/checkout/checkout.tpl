@@ -20,7 +20,7 @@
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
       <h1 class="checkout_h1"><?php echo $heading_title; ?></h1>
-      <div class ="col-sm-8">
+      <div class ="col-sx-6 col-lg-6">
           <div id ="for-customer-type"></div>
           <div id ="for-payment-address"></div>
           <div id ="for-shipping-method" style ="display: none"></div>
@@ -228,43 +228,25 @@ var checkout = {
   },
 
   hiddenField: function() {
-<<<<<<< HEAD
 
       $('#new-customer').on('click', function() {
 
-=======
-      
-      $('#show-new-customer').on('click', function() {
-          
->>>>>>> 79bd0e9e01452c43579bf6cf2502f070c66efb4d
           $('#for-shipping-method').show();
           $('#for-shipping-address').show();
           $('#for-payment-method').show();
 
       });
-<<<<<<< HEAD
 
       $('#old-customer').on('click', function() {
 
-=======
-      
-      $('#show-old-customer').on('click', function() {
-          
->>>>>>> 79bd0e9e01452c43579bf6cf2502f070c66efb4d
           $('#for-shipping-method').show();
           $('#for-shipping-address').show();
           $('#for-payment-method').show();
 
       });
-<<<<<<< HEAD
 
       $('#easy-customer').on('click', function() {
 
-=======
-      
-      $('#show-easy-customer').on('click', function() {
-          
->>>>>>> 79bd0e9e01452c43579bf6cf2502f070c66efb4d
           $('#for-shipping-method').hide();
           $('#for-shipping-address').hide();
           $('#for-payment-method').hide();

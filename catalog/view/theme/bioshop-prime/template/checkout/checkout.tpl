@@ -87,7 +87,6 @@ var checkout = {
                    checkout.hiddenField();
 		   checkout.loginSave();
                    checkout.registerSave();
-                   checkout.MainCase(3);
 
 	     break;
 
@@ -155,7 +154,7 @@ var checkout = {
 
        checkout.data.url = 'index.php?route=checkout/payment_address_1';
        checkout.data.id = '#for-payment-address';
-       checkout.ajaxHtml(checkout.data.url, 5, checkout.data.id);
+       checkout.ajaxHtml(checkout.data.url, 4, checkout.data.id);
 
   },
 
@@ -165,7 +164,7 @@ var checkout = {
             checkout.data.id = null;
             checkout.data.value = $('#payment-address-input :input');
             checkout.data.progress = null;
-            checkout.ajaxJson(checkout.data.url, checkout.data.value, null, checkout.data.id, checkout.data.progress);
+            checkout.ajaxJson(checkout.data.url, checkout.data.value, 5, checkout.data.id, checkout.data.progress);
 
   },
 
@@ -177,7 +176,7 @@ var checkout = {
             checkout.data.id = '#login-done';
             checkout.data.value = $('#old-customer :input');
             checkout.data.progress = '#button-login';
-            checkout.ajaxJson(checkout.data.url, checkout.data.value, 4, checkout.data.id, checkout.data.progress);
+            checkout.ajaxJson(checkout.data.url, checkout.data.value, 3, checkout.data.id, checkout.data.progress);
         });
 
   },
@@ -190,8 +189,8 @@ var checkout = {
             checkout.data.id = '#register-done';
             checkout.data.value = $('#new-customer :input');
             checkout.data.progress = '#button-register';
-            checkout.ajaxJson(checkout.data.url, checkout.data.value, 4, checkout.data.id, checkout.data.progress);
-            
+            checkout.ajaxJson(checkout.data.url, checkout.data.value, 3, checkout.data.id, checkout.data.progress);
+
         });
 
   },
@@ -229,44 +228,25 @@ var checkout = {
   },
 
   hiddenField: function() {
-<<<<<<< HEAD
 
       $('#new-customer').on('click', function() {
 
-=======
-      
-      $('#show-new-customer').on('click', function() {
-          
->>>>>>> 05c9bc82ad732d94a6c1c0660e630b89ca6b1096
           $('#for-shipping-method').show();
           $('#for-shipping-address').show();
           $('#for-payment-method').show();
 
       });
 
-<<<<<<< HEAD
       $('#old-customer').on('click', function() {
 
-=======
-      
-      $('#show-old-customer').on('click', function() {
-          
->>>>>>> 05c9bc82ad732d94a6c1c0660e630b89ca6b1096
           $('#for-shipping-method').show();
           $('#for-shipping-address').show();
           $('#for-payment-method').show();
 
       });
-<<<<<<< HEAD
 
       $('#easy-customer').on('click', function() {
 
-=======
-
-      
-      $('#show-easy-customer').on('click', function() {
-          
->>>>>>> 05c9bc82ad732d94a6c1c0660e630b89ca6b1096
           $('#for-shipping-method').hide();
           $('#for-shipping-address').hide();
           $('#for-payment-method').hide();

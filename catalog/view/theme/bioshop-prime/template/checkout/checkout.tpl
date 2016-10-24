@@ -19,7 +19,7 @@
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
-      <h1><?php echo $heading_title; ?></h1>
+      <h1 class="checkout_h1"><?php echo $heading_title; ?></h1>
       <div class ="col-sm-8">
           <div id ="for-customer-type"></div>
           <div id ="for-payment-address"></div>
@@ -28,30 +28,30 @@
           <div id ="for-payment-method" style ="display: none"></div>
       </div>
       <div class ="col-sm-4">
-         <div class ="for-customer-cart"></div> 
+         <div class ="for-customer-cart"></div>
       </div>
       <?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
 </div>
 <script type="text/javascript"><!--
  $(function(){
-     
+
     //Is user login?
     <?php if (!$logged) { ?>                      //No
 
        checkout.MainCase(0);
-    
+
     <?php } else { ?>                             //Yes
-    
+
        checkout.MainCase(1);
-       
+
     <?php } ?>
-   
-});  
+
+});
 
 //Main object
 var checkout = {
-    
+
         //Common variables
 	data:{
 	      SwitchState: 0,
@@ -60,119 +60,123 @@ var checkout = {
               id: null,
               progress: null
 	},
-        
+
         //It is main execute switch
-   
+
    MainCase:function(step) {
-       
+
       var step;
-       
+
       switch (step) {
-          
+
             //User is not logged
 	     case 0:
-                 
+
                     checkout.login();
-                     
+
 	     break;
-             
+
              //User is logged
 	     case 1:
 		    checkout.payment();
 	     break;
-             
+
              //Hook event on buttons "Login" and "Register"
 	     case 2:
-                 
+
                    checkout.hiddenField();
 		   checkout.loginSave();
                    checkout.registerSave();
+<<<<<<< HEAD
                    checkout.MainCase(3);
                 
+=======
+
+>>>>>>> cdbf15c05fcf6507b5a6cc42f4ea8a9281d53c69
 	     break;
-             
+
              //Load data for payment address
 	     case 3:
 
                   checkout.payment();
 	     break;
-             
+
              //Save data for payment address
              case 4:
 
                   checkout.paymentSave();
 	     break;
-             
+
              //Load shipping method
              case 5:
 
                    checkout.shippingMethod();
 	     break;
-             
+
              //Load shipping address
              case 6:
-                 
+
                    checkout.changeShippingMethod();
                    checkout.shippingAddress();
-                   
+
              break;
-             
+
              //Load payment method
              case 7:
-             
+
                     checkout.showField();
              break;
-             
-             
+
+
              //Show loaded html
              case 8:
-             
+
                     checkout.showField();
              break;
-             
-             
-             
 
-             
-             
 
-             
+
+
+
+
+
+
              default: break;
-		 
+
       }
   },
-  
+
   login: function() {
-      
+
        checkout.data.url = 'index.php?route=checkout/login_1';
        checkout.data.id = '#for-customer-type';
        checkout.ajaxHtml(checkout.data.url, 2, checkout.data.id);
-      
-      
+
+
   },
-  
+
   payment: function() {
-      
+
        checkout.data.url = 'index.php?route=checkout/payment_address_1';
        checkout.data.id = '#for-payment-address';
        checkout.ajaxHtml(checkout.data.url, 5, checkout.data.id);
-       
+
   },
-  
+
   paymentSave: function() {
-      
+
             checkout.data.url = 'index.php?route=checkout/payment_address_1/save';
             checkout.data.id = null;
             checkout.data.value = $('#payment-address-input :input');
             checkout.data.progress = null;
             checkout.ajaxJson(checkout.data.url, checkout.data.value, null, checkout.data.id, checkout.data.progress);
-       
+
   },
-  
+
   loginSave: function() {
 
         $('#button-login').on('click', function() {
-            
+
             checkout.data.url = 'index.php?route=checkout/login_1/save';
             checkout.data.id = '#login-done';
             checkout.data.value = $('#old-customer :input');
@@ -181,102 +185,125 @@ var checkout = {
         });
 
   },
-  
+
   registerSave: function() {
 
         $('#button-register').on('click', function() {
-            
+
             checkout.data.url = 'index.php?route=checkout/register_1/save';
             checkout.data.id = '#register-done';
             checkout.data.value = $('#new-customer :input');
             checkout.data.progress = '#button-register';
+<<<<<<< HEAD
             checkout.ajaxJson(checkout.data.url, checkout.data.value, 4, checkout.data.id, checkout.data.progress);
             
+=======
+            checkout.ajaxJson(checkout.data.url, checkout.data.value, 3, checkout.data.id, checkout.data.progress);
+
+>>>>>>> cdbf15c05fcf6507b5a6cc42f4ea8a9281d53c69
         });
 
   },
-  
+
   shippingMethod: function() {
-      
+
        checkout.data.url = 'index.php?route=checkout/shipping_method_1';
        checkout.data.id = '#for-shipping-method';
        checkout.ajaxHtml(checkout.data.url, 6, checkout.data.id);
   },
-  
+
   shippingAddress: function() {
-      
+
        checkout.data.url = 'index.php?route=checkout/shipping_address_1';
        checkout.data.id = '#for-shipping-address';
        checkout.ajaxHtml(checkout.data.url, 7, checkout.data.id);
   },
-  
+
   changeShippingMethod: function() {
-      
+
       $('#for-shipping-method').on('change', function() {
-          
-           
+
+
       });
   },
 
-  
+
   showField: function() {
-      
+
           $('#for-shipping-method').show();
           $('#for-shipping-address').show();
           $('#for-payment-method').show();
-      
-      
+
+
   },
-  
+
   hiddenField: function() {
+<<<<<<< HEAD
+
+      $('#new-customer').on('click', function() {
+
+=======
       
       $('#show-new-customer').on('click', function() {
           
+>>>>>>> 79bd0e9e01452c43579bf6cf2502f070c66efb4d
           $('#for-shipping-method').show();
           $('#for-shipping-address').show();
           $('#for-payment-method').show();
-          
+
       });
+<<<<<<< HEAD
+
+      $('#old-customer').on('click', function() {
+
+=======
       
       $('#show-old-customer').on('click', function() {
           
+>>>>>>> 79bd0e9e01452c43579bf6cf2502f070c66efb4d
           $('#for-shipping-method').show();
           $('#for-shipping-address').show();
           $('#for-payment-method').show();
-          
+
       });
+<<<<<<< HEAD
+
+      $('#easy-customer').on('click', function() {
+
+=======
       
       $('#show-easy-customer').on('click', function() {
           
+>>>>>>> 79bd0e9e01452c43579bf6cf2502f070c66efb4d
           $('#for-shipping-method').hide();
           $('#for-shipping-address').hide();
           $('#for-payment-method').hide();
-          
+
       });
-    
+
   },
-  
+
   showHtml: function(id, html) {
-      
+
       $(id).html(html);
   },
-  
+
   ajaxHtml: function(url, callback, id) {
-      
+
       var url, callback, id;
-      
+
      $.ajax({
            url: url,
            dataType: 'html',
            success: function(html) {
-               
+
                          if(id !== null) {
-                             
-                            checkout.showHtml(id, html); 
+
+                            checkout.showHtml(id, html);
                          }
-                         
+
                          if(html !== undefined) {
-                             
+
                              checkout.MainCase(callback);
                          }
            },
@@ -285,22 +312,22 @@ var checkout = {
            }
     });
   },
-  
+
     ajaxJson: function(url, data, callback, id, progress) {
-      
+
       var url, data, callback, id, progress;
-      
+
           $.ajax({
                url: url,
                type: 'post',
                data: data,
                dataType: 'json',
                beforeSend: function() {
-                   
+
                       if(progress !== null) {
-                         $(progress).button('loading'); 
+                         $(progress).button('loading');
                       }
-        	      
+
                },
                complete: function() {
                    if(progress !== null) {
@@ -308,18 +335,18 @@ var checkout = {
                    }
                },
               success: function(json) {
-                  
+
                         if (json['redirect']) {
                            location = json['redirect'];
                         }
-                       
+
                         if(id !== null) {
-                             
-                            checkout.showHtml(id, json); 
+
+                            checkout.showHtml(id, json);
                          }
-                         
+
                          if(json !== undefined) {
-                             
+
                              checkout.MainCase(callback);
                          }
 
@@ -328,12 +355,12 @@ var checkout = {
                      alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
               }
     });
-      
+
   }
-  
-  
-    
-    
+
+
+
+
 };
 /*$(document).on('change', 'input[name=\'account\']', function() {
 	if ($('#collapse-payment-address').parent().find('.panel-heading .panel-title > *').is('a')) {
@@ -966,7 +993,7 @@ $(document).delegate('#button-shipping-method', 'click', function() {
                 location = json['redirect'];
             } else if (json['error']) {
                 $('#button-shipping-method').button('reset');
-                
+
                 if (json['error']['warning']) {
                     $('#collapse-shipping-method .panel-body').prepend('<div class="alert alert-warning">' + json['error']['warning'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
                 }

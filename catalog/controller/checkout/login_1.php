@@ -1,5 +1,5 @@
 <?php
-class ControllerCheckoutLogin extends Controller {
+class ControllerCheckoutLogin1 extends Controller {
 	public function index() {
 		$this->load->language('checkout/checkout');
 
@@ -30,6 +30,13 @@ class ControllerCheckoutLogin extends Controller {
 		}
 
 		$data['forgotten'] = $this->url->link('account/forgotten', '', 'SSL');
+                
+                $register = $this->load->controller('checkout/register_1');
+                
+                $data['customer_group_id'] = $register['customer_group_id'];
+                $data['postcode'] = $register['postcode'];
+                $data['country_id'] = $register['country_id'];
+                $data['zone_id'] = $register['zone_id'];
 
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/checkout/login.tpl')) {
 			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/checkout/login.tpl', $data));

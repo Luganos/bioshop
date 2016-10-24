@@ -120,7 +120,7 @@ var checkout = {
              //Load payment method
              case 7:
 
-                    checkout.showField();
+                    checkout.paymentMethod();
              break;
 
 
@@ -209,6 +209,15 @@ var checkout = {
        checkout.data.id = '#for-shipping-address';
        checkout.ajaxHtml(checkout.data.url, 7, checkout.data.id);
   },
+  
+  paymentMethod: function() {
+
+       checkout.data.url = 'index.php?route=checkout/payment_method_1';
+       checkout.data.id = '#for-payment-method';
+       checkout.ajaxHtml(checkout.data.url, 8, checkout.data.id);
+  },
+  
+  
 
   changeShippingMethod: function() {
 

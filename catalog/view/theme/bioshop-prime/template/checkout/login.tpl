@@ -79,7 +79,7 @@
                   <div class="form-group">
                       <label class="col-sm-2 control-label" for="input-password"><span data-toggle="tooltip" title="Пароль">Пароль</span></label>
                       <div class="col-sm-10">
-                          <input type="text" name="password" value="" placeholder="" id="input-phone" class="form-control" />
+                          <input type="password" name="password" value="" placeholder="" id="input-phone" class="form-control" />
                       </div>
                   </div>
                   <div class="form-group">
@@ -101,7 +101,7 @@
                   <div class="form-group">
                       <label class="col-sm-2 control-label" for="input-password"><span data-toggle="tooltip" title="Пароль">Пароль</span></label>
                       <div class="col-sm-10">
-                          <input type="text" name="password" value="" placeholder="" id="input-phone" class="form-control" />
+                          <input type="password" name="password" value="" placeholder="" id="input-phone" class="form-control" />
                       </div>
                   </div>
                   <div class="form-group">

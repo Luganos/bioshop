@@ -38,7 +38,10 @@ class ControllerCheckoutShippingMethod1 extends Controller {
 			array_multisort($sort_order, SORT_ASC, $method_data);
 
 			$this->session->data['shipping_methods'] = $method_data;
-		}
+		} else {
+                    
+                    $data['shipping_methods'] = array();
+                }
 
 		$data['text_shipping_method'] = $this->language->get('text_shipping_method');
 		$data['text_comments'] = $this->language->get('text_comments');

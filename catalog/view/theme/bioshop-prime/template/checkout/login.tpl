@@ -31,12 +31,12 @@
                           <input type="text" name="city" value="" placeholder="Киев" id="input-phone" class="form-control" />
                       </div>
                   </div>
-                  <!--<div class="form-group">
+                  <div class="form-group">
                       <label class="col-sm-2 control-label" for="input-address_1"><span data-toggle="tooltip" title="Адрес">Адрес</span></label>
                       <div class="col-sm-12 checkout_login_input">
                           <input type="text" name="address_1" value="" placeholder="" id="input-phone" class="form-control" />
                       </div>
-                  </div>-->
+                  </div>
                   <div class="form-group">
                       <label class="col-sm-2 control-label" for="input-comment"><span data-toggle="tooltip" title="Комментарий">Комментарий</span></label>
                       <div class="col-sm-12 checkout_login_input">
@@ -45,18 +45,18 @@
                           </textarea>
                       </div>
                   </div>
-                  <!--<div class="form-group">
+                  <div class="form-group">
                       <label class="col-sm-2 control-label" for="input-password"><span data-toggle="tooltip" title="Пароль">Пароль</span></label>
                       <div class="col-sm-12 checkout_login_input">
                           <input type="password" name="password" value="" placeholder="" id="input-email" class="form-control" />
                       </div>
-                  </div>-->
-                  <!--<div class="form-group">
+                  </div>
+                  <div class="form-group">
                       <label class="col-sm-2 control-label" for="input-confirm"><span data-toggle="tooltip" title="Подтвердить пароль">Подтвердить пароль</span></label>
                       <div class="col-sm-12 checkout_login_input">
                           <input type="password" name="confirm" value="" placeholder="" id="input-email" class="form-control" />
                       </div>
-                  </div>-->
+                  </div>
                   <input type="hidden" name="lastname"  value="Не указано" placeholder="" id="input-lastname" class="form-control" />
                   <input type="hidden" name="address_2"  value="" placeholder="" id="input-lastname" class="form-control" />
                   <input type="hidden" name="customer_group_id"  value="<?php echo $customer_group_id; ?>" placeholder="" id="input-customer_group_id" class="form-control" />

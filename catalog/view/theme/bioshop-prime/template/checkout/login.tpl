@@ -34,7 +34,7 @@
                   <div class="form-group">
                       <label class="col-sm-2 control-label" for="input-address_1"><span data-toggle="tooltip" title="Адрес">Адрес</span></label>
                       <div class="col-sm-12 checkout_login_input">
-                          <input type="text" name="address_1" value="" placeholder="" id="input-phone" class="form-control" />
+                          <input type="text" name="address_1" value="" placeholder="Улица, дом, квартира" id="input-phone" class="form-control" />
                       </div>
                   </div>
                   <div class="form-group">

@@ -13,7 +13,7 @@
                   <input type="hidden" name="address_id"  value="<?php echo $address_id; ?>" placeholder="" id="input-payment-address-address_id" class="form-control" />
                   <?php if (empty($delivery_net)) { ?>
                   <div class="form-group">
-                      <div class="col-sm-10">
+                      <div class="col-sm-12 checkout_address_deliveri">
                           <input type="text" name="address_2" value="" placeholder="" id="input-address_2" class="form-control" />
                       </div>
                   </div>

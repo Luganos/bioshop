@@ -357,7 +357,7 @@
             </div>
         </div>
         <?php } ?>
-    </div> 
+    </div>
   </div>
       <?php } ?>
       <?php if ($tags) { ?>
@@ -435,7 +435,7 @@ $('#button-cart').on('click', function() {
 			if (json['success']) {
 				$('.breadcrumb').after('<div class="alert alert-success">' + json['success'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
 
-				$('#cart > button').html('<i class="fa fa-shopping-cart"></i> ' + json['total']);
+				$('#cart > button').html('<i class="basket_cart"><img src="catalog/view/theme/bioshop-prime/image/basket_bg.png" alt=""></i><div class="header_pay_circle"><span >' + json['quantity'] + '</span><span id="cart-total_two"> ' + json['total'] + '</span>');
 
 				$('html, body').animate({ scrollTop: 0 }, 'slow');
 

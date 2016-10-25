@@ -173,6 +173,11 @@ body {
     font-weight: bold !important;
     color: #a5a5a6 !important;
   }
+  #cart-total_two {
+    font-size: 12px !important;
+    font-weight: bold !important;
+    color: #a5a5a6 !important;
+  }
   .cart_small_js p {
     font-size: 12px !important;
     font-weight: bold !important;
@@ -227,6 +232,12 @@ body {
     right: 110px;
     top: 0px;
     left: 46px !important;
+  }
+  #cart-total_two {
+    position: absolute;
+    right: px !important;
+    top: -42px;
+    left: -85px !important;
   }
   .header_bottom {
     padding-left: 50px;
@@ -395,6 +406,11 @@ body {
     bottom: 40px !important;
   }
   #cart-total {
+    font-size: 12px !important;
+    font-weight: bold !important;
+    color: #a5a5a6 !important;
+  }
+  #cart-total_two {
     font-size: 12px !important;
     font-weight: bold !important;
     color: #a5a5a6 !important;

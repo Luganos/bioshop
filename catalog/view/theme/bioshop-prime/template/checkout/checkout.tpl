@@ -19,17 +19,157 @@
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
-      <h1 class="checkout_h1"><?php echo $heading_title; ?></h1>
-      <div class ="col-sx-6 col-lg-6">
-          <div id ="for-customer-type"></div>
-          <div id ="for-payment-address"></div>
-          <div id ="for-shipping-method" style ="display: none"></div>
-          <div id ="for-shipping-address" style ="display: none"></div>
-          <div id ="for-payment-method" style ="display: none"></div>
+     <h1 class="checkout_h1"><?php echo $heading_title; ?></h1>
+     <div class ="col-sx-6 col-lg-6">
+        <div id ="for-customer-type" style ="display: none">
+          <div id ="container-new-customer" class="col-sx-6">
+            <ul class="nav nav-tabs product_nav-tabs show-new-customer">
+                <h1 class="checkout_login_h1">Получатель заказа</h1>
+                <li class="active product_nav-tabs_one checkout_nav-tabs_one" id ="show-new-customer"><a href="#new-customer" data-toggle="tab">Я новый покупатель</a></li>
+                <li class="product_nav-tabs_one checkout_nav-tabs_one" id ="show-old-customer"><a href="#old-customer" data-toggle="tab">Я постоянный клиент</a></li>
+                <li class="product_nav-tabs_one checkout_nav-tabs_one" id ="show-easy-customer"><a href="#easy-customer" data-toggle="tab">Быстрый заказ</a></li>
+            </ul>
+          <div class="tab-content product_tab-content checkout_tab-content">
+              <div class="tab-pane active" id="new-customer">
+                  <div class="form-group required">
+                      <label class="col-sm-2 control-label" for="input-firstname"><span data-toggle="tooltip" title="Имя и фамилия">Имя и фамилия</span></label>
+                      <div class="col-sm-12 checkout_login_input">
+                          <input type="text" name="firstname" value="" placeholder="Иван Иванов " id="input-firstname" class="form-control" />
+                      </div>
+                  </div>
+                  <div class="form-group required">
+                      <label class="col-sm-2 control-label" for="input-email"><span data-toggle="tooltip" title="Эл.почта">Эл.почта</span></label>
+                      <div class="col-sm-12 checkout_login_input">
+                          <input type="text" name="email" value="" placeholder="bioshop@ua.com" id="input-email" class="form-control" />
+                      </div>
+                  </div>
+                  <div class="form-group required">
+                      <label class="col-sm-2 control-label" for="input-telephone"><span data-toggle="tooltip" title="Телефон">Телефон</span></label>
+                      <div class="col-sm-12 checkout_login_input">
+                          <input type="text" name="telephone" value="" placeholder="067-123-4567" id="phone" class="form-control" />
+                      </div>
+                  </div>
+                  <div class="form-group required">
+                      <label class="col-sm-2 control-label" for="input-city"><span data-toggle="tooltip" title="Город">Город</span></label>
+                      <div class="col-sm-12 checkout_login_input">
+                          <input type="text" name="city" value="" placeholder="Киев" id="input-phone" class="form-control" />
+                      </div>
+                  </div>
+                  <div class="form-group required">
+                      <label class="col-sm-2 control-label" for="input-address_1"><span data-toggle="tooltip" title="Адрес">Адрес</span></label>
+                      <div class="col-sm-12 checkout_login_input">
+                          <input type="text" name="address_1" value="" placeholder="Улица, дом, квартира" id="input-phone" class="form-control" />
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label class="col-sm-2 control-label" for="input-comment"><span data-toggle="tooltip" title="Комментарий">Комментарий</span></label>
+                      <div class="col-sm-12 checkout_login_input">
+                          <textarea name="" id="" cols="90" rows="5">
+
+                          </textarea>
+                      </div>
+                  </div>
+                  <div class="form-group required">
+                      <label class="col-sm-2 control-label" for="input-password"><span data-toggle="tooltip" title="Пароль">Пароль</span></label>
+                      <div class="col-sm-12 checkout_login_input">
+                          <input type="password" name="password" value="" placeholder="" id="input-email" class="form-control" />
+                      </div>
+                  </div>
+                  <div class="form-group required">
+                      <label class="col-sm-2 control-label" for="input-confirm"><span data-toggle="tooltip" title="Подтвердить пароль">Подтвердить пароль</span></label>
+                      <div class="col-sm-12 checkout_login_input">
+                          <input type="password" name="confirm" value="" placeholder="" id="input-email" class="form-control" />
+                      </div>
+                  </div>
+                  <div class ="row">
+                         <button type="button" style ="margin-top: 20px !important; margin-left: 25px !important" id="button-register" data-loading-text="Загрузка" class="button_red_input">Регистрация</button>
+                  </div>
+                  <div id ="register-done"></div>
+              </div>
+              <div class="tab-pane" id="old-customer">
+                 <div class="form-group">
+                      <label class="col-sm-2 control-label" for="input-email"><span data-toggle="tooltip" title="Эл.почта">Эл.почта</span></label>
+                      <div class="col-sm-10">
+                          <input type="text" name="email" value="" placeholder="" id="input-email" class="form-control" />
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label class="col-sm-2 control-label" for="input-password"><span data-toggle="tooltip" title="Пароль">Пароль</span></label>
+                      <div class="col-sm-10">
+                          <input type="password" name="password" value="" placeholder="" id="input-phone" class="form-control" />
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <div class="col-sm-10" style ="margin-top: 20px !important;">
+                         <a href="<?php echo $forgotten; ?>"><?php echo $text_forgotten; ?></a>
+                      </div>
+                  </div>
+                  <div class ="row" >
+                         <button type="button" style ="margin-top: 40px !important; margin-left: 25px !important" id="button-login" data-loading-text="Загрузка" class="button_red_input">Войти</button>
+                     </div>
+              </div>
+              <div class="tab-pane" id="easy-customer">
+                 <div class="form-group">
+                      <label class="col-sm-2 control-label" for="input-email"><span data-toggle="tooltip" title="Эл.почта">Эл.почта</span></label>
+                      <div class="col-sm-10">
+                          <input type="text" name="email" value="" placeholder="" id="input-email" class="form-control" />
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label class="col-sm-2 control-label" for="input-password"><span data-toggle="tooltip" title="Пароль">Пароль</span></label>
+                      <div class="col-sm-10">
+                          <input type="password" name="password" value="" placeholder="" id="input-phone" class="form-control" />
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label class="col-sm-2 control-label" for="input-phone"><span data-toggle="tooltip" title="Телефон">Телефон</span></label>
+                      <div class="col-sm-10">
+                          <input type="text" name="phone" value="" placeholder="" id="input-phone" class="form-control" />
+                      </div>
+                  </div>
+                  <div class ="row" >
+                        <button type="button" style ="margin-top: 40px !important; margin-left: 290px !important" id="button-confirm-easy-buy" data-loading-text="Загрузка" class="button_red_input">Оформить заказ</button>
+                 </div> 
+              </div>
+          </div>
+       </div>       
       </div>
-      <div class ="col-sm-4">
+      <div id ="for-payment-address" style ="display: none"></div>
+      <div id ="for-shipping-method" style ="display: none">
+          <h1 class="checkout_login_h1">Доставка</h1>
+          <p class="control-label">Способ доставки</p>
+           <div class="form-group">
+               <div class="col-sm-12 checkout_address_deliveri">
+                   <input type="text" name="shipping_method" value="" placeholder="" class="form-control" />
+               </div>
+           </div>
+      </div>
+      <div id ="for-shipping-address" style ="display: none">
+          <p class="control-label">Адрес доставки</p>
+          <div class="form-group">
+               <div class="col-sm-12 checkout_address_deliveri">
+                   <input type="text" name="address_2" value="" placeholder="" id="input-address_2" class="form-control" />
+               </div>
+          </div>   
+      </div>
+      <div id ="for-payment-method" style ="display: none">
+         <h1 class="checkout_login_h1">Оплата</h1>
+         <p class="control-label">Способ оплаты</p>
+         <div class="form-group">
+            <div class="col-sm-12 checkout_address_deliveri">
+                <input type="text" name="payment_method" value="" placeholder=""  class="form-control" />
+            </div>
+         </div>    
+      </div>
+      <div id ="for-confirm-button" style ="display: none">
+           <div class ="row" >
+                <button type="button" style ="margin-top: 40px !important; margin-left: 390px !important" id="button-confirm-buy" data-loading-text="Загрузка" class="button_red_input">Оформить заказ</button>
+           </div>  
+      </div>
+    </div>
+    <div class ="col-sm-4">
          <div class ="for-customer-cart"></div>
-      </div>
+     </div>
       <?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
 </div>
@@ -76,17 +216,20 @@ var checkout = {
 
             //User is not logged
 	     case 0:
-
+                    checkout.showAllField();
+                    checkout.hiddenField();
                     checkout.login();
   
 	     break;
 
              //User is logged
 	     case 1:
+                    checkout.showField();
+                    checkout.hiddenField();
 		    checkout.payment();
 	     break;
 
-             //Hook event on buttons "Login" and "Register"
+             
 	     case 2:
 
                    checkout.hiddenField();
@@ -94,7 +237,7 @@ var checkout = {
                    
 	     break;
 
-             //Load data for payment address
+             //Hook event on buttons "Login" and "Register"
 	     case 3:
                  
 		   checkout.loginSave();
@@ -113,7 +256,7 @@ var checkout = {
              case 5:
 
                    checkout.shippingMethod();
-                   checkout.showField();
+                  
 	     break;
 
              //Load shipping address
@@ -121,7 +264,7 @@ var checkout = {
 
                    checkout.changeShippingMethod();
                    checkout.shippingAddress();
-                   checkout.showField();
+                   
 
              break;
 
@@ -129,7 +272,7 @@ var checkout = {
              case 7:
 
                     checkout.paymentMethod();
-                    checkout.showField();
+                    
              break;
 
 
@@ -250,13 +393,24 @@ var checkout = {
   },
 
 
-  showField: function() {
+  showAllField: function() {
 
           $('#for-shipping-method').show();
           $('#for-shipping-address').show();
           $('#for-payment-method').show();
+          $('#for-confirm-button').show();
+          $('#for-customer-type').show();
 
 
+  },
+  
+  showField: function() {
+
+          $('#for-shipping-method').show();
+          $('#for-shipping-address').show();
+          $('#for-confirm-button').show();
+          $('#for-payment-method').show();
+ 
   },
 
   hiddenField: function() {
@@ -266,6 +420,7 @@ var checkout = {
           $('#for-shipping-method').show();
           $('#for-shipping-address').show();
           $('#for-payment-method').show();
+          $('#for-confirm-button').show();
 
       });
 
@@ -274,6 +429,7 @@ var checkout = {
           $('#for-shipping-method').show();
           $('#for-shipping-address').show();
           $('#for-payment-method').show();
+          $('#for-confirm-button').show();
 
       });
 
@@ -282,6 +438,7 @@ var checkout = {
           $('#for-shipping-method').hide();
           $('#for-shipping-address').hide();
           $('#for-payment-method').hide();
+          $('#for-confirm-button').hide();
 
       });
 

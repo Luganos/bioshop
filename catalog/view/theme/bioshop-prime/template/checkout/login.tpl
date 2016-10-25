@@ -112,6 +112,9 @@
                           <input type="text" name="phone" value="" placeholder="" id="input-phone" class="form-control" />
                       </div>
                   </div>
+                  <div class ="row" >
+                        <button type="button" style ="margin-top: 40px !important; margin-left: 290px !important" id="button-confirm-easy-buy" data-loading-text="Загрузка" class="button_red_input">Оформить заказ</button>
+                  </div> 
               </div>
           </div>
        </div>

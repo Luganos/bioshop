@@ -21,6 +21,9 @@
 <?php } else { ?>
 <h1 class="checkout_login_h1">Доставка</h1>
 <p class="control-label">Способ доставки</p>
-<select name="shipping_method" class="form-control">
-</select>
+   <div class="form-group">
+       <div class="col-sm-12 checkout_address_deliveri">
+            <input type="text" name="shipping_method" value="" placeholder="" class="form-control" />
+       </div>
+   </div>
 <?php } ?>

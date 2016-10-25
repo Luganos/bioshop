@@ -1,6 +1,3 @@
-<?php if ($error_warning) { ?>
-<div class="alert alert-warning"><i class="fa fa-exclamation-circle"></i> <?php echo $error_warning; ?></div>
-<?php } ?>
 <?php if ($payment_methods) { ?>
 <h1 class="checkout_login_h1">Оплата</h1>
 <p class="control-label">Способ оплаты</p>
@@ -17,6 +14,9 @@
 <?php } else { ?>
 <h1 class="checkout_login_h1">Оплата</h1>
 <p class="control-label">Способ оплаты</p>
-<select name="payment_method" class="form-control" id ="select-payment-method">
-</select>
+<div class="form-group">
+    <div class="col-sm-12 checkout_address_deliveri">
+        <input type="text" name="payment_method" value="" placeholder=""  class="form-control" />
+    </div>
+</div>
 <?php } ?>

@@ -128,7 +128,7 @@
                       </div>
                   </div>
                   <div class ="row" >
-                        <button type="button" style ="margin-top: 40px !important; margin-left: 290px !important" id="button-confirm-easy-buy" data-loading-text="Загрузка" class="button_red_input">Оформить заказ</button>
+                        <button type="button" style ="margin-top: 40px !important; margin-left: 290px !important" id="button-forbid-easy-buy" data-loading-text="Загрузка" class="button_red_input">Оформить заказ</button>
                  </div> 
               </div>
           </div>
@@ -163,7 +163,7 @@
       </div>
       <div id ="for-confirm-button" style ="display: none">
            <div class ="row" >
-                <button type="button" style ="margin-top: 40px !important; margin-left: 390px !important" id="button-confirm-buy" data-loading-text="Загрузка" class="button_red_input">Оформить заказ</button>
+                <button type="button" style ="margin-top: 40px !important; margin-left: 390px !important"  id = "button-forbid-buy" data-loading-text="Загрузка" class="button_red_input">Оформить заказ</button>
            </div>  
       </div>
     </div>
@@ -218,6 +218,7 @@ var checkout = {
 	     case 0:
                     checkout.showAllField();
                     checkout.hiddenField();
+                    checkout.forbiddenBuy();
                     checkout.login();
   
 	     break;
@@ -226,6 +227,7 @@ var checkout = {
 	     case 1:
                     checkout.showField();
                     checkout.hiddenField();
+                    checkout.createConfirmButton();
 		    checkout.payment();
 	     break;
 
@@ -278,8 +280,10 @@ var checkout = {
 
              //Show loaded html
              case 8:
-
-                    checkout.showField();
+                 
+                    checkout.confirmCustomer();
+                    checkout.confirmEasyCustomer();
+                    
              break;
              
 
@@ -293,6 +297,45 @@ var checkout = {
              default: break;
 
       }
+  },
+  
+  createConfirmButton: function() {
+      
+      var html = '';
+      html += '<div class ="row" >';
+      html +=    '<button type="button" style ="margin-top: 40px !important; margin-left: 390px !important"  id = "button-confirm-buy" data-loading-text="Загрузка" class="button_red_input">Оформить заказ</button>';
+      html += '</div>';
+      var id = '#for-confirm-button';
+      checkout.showHtml(id, html);
+      
+  },
+  
+  forbiddenBuy: function() {
+      
+      $('#button-forbid-buy').on('click', function(){
+          
+          alert('You must login before');
+          
+     });
+  },
+  
+  
+  confirmCustomer: function() {
+      $('#button-confirm-buy').on('click', function(){
+         
+    
+                alert('Confirm');
+       
+      });
+      
+  },
+  
+  
+  confirmEasyCustomer: function() {
+      
+      $('#button-confirm-easy-buy').on('click', function() {
+          alert('Easy confirm');
+      });
   },
   
   redirect: function() {

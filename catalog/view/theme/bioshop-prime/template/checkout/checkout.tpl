@@ -203,7 +203,8 @@ var checkout = {
               id: null,
               progress: null,
               redirect: null,
-              path: null
+              path: null,
+              error: null
 	},
 
         //It is main execute switch
@@ -286,13 +287,24 @@ var checkout = {
                     
              break;
              
-
-
-
-
-
-
-
+             //Confirm buy button is pushed
+             case 9:
+                 
+                    checkout.shippingAddressSave();
+                    
+             break;
+             
+             case 9:
+                 
+                    checkout.shippingMethodSave();
+                    
+             break;
+             
+             case 10:
+                 
+                    checkout.paymentMethodSave();
+                    
+             break;
 
              default: break;
 
@@ -324,9 +336,31 @@ var checkout = {
       $('#button-confirm-buy').on('click', function(){
          
     
-                alert('Confirm');
+           checkout.MainCase(9);
        
       });
+      
+  },
+  
+  shippingAddressSave: function() {
+      
+      var address = $('#shipping-address-input :input');
+      checkout.data.url = 'index.php?route=checkout/shipping_address_1/save';
+      checkout.data.id = null;
+      checkout.data.value = address;
+      checkout.data.redirect = true;
+      checkout.data.progress = null;
+      checkout.ajaxJson(checkout.data.url, checkout.data.value, null, checkout.data.id, checkout.data.progress, checkout.data.redirect);
+      
+  },
+  
+  shippingMethodSave: function() {
+      
+      
+  },
+  
+  paymentMethodSave: function() {
+      
       
   },
   
@@ -595,12 +629,16 @@ var checkout = {
 
                             checkout.showHtml(id, json);
                          }
+                         
+                         if (json['error']) {
+                             
+                             checkout.data.error = json['error'];
+                             alert(checkout.data.error);
 
-                         if(json !== undefined) {
-
+                         } else {
+                             
                              checkout.MainCase(callback);
                          }
-                         
                          
                         if (json['redirect'] && redirect) {
                            checkout.data.path = json['redirect'];

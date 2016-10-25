@@ -134,7 +134,7 @@ class ControllerCheckoutShippingAddress1 extends Controller {
 
 		if (!$json) {
                     
-                        $json['success'] = 1;
+                        
                         
 			if (isset($this->request->post['shipping_address']) && $this->request->post['shipping_address'] == 'existing') {
 				$this->load->model('account/address');
@@ -162,6 +162,8 @@ class ControllerCheckoutShippingAddress1 extends Controller {
 					unset($this->session->data['shipping_method']);
 					unset($this->session->data['shipping_methods']);
 				}
+                                
+                                $json['success'] = 1;
 			} else {
                             
                             $json['error']['address_2'] = $this->language->get('error_address_1');

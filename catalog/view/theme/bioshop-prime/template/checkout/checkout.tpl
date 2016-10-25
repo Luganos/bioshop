@@ -192,7 +192,6 @@ var checkout = {
             checkout.data.id = '#login-done';
             checkout.data.value = $('#old-customer :input');
             checkout.data.progress = '#button-login';
-            checkout.data.redirect = false;
             checkout.ajaxJson(checkout.data.url, checkout.data.value, 1, checkout.data.id, checkout.data.progress, checkout.data.redirect);
         });
 
@@ -206,7 +205,6 @@ var checkout = {
             checkout.data.id = '#register-done';
             checkout.data.value = $('#new-customer :input');
             checkout.data.progress = '#button-register';
-            checkout.data.redirect = false;
             checkout.ajaxJson(checkout.data.url, checkout.data.value, 1, checkout.data.id, checkout.data.progress);
 
         });

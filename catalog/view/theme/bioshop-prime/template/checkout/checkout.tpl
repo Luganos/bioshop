@@ -237,8 +237,15 @@ var checkout = {
   changeShippingMethod: function() {
 
       $('#for-shipping-method').on('change', function() {
-
-
+      var value = $( "#select-shipping-method").val();
+      
+      value = value.substr(0, value.indexOf('.') === -1 ? value.length : value.indexOf('.'));
+      
+            checkout.data.url = 'index.php?route=checkout/shipping_address_1/change';
+            checkout.data.id = '#for-shipping-address';
+            checkout.data.value = { "shipping_method" : value };
+            checkout.data.progress = null;
+            checkout.ajaxChange(checkout.data.url, checkout.data.value, null, checkout.data.id, checkout.data.progress);
       });
   },
 
@@ -283,6 +290,56 @@ var checkout = {
   showHtml: function(id, html) {
 
       $(id).html(html);
+  },
+  
+    ajaxChange: function(url, data, callback, id, progress, redirect) {
+
+      var url, data, callback, id, progress, redirect;
+
+          $.ajax({
+               url: url,
+               type: 'post',
+               data: data,
+               dataType: 'html',
+               beforeSend: function() {
+
+                      if(progress !== null) {
+                         $(progress).button('loading');
+                      }
+
+               },
+               complete: function() {
+                   if(progress !== null) {
+                      $(progress).button('reset');
+                   }
+               },
+              success: function(json) {
+
+
+                        if(id !== null) {
+
+                            checkout.showHtml(id, json);
+                         }
+
+                         if(json !== undefined) {
+
+                             checkout.MainCase(callback);
+                         }
+                         
+                         
+                        if (json['redirect'] && redirect) {
+                           checkout.data.path = json['redirect'];
+                           checkout.redirect();
+                        }
+
+
+
+              },
+              error: function(xhr, ajaxOptions, thrownError) {
+                     alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+              }
+    });
+
   },
 
   ajaxHtml: function(url, callback, id) {

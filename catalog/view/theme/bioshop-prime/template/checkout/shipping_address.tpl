@@ -18,6 +18,10 @@
                       </div>
                   </div>
                   <?php } else { ?>
-
+                  <select name="shipping_adress" class="form-control" id ="select-shipping-address">
+                  <?php foreach ($houses as $house) { ?>
+                  <option value="<?php echo $house['warehouse']; ?>"><?php echo $house['warehouse']; ?></option>
+                  <?php } ?>
+                  </select>
                   <?php } ?>
              </div>

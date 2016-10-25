@@ -80,7 +80,7 @@ class ControllerCheckoutShippingAddress1 extends Controller {
 		    if ($quote) {
                                             
 			$data['houses'] = (empty($quote['houses']))? array(): $quote['houses'];
-			$data['$delivery_net'] = TRUE;			
+			$data['delivery_net'] = (empty($quote['houses']))? NULL : TRUE;			
                     }
 		}
 

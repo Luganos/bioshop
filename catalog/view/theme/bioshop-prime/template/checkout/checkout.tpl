@@ -294,13 +294,13 @@ var checkout = {
                     
              break;
              
-             case 9:
+             case 10:
                  
                     checkout.shippingMethodSave();
                     
              break;
              
-             case 10:
+             case 11:
                  
                     checkout.paymentMethodSave();
                     
@@ -350,18 +350,24 @@ var checkout = {
       checkout.data.value = address;
       checkout.data.redirect = true;
       checkout.data.progress = null;
-      checkout.ajaxJson(checkout.data.url, checkout.data.value, null, checkout.data.id, checkout.data.progress, checkout.data.redirect);
+      checkout.ajaxJson(checkout.data.url, checkout.data.value, 10, checkout.data.id, checkout.data.progress, checkout.data.redirect);
       
   },
   
   shippingMethodSave: function() {
       
-      
+      var address = $('#select-shipping-method :input');
+      checkout.data.url = 'index.php?route=checkout/shipping_method_1/save';
+      checkout.data.id = null;
+      checkout.data.value = address;
+      checkout.data.redirect = true;
+      checkout.data.progress = null;
+      checkout.ajaxJson(checkout.data.url, checkout.data.value, 11, checkout.data.id, checkout.data.progress, checkout.data.redirect);
   },
   
   paymentMethodSave: function() {
       
-      
+      alert('Payment method save');
   },
   
   

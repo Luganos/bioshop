@@ -356,10 +356,10 @@ var checkout = {
   
   shippingMethodSave: function() {
       
-      var address = $('#select-shipping-method :input');
+      var address = $('#select-shipping-method :selected').val();
       checkout.data.url = 'index.php?route=checkout/shipping_method_1/save';
       checkout.data.id = null;
-      checkout.data.value = address;
+      checkout.data.value = { "shipping_method": address };
       checkout.data.redirect = true;
       checkout.data.progress = null;
       checkout.ajaxJson(checkout.data.url, checkout.data.value, 11, checkout.data.id, checkout.data.progress, checkout.data.redirect);
@@ -367,7 +367,13 @@ var checkout = {
   
   paymentMethodSave: function() {
       
-      alert('Payment method save');
+      var method = $('#select-payment-method :selected').val();
+      checkout.data.url = 'index.php?route=checkout/payment_method_1/save';
+      checkout.data.id = null;
+      checkout.data.value = { "payment_method": method };
+      checkout.data.redirect = true;
+      checkout.data.progress = null;
+      checkout.ajaxJson(checkout.data.url, checkout.data.value, null, checkout.data.id, checkout.data.progress, checkout.data.redirect);
   },
   
   

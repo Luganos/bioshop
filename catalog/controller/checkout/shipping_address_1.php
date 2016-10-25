@@ -70,7 +70,7 @@ class ControllerCheckoutShippingAddress1 extends Controller {
 		}
                 
                 
-                $data['$delivery_net'] = NULL;
+                $data['delivery_net'] = NULL;
                 
 		if ($this->config->get($this->request->post['shipping_method'] . '_status')) {
                     

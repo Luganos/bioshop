@@ -23,7 +23,7 @@
 <p class="control-label">Способ доставки</p>
    <div class="form-group">
        <div class="col-sm-12 checkout_address_deliveri">
-            <input type="text" name="shipping_method" value="" placeholder="" class="form-control" />
+            <input type="text" name="shipping_method" id ="select-shipping-method" value="" placeholder="" class="form-control" />
        </div>
    </div>
 <?php } ?>

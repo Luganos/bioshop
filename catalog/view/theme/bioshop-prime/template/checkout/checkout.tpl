@@ -58,7 +58,9 @@ var checkout = {
 	      url: 0,
               value: null,
               id: null,
-              progress: null
+              progress: null,
+              redirect: null,
+              path: null
 	},
 
         //It is main execute switch
@@ -130,6 +132,12 @@ var checkout = {
 
                     checkout.showField();
              break;
+             
+             //Redirect
+             case 9:
+
+                    location = checkout.data.path;
+             break;
 
 
 
@@ -166,7 +174,8 @@ var checkout = {
             checkout.data.id = null;
             checkout.data.value = $('#payment-address-input :input');
             checkout.data.progress = null;
-            checkout.ajaxJson(checkout.data.url, checkout.data.value, null, checkout.data.id, checkout.data.progress);
+            checkout.data.redirect = true;
+            checkout.ajaxJson(checkout.data.url, checkout.data.value, 9, checkout.data.id, checkout.data.progress, checkout.data.redirect);
 
   },
 
@@ -178,7 +187,8 @@ var checkout = {
             checkout.data.id = '#login-done';
             checkout.data.value = $('#old-customer :input');
             checkout.data.progress = '#button-login';
-            checkout.ajaxJson(checkout.data.url, checkout.data.value, 1, checkout.data.id, checkout.data.progress);
+            checkout.data.redirect = false;
+            checkout.ajaxJson(checkout.data.url, checkout.data.value, 1, checkout.data.id, checkout.data.progress, checkout.data.redirect);
         });
 
   },
@@ -191,6 +201,7 @@ var checkout = {
             checkout.data.id = '#register-done';
             checkout.data.value = $('#new-customer :input');
             checkout.data.progress = '#button-register';
+            checkout.data.redirect = false;
             checkout.ajaxJson(checkout.data.url, checkout.data.value, 1, checkout.data.id, checkout.data.progress);
 
         });
@@ -296,9 +307,9 @@ var checkout = {
     });
   },
 
-    ajaxJson: function(url, data, callback, id, progress) {
+    ajaxJson: function(url, data, callback, id, progress, redirect) {
 
-      var url, data, callback, id, progress;
+      var url, data, callback, id, progress, redirect;
 
           $.ajax({
                url: url,
@@ -331,9 +342,9 @@ var checkout = {
                              checkout.MainCase(callback);
                          }
                          
-                /*if (json['redirect']) {
-                           location = json['redirect'];
-                        }*/
+                        if (json['redirect'] && redirect) {
+                           checkout.data.path = json['redirect'];
+                        }
 
               },
               error: function(xhr, ajaxOptions, thrownError) {

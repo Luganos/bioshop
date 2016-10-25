@@ -72,7 +72,7 @@
           <div class="form-group required">
             <label class="col-sm-2 control-label" for="input-telephone"><?php echo $entry_telephone; ?></label>
             <div class="col-sm-10">
-              <input type="tel" name="telephone" value="<?php echo $telephone; ?>" placeholder="<?php echo $entry_telephone; ?>" id="input-telephone" class="form-control" />
+              <input type="tel" id="phone" name="telephone" value="<?php echo $telephone; ?>" placeholder="<?php echo $entry_telephone; ?>" id="input-telephone" class="form-control" />
               <?php if ($error_telephone) { ?>
               <div class="text-danger"><?php echo $error_telephone; ?></div>
               <?php } ?>
@@ -699,3 +699,8 @@ $('select[name=\'country_id\']').on('change', function() {
 $('select[name=\'country_id\']').trigger('change');
 //--></script>
 <?php echo $footer; ?>
+<script>
+          $(function($){
+            $("#phone").mask("+38(999) 999-9999");
+          });
+       </script>

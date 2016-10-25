@@ -7,31 +7,31 @@
             </ul>
           <div class="tab-content product_tab-content checkout_tab-content">
               <div class="tab-pane active" id="new-customer">
-                  <div class="form-group">
+                  <div class="form-group required">
                       <label class="col-sm-2 control-label" for="input-firstname"><span data-toggle="tooltip" title="Имя и фамилия">Имя и фамилия</span></label>
                       <div class="col-sm-12 checkout_login_input">
                           <input type="text" name="firstname" value="" placeholder="Иван Иванов " id="input-firstname" class="form-control" />
                       </div>
                   </div>
-                  <div class="form-group">
+                  <div class="form-group required">
                       <label class="col-sm-2 control-label" for="input-email"><span data-toggle="tooltip" title="Эл.почта">Эл.почта</span></label>
                       <div class="col-sm-12 checkout_login_input">
                           <input type="text" name="email" value="" placeholder="bioshop@ua.com" id="input-email" class="form-control" />
                       </div>
                   </div>
-                  <div class="form-group">
+                  <div class="form-group required">
                       <label class="col-sm-2 control-label" for="input-telephone"><span data-toggle="tooltip" title="Телефон">Телефон</span></label>
                       <div class="col-sm-12 checkout_login_input">
                           <input type="text" name="telephone" value="" placeholder="067-123-4567" id="phone" class="form-control" />
                       </div>
                   </div>
-                  <div class="form-group">
+                  <div class="form-group required">
                       <label class="col-sm-2 control-label" for="input-city"><span data-toggle="tooltip" title="Город">Город</span></label>
                       <div class="col-sm-12 checkout_login_input">
                           <input type="text" name="city" value="" placeholder="Киев" id="input-phone" class="form-control" />
                       </div>
                   </div>
-                  <div class="form-group">
+                  <div class="form-group required">
                       <label class="col-sm-2 control-label" for="input-address_1"><span data-toggle="tooltip" title="Адрес">Адрес</span></label>
                       <div class="col-sm-12 checkout_login_input">
                           <input type="text" name="address_1" value="" placeholder="Улица, дом, квартира" id="input-phone" class="form-control" />
@@ -45,13 +45,13 @@
                           </textarea>
                       </div>
                   </div>
-                  <div class="form-group">
+                  <div class="form-group required">
                       <label class="col-sm-2 control-label" for="input-password"><span data-toggle="tooltip" title="Пароль">Пароль</span></label>
                       <div class="col-sm-12 checkout_login_input">
                           <input type="password" name="password" value="" placeholder="" id="input-email" class="form-control" />
                       </div>
                   </div>
-                  <div class="form-group">
+                  <div class="form-group required">
                       <label class="col-sm-2 control-label" for="input-confirm"><span data-toggle="tooltip" title="Подтвердить пароль">Подтвердить пароль</span></label>
                       <div class="col-sm-12 checkout_login_input">
                           <input type="password" name="confirm" value="" placeholder="" id="input-email" class="form-control" />

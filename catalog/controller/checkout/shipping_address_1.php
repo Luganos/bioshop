@@ -160,7 +160,6 @@ class ControllerCheckoutShippingAddress1 extends Controller {
                                         $this->session->data['shipping_address']['address_2'] = trim($this->request->post['address_2']);
                                                 
 					unset($this->session->data['shipping_method']);
-					unset($this->session->data['shipping_methods']);
 				}
                                 
                                 $json['success'] = 1;

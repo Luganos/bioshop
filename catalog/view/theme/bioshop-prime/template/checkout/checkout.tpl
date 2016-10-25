@@ -40,11 +40,14 @@
     <?php if (!$logged) { ?>                      //No
 
        checkout.MainCase(0);
+       checkout.data.redirect = true;
 
     <?php } else { ?>                             //Yes
-
+    
+       checkout.data.redirect = false;
        checkout.MainCase(1);
-
+       checkout.MainCase(5);
+       
     <?php } ?>
 
 });
@@ -75,7 +78,7 @@ var checkout = {
 	     case 0:
 
                     checkout.login();
-
+  
 	     break;
 
              //User is logged
@@ -110,6 +113,7 @@ var checkout = {
              case 5:
 
                    checkout.shippingMethod();
+                   checkout.showField();
 	     break;
 
              //Load shipping address
@@ -117,6 +121,7 @@ var checkout = {
 
                    checkout.changeShippingMethod();
                    checkout.shippingAddress();
+                   checkout.showField();
 
              break;
 
@@ -124,6 +129,7 @@ var checkout = {
              case 7:
 
                     checkout.paymentMethod();
+                    checkout.showField();
              break;
 
 
@@ -133,11 +139,6 @@ var checkout = {
                     checkout.showField();
              break;
              
-             //Redirect
-             case 9:
-
-                    location = checkout.data.path;
-             break;
 
 
 
@@ -149,6 +150,11 @@ var checkout = {
              default: break;
 
       }
+  },
+  
+  redirect: function() {
+      
+      location = checkout.data.path;
   },
 
   login: function() {
@@ -174,8 +180,7 @@ var checkout = {
             checkout.data.id = null;
             checkout.data.value = $('#payment-address-input :input');
             checkout.data.progress = null;
-            checkout.data.redirect = true;
-            checkout.ajaxJson(checkout.data.url, checkout.data.value, 9, checkout.data.id, checkout.data.progress, checkout.data.redirect);
+            checkout.ajaxJson(checkout.data.url, checkout.data.value, null, checkout.data.id, checkout.data.progress, checkout.data.redirect);
 
   },
 
@@ -331,7 +336,6 @@ var checkout = {
               success: function(json) {
 
 
-
                         if(id !== null) {
 
                             checkout.showHtml(id, json);
@@ -342,9 +346,13 @@ var checkout = {
                              checkout.MainCase(callback);
                          }
                          
+                         
                         if (json['redirect'] && redirect) {
                            checkout.data.path = json['redirect'];
+                           checkout.redirect();
                         }
+
+
 
               },
               error: function(xhr, ajaxOptions, thrownError) {

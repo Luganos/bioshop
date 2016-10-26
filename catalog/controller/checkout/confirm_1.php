@@ -1,5 +1,5 @@
 <?php
-class ControllerCheckoutConfirm extends Controller {
+class ControllerCheckoutConfirm1 extends Controller {
 	public function index() {
 		$redirect = '';
 
@@ -411,10 +411,36 @@ class ControllerCheckoutConfirm extends Controller {
 			$data['redirect'] = $redirect;
 		}
 
-		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/checkout/confirm.tpl')) {
+		/*if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/checkout/confirm.tpl')) {
 			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/checkout/confirm.tpl', $data));
 		} else {
 			$this->response->setOutput($this->load->view('default/template/checkout/confirm.tpl', $data));
-		}
+		}*/
+                
+                
+                $this->response->setOutput($data['payment']);
+                
 	}
+        
+        public function defaultPaymentMethod() {
+            
+            //Is payment method existing?
+            if (isset($this->session->data['payment_method']['code'])) {
+                
+                $payment = $this->load->controller('payment/' . $this->session->data['payment_method']['code']);
+                
+            } else {
+                
+                if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/checkout/default_payment.tpl')) {
+		     $payment = $this->load->view($this->config->get('config_template') . '/template/checkout/default_payment.tpl');
+		} else {
+		     $payment = $this->load->view('default/template/checkout/default_payment.tpl');
+		}
+
+            }
+           
+            $this->response->setOutput($payment);
+    
+                 
+        }
 }

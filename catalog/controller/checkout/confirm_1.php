@@ -245,7 +245,7 @@ class ControllerCheckoutConfirm1 extends Controller {
 				}
 			}
 
-			$order_data['comment'] = $this->session->data['comment'];
+			$order_data['comment'] = (isset($this->session->data['comment']))? $this->session->data['comment']: '';
 			$order_data['total'] = $total;
 
 			if (isset($this->request->cookie['tracking'])) {
@@ -411,18 +411,15 @@ class ControllerCheckoutConfirm1 extends Controller {
 			$data['redirect'] = $redirect;
 		}
 
-		/*if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/checkout/confirm.tpl')) {
+		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/checkout/confirm.tpl')) {
 			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/checkout/confirm.tpl', $data));
 		} else {
 			$this->response->setOutput($this->load->view('default/template/checkout/confirm.tpl', $data));
-		}*/
-                
-                
-                $this->response->setOutput($data['payment']);
+		}
                 
 	}
         
-        public function defaultPaymentMethod() {
+        /*public function defaultPaymentMethod() {
             
             //Is payment method existing?
             if (isset($this->session->data['payment_method']['code'])) {
@@ -442,5 +439,5 @@ class ControllerCheckoutConfirm1 extends Controller {
             $this->response->setOutput($payment);
     
                  
-        }
+        }*/
 }

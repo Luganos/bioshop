@@ -283,21 +283,15 @@ var checkout = {
              break;
 
 
-             //Load default payment system module
+             //Hook action after change field
              case 8:
                     if (checkout.data.logged) {
                         
                         checkout.changeShippingMethod();
-                        checkout.changePaymentMethod();
-                        
-                        
-                    } 
-                        
-                    checkout.loadDefaultPaymentMethod();  
-  
+                    }
                     
-                     
-
+                    checkout.forbiddenBuy();
+                        
              break;
 
              //Confirm buy button is pushed
@@ -325,8 +319,13 @@ var checkout = {
             
             break;
             
-
-
+            case 13:
+            
+                  alert('Please wait');
+            
+            break;
+            
+            
              default: break;
 
       }
@@ -366,7 +365,7 @@ var checkout = {
 
       $('#button-forbid-buy').on('click', function(){
 
-          alert('You must login before');
+          alert('You must log in or register before');
 
      });
   },
@@ -501,7 +500,7 @@ var checkout = {
 
        checkout.data.url = 'index.php?route=checkout/payment_method_1';
        checkout.data.id = '#for-payment-method';
-       checkout.ajaxHtml(checkout.data.url, null, checkout.data.id);
+       checkout.ajaxHtml(checkout.data.url, 8, checkout.data.id);
   },
 
 
@@ -525,36 +524,12 @@ var checkout = {
      });
   },
   
-  loadDefaultPaymentMethod: function() {
-      
-       if (checkout.data.logged) {
-           
-           
-       }
-      
-       checkout.data.url = 'index.php?route=checkout/confirm_1/defaultPaymentMethod';;
-       checkout.data.id = '#for-confirm-button';
-       checkout.ajaxHtml(checkout.data.url, null, checkout.data.id);
-       
-  },
-  
-  //Field payment method has changed 
-  changePaymentMethod: function() {
-      
-       $('#for-payment-method').on('change', function() {
-          
-           checkout.collectData(); 
-           checkout.MainCase(9);
-    
-       });      
-          
-  },
   
   confirmBuy: function() {
       
        checkout.data.url = 'index.php?route=checkout/confirm_1/index';;
        checkout.data.id = '#for-confirm-button';
-       checkout.ajaxHtml(checkout.data.url, null, checkout.data.id);
+       checkout.ajaxHtml(checkout.data.url, 13, checkout.data.id);
   },
 
 

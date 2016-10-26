@@ -26,9 +26,9 @@
 <form method="POST" action="<?=$action?>" id="liqpay_checkout" accept-charset="utf-8">
     <input type="hidden" name="data"  value="<?=$data?>" />
     <input type="hidden" name="signature" value="<?=$signature?>" />
-    <div class="buttons">
-        <div class="right">
-            <input type="submit" value="<?php echo $button_confirm; ?>" id="button-confirm" class="button" />
-        </div>
-    </div>
 </form>
+<script type="text/javascript"><!--
+$(function(){
+     $('#liqpay_checkout').submit();
+ });
+//--></script>

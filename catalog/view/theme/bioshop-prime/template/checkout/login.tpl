@@ -40,7 +40,7 @@
                   <div class="form-group">
                       <label class="col-sm-2 control-label" for="input-comment"><span data-toggle="tooltip" title="Комментарий">Комментарий</span></label>
                       <div class="col-sm-12 checkout_login_input">
-                          <textarea name="" id="" cols="90" rows="5">
+                          <textarea name="comment" id="" cols="90" rows="5">
 
                           </textarea>
                       </div>

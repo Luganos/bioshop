@@ -129,10 +129,10 @@
                   </div>
                   <div class ="row" >
                         <button type="button" style ="margin-top: 40px !important; margin-left: 290px !important" id="button-forbid-easy-buy" data-loading-text="Загрузка" class="button_red_input">Оформить заказ</button>
-                 </div> 
+                 </div>
               </div>
           </div>
-       </div>       
+       </div>
       </div>
       <div id ="for-payment-address" style ="display: none"></div>
       <div id ="for-shipping-method" style ="display: none">
@@ -150,7 +150,7 @@
                <div class="col-sm-12 checkout_address_deliveri">
                    <input type="text" name="address_2" value="" placeholder="" id="input-address_2" class="form-control" />
                </div>
-          </div>   
+          </div>
       </div>
       <div id ="for-payment-method" style ="display: none">
          <h1 class="checkout_login_h1">Оплата</h1>
@@ -159,12 +159,12 @@
             <div class="col-sm-12 checkout_address_deliveri">
                 <input type="text" name="payment_method" value="" placeholder=""  class="form-control" />
             </div>
-         </div>    
+         </div>
       </div>
       <div id ="for-confirm-button" style ="display: none">
            <div class ="row" >
                 <button type="button" style ="margin-top: 40px !important; margin-left: 390px !important"  id = "button-forbid-buy" data-loading-text="Загрузка" class="button_red_input">Оформить заказ</button>
-           </div>  
+           </div>
       </div>
     </div>
     <div class ="col-sm-4">
@@ -183,11 +183,11 @@
        checkout.data.redirect = true;
 
     <?php } else { ?>                             //Yes
-    
+
        checkout.data.redirect = false;
        checkout.MainCase(1);
        checkout.MainCase(5);
-       
+
     <?php } ?>
 
 });
@@ -221,7 +221,7 @@ var checkout = {
                     checkout.hiddenField();
                     checkout.forbiddenBuy();
                     checkout.login();
-  
+
 	     break;
 
              //User is logged
@@ -232,21 +232,21 @@ var checkout = {
 		    checkout.payment();
 	     break;
 
-             
+
 	     case 2:
 
                    checkout.hiddenField();
                    checkout.MainCase(3);
-                   
+
 	     break;
 
              //Hook event on buttons "Login" and "Register"
 	     case 3:
-                 
+
 		   checkout.loginSave();
                    checkout.registerSave();
                    checkout.MainCase(5);
-                  
+
 	     break;
 
              //Save data for payment address
@@ -259,7 +259,7 @@ var checkout = {
              case 5:
 
                    checkout.shippingMethod();
-                  
+
 	     break;
 
              //Load shipping address
@@ -267,7 +267,7 @@ var checkout = {
 
                    checkout.changeShippingMethod();
                    checkout.shippingAddress();
-                   
+
 
              break;
 
@@ -275,75 +275,75 @@ var checkout = {
              case 7:
 
                     checkout.paymentMethod();
-                    
+
              break;
 
 
              //Show loaded html
              case 8:
-                 
+
                     checkout.confirmCustomer();
                     checkout.confirmEasyCustomer();
-                    
+
              break;
-             
+
              //Confirm buy button is pushed
              case 9:
-                 
+
                     checkout.shippingAddressSave();
-                    
+
              break;
-             
+
              case 10:
-                 
+
                     checkout.shippingMethodSave();
-                    
+
              break;
-             
+
              case 11:
-                 
+
                     checkout.paymentMethodSave();
-                    
+
              break;
 
              default: break;
 
       }
   },
-  
+
   createConfirmButton: function() {
-      
+
       var html = '';
       html += '<div class ="row" >';
       html +=    '<button type="button" style ="margin-top: 40px !important; margin-left: 390px !important"  id = "button-confirm-buy" data-loading-text="Загрузка" class="button_red_input">Оформить заказ</button>';
       html += '</div>';
       var id = '#for-confirm-button';
       checkout.showHtml(id, html);
-      
+
   },
-  
+
   forbiddenBuy: function() {
-      
+
       $('#button-forbid-buy').on('click', function(){
-          
+
           alert('You must login before');
-          
+
      });
   },
-  
-  
+
+
   confirmCustomer: function() {
       $('#button-confirm-buy').on('click', function(){
-         
-    
+
+
            checkout.MainCase(9);
-       
+
       });
-      
+
   },
-  
+
   shippingAddressSave: function() {
-      
+
       var address = $('#shipping-address-input :input');
       checkout.data.url = 'index.php?route=checkout/shipping_address_1/save';
       checkout.data.id = null;
@@ -351,11 +351,11 @@ var checkout = {
       checkout.data.redirect = true;
       checkout.data.progress = null;
       checkout.ajaxJson(checkout.data.url, checkout.data.value, 10, checkout.data.id, checkout.data.progress, checkout.data.redirect);
-      
+
   },
-  
+
   shippingMethodSave: function() {
-      
+
       var address = $('#select-shipping-method :selected').val();
       checkout.data.url = 'index.php?route=checkout/shipping_method_1/save';
       checkout.data.id = null;
@@ -364,9 +364,9 @@ var checkout = {
       checkout.data.progress = null;
       checkout.ajaxJson(checkout.data.url, checkout.data.value, 11, checkout.data.id, checkout.data.progress, checkout.data.redirect);
   },
-  
+
   paymentMethodSave: function() {
-      
+
       var method = $('#select-payment-method :selected').val();
       checkout.data.url = 'index.php?route=checkout/payment_method_1/save';
       checkout.data.id = null;
@@ -375,17 +375,17 @@ var checkout = {
       checkout.data.progress = null;
       checkout.ajaxJson(checkout.data.url, checkout.data.value, null, checkout.data.id, checkout.data.progress, checkout.data.redirect);
   },
-  
-  
+
+
   confirmEasyCustomer: function() {
-      
+
       $('#button-confirm-easy-buy').on('click', function() {
           alert('Easy confirm');
       });
   },
-  
+
   redirect: function() {
-      
+
       location = checkout.data.path;
   },
 
@@ -456,23 +456,23 @@ var checkout = {
        checkout.data.id = '#for-shipping-address';
        checkout.ajaxHtml(checkout.data.url, 7, checkout.data.id);
   },
-  
+
   paymentMethod: function() {
 
        checkout.data.url = 'index.php?route=checkout/payment_method_1';
        checkout.data.id = '#for-payment-method';
        checkout.ajaxHtml(checkout.data.url, 8, checkout.data.id);
   },
-  
-  
+
+
 
   changeShippingMethod: function() {
 
       $('#for-shipping-method').on('change', function() {
       var value = $( "#select-shipping-method").val();
-      
+
       value = value.substr(0, value.indexOf('.') === -1 ? value.length : value.indexOf('.'));
-      
+
             checkout.data.url = 'index.php?route=checkout/shipping_address_1/change';
             checkout.data.id = '#for-shipping-address';
             checkout.data.value = { "shipping_method" : value };
@@ -492,14 +492,14 @@ var checkout = {
 
 
   },
-  
+
   showField: function() {
 
           $('#for-shipping-method').show();
           $('#for-shipping-address').show();
           $('#for-confirm-button').show();
           $('#for-payment-method').show();
- 
+
   },
 
   hiddenField: function() {
@@ -537,7 +537,7 @@ var checkout = {
 
       $(id).html(html);
   },
-  
+
     ajaxChange: function(url, data, callback, id, progress, redirect) {
 
       var url, data, callback, id, progress, redirect;
@@ -571,8 +571,8 @@ var checkout = {
 
                              checkout.MainCase(callback);
                          }
-                         
-                         
+
+
                         if (json['redirect'] && redirect) {
                            checkout.data.path = json['redirect'];
                            checkout.redirect();
@@ -643,9 +643,9 @@ var checkout = {
 
                             checkout.showHtml(id, json);
                          }
-                         
+
                          if (json['error']) {
-                             
+
                              checkout.data.error = json['error'];
                              alert(checkout.data.error);
 
@@ -655,7 +655,7 @@ var checkout = {
                                 checkout.MainCase(callback);
                              }
                          }
-                         
+
                         if (json['redirect'] && redirect) {
                            checkout.data.path = json['redirect'];
                            checkout.redirect();

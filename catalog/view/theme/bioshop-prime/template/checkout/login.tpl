@@ -72,9 +72,9 @@
                   <div id ="register-done"></div>
               </div>
               <div class="tab-pane" id="old-customer">
-                 <div class="form-group">
+                 <div class="form-group ">
                       <label class="col-sm-2 control-label" for="input-email"><span data-toggle="tooltip" title="Эл.почта">Эл.почта</span></label>
-                      <div class="col-sm-10">
+                      <div class="col-sm-10 form-group_login">
                           <input type="text" name="email" value="" placeholder="" id="input-email" class="form-control" />
                       </div>
                   </div>
@@ -86,11 +86,11 @@
                   </div>
                   <div class="form-group">
                       <div class="col-sm-10" style ="margin-top: 20px !important;">
-                         <a href="<?php echo $forgotten; ?>"><?php echo $text_forgotten; ?></a>
+                         <a id="forget_pas" href="<?php echo $forgotten; ?>"><?php echo $text_forgotten; ?></a>
                       </div>
                   </div>
                   <div class ="row" >
-                         <button type="button" style ="margin-top: 40px !important; margin-left: 25px !important" id="button-login" data-loading-text="Загрузка" class="button_red_input">Войти</button>
+                         <button type="button" style ="margin-top: 40px !important; margin-left: 25px !important" id="button-login" data-loading-text="Загрузка" class="button_red_input button_red_input_login">Войти</button>
                      </div>
               </div>
               <div class="tab-pane" id="easy-customer">
@@ -114,7 +114,7 @@
                   </div>
                   <div class ="row" >
                         <button type="button" style ="margin-top: 40px !important; margin-left: 290px !important" id="button-confirm-easy-buy" data-loading-text="Загрузка" class="button_red_input">Оформить заказ</button>
-                  </div> 
+                  </div>
               </div>
           </div>
        </div>

@@ -583,7 +583,8 @@ var checkout = {
               },
               error: function(xhr, ajaxOptions, thrownError) {
                      alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
-              }
+   
+    }
     });
 
   },
@@ -609,7 +610,8 @@ var checkout = {
            },
            error: function(xhr, ajaxOptions, thrownError) {
                 alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
-           }
+            
+    }
     });
   },
 
@@ -649,7 +651,9 @@ var checkout = {
 
                          } else {
                              
-                             checkout.MainCase(callback);
+                             if (callback !== null) {
+                                checkout.MainCase(callback);
+                             }
                          }
                          
                         if (json['redirect'] && redirect) {
@@ -661,8 +665,9 @@ var checkout = {
 
               },
               error: function(xhr, ajaxOptions, thrownError) {
-                     alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
-              }
+                   alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+            
+    }
     });
 
   }

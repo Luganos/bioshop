@@ -156,6 +156,14 @@ class ControllerCheckoutPaymentAddress1 extends Controller {
 			}
 		}
                 
+                if(!$json) {
+                    
+                  $json['success'] = 1; 
+                } else {
+                    
+                  $json['success'] = 0; 
+                }
+                
                 $json['redirect'] = $this->url->link('checkout/checkout');
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));

@@ -33,6 +33,9 @@
 <script src="catalog/view/javascript/common.js" type="text/javascript"></script>
 <script src="catalog/view/javascript/js.js" type="text/javascript"></script>
 <script src="catalog/view/javascript/maskedinput.js" type="text/javascript"></script>
+<!--<script src="catalog/view/javascript/pace.min.js" type="text/javascript"></script> Two Loader-->
+<script src="catalog/view/javascript/spin.js" type="text/javascript"></script>
+<!--<script data-pace-options='{ "ajax": false }' src='pace.js'></script>-->
 <?php foreach ($links as $link) { ?>
 <link href="<?php echo $link['href']; ?>" rel="<?php echo $link['rel']; ?>" />
 <?php } ?>
@@ -44,6 +47,7 @@
 <?php } ?>
 </head>
 <body>
+<div id="loader"></div>
 <div>
   <a class="idTop"><img src='catalog/view/theme/bioshop-prime/image/to_up.png'/></a>
 </div>

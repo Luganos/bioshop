@@ -757,15 +757,10 @@ var checkout = {
                },
               success: function(json) {
 
-
-                        if(id !== null) {
-
-                            checkout.showHtml(id, json);
-                         }
-
                          if (json['error']) {
 
                              checkout.data.error = json['error'];
+                             alert(checkout.data.error);
 
                          } else {
 

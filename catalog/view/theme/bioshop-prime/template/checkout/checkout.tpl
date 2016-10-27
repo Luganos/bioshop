@@ -35,7 +35,9 @@
                       <label class="col-sm-2 control-label" for="input-firstname"><span data-toggle="tooltip" title="Имя и фамилия">Имя и фамилия</span></label>
                       <div class="col-sm-12 checkout_login_input">
                           <input type="text" name="firstname" value="" placeholder="Иван Иванов " id="input-firstname" class="form-control" />
+                          <span id="input_error_name">55</span>
                       </div>
+
                   </div>
                   <div class="form-group required">
                       <label class="col-sm-2 control-label" for="input-email"><span data-toggle="tooltip" title="Эл.почта">Эл.почта</span></label>
@@ -701,6 +703,8 @@ var checkout = {
               error: function(xhr, ajaxOptions, thrownError) {
                      alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 
+
+
     }
     });
 
@@ -761,6 +765,29 @@ var checkout = {
 
                              checkout.data.error = json['error'];
                              alert(checkout.data.error);
+                             console.log("777");
+                             console.log(json['error']['firstname']);
+                             if(json['error']['email']){
+                              $('input[name=\'email\']').parent().addClass('has-error');}
+                             if(json['error']['firstname']){
+                              $('input[name=\'firstname\']').parent().addClass('has-error');
+                              $('#input_error_name').html(json['error']['firstname']);
+                              };
+                              if(json['error']['telephone']){
+                                $('input[name=\'telephone\']').parent().addClass('has-error');
+                              }
+                              if(json['error']['city']){
+                                $('input[name=\'city\']').parent().addClass('has-error');
+                              }
+                              if(json['error']['address_1']){
+                                $('input[name=\'address_1\']').parent().addClass('has-error');
+                              }
+                               if(json['error']['password']){
+                                $('input[name=\'password\']').parent().addClass('has-error');
+                              }
+
+
+
 
                          } else {
 

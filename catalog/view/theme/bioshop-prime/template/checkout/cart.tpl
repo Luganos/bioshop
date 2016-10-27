@@ -31,7 +31,7 @@
     <div id="content" class="<?php echo $class; ?> content_cart"><?php echo $content_top; ?>
       <h1 class="cart_big_text_header"><?php echo $heading_title; ?>
       </h1>
-      <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
+      <form id="send_col_product_big_cart" action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
         <div class="table-responsive">
           <table class="table table-bordered">
             <thead class="cart_table_line">
@@ -70,10 +70,10 @@
                   <?php } ?></td>
                 <td class="text-left text_left_text"><?php echo $product['model']; ?></td>
                 <td class="text-left text_left_cart_col"><div class="input-group btn-block input-group_cart" style="max-width: 120px;">
-                    <input type="number" name="quantity[<?php echo $product['cart_id']; ?>]" value="<?php echo $product['quantity']; ?>" size="1" class="form-control" />
+                    <input id="refresh_input_cart" type="number" autofocus name="quantity[<?php echo $product['cart_id']; ?>]" value="<?php echo $product['quantity']; ?>" size="1" class="form-control" />
                     <span class="input-group-btn">
-                    <button type="submit" data-toggle="tooltip" title="<?php echo $button_update; ?>" class="btn btn-primary button_remove_top"></button>
-                    <button type="submit" data-toggle="tooltip" title="<?php echo $button_update; ?>" class="btn btn-primary button_remove_buttom"></button>
+                    <!--<button type="submit" data-toggle="tooltip" title="<?php echo $button_update; ?>" class="btn btn-primary button_remove_top"></button>
+                    <button type="submit" data-toggle="tooltip" title="<?php echo $button_update; ?>" class="btn btn-primary button_remove_buttom"></button>-->
                     <button type="button" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger cart_del" onclick="cart.remove('<?php echo $product['cart_id']; ?>');"><i class="fa fa-times-circle"></i></button></span></div></td>
                 <td class="text-right text_right_cart"><?php echo $product['price']; ?></td>
                 <td class="text-right text_right_cart text_right_cart_end"><?php echo $product['total']; ?></td>

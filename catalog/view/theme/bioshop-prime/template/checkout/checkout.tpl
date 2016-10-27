@@ -137,7 +137,7 @@
       <div id ="for-payment-address" style ="display: none"></div>
       <div id ="for-shipping-method" style ="display: none">
           <h1 class="checkout_login_h1">Доставка</h1>
-          <p class="control-label">Способ доставки</p>
+          <p class="control-label ">Способ доставки</p>
            <div class="form-group">
                <div class="col-sm-12 checkout_address_deliveri">
                    <input type="text" name="shipping_method" value="" placeholder="" class="form-control" />
@@ -270,7 +270,7 @@ var checkout = {
 
              //Load shipping address
              case 6:
-                 
+
                    checkout.shippingAddress();
 
              break;
@@ -286,13 +286,13 @@ var checkout = {
              //Hook action after change field
              case 8:
                     if (checkout.data.logged) {
-                        
+
                         checkout.changeShippingMethod();
                     }
                     
                     checkout.confirmEasyCustomer();
                     checkout.forbiddenBuy();
-                        
+
              break;
 
              //Confirm buy button is pushed
@@ -313,20 +313,21 @@ var checkout = {
                     checkout.paymentMethodSave();
 
              break;
-             
+
             case 12:
-            
+
                    checkout.confirmBuy();
-            
+
             break;
+
             
             //Wait for shipping
             case 13:
-            
+
                   alert('Please wait');
-            
+
             break;
-            
+           
             //Wait for guest shipping
             /*case 14:
             
@@ -354,14 +355,12 @@ var checkout = {
                   checkout.guestSuccess();
             
             break;
-            
-            
-            
-            
+
              default: break;
 
       }
   },
+
   
   guestSave: function() {
       
@@ -399,16 +398,17 @@ var checkout = {
       
   },
   
+
   savePaymentMethodFirst: function () {
-      
+
       checkout.data.url = 'index.php?route=checkout/payment_method_1/save';
       checkout.data.id = null;
       checkout.data.value = { "payment_method": checkout.data.payment_method };
       checkout.data.redirect = true;
       checkout.data.progress = null;
       checkout.ajaxJson(checkout.data.url, checkout.data.value, 8, checkout.data.id, checkout.data.progress, checkout.data.redirect);
-      
-      
+
+
   },
 
   createConfirmButton: function() {
@@ -421,13 +421,13 @@ var checkout = {
       checkout.showHtml(id, html);
 
   },
-                                                            
-  collectData: function() { 
-      
+
+  collectData: function() {
+
       checkout.data.shipping_address = $('#shipping-address-input :input');
       checkout.data.shipping_method = $('#select-shipping-method :selected').val();
       checkout.data.payment_method = $('#select-payment-method :selected').val();
-  },                                                          
+  },
 
   forbiddenBuy: function() {
 
@@ -580,23 +580,23 @@ var checkout = {
       $('#for-shipping-method').on('change', function() {
 
             checkout.collectData();
-            
+
             var value = checkout.data.shipping_method;
-            
+
             value = value.substr(0, value.indexOf('.') === -1 ? value.length : value.indexOf('.'));
-            
+
             checkout.data.url = 'index.php?route=checkout/shipping_address_1/change';
             checkout.data.id = '#for-shipping-address';
             checkout.data.value = { "shipping_method" : value };
             checkout.data.progress = null;
-            checkout.ajaxChange(checkout.data.url, checkout.data.value, null, checkout.data.id, checkout.data.progress);       
+            checkout.ajaxChange(checkout.data.url, checkout.data.value, null, checkout.data.id, checkout.data.progress);
 
      });
   },
-  
-  
+
+
   confirmBuy: function() {
-      
+
        checkout.data.url = 'index.php?route=checkout/confirm_1/index';;
        checkout.data.id = '#for-confirm-button';
        checkout.ajaxHtml(checkout.data.url, 13, checkout.data.id);
@@ -706,7 +706,7 @@ var checkout = {
               },
               error: function(xhr, ajaxOptions, thrownError) {
                      alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
-   
+
     }
     });
 
@@ -735,7 +735,7 @@ var checkout = {
            },
            error: function(xhr, ajaxOptions, thrownError) {
                 alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
-            
+
     }
     });
   },
@@ -774,7 +774,7 @@ var checkout = {
                              checkout.data.error = json['error'];
 
                          } else {
-                             
+
                              if (callback !== null) {
                                 checkout.MainCase(callback);
                              }
@@ -790,7 +790,7 @@ var checkout = {
               },
               error: function(xhr, ajaxOptions, thrownError) {
                    alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
-            
+
     }
     });
 

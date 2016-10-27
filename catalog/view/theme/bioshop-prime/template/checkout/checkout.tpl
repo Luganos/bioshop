@@ -648,9 +648,10 @@ var checkout = {
 
   },
   
-  showError: function() {
+  showError: function(id, error) {
       
-      
+      alert(id);
+      alert(error.address_2);
   },
 
   showHtml: function(id, html) {

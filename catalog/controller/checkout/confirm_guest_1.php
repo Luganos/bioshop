@@ -1,5 +1,5 @@
 <?php
-class ControllerCheckoutConfirm1 extends Controller {
+class ControllerCheckoutConfirmGuest1 extends Controller {
 	public function index() {
 		$redirect = '';
 
@@ -406,17 +406,24 @@ class ControllerCheckoutConfirm1 extends Controller {
 				);
 			}
 
-			$data['payment'] = $this->load->controller('payment/' . $this->session->data['payment_method']['code']);
 		} else {
 			$data['redirect'] = $redirect;
 		}
-
-		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/checkout/confirm.tpl')) {
-			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/checkout/confirm.tpl', $data));
-		} else {
-			$this->response->setOutput($this->load->view('default/template/checkout/confirm.tpl', $data));
-		}
                 
+                
+                if (!$redirect) {
+                    
+                    $json['success'] = 1;
+                } else {
+                    
+                   $json['redirect'] = $redirect; 
+                   $json['success'] = 0;
+                }
+                
+                
+                $this->response->addHeader('Content-Type: application/json');
+		$this->response->setOutput(json_encode($json));
+          
 	}
-        
+
 }

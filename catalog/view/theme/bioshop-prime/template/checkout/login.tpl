@@ -57,7 +57,7 @@
                           <input type="password" name="confirm" value="" placeholder="" id="input-email" class="form-control" />
                       </div>
                   </div>
-                  <input type="hidden" name="lastname"  value="Не указано" placeholder="" id="input-lastname" class="form-control" />
+                  <input type="hidden" name="lastname"  value="" placeholder="" id="input-lastname" class="form-control" />
                   <input type="hidden" name="address_2"  value="" placeholder="" id="input-lastname" class="form-control" />
                   <input type="hidden" name="customer_group_id"  value="<?php echo $customer_group_id; ?>" placeholder="" id="input-customer_group_id" class="form-control" />
                   <input type="hidden" name="country_id"  value="<?php echo $country_id; ?>" placeholder="" id="input-country_id" class="form-control" />

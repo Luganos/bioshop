@@ -368,7 +368,7 @@ var checkout = {
          checkout.data.id = null;
          checkout.data.value = $('#easy-customer :input');
          checkout.data.redirect = true;
-         checkout.data.progress = '#button-confirm-easy-buy';
+         checkout.data.progress = null;
          checkout.ajaxJson(checkout.data.url, checkout.data.value, 15, checkout.data.id, checkout.data.progress, checkout.data.redirect);
       
       
@@ -380,7 +380,7 @@ var checkout = {
          checkout.data.id = null;
          checkout.data.value = null;
          checkout.data.redirect = true;
-         checkout.data.progress = '#button-confirm-easy-buy';
+         checkout.data.progress = null;
          checkout.ajaxJson(checkout.data.url, checkout.data.value, 16, checkout.data.id, checkout.data.progress, checkout.data.redirect);
       
       
@@ -388,14 +388,8 @@ var checkout = {
   
   guestSuccess: function() {
       
-         checkout.data.url = 'index.php?route=checkout/success_guest_1';
-         checkout.data.id = null;
-         checkout.data.value = null;
-         checkout.data.redirect = true;
-         checkout.data.progress = '#button-confirm-easy-buy';
-         checkout.ajaxJson(checkout.data.url, checkout.data.value, null, checkout.data.id, checkout.data.progress, checkout.data.redirect);
-      
-      
+        window.location.href = 'index.php?route=checkout/success_guest_1';
+
   },
   
 

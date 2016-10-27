@@ -1132,6 +1132,7 @@ header{
         background-image: none;
         border-color: transparent;
         border:0px;
+        z-index: 10 !important;
     }
     .button_remove_buttom{
         position: absolute;
@@ -1144,6 +1145,10 @@ header{
         background-image: none;
         border-color: transparent;
         border:0px;
+    }
+    #spin{
+        line-height: 58px !important;
+        z-index: 8 !important;
     }
     .text_right_cart{
         width: 150px;
@@ -1279,6 +1284,11 @@ header{
         text-transform: uppercase;
         margin-bottom: 60px;
     }
+    #spin {
+    color: red !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    }
 
 }
 
@@ -1361,7 +1371,7 @@ header{
         position: absolute;
         right: 26px;
         bottom: 10px;
-        padding: 5px;
+        padding: 10px;
         background-color: transparent !important;
         background-image: none;
         border-color: transparent;
@@ -1972,6 +1982,15 @@ header{
     }
     #button-confirm-easy-buy{
         width: 205px;
+    }
+    #select-shipping-method{
+        width: 460px;
+    }
+    #select-payment-method{
+        width: 460px;
+    }
+    #select-shipping-address{
+        width: 460px;
     }
 
     }

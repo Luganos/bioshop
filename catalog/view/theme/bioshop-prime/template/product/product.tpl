@@ -329,7 +329,7 @@
           </div>
       <?php if ($products) { ?>
       <h3 class="product_h3"><?php echo $text_related; ?></h3>
-      <div class="row">
+      <div class="row product_slider">
         <?php $i = 0; ?>
         <div id="srcoll" class="sl" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
         <?php foreach ($products as $product) { ?>
@@ -556,6 +556,14 @@ $('#button-review').on('click', function() {
 		}
 	});
 });
+
+var width = document.documentElement.clientWidth;
+
+    if(width < 1280){
+
+    teg = document.getElementById('srcoll');
+    teg.setAttribute('data-slick','{"slidesToShow": 3, "slidesToScroll": 3}')
+}
 
 $(document).ready(function() {
 	$('.thumbnails').magnificPopup({

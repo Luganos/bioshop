@@ -97,7 +97,7 @@
                  <div class="form-group">
                       <label class="col-sm-2 control-label" for="input-email"><span data-toggle="tooltip" title="Эл.почта">Эл.почта</span></label>
                       <div class="col-sm-10">
-                          <input type="text" name="email" value="" placeholder="" id="input-email" class="form-control" />
+                          <input type="text" name="email" value="" placeholder="bioshop@i.ua" id="input-email" class="form-control" />
                       </div>
                   </div>
                   <div class="form-group">
@@ -109,7 +109,7 @@
                   <div class="form-group">
                       <label class="col-sm-2 control-label" for="input-phone"><span data-toggle="tooltip" title="Телефон">Телефон</span></label>
                       <div class="col-sm-10">
-                          <input type="text" name="phone" value="" placeholder="" id="input-phone" class="form-control" />
+                          <input id="phone" type="text" name="phone" value="" placeholder="067-1234-567"  class="form-control" />
                       </div>
                   </div>
                   <div class ="row" >

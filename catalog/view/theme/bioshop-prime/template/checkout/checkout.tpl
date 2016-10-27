@@ -124,7 +124,7 @@
                   <div class="form-group">
                       <label class="col-sm-2 control-label" for="input-phone"><span data-toggle="tooltip" title="Телефон">Телефон</span></label>
                       <div class="col-sm-10">
-                          <input type="text" name="phone" value="" placeholder="" id="input-phone" class="form-control" />
+                          <input type="text" name="phone" value="" placeholder="" id="phone" class="form-control" />
                       </div>
                   </div>
                   <div class ="row" >
@@ -289,7 +289,7 @@ var checkout = {
 
                         checkout.changeShippingMethod();
                     }
-                    
+
                     checkout.confirmEasyCustomer();
                     checkout.forbiddenBuy();
 
@@ -320,40 +320,40 @@ var checkout = {
 
             break;
 
-            
+
             //Wait for shipping
             case 13:
 
                   alert('Please wait');
 
             break;
-           
+
             //Wait for guest shipping
             /*case 14:
-            
+
                   alert('Please wait');
-            
+
             break;*/
-            
+
             //Guest shipping start
             case 14:
-            
+
                   checkout.guestSave();
-            
+
             break;
-            
+
             //Guest confirm
             case 15:
-            
+
                   checkout.guestConfirm();
-            
+
             break;
-            
+
             //Guest success
             case 16:
-            
+
                   checkout.guestSuccess();
-            
+
             break;
 
              default: break;
@@ -361,37 +361,37 @@ var checkout = {
       }
   },
 
-  
+
   guestSave: function() {
-      
+
          checkout.data.url = 'index.php?route=checkout/guest_1/save';
          checkout.data.id = '#easy-customer';
          checkout.data.value = $('#easy-customer :input');
          checkout.data.redirect = true;
          checkout.data.progress = null;
          checkout.ajaxJson(checkout.data.url, checkout.data.value, 15, checkout.data.id, checkout.data.progress, checkout.data.redirect);
-      
-      
+
+
   },
-  
+
   guestConfirm: function() {
-      
+
          checkout.data.url = 'index.php?route=checkout/confirm_guest_1';
          checkout.data.id = null;
          checkout.data.value = null;
          checkout.data.redirect = true;
          checkout.data.progress = null;
          checkout.ajaxJson(checkout.data.url, checkout.data.value, 16, checkout.data.id, checkout.data.progress, checkout.data.redirect);
-      
-      
+
+
   },
-  
+
   guestSuccess: function() {
-      
+
         window.location.href = 'index.php?route=checkout/success_guest_1';
 
   },
-  
+
 
   savePaymentMethodFirst: function () {
 
@@ -478,9 +478,9 @@ var checkout = {
   confirmEasyCustomer: function() {
 
       $('#button-confirm-easy-buy').on('click', function() {
-          
+
             checkout.MainCase(14);
-          
+
       });
   },
 

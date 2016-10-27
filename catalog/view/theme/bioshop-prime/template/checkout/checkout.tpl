@@ -365,7 +365,7 @@ var checkout = {
   guestSave: function() {
       
          checkout.data.url = 'index.php?route=checkout/guest_1/save';
-         checkout.data.id = null;
+         checkout.data.id = '#easy-customer';
          checkout.data.value = $('#easy-customer :input');
          checkout.data.redirect = true;
          checkout.data.progress = null;
@@ -396,7 +396,7 @@ var checkout = {
   savePaymentMethodFirst: function () {
 
       checkout.data.url = 'index.php?route=checkout/payment_method_1/save';
-      checkout.data.id = null;
+      checkout.data.id = '#select-payment-method';
       checkout.data.value = { "payment_method": checkout.data.payment_method };
       checkout.data.redirect = true;
       checkout.data.progress = null;
@@ -446,7 +446,7 @@ var checkout = {
   shippingAddressSave: function() {
 
       checkout.data.url = 'index.php?route=checkout/shipping_address_1/save';
-      checkout.data.id = null;
+      checkout.data.id = '#select-shipping-address';
       checkout.data.value = checkout.data.shipping_address;
       checkout.data.redirect = true;
       checkout.data.progress = null;
@@ -457,7 +457,7 @@ var checkout = {
   shippingMethodSave: function() {
 
       checkout.data.url = 'index.php?route=checkout/shipping_method_1/save';
-      checkout.data.id = null;
+      checkout.data.id = '#select-shipping-method';
       checkout.data.value = { "shipping_method": checkout.data.shipping_method };
       checkout.data.redirect = true;
       checkout.data.progress = null;
@@ -467,7 +467,7 @@ var checkout = {
   paymentMethodSave: function() {
 
       checkout.data.url = 'index.php?route=checkout/payment_method_1/save';
-      checkout.data.id = null;
+      checkout.data.id = '#select-payment-method';
       checkout.data.value = { "payment_method": checkout.data.payment_method};
       checkout.data.redirect = true;
       checkout.data.progress = null;
@@ -521,7 +521,7 @@ var checkout = {
         $('#button-login').on('click', function() {
 
             checkout.data.url = 'index.php?route=checkout/login_1/save';
-            checkout.data.id = '#login-done';
+            checkout.data.id = '#old-customer';
             checkout.data.value = $('#old-customer :input');
             checkout.data.progress = '#button-login';
             checkout.ajaxJson(checkout.data.url, checkout.data.value, 1, checkout.data.id, checkout.data.progress, checkout.data.redirect);
@@ -534,7 +534,7 @@ var checkout = {
         $('#button-register').on('click', function() {
 
             checkout.data.url = 'index.php?route=checkout/register_1/save';
-            checkout.data.id = '#register-done';
+            checkout.data.id = '#new-customer';
             checkout.data.value = $('#new-customer :input');
             checkout.data.progress = '#button-register';
             checkout.ajaxJson(checkout.data.url, checkout.data.value, 1, checkout.data.id, checkout.data.progress);
@@ -646,6 +646,11 @@ var checkout = {
 
       });
 
+  },
+  
+  showError: function() {
+      
+      
   },
 
   showHtml: function(id, html) {
@@ -760,7 +765,8 @@ var checkout = {
                          if (json['error']) {
 
                              checkout.data.error = json['error'];
-                             alert(checkout.data.error);
+                             
+                             checkout.showError(id, checkout.data.error);
 
                          } else {
 

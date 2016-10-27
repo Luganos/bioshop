@@ -16,7 +16,7 @@
 <p class="control-label">Способ оплаты</p>
 <div class="form-group">
     <div class="col-sm-12 checkout_address_deliveri">
-        <input type="text" name="payment_method" value="" placeholder=""  class="form-control" />
+        <input type="text" name="payment_method" value="" placeholder=""  id ="select-payment-method" class="form-control" />
     </div>
 </div>
 <?php } ?>

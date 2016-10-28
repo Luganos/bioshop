@@ -15,7 +15,7 @@
                       </div>
                   </div>
                   <div class="form-group required">
-                      <label class="col-sm-2 control-label" for="input-email"><span data-toggle="tooltip" title="Эл.почта">Эл.почта6</span></label>
+                      <label class="col-sm-2 control-label" for="input-email"><span data-toggle="tooltip" title="Эл.почта">Эл.почта</span></label>
                       <div class="col-sm-12 checkout_login_input">
                           <input type="text" name="email" value="" placeholder="bioshop@ua.com" id="input-email" class="form-control" />
                           <span id="input_error_email"></span>
@@ -79,7 +79,7 @@
               </div>
               <div class="tab-pane" id="old-customer">
                  <div class="form-group ">
-                      <label class="col-sm-2 control-label" for="input-email"><span data-toggle="tooltip" title="Эл.почта">Эл.почта4</span></label>
+                      <label class="col-sm-2 control-label" for="input-email"><span data-toggle="tooltip" title="Эл.почта">Эл.почта</span></label>
                       <div class="col-sm-10 form-group_login">
                           <input type="text" name="email" value="" placeholder="" id="input-email" class="form-control" />
                           <span id="input_error_email"></span>
@@ -102,7 +102,7 @@
               </div>
               <div class="tab-pane" id="easy-customer">
                  <div class="form-group">
-                      <label class="col-sm-2 control-label" for="input-email"><span data-toggle="tooltip" title="Эл.почта">Эл.почта5</span></label>
+                      <label class="col-sm-2 control-label" for="input-email"><span data-toggle="tooltip" title="Эл.почта">Эл.почта</span></label>
                       <div class="col-sm-10">
                           <input type="text" name="email" value="" placeholder="bioshop@i.ua" id="input-email" class="form-control" />
                           <span  class="input_error_email"></span>

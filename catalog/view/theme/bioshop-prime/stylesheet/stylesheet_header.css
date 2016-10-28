@@ -1860,7 +1860,7 @@ textarea {
   width: 100%;
 }
 .you_order_cart_del {
-  left: 180px;
+  left: 240px;
   bottom: 20px;
 }
 .you_order_form-control {
@@ -1878,9 +1878,9 @@ textarea {
 }
 .you_order_all {
   display: inline;
-  position: relative;
-  left: 150px;
-  bottom: 35px;
+  position: absolute;
+  left: 220px;
+  bottom: 37px;
   font-size: 18px;
   font-weight: bold;
   color: black;
@@ -1936,6 +1936,10 @@ textarea {
 @media (min-width: 1280px) {
   h5 {
     width: 120px;
+    position: absolute !important;
+    top: 125px !important;
+    left: 280px !important;
+    color: #999999;
   }
   #loggin-by-social-network {
     display: inline;
@@ -1946,8 +1950,21 @@ textarea {
     width: 10px !important;
     display: none !important;
   }
+  #branding a {
+    width: 10px !important;
+    height: 0px !important;
+    display: none !important;
+  }
   .plugin_title {
     color: red !important;
+  }
+  #social_login {
+    width: 220px;
+  }
+  #show-social-login {
+    position: absolute !important;
+    top: 97px !important;
+    left: 350px !important;
   }
 }
 @media (max-width: 1279px) {

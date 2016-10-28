@@ -14,28 +14,57 @@
     <button type="button" class="close" data-dismiss="alert">&times;</button>
   </div>
   <?php } ?>
-    <div id="content" class="col-sm-12">
-      <h1 class="cart_big_text_header"><?php echo $heading_title; ?>
+    <div id="content" class="col-sx-12 col-sm-6 ">
+      <h1 class="checkout_login_h1">Ваш заказ
       </h1>
       <form id="send_col_product_big_cart" action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
         <div class="table-responsive">
-          <table class="table table-bordered">
-            <thead class="cart_table_line">
+          <table class="table table-bordered checkout_cart_table-bordered">
+            <!--<thead class="cart_table_line">
               <tr>
-                <td class="text-center text_center_one"><?php echo $column_image; ?></td>
+                <td class="text-center text_center_one">5<?php echo $column_image; ?></td>
                 <td class="text-left "><?php echo $column_name; ?></td>
                 <td class="text-left  "><?php echo $column_model; ?></td>
                 <td class="text-left "><?php echo $column_quantity; ?></td>
                 <td class="text-right text_cart_center"><?php echo $column_price; ?></td>
                 <td class="text-right text_cart_center"><?php echo $column_total; ?></td>
               </tr>
-            </thead>
+            </thead>-->
             <tbody>
               <?php foreach ($products as $product) { ?>
+              <div class="you_order clearfix">
+                <div class="you_order_img">
+                  <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-thumbnail" /></a>
+                </div>
+                <div class="you_order_inform">
+                  <div class="you_order_inform_descroptoin">
+                    <a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
+                  <?php if (!$product['stock']) { ?>
+                  <span class="text-danger">***</span>
+                  <?php } ?>
+                  <?php if ($product['option']) { ?>
+                  <?php foreach ($product['option'] as $option) { ?>
+                  <br />
+                  <small><?php echo $option['name']; ?>: <?php echo $option['value']; ?></small>
+                  <?php } ?>
+                  <?php } ?>
+                  <?php if ($product['reward']) { ?>
+                  <br />
+                  <small><?php echo $product['reward']; ?></small>
+                  <?php } ?>
+                  <?php if ($product['recurring']) { ?>
+                  <br />
+                  <span class="label label-info"><?php echo $text_recurring_item; ?></span> <small><?php echo $product['recurring']; ?></small>
+                  <?php } ?>
+                  </div>
+                </div>
+                <div class="clear"></div>
+              </div>
               <tr class="xxxx">
                 <td class="text-center text_center_img"><?php if ($product['thumb']) { ?>
                   <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-thumbnail" /></a>
                   <?php } ?></td>
+                  <p>55456</p>
                 <td class="text-left text_left_text "><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
                   <?php if (!$product['stock']) { ?>
                   <span class="text-danger">***</span>

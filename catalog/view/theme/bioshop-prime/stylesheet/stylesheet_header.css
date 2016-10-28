@@ -2180,5 +2180,8 @@ width: 300px;
   }
 }
 /*-----END_Loading------*/
+.show_text_under:after {
+  content: "test";
+}
 
 /* This beautiful CSS-File has been crafted with LESS (lesscss.org) and compiled by simpLESS (wearekiss.com/simpless) */

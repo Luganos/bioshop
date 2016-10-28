@@ -20,16 +20,6 @@
       <form id="send_col_product_big_cart" action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
         <div class="table-responsive">
           <table class="table table-bordered checkout_cart_table-bordered">
-            <!--<thead class="cart_table_line">
-              <tr>
-                <td class="text-center text_center_one">5<?php echo $column_image; ?></td>
-                <td class="text-left "><?php echo $column_name; ?></td>
-                <td class="text-left  "><?php echo $column_model; ?></td>
-                <td class="text-left "><?php echo $column_quantity; ?></td>
-                <td class="text-right text_cart_center"><?php echo $column_price; ?></td>
-                <td class="text-right text_cart_center"><?php echo $column_total; ?></td>
-              </tr>
-            </thead>-->
             <tbody>
               <?php foreach ($products as $product) { ?>
               <div class="you_order clearfix">
@@ -90,7 +80,6 @@
       </form>
       <?php if ($coupon || $voucher || $reward || $shipping) { ?>
       <div class="panel-group checkout_cart_panel-group" >
-      <!--<p class="cart_p">применить промо-код</p>-->
       <div class="checkout_cart_coupon_and_certificat">
       <form action="">
         <p>купон</p>
@@ -106,7 +95,6 @@
       <br />
       <div class="row row_cart">
         <div class="col-lg-6 col-sm-4 cart_sum checkout_cart_cart_sum">
-       <!-- <p>общая сумма</p>-->
           <table class="table table-bordered">
             <?php foreach ($totals as $total) { ?>
             <tr>
@@ -116,9 +104,6 @@
             <?php } ?>
           </table>
         </div>
-        <!--<div class="buttons">
-        <div class="pull-right button"><a href="<?php echo $checkout; ?>" class=""><?php echo $button_checkout; ?></a></div>
-      </div>-->
     </div>
    </div>
  </div>

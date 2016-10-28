@@ -44,55 +44,33 @@
                   <?php } ?>
                   <?php if ($product['option']) { ?>
                   <?php foreach ($product['option'] as $option) { ?>
-                  <br />
                   <small><?php echo $option['name']; ?>: <?php echo $option['value']; ?></small>
                   <?php } ?>
                   <?php } ?>
                   <?php if ($product['reward']) { ?>
-                  <br />
                   <small><?php echo $product['reward']; ?></small>
                   <?php } ?>
                   <?php if ($product['recurring']) { ?>
-                  <br />
                   <span class="label label-info"><?php echo $text_recurring_item; ?></span> <small><?php echo $product['recurring']; ?></small>
                   <?php } ?>
+                  </div>
+                  <div class="you_order_inform_col_and_sum">
+                    <div class="text-left text_left_cart_col you_order_text_left_cart_col">
+                      <div class="input-group btn-block input-group_cart" style="max-width: 120px;">
+                          <input id="refresh_input_cart" type="number" autofocus name="quantity[<?php echo $product['cart_id']; ?>]" value="<?php echo $product['quantity']; ?>" size="1" class="form-control you_order_form-control" />
+                          <span class="you_order_price"><?php echo $product['price']; ?></span>
+                          <span class="you_order_all"><?php echo $product['total']; ?></span>
+                          <span class="input-group-btn">
+                            <button type="button" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger cart_del you_order_cart_del" onclick="cart.remove('<?php echo $product['cart_id']; ?>');">
+                              <i class="fa fa-times-circle"></i>
+                            </button>
+                          </span>
+                        </div>
+                      </div>
                   </div>
                 </div>
                 <div class="clear"></div>
               </div>
-              <tr class="xxxx">
-                <td class="text-center text_center_img"><?php if ($product['thumb']) { ?>
-                  <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-thumbnail" /></a>
-                  <?php } ?></td>
-                  <p>55456</p>
-                <td class="text-left text_left_text "><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
-                  <?php if (!$product['stock']) { ?>
-                  <span class="text-danger">***</span>
-                  <?php } ?>
-                  <?php if ($product['option']) { ?>
-                  <?php foreach ($product['option'] as $option) { ?>
-                  <br />
-                  <small><?php echo $option['name']; ?>: <?php echo $option['value']; ?></small>
-                  <?php } ?>
-                  <?php } ?>
-                  <?php if ($product['reward']) { ?>
-                  <br />
-                  <small><?php echo $product['reward']; ?></small>
-                  <?php } ?>
-                  <?php if ($product['recurring']) { ?>
-                  <br />
-                  <span class="label label-info"><?php echo $text_recurring_item; ?></span> <small><?php echo $product['recurring']; ?></small>
-                  <?php } ?></td>
-                <td class="text-left text_left_text"><?php echo $product['model']; ?></td>
-                <td class="text-left text_left_cart_col"><div class="input-group btn-block input-group_cart" style="max-width: 120px;">
-                    <input id="refresh_input_cart" type="number" autofocus name="quantity[<?php echo $product['cart_id']; ?>]" value="<?php echo $product['quantity']; ?>" size="1" class="form-control" />
-                    <span class="input-group-btn">
-                    <!--<button type="submit" data-toggle="tooltip" title="<?php echo $button_update; ?>" class="btn btn-primary button_remove_top"></button>
-                    <button type="submit" data-toggle="tooltip" title="<?php echo $button_update; ?>" class="btn btn-primary button_remove_buttom"></button>-->
-                    <button type="button" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger cart_del" onclick="cart.remove('<?php echo $product['cart_id']; ?>');"><i class="fa fa-times-circle"></i></button></span></div></td>
-                <td class="text-right text_right_cart"><?php echo $product['price']; ?></td>
-                <td class="text-right text_right_cart text_right_cart_end"><?php echo $product['total']; ?></td>
-              </tr>
               <?php } ?>
               <?php foreach ($vouchers as $vouchers) { ?>
               <tr>
@@ -111,8 +89,8 @@
         </div>
       </form>
       <?php if ($coupon || $voucher || $reward || $shipping) { ?>
-      <div class="panel-group" id="accordion">
-      <p class="cart_p">применить промо-код</p>
+      <div class="panel-group checkout_cart_panel-group" >
+      <!--<p class="cart_p">применить промо-код</p>-->
       <?php echo $coupon; ?>
         <div class="pull-left button_blue"><a href="<?php echo $continue; ?>" class=""><?php echo $button_shopping; ?></a></div>
       </div>
@@ -122,7 +100,7 @@
       <div class="row row_cart">
 
         <div class="col-lg-6 col-sm-4 col-sm-offset-8 cart_sum">
-        <p>общая сумма</p>
+       <!-- <p>общая сумма</p>-->
           <table class="table table-bordered">
             <?php foreach ($totals as $total) { ?>
             <tr>

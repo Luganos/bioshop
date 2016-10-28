@@ -282,6 +282,8 @@ public function calculateProduct() {
 			$data['content_bottom'] = $this->load->controller('common/content_bottom');
 			$data['footer'] = $this->load->controller('common/footer');
 			$data['header'] = $this->load->controller('common/header');
+                        
+                        $this->GetTotal();
 
 			if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/checkout/checkout_cart.tpl')) {
 				$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/checkout/checkout_cart.tpl', $data));
@@ -513,8 +515,57 @@ $json['quantity'] = $this->calculateProduct();
                         $json['quantity'] = $this->calculateProduct();
                    $json['total'] = sprintf(preg_match("/^0.0/", $this->currency->format($total))? '':  $this->currency->format($total));
 		}
-
+                
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
 	}
+        
+        public function GetTotal() {
+            
+            	        $order_data = array();
+
+			$order_data['totals'] = array();
+			$total = 0;
+			$taxes = $this->cart->getTaxes();
+
+			$this->load->model('extension/extension');
+
+			$sort_order = array();
+
+			$results = $this->model_extension_extension->getExtensions('total');
+
+			foreach ($results as $key => $value) {
+				$sort_order[$key] = $this->config->get($value['code'] . '_sort_order');
+			}
+
+			array_multisort($sort_order, SORT_ASC, $results);
+
+			foreach ($results as $result) {
+				if ($this->config->get($result['code'] . '_status')) {
+					$this->load->model('total/' . $result['code']);
+
+					$this->{'model_total_' . $result['code']}->getTotal($order_data['totals'], $total, $taxes);
+				}
+			}
+
+			$sort_order = array();
+
+			foreach ($order_data['totals'] as $key => $value) {
+				$sort_order[$key] = $value['sort_order'];
+			}
+
+			array_multisort($sort_order, SORT_ASC, $order_data['totals']);
+                        
+                       $data['totals'] = array();
+
+			foreach ($order_data['totals'] as $total) {
+				$data['totals'][] = array(
+					'title' => $total['title'],
+					'text'  => $this->currency->format($total['value']),
+				);
+			}
+            
+                        $test = $data['totals'];
+            
+        }
 }

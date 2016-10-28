@@ -177,14 +177,14 @@
 </div>
 <script type="text/javascript"><!--
  $(function(){
-     
-     
+
+
      showcart.MainCase(0);
-     
+
     //Is user login?
     <?php if (!$logged) { ?>                      //No
 
-       
+
        checkout.MainCase(0);
        checkout.data.redirect = true;
        checkout.data.logged = false;
@@ -202,57 +202,62 @@
 
 //Cart object
 var showcart = {
-    
-    data: { 
+
+    data: {
             SwitchState: 0,
             redirect: null,
             error: null,
             progress: null
     },
-    
+
     MainCase:function(step) {
 
       var step;
-      
+
       switch (step) {
-          
+
              //Start load html
-             case 0: 
+             case 0:
                      showcart.startLoad();
              break;
-             
+
              //Hook event after load
-             case 1: 
+             case 1:
                      showcart.hookEvent();
              break;
-         
+
              default:
-                
+
              break;
-          
+
       }
-        
-        
-        
+
+
+
     },
-    
+
     startLoad: function() {
-        
+
          showcart.data.url = 'index.php?route=checkout/checkout_cart';
          showcart.data.id = '.for-customer-cart';
          showcart.ajaxHtml(showcart.data.url, 1, showcart.data.id);
     },
-    
+
     hookEvent: function() {
+<<<<<<< HEAD
+
+      //  alert('Hook event');
+=======
         
       
+>>>>>>> 38a6bb6a8b92847006b5c10db2954933e4d0ff47
     },
-    
+
     showHtml: function(id, html) {
 
           $(id).html(html);
     },
-    
+
     ajaxChange: function(url, data, callback, id, progress, redirect) {
 
       var url, data, callback, id, progress, redirect;
@@ -363,7 +368,7 @@ var showcart = {
                          if (json['error']) {
 
                              showcart.data.error = json['error'];
-                            
+
                              showcart.showError(id, checkout.data.error);
 
 
@@ -388,7 +393,7 @@ var showcart = {
     }
     });
   }
-        
+
 };
 
 //Checkout object

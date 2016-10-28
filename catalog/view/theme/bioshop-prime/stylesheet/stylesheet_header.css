@@ -1,4 +1,9 @@
 /*-----Header-------*/
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 .red_button {
   width: 215px;
   height: 40px;
@@ -1823,6 +1828,29 @@ textarea {
   
 }
 /*-----END_login----*/
+/*-----checkout_cart.tpl--------*/
+.you_order {
+  border: 1px solid #e2e2e2;
+}
+.you_order_img {
+  float: left;
+  margin: 20px;
+}
+.you_order_img img {
+  min-width: 145px;
+  min-height: 145px;
+}
+.you_order_inform_descroptoin {
+  float: left;
+  width: 50%;
+}
+.you_order_inform_descroptoin a {
+  display: inline;
+}
+.you_order_inform_descroptoin small {
+  display: inline;
+}
+/*-----END_checkout_cart.tpl----*/
 /*-----END_checkout.tpl---------*/
 /*----footer-----*/
 @media (min-width: 1280px) {

@@ -3,6 +3,11 @@
 @text_blue: rgb(111,161,206);
 @cart_product_red: rgb(242,23,23);
 
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
 
 .red_button{
         width: 215px;
@@ -2005,6 +2010,32 @@ header{
     }
     /*-----END_login----*/
 
+    /*-----checkout_cart.tpl--------*/
+    .you_order{
+        border: 1px solid rgb(226,226,226);
+    }
+    .you_order_img{
+        float: left;
+        margin: 20px;
+
+    }
+    .you_order_img img{
+        min-width: 145px;
+        min-height: 145px;
+    }
+    .you_order_inform_descroptoin{
+        float: left;
+        width: 50%;
+    }
+    .you_order_inform_descroptoin a{
+        display: inline;
+    }
+    .you_order_inform_descroptoin small{
+        display: inline;
+    }
+
+
+    /*-----END_checkout_cart.tpl----*/
 
 /*-----END_checkout.tpl---------*/
 

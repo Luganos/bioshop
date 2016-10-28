@@ -40,7 +40,7 @@
 
                   </div>
                   <div class="form-group required">
-                      <label class="col-sm-2 control-label" for="input-email"><span data-toggle="tooltip" title="Эл.почта">Эл.почта</span></label>
+                      <label class="col-sm-2 control-label" for="input-email"><span data-toggle="tooltip" title="Эл.почта">Эл.почта1</span></label>
                       <div class="col-sm-12 checkout_login_input">
                           <input type="text" name="email" value="" placeholder="bioshop@ua.com" id="input-email" class="form-control" />
                       </div>
@@ -90,7 +90,7 @@
               </div>
               <div class="tab-pane" id="old-customer">
                  <div class="form-group">
-                      <label class="col-sm-2 control-label" for="input-email"><span data-toggle="tooltip" title="Эл.почта">Эл.почта</span></label>
+                      <label class="col-sm-2 control-label" for="input-email"><span data-toggle="tooltip" title="Эл.почта">Эл.почта2</span></label>
                       <div class="col-sm-10">
                           <input type="text" name="email" value="" placeholder="" id="input-email" class="form-control" />
                       </div>
@@ -112,7 +112,7 @@
               </div>
               <div class="tab-pane" id="easy-customer">
                  <div class="form-group">
-                      <label class="col-sm-2 control-label" for="input-email"><span data-toggle="tooltip" title="Эл.почта">Эл.почта</span></label>
+                      <label class="col-sm-2 control-label" for="input-email"><span data-toggle="tooltip" title="Эл.почта">Эл.почта3</span></label>
                       <div class="col-sm-10">
                           <input type="text" name="email" value="" placeholder="" id="input-email" class="form-control" />
                       </div>
@@ -844,12 +844,36 @@ var checkout = {
       });
 
   },
-  
+
   showError: function(id, error) {
-      
+
       alert(id);
       alert(error.address_2);
-  },
+      console.log(id);
+      console.log(error);
+      $('input[name=\'email\']',id).parent().addClass('has-error');
+      $('input[name=\'firstname\']',id).parent().addClass('has-error');
+      $('input[name=\'telephone\']',id).parent().addClass('has-error');
+      $('input[name=\'phone\']',id).parent().addClass('has-error');
+      $('input[name=\'city\']',id).parent().addClass('has-error');
+      $('input[name=\'address_1\']',id).parent().addClass('has-error');
+      $('input[name=\'password\']',id).parent().addClass('has-error');
+
+
+      $('#input_error_name').html(error.firstname);
+      $('#input_error_email').html(error.email);
+      $('#input_error_tel').html(error.telephone);
+      $('#input_error_city').html(error.city);
+      $('#input_error_address_1').html(error.address_1);
+      $('#input_error_password').html(error.password);
+
+      $('.input_error_email').html(error.email);
+      $('.input_error_password').html(error.password);
+      $('.input_error_tel').html(error.phone);
+
+
+
+      },
 
   showHtml: function(id, html) {
 
@@ -965,20 +989,45 @@ var checkout = {
                          if (json['error']) {
 
                              checkout.data.error = json['error'];
-                            
+
+/*
+                             alert(checkout.data.error);
+                             console.log("777");
+                             console.log(json['error']['firstname']);
+                             if(json['error']['email']){
+                              $('input[name=\'email\']').parent().addClass('has-error');}
+                             if(json['error']['firstname']){
+                              $('input[name=\'firstname\']').parent().addClass('has-error');
+                              $('#input_error_name').html(json['error']['firstname']);
+                              };
+                              if(json['error']['telephone']){
+                                $('input[name=\'telephone\']').parent().addClass('has-error');
+                              }
+                              if(json['error']['city']){
+                                $('input[name=\'city\']').parent().addClass('has-error');
+                              }
+                              if(json['error']['address_1']){
+                                $('input[name=\'address_1\']').parent().addClass('has-error');
+                              }
+                               if(json['error']['password']){
+                                $('input[name=\'password\']').parent().addClass('has-error');
+                              }
+
+*/
+
+
                              checkout.showError(id, checkout.data.error);
 
-
                          } else {
-
                              if (callback !== null) {
                                 checkout.MainCase(callback);
+                                console.log("checkout.data.path");
                              }
                          }
-
                         if (json['redirect'] && redirect) {
                            checkout.data.path = json['redirect'];
                            checkout.redirect();
+                           console.log("checkout.data.path");
                         }
 
 

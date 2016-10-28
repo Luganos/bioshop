@@ -93,7 +93,7 @@
       <!--<p class="cart_p">применить промо-код</p>-->
       <div class="checkout_cart_coupon_and_certificat">
       <form action="">
-        <p>купон</p>
+        <p>Купон</p>
         <input class="checkout_cart_input_cupon" type="text">
         <br>
         <p >Подарочный сертификат</p>
@@ -109,9 +109,9 @@
        <!-- <p>общая сумма</p>-->
           <table class="table table-bordered">
             <?php foreach ($totals as $total) { ?>
-            <tr>
-              <td class="text-right text-right_cart_sum long "><strong><?php echo $total['title']; ?>:</strong><hr></td>
-              <td class="text-right text-right_cart_sum"><?php echo $total['text']; ?><hr></td>
+            <tr class="zxc">
+              <td class="text-right text-right_cart_sum checkout_cart_text-right_cart_sum long "><strong><?php echo $total['title']; ?>:</strong><hr></td>
+              <td class="text-right text-right_cart_sum checkout_cart_text-right_cart_sum"><?php echo $total['text']; ?><hr></td>
             </tr>
             <?php } ?>
           </table>

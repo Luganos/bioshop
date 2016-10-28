@@ -169,7 +169,7 @@
            </div>
       </div>
     </div>
-    <div class ="col-sm-4">
+    <div class ="col-sm-6">
          <div class ="for-customer-cart"></div>
      </div>
       <?php echo $content_bottom; ?></div>
@@ -177,10 +177,14 @@
 </div>
 <script type="text/javascript"><!--
  $(function(){
-
+     
+     
+     showcart.MainCase(0);
+     
     //Is user login?
     <?php if (!$logged) { ?>                      //No
 
+       
        checkout.MainCase(0);
        checkout.data.redirect = true;
        checkout.data.logged = false;
@@ -196,7 +200,198 @@
 
 });
 
-//Main object
+//Cart object
+var showcart = {
+    
+    data: { 
+            SwitchState: 0,
+            redirect: null,
+            error: null,
+            progress: null
+    },
+    
+    MainCase:function(step) {
+
+      var step;
+      
+      switch (step) {
+          
+             //Start load html
+             case 0: 
+                     showcart.startLoad();
+             break;
+             
+             //Hook event after load
+             case 1: 
+                     showcart.hookEvent();
+             break;
+         
+             default:
+                
+             break;
+          
+      }
+        
+        
+        
+    },
+    
+    startLoad: function() {
+        
+         showcart.data.url = 'index.php?route=checkout/checkout_cart';
+         showcart.data.id = '.for-customer-cart';
+         showcart.ajaxHtml(showcart.data.url, 1, showcart.data.id);
+    },
+    
+    hookEvent: function() {
+        
+        alert('Hook event');
+    },
+    
+    showHtml: function(id, html) {
+
+          $(id).html(html);
+    },
+    
+    ajaxChange: function(url, data, callback, id, progress, redirect) {
+
+      var url, data, callback, id, progress, redirect;
+
+          $.ajax({
+               url: url,
+               type: 'post',
+               data: data,
+               dataType: 'html',
+               beforeSend: function() {
+
+                      if(progress !== null) {
+                         $(progress).button('loading');
+                      }
+
+               },
+               complete: function() {
+                   if(progress !== null) {
+                      $(progress).button('reset');
+                   }
+               },
+              success: function(json) {
+
+
+                        if(id !== null) {
+
+                            showcart.showHtml(id, json);
+                         }
+
+                         if(json !== undefined) {
+
+                             if (callback !== null) {
+                                showcart.MainCase(callback);
+                             }
+                         }
+
+
+                        if (json['redirect'] && redirect) {
+                           showcart.data.path = json['redirect'];
+                           showcart.redirect();
+                        }
+
+
+
+              },
+              error: function(xhr, ajaxOptions, thrownError) {
+                     alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+
+
+
+    }
+    });
+
+  },
+
+  ajaxHtml: function(url, callback, id) {
+
+      var url, callback, id;
+
+     $.ajax({
+           url: url,
+           dataType: 'html',
+           async: false,
+           success: function(html) {
+
+                         if(id !== null) {
+
+                            showcart.showHtml(id, html);
+                         }
+
+                         if(html !== undefined) {
+
+                             if (callback !== null) {
+                                showcart.MainCase(callback);
+                             }
+                         }
+           },
+           error: function(xhr, ajaxOptions, thrownError) {
+                alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+
+    }
+    });
+  },
+
+    ajaxJson: function(url, data, callback, id, progress, redirect) {
+
+      var url, data, callback, id, progress, redirect;
+
+          $.ajax({
+               url: url,
+               type: 'post',
+               data: data,
+               dataType: 'json',
+               beforeSend: function() {
+
+                      if(progress !== null) {
+                         $(progress).button('loading');
+                      }
+
+               },
+               complete: function() {
+                   if(progress !== null) {
+                      $(progress).button('reset');
+                   }
+               },
+              success: function(json) {
+
+                         if (json['error']) {
+
+                             showcart.data.error = json['error'];
+                            
+                             showcart.showError(id, checkout.data.error);
+
+
+                         } else {
+
+                             if (callback !== null) {
+                                showcart.MainCase(callback);
+                             }
+                         }
+
+                        if (json['redirect'] && redirect) {
+                           showcart.data.path = json['redirect'];
+                           showcart.redirect();
+                        }
+
+
+
+              },
+              error: function(xhr, ajaxOptions, thrownError) {
+                   alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+
+    }
+    });
+  }
+        
+};
+
+//Checkout object
 var checkout = {
 
         //Common variables
@@ -843,12 +1038,7 @@ var checkout = {
 
     }
     });
-
   }
-
-
-
-
 };
 /*$(document).on('change', 'input[name=\'account\']', function() {
 	if ($('#collapse-payment-address').parent().find('.panel-heading .panel-title > *').is('a')) {

@@ -244,13 +244,10 @@ var showcart = {
     },
 
     hookEvent: function() {
-<<<<<<< HEAD
+
 
       //  alert('Hook event');
-=======
-        
-      
->>>>>>> 38a6bb6a8b92847006b5c10db2954933e4d0ff47
+
     },
 
     showHtml: function(id, html) {

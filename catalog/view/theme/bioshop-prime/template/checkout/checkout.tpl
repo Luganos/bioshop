@@ -849,8 +849,6 @@ var checkout = {
 
   showError: function(id, error) {
 
-      alert(id);
-      alert(error.address_2);
       console.log(id);
       console.log(error);
       $('input[name=\'email\']',id).parent().addClass('has-error');

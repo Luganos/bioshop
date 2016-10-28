@@ -245,7 +245,7 @@ var showcart = {
     
     hookEvent: function() {
         
-        alert('Hook event');
+      
     },
     
     showHtml: function(id, html) {

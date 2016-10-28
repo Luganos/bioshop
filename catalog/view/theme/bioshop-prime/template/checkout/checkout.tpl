@@ -41,7 +41,7 @@
 
                   </div>
                   <div class="form-group required">
-                      <label class="col-sm-2 control-label" for="input-email"><span data-toggle="tooltip" title="Эл.почта">Эл.почта1</span></label>
+                      <label class="col-sm-2 control-label" for="input-email"><span data-toggle="tooltip" title="Эл.почта">Эл.почта</span></label>
                       <div class="col-sm-12 checkout_login_input">
                           <input type="text" name="email" value="" placeholder="bioshop@ua.com" id="input-email" class="form-control" />
                       </div>
@@ -91,7 +91,7 @@
               </div>
               <div class="tab-pane" id="old-customer">
                  <div class="form-group">
-                      <label class="col-sm-2 control-label" for="input-email"><span data-toggle="tooltip" title="Эл.почта">Эл.почта2</span></label>
+                      <label class="col-sm-2 control-label" for="input-email"><span data-toggle="tooltip" title="Эл.почта">Эл.почта</span></label>
                       <div class="col-sm-10">
                           <input type="text" name="email" value="" placeholder="" id="input-email" class="form-control" />
                       </div>
@@ -113,7 +113,7 @@
               </div>
               <div class="tab-pane" id="easy-customer">
                  <div class="form-group">
-                      <label class="col-sm-2 control-label" for="input-email"><span data-toggle="tooltip" title="Эл.почта">Эл.почта3</span></label>
+                      <label class="col-sm-2 control-label" for="input-email"><span data-toggle="tooltip" title="Эл.почта">Эл.почта</span></label>
                       <div class="col-sm-10">
                           <input type="text" name="email" value="" placeholder="" id="input-email" class="form-control" />
                       </div>
@@ -455,7 +455,7 @@ var checkout = {
 
                   checkout.paymentSave();
                   checkout.confirmCustomer();
-                  
+
 	     break;
 
              //Load shipping method
@@ -486,7 +486,7 @@ var checkout = {
 
                         checkout.changeShippingMethod();
                     }
-                    
+
                     checkout.showSocialLogin();
                     checkout.confirmEasyCustomer();
                     checkout.forbiddenBuy();
@@ -546,20 +546,20 @@ var checkout = {
                   checkout.guestSuccess();
 
             break;
-            
-            
+
+
 
              default: break;
 
       }
   },
-  
+
   showSocialLogin: function() {
-          
+
       $('#loggin-by-social-network').show();
-      
+
   },
-  
+
   guestSave: function() {
 
          checkout.data.url = 'index.php?route=checkout/guest_1/save';
@@ -607,7 +607,7 @@ var checkout = {
 
       var html = '';
       html += '<div class ="row" >';
-      html +=    '<button type="button" style ="margin-top: 40px !important; margin-left: 390px !important"  id = "button-confirm" data-loading-text="Загрузка" class="button_red_input">Оформить заказ</button>';
+      html +=    '<button type="button" style ="margin-top: 40px !important; margin-left: 260px !important"  id = "button-confirm" data-loading-text="Загрузка" class="button_red_input">Оформить заказ</button>';
       html += '</div>';
       var id = '#for-confirm-button';
       checkout.showHtml(id, html);

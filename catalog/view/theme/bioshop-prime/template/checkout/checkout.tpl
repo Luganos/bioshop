@@ -483,11 +483,15 @@ var checkout = {
              //Hook action after change field
              case 8:
                     if (checkout.data.logged) {
-
+                        
+                        
                         checkout.changeShippingMethod();
+                    } else {
+                        
+                        checkout.showSocialLogin();
                     }
 
-                    checkout.showSocialLogin();
+                    
                     checkout.confirmEasyCustomer();
                     checkout.forbiddenBuy();
 

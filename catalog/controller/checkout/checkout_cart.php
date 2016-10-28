@@ -18,7 +18,16 @@ public function calculateProduct() {
                   }
 	public function index() {
 		$this->load->language('checkout/cart');
+                
+                if (isset($this->request->post['shipping_method'])) {
+		
+		    $shipping = explode('.', $this->request->post['shipping_method']);
 
+		    if (isset($shipping[0]) && isset($shipping[1]) && isset($this->session->data['shipping_methods'][$shipping[0]]['quote'][$shipping[1]])) {
+			$this->session->data['shipping_method'] = $this->session->data['shipping_methods'][$shipping[0]]['quote'][$shipping[1]];	
+		    }
+		}
+                
 		$this->document->setTitle($this->language->get('heading_title'));
 
 		$data['breadcrumbs'] = array();

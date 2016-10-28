@@ -207,7 +207,11 @@ var showcart = {
             SwitchState: 0,
             redirect: null,
             error: null,
-            progress: null
+            progress: null,
+            path: null,
+            url: null,
+            value: null
+
     },
 
     MainCase:function(step) {
@@ -224,6 +228,11 @@ var showcart = {
              //Hook event after load
              case 1:
                      showcart.hookEvent();
+             break;
+             
+             //Was changed shipping method
+             case 2:
+                     showcart.changeShippingMethod();
              break;
 
              default:
@@ -246,6 +255,16 @@ var showcart = {
     hookEvent: function() {
 
     },
+    
+    changeShippingMethod: function() {
+        
+            showcart.data.url = 'index.php?route=checkout/checkout_cart';
+            showcart.data.id = '.for-customer-cart';
+            showcart.data.value = { "shipping_method" : checkout.data.shipping_method };
+            showcart.data.progress = null;
+            showcart.ajaxChange(showcart.data.url, showcart.data.value, null, showcart.data.id, showcart.data.progress);
+        
+    },
 
     showHtml: function(id, html) {
 
@@ -259,6 +278,7 @@ var showcart = {
           $.ajax({
                url: url,
                type: 'post',
+               async: false,
                data: data,
                dataType: 'html',
                beforeSend: function() {
@@ -781,6 +801,7 @@ var checkout = {
 
             value = value.substr(0, value.indexOf('.') === -1 ? value.length : value.indexOf('.'));
 
+            showcart.MainCase(2);
             checkout.data.url = 'index.php?route=checkout/shipping_address_1/change';
             checkout.data.id = '#for-shipping-address';
             checkout.data.value = { "shipping_method" : value };

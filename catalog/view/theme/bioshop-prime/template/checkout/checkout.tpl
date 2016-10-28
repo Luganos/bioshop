@@ -649,10 +649,10 @@ var checkout = {
       });
 
   },
-  
+
   showError: function() {
-      
-      
+
+
   },
 
   showHtml: function(id, html) {
@@ -769,7 +769,7 @@ var checkout = {
                          if (json['error']) {
 
                              checkout.data.error = json['error'];
-<<<<<<< HEAD
+/*
                              alert(checkout.data.error);
                              console.log("777");
                              console.log(json['error']['firstname']);
@@ -792,23 +792,20 @@ var checkout = {
                                 $('input[name=\'password\']').parent().addClass('has-error');
                               }
 
+*/
 
 
-=======
-                             
                              checkout.showError(id, checkout.data.error);
->>>>>>> 3582c5c442a5dfdbb9556dfab484ab7acbc4d8b3
-
                          } else {
-
                              if (callback !== null) {
                                 checkout.MainCase(callback);
+                                console.log("checkout.data.path");
                              }
                          }
-
                         if (json['redirect'] && redirect) {
                            checkout.data.path = json['redirect'];
                            checkout.redirect();
+                           console.log("checkout.data.path");
                         }
 
 

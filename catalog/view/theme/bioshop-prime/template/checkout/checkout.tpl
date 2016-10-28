@@ -18,8 +18,9 @@
     <?php } else { ?>
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
-    <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
+    <div id="content" class="<?php echo $class; ?>">
      <h1 class="checkout_h1"><?php echo $heading_title; ?></h1>
+     <div id = "loggin-by-social-network" style ="display: none"><h5>Войти через:</h5><div id ="show-social-login"><?php echo $content_top; ?></div></div>
      <div class ="col-sx-6 col-lg-6">
         <div id ="for-customer-type" style ="display: none">
           <div id ="container-new-customer" class="col-sx-6">
@@ -178,7 +179,6 @@
 <script type="text/javascript"><!--
  $(function(){
 
-
      showcart.MainCase(0);
 
     //Is user login?
@@ -244,9 +244,6 @@ var showcart = {
     },
 
     hookEvent: function() {
-
-
-      //  alert('Hook event');
 
     },
 
@@ -458,6 +455,7 @@ var checkout = {
 
                   checkout.paymentSave();
                   checkout.confirmCustomer();
+                  
 	     break;
 
              //Load shipping method
@@ -488,7 +486,8 @@ var checkout = {
 
                         checkout.changeShippingMethod();
                     }
-
+                    
+                    checkout.showSocialLogin();
                     checkout.confirmEasyCustomer();
                     checkout.forbiddenBuy();
 
@@ -527,13 +526,6 @@ var checkout = {
 
             break;
 
-            //Wait for guest shipping
-            /*case 14:
-
-                  alert('Please wait');
-
-            break;*/
-
             //Guest shipping start
             case 14:
 
@@ -554,13 +546,20 @@ var checkout = {
                   checkout.guestSuccess();
 
             break;
+            
+            
 
              default: break;
 
       }
   },
-
-
+  
+  showSocialLogin: function() {
+          
+      $('#loggin-by-social-network').show();
+      
+  },
+  
   guestSave: function() {
 
          checkout.data.url = 'index.php?route=checkout/guest_1/save';

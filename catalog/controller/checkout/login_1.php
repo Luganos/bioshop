@@ -74,6 +74,14 @@ class ControllerCheckoutLogin1 extends Controller {
 			if ($customer_info && !$customer_info['approved']) {
 				$json['error']['warning'] = $this->language->get('error_approved');
 			}
+                        
+                        if ((utf8_strlen($this->request->post['email']) > 96) || !preg_match('/^[^\@]+@.*.[a-z]{2,15}$/i', $this->request->post['email'])) {
+				$json['error']['email'] = $this->language->get('error_email');
+			}
+                        
+                        if ((utf8_strlen($this->request->post['password']) < 4) || (utf8_strlen($this->request->post['password']) > 20)) {
+				$json['error']['password'] = $this->language->get('error_password');
+			}
 
 			if (!isset($json['error'])) {
 				if (!$this->customer->login($this->request->post['email'], $this->request->post['password'])) {

@@ -770,35 +770,9 @@ var checkout = {
                          if (json['error']) {
 
                              checkout.data.error = json['error'];
-<<<<<<< HEAD
-                             alert(checkout.data.error);
-                             console.log("777");
-                             console.log(json['error']['firstname']);
-                             if(json['error']['email']){
-                              $('input[name=\'email\']').parent().addClass('has-error');}
-                             if(json['error']['firstname']){
-                              $('input[name=\'firstname\']').parent().addClass('has-error');
-                              $('#input_error_name').html(json['error']['firstname']);
-                              };
-                              if(json['error']['telephone']){
-                                $('input[name=\'telephone\']').parent().addClass('has-error');
-                              }
-                              if(json['error']['city']){
-                                $('input[name=\'city\']').parent().addClass('has-error');
-                              }
-                              if(json['error']['address_1']){
-                                $('input[name=\'address_1\']').parent().addClass('has-error');
-                              }
-                               if(json['error']['password']){
-                                $('input[name=\'password\']').parent().addClass('has-error');
-                              }
-
-
-
-=======
-                             
+                            
                              checkout.showError(id, checkout.data.error);
->>>>>>> 3582c5c442a5dfdbb9556dfab484ab7acbc4d8b3
+
 
                          } else {
 

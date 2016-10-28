@@ -1885,8 +1885,40 @@ textarea {
   font-weight: bold;
   color: black;
 }
+.checkout_cart_coupon_and_certificat {
+  text-align: right;
+  margin-right: 20px;
+}
+.checkout_cart_input_cupon {
+  width: 115px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+.checkout_cart_input_sertificat {
+  width: 115px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+.checkout_cart_input_submit {
+  width: 115px;
+  height: 40px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: #8ea9e8;
+  margin-right: 4px;
+  margin-bottom: 30px;
+}
 .checkout_cart_panel-group {
   width: 100% !important;
+}
+.checkout_cart_panel-group p {
+  display: inline;
+}
+.checkout_cart_cart_sum {
+  width: 390px;
+  margin-left: 155px !important;
 }
 /*-----END_checkout_cart.tpl----*/
 /*-----END_checkout.tpl---------*/

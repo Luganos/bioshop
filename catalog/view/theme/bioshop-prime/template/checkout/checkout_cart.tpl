@@ -14,7 +14,7 @@
     <button type="button" class="close" data-dismiss="alert">&times;</button>
   </div>
   <?php } ?>
-    <div id="content" class="col-sx-12 col-sm-6 ">
+    <div id="content" class="col-sx-12 col-sm-12 col-lg-6 ">
       <h1 class="checkout_login_h1">Ваш заказ
       </h1>
       <form id="send_col_product_big_cart" action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
@@ -91,15 +91,21 @@
       <?php if ($coupon || $voucher || $reward || $shipping) { ?>
       <div class="panel-group checkout_cart_panel-group" >
       <!--<p class="cart_p">применить промо-код</p>-->
-      <?php echo $coupon; ?>
-        <div class="pull-left button_blue"><a href="<?php echo $continue; ?>" class=""><?php echo $button_shopping; ?></a></div>
+      <div class="checkout_cart_coupon_and_certificat">
+      <form action="">
+        <p>купон</p>
+        <input class="checkout_cart_input_cupon" type="text">
+        <br>
+        <p >Подарочный сертификат</p>
+        <input class="checkout_cart_input_sertificat" type="text">
+        <br>
+        <input class="checkout_cart_input_submit" type="submit" value="Обновить"></input>
+      </form>
       </div>
       <?php } ?>
-
       <br />
       <div class="row row_cart">
-
-        <div class="col-lg-6 col-sm-4 col-sm-offset-8 cart_sum">
+        <div class="col-lg-6 col-sm-4 cart_sum checkout_cart_cart_sum">
        <!-- <p>общая сумма</p>-->
           <table class="table table-bordered">
             <?php foreach ($totals as $total) { ?>
@@ -110,9 +116,9 @@
             <?php } ?>
           </table>
         </div>
-        <div class="buttons">
+        <!--<div class="buttons">
         <div class="pull-right button"><a href="<?php echo $checkout; ?>" class=""><?php echo $button_checkout; ?></a></div>
-      </div>
+      </div>-->
     </div>
    </div>
  </div>

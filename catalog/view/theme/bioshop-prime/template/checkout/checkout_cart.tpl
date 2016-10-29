@@ -75,12 +75,12 @@
       <div class="checkout_cart_coupon_and_certificat">
       <form action="">
         <p>Купон</p>
-        <input class="checkout_cart_input_cupon" type="text">
+        <input class="checkout_cart_input_cupon" name ="coupon" value = "<?php echo $coupon_value; ?>" type="text">
         <br>
         <p >Подарочный сертификат</p>
-        <input class="checkout_cart_input_sertificat" type="text">
+        <input class="checkout_cart_input_sertificat" name = "voucher" value ="<?php echo $voucher_value; ?>" type="text">
         <br>
-        <input class="checkout_cart_input_submit" type="submit" value="Обновить"></input>
+        <input class="checkout_cart_input_submit" type="button" value="Обновить"></input>
       </form>
       </div>
       <?php } ?>

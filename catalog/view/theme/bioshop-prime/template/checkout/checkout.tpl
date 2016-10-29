@@ -210,6 +210,8 @@ var showcart = {
             progress: null,
             path: null,
             url: null,
+            coupon: null,
+            voucher: null,
             value: null
 
     },
@@ -227,12 +229,25 @@ var showcart = {
 
              //Hook event after load
              case 1:
-                     showcart.hookEvent();
+                     showcart.pushButtonCoupon();
              break;
              
              //Was changed shipping method
              case 2:
                      showcart.changeShippingMethod();
+             break;
+            
+             //Send request to voucher API
+             case 3:
+                       
+                     showcart.voucher();
+            
+             break;
+             
+             //Send request to coupon API
+             case 4:
+                     showcart.coupon(); 
+             
              break;
 
              default:
@@ -244,6 +259,14 @@ var showcart = {
 
 
     },
+    
+    showError: function(id, errors){
+        
+        
+        $(id).addClass('has-error');
+        
+        
+    },
 
     startLoad: function() {
 
@@ -252,9 +275,6 @@ var showcart = {
          showcart.ajaxHtml(showcart.data.url, 1, showcart.data.id);
     },
 
-    hookEvent: function() {
-
-    },
     
     changeShippingMethod: function() {
         
@@ -262,7 +282,84 @@ var showcart = {
             showcart.data.id = '.for-customer-cart';
             showcart.data.value = { "shipping_method" : checkout.data.shipping_method };
             showcart.data.progress = null;
-            showcart.ajaxChange(showcart.data.url, showcart.data.value, null, showcart.data.id, showcart.data.progress);
+            showcart.ajaxChange(showcart.data.url, showcart.data.value, 1, showcart.data.id, showcart.data.progress);
+        
+    },
+    
+    coupon: function() {
+        
+            showcart.data.url = 'index.php?route=total/coupon/coupon';
+            showcart.data.id = '.checkout_cart_input_cupon';
+            showcart.data.value = { 'coupon': showcart.data.coupon };
+            showcart.data.progress = null;
+            showcart.data.redirect = false;
+            showcart.ajaxJson(showcart.data.url, showcart.data.value, null, showcart.data.id, showcart.data.progress);
+        
+            
+    },
+    
+    voucher: function() {
+        
+            showcart.data.url = 'index.php?route=total/voucher/voucher';
+            showcart.data.id = '.checkout_cart_input_sertificat';
+            showcart.data.value = { 'voucher': showcart.data.voucher };
+            showcart.data.progress = null;
+            showcart.data.redirect = false;
+            showcart.ajaxJson(showcart.data.url, showcart.data.value, null, showcart.data.id, showcart.data.progress);
+        
+        
+        
+    },
+    
+    pushButtonCoupon: function() {
+        
+        $('.checkout_cart_input_submit').on('click', function() {
+            
+            showcart.data.voucher = $('input[name=\'voucher\']').val();
+            
+            showcart.data.coupon = $('input[name=\'coupon\']').val();
+            
+            showcart.data.error = null;
+            
+            if (showcart.data.voucher) {
+                
+                showcart.MainCase(3);
+                
+                if(showcart.data.error === null) {
+                    
+                    showcart.MainCase(2);
+                }  
+                
+            } else if (showcart.data.coupon) {
+                
+                showcart.MainCase(4);
+                
+                if(showcart.data.error === null) {
+                    
+                    showcart.MainCase(2);
+                }
+                
+                
+            } else if (showcart.data.coupon && showcart.data.voucher) {
+                
+                showcart.MainCase(3);
+                
+                if(showcart.data.error === null) {
+                    
+                    showcart.MainCase(4);
+                    
+                    if(showcart.data.error === null) {
+                    
+                        showcart.MainCase(2);
+                    }
+                    
+                    
+                }
+                
+                
+            }
+
+        });
         
     },
 
@@ -363,6 +460,7 @@ var showcart = {
           $.ajax({
                url: url,
                type: 'post',
+               async: false,
                data: data,
                dataType: 'json',
                beforeSend: function() {
@@ -383,7 +481,7 @@ var showcart = {
 
                              showcart.data.error = json['error'];
 
-                             showcart.showError(id, checkout.data.error);
+                             showcart.showError(id, showcart.data.error);
 
 
                          } else {
@@ -873,8 +971,6 @@ var checkout = {
 
   showError: function(id, error) {
 
-      console.log(id);
-      console.log(error);
       $('input[name=\'email\']',id).parent().addClass('has-error');
       $('input[name=\'firstname\']',id).parent().addClass('has-error');
       $('input[name=\'telephone\']',id).parent().addClass('has-error');
@@ -1014,44 +1110,16 @@ var checkout = {
 
                              checkout.data.error = json['error'];
 
-/*
-                             alert(checkout.data.error);
-                             console.log("777");
-                             console.log(json['error']['firstname']);
-                             if(json['error']['email']){
-                              $('input[name=\'email\']').parent().addClass('has-error');}
-                             if(json['error']['firstname']){
-                              $('input[name=\'firstname\']').parent().addClass('has-error');
-                              $('#input_error_name').html(json['error']['firstname']);
-                              };
-                              if(json['error']['telephone']){
-                                $('input[name=\'telephone\']').parent().addClass('has-error');
-                              }
-                              if(json['error']['city']){
-                                $('input[name=\'city\']').parent().addClass('has-error');
-                              }
-                              if(json['error']['address_1']){
-                                $('input[name=\'address_1\']').parent().addClass('has-error');
-                              }
-                               if(json['error']['password']){
-                                $('input[name=\'password\']').parent().addClass('has-error');
-                              }
-
-*/
-
-
                              checkout.showError(id, checkout.data.error);
 
                          } else {
                              if (callback !== null) {
                                 checkout.MainCase(callback);
-                                console.log("checkout.data.path");
                              }
                          }
                         if (json['redirect'] && redirect) {
                            checkout.data.path = json['redirect'];
                            checkout.redirect();
-                           console.log("checkout.data.path");
                         }
 
 

@@ -282,6 +282,8 @@
          </add>  
       </operation>
   </file>
+   <file path="catalog/language/russian/checkout/checkout.php">
+   </file>
   <file path="catalog/language/russian/product/product.php">
       <operation>
 	 <search>

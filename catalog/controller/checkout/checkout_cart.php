@@ -28,6 +28,18 @@ public function calculateProduct() {
 		    }
 		}
                 
+                if (isset($this->session->data['coupon'])) {
+		    $data['coupon_value'] = $this->session->data['coupon'];
+		} else {
+		    $data['coupon_value'] = '';
+		}
+                
+                if (isset($this->session->data['voucher'])) {
+		   $data['voucher_value'] = $this->session->data['voucher'];
+		} else {
+		   $data['voucher_value'] = '';
+		}
+                
 		$this->document->setTitle($this->language->get('heading_title'));
 
 		$data['breadcrumbs'] = array();

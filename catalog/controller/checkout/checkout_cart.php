@@ -39,20 +39,6 @@ public function calculateProduct() {
 		} else {
 		   $data['voucher_value'] = '';
 		}
-                
-		$this->document->setTitle($this->language->get('heading_title'));
-
-		$data['breadcrumbs'] = array();
-
-		$data['breadcrumbs'][] = array(
-			'href' => $this->url->link('common/home'),
-			'text' => $this->language->get('text_home')
-		);
-
-		$data['breadcrumbs'][] = array(
-			'href' => $this->url->link('checkout/cart'),
-			'text' => $this->language->get('heading_title')
-		);
 
 		if ($this->cart->hasProducts() || !empty($this->session->data['vouchers'])) {
 			$data['heading_title'] = $this->language->get('heading_title');
@@ -279,10 +265,6 @@ public function calculateProduct() {
 				);
 			}
 
-			$data['continue'] = $this->url->link('common/home');
-
-			$data['checkout'] = $this->url->link('checkout/checkout', '', 'SSL');
-
 			$this->load->model('extension/extension');
 
 			$data['checkout_buttons'] = array();
@@ -297,159 +279,22 @@ public function calculateProduct() {
 				}
 			}
 
-			$data['column_left'] = $this->load->controller('common/column_left');
-			$data['column_right'] = $this->load->controller('common/column_right');
-			$data['content_top'] = $this->load->controller('common/content_top');
-			$data['content_bottom'] = $this->load->controller('common/content_bottom');
-			$data['footer'] = $this->load->controller('common/footer');
-			$data['header'] = $this->load->controller('common/header');
-                        
-                        $this->GetTotal();
-
 			if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/checkout/checkout_cart.tpl')) {
 				$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/checkout/checkout_cart.tpl', $data));
 			} else {
 				$this->response->setOutput($this->load->view('default/template/checkout/checkout_cart.tpl', $data));
 			}
 		} else {
-			$data['heading_title'] = $this->language->get('heading_title');
+                    
+                        $data['redirect'] = $this->url->link('checkout/cart', '', 'SSL');
 
-			$data['text_error'] = $this->language->get('text_empty');
-
-			$data['button_continue'] = $this->language->get('button_continue');
-
-			$data['continue'] = $this->url->link('common/home');
-
-			unset($this->session->data['success']);
-
-			$data['column_left'] = $this->load->controller('common/column_left');
-			$data['column_right'] = $this->load->controller('common/column_right');
-			$data['content_top'] = $this->load->controller('common/content_top');
-			$data['content_bottom'] = $this->load->controller('common/content_bottom');
-			$data['footer'] = $this->load->controller('common/footer');
-			$data['header'] = $this->load->controller('common/header');
-
-			if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/checkout/cart_empty.tpl')) {
-				$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/checkout/cart_empty.tpl', $data));
+                        if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/checkout/not_product.tpl')) {
+				$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/checkout/not_product.tpl', $data));
 			} else {
-				$this->response->setOutput($this->load->view('default/template/checkout/cart_empty.tpl', $data));
+				$this->response->setOutput($this->load->view('default/template/checkout/not_product.tpl', $data));
 			}
+
 		}
-	}
-
-	public function add() {
-		$this->load->language('checkout/cart');
-
-		$json = array();
-
-		if (isset($this->request->post['product_id'])) {
-			$product_id = (int)$this->request->post['product_id'];
-		} else {
-			$product_id = 0;
-		}
-
-		$this->load->model('catalog/product');
-
-		$product_info = $this->model_catalog_product->getProduct($product_id);
-
-		if ($product_info) {
-			if (isset($this->request->post['quantity']) && ((int)$this->request->post['quantity'] >= $product_info['minimum'])) {
-				$quantity = (int)$this->request->post['quantity'];
-			} else {
-				$quantity = $product_info['minimum'] ? $product_info['minimum'] : 1;
-			}
-
-			if (isset($this->request->post['option'])) {
-				$option = array_filter($this->request->post['option']);
-			} else {
-				$option = array();
-			}
-
-			$product_options = $this->model_catalog_product->getProductOptions($this->request->post['product_id']);
-
-			foreach ($product_options as $product_option) {
-				if ($product_option['required'] && empty($option[$product_option['product_option_id']])) {
-					$json['error']['option'][$product_option['product_option_id']] = sprintf($this->language->get('error_required'), $product_option['name']);
-				}
-			}
-
-			if (isset($this->request->post['recurring_id'])) {
-				$recurring_id = $this->request->post['recurring_id'];
-			} else {
-				$recurring_id = 0;
-			}
-
-			$recurrings = $this->model_catalog_product->getProfiles($product_info['product_id']);
-
-			if ($recurrings) {
-				$recurring_ids = array();
-
-				foreach ($recurrings as $recurring) {
-					$recurring_ids[] = $recurring['recurring_id'];
-				}
-
-				if (!in_array($recurring_id, $recurring_ids)) {
-					$json['error']['recurring'] = $this->language->get('error_recurring_required');
-				}
-			}
-
-			if (!$json) {
-				$this->cart->add($this->request->post['product_id'], $quantity, $option, $recurring_id);
-
-				$json['success'] = sprintf($this->language->get('text_success'), $this->url->link('product/product', 'product_id=' . $this->request->post['product_id']), $product_info['name'], $this->url->link('checkout/cart'));
-
-				// Unset all shipping and payment methods
-				unset($this->session->data['shipping_method']);
-				unset($this->session->data['shipping_methods']);
-				unset($this->session->data['payment_method']);
-				unset($this->session->data['payment_methods']);
-
-				// Totals
-				$this->load->model('extension/extension');
-
-				$total_data = array();
-				$total = 0;
-				$taxes = $this->cart->getTaxes();
-
-				// Display prices
-				if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
-					$sort_order = array();
-
-					$results = $this->model_extension_extension->getExtensions('total');
-
-					foreach ($results as $key => $value) {
-						$sort_order[$key] = $this->config->get($value['code'] . '_sort_order');
-					}
-
-					array_multisort($sort_order, SORT_ASC, $results);
-
-					foreach ($results as $result) {
-						if ($this->config->get($result['code'] . '_status')) {
-							$this->load->model('total/' . $result['code']);
-
-							$this->{'model_total_' . $result['code']}->getTotal($total_data, $total, $taxes);
-						}
-					}
-
-					$sort_order = array();
-
-					foreach ($total_data as $key => $value) {
-						$sort_order[$key] = $value['sort_order'];
-					}
-
-					array_multisort($sort_order, SORT_ASC, $total_data);
-				}
-              
-				$json['quantity'] = $this->calculateProduct();
-                                $json['total'] = sprintf(preg_match("/^0.0/", $this->currency->format($total))? '':  $this->currency->format($total));
-        
-			} else {
-				 $json['redirect'] = str_replace('&amp;', '&', $this->url->link('product/product', 'product_id=' . $this->request->post['product_id']));
-			}
-		}
-
-		$this->response->addHeader('Content-Type: application/json');
-		$this->response->setOutput(json_encode($json));
 	}
 
 	public function edit() {
@@ -461,26 +306,15 @@ public function calculateProduct() {
 		if (!empty($this->request->post['quantity'])) {
 			foreach ($this->request->post['quantity'] as $key => $value) {
 				$this->cart->update($key, $value);
-			}
-
-			unset($this->session->data['shipping_method']);
-			unset($this->session->data['shipping_methods']);
-			unset($this->session->data['payment_method']);
-			unset($this->session->data['payment_methods']);
-			unset($this->session->data['reward']);
-$json['quantity'] = $this->calculateProduct();
-
-			$this->response->redirect($this->url->link('checkout/cart'));
+			}		
 		}
 
-		$this->response->addHeader('Content-Type: application/json');
-		$this->response->setOutput(json_encode($json));
+                //Show cart content
+                $this->index();   
 	}
 
 	public function remove() {
 		$this->load->language('checkout/cart');
-
-		$json = array();
 
 		// Remove
 		if (isset($this->request->post['key'])) {
@@ -489,13 +323,23 @@ $json['quantity'] = $this->calculateProduct();
 			unset($this->session->data['vouchers'][$this->request->post['key']]);
 
 			$this->session->data['success'] = $this->language->get('text_remove');
+                        
 
-			unset($this->session->data['shipping_method']);
-			unset($this->session->data['shipping_methods']);
-			unset($this->session->data['payment_method']);
-			unset($this->session->data['payment_methods']);
-			unset($this->session->data['reward']);
-$json['quantity'] = $this->calculateProduct();
+		} 
+                
+                //Show cart content
+                $this->index(); 
+	}
+        
+        public function info() {
+		$this->load->language('checkout/cart');
+
+		$json = array();
+
+		// Remove
+		if (isset($this->request->post['info'])) {
+
+                        $json['quantity'] = $this->calculateProduct();
 
 			// Totals
 			$this->load->model('extension/extension');
@@ -534,59 +378,11 @@ $json['quantity'] = $this->calculateProduct();
 			}
                         
                         $json['quantity'] = $this->calculateProduct();
-                   $json['total'] = sprintf(preg_match("/^0.0/", $this->currency->format($total))? '':  $this->currency->format($total));
+                        $json['total'] = sprintf(preg_match("/^0.0/", $this->currency->format($total))? '':  $this->currency->format($total));
 		}
-                
+
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
 	}
         
-        public function GetTotal() {
-            
-            	        $order_data = array();
-
-			$order_data['totals'] = array();
-			$total = 0;
-			$taxes = $this->cart->getTaxes();
-
-			$this->load->model('extension/extension');
-
-			$sort_order = array();
-
-			$results = $this->model_extension_extension->getExtensions('total');
-
-			foreach ($results as $key => $value) {
-				$sort_order[$key] = $this->config->get($value['code'] . '_sort_order');
-			}
-
-			array_multisort($sort_order, SORT_ASC, $results);
-
-			foreach ($results as $result) {
-				if ($this->config->get($result['code'] . '_status')) {
-					$this->load->model('total/' . $result['code']);
-
-					$this->{'model_total_' . $result['code']}->getTotal($order_data['totals'], $total, $taxes);
-				}
-			}
-
-			$sort_order = array();
-
-			foreach ($order_data['totals'] as $key => $value) {
-				$sort_order[$key] = $value['sort_order'];
-			}
-
-			array_multisort($sort_order, SORT_ASC, $order_data['totals']);
-                        
-                       $data['totals'] = array();
-
-			foreach ($order_data['totals'] as $total) {
-				$data['totals'][] = array(
-					'title' => $total['title'],
-					'text'  => $this->currency->format($total['value']),
-				);
-			}
-            
-                        $test = $data['totals'];
-            
-        }
 }

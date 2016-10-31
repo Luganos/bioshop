@@ -151,7 +151,7 @@
           <p class="control-label">Адрес доставки</p>
           <div class="form-group">
                <div class="col-sm-12 checkout_address_deliveri">
-                   <input type="text" name="address_2" value="" placeholder="" id="input-address_2" class="form-control viber" />
+                   <input type="text" name="address_2" value="" placeholder="" id="input-address_2" class="form-control " />
                    <span id="input_error_address_2"></span>
                </div>
           </div>
@@ -167,7 +167,7 @@
       </div>
       <div id ="for-confirm-button" style ="display: none">
            <div class ="row" >
-                <button type="button" style ="margin-top: 40px !important; margin-left: 390px !important"  id = "button-forbid-buy" data-loading-text="Загрузка" class="button_red_input">Оформить заказ</button>
+                <button type="button" style ="margin-top: 40px !important; margin-left: 20px !important"  id = "button-forbid-buy" data-loading-text="Загрузка" class="button_red_input">Оформить заказ</button>
            </div>
       </div>
     </div>
@@ -1071,12 +1071,12 @@ var checkout = {
       $('.input_error_tel').html(error.phone);
 
       $('.input_error_email_two').html(error.email);
-      $('.input_error_pass_two').html("44");
+      $('.input_error_pass_two').html(error.password);
 
       $('#input_error_address_2').html(error.address_2);
       //$('.viber',id).parent().addClass('has-error');
       //$('#select-shipping-address',id).addClass("viber");
-      $('.viber').css({"border":"1px solid red"})
+      $('.viber').css({"border":"1px solid #A94442"})
 
 
 

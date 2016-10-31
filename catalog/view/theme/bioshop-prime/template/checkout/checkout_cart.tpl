@@ -76,9 +76,12 @@
       <form action="">
         <p>Купон</p>
         <input class="checkout_cart_input_cupon" name ="coupon" value = "<?php echo $coupon_value; ?>" type="text">
+        <span class="input_error_cupon"></span>
         <br>
+
         <p >Подарочный сертификат</p>
         <input class="checkout_cart_input_sertificat" name = "voucher" value ="<?php echo $voucher_value; ?>" type="text">
+        <span class="input_error_sertificat"></span>
         <br>
         <input class="checkout_cart_input_submit" type="button" value="Обновить"></input>
       </form>
@@ -90,7 +93,7 @@
           <table class="table table-bordered">
             <?php foreach ($totals as $total) { ?>
             <tr class="zxc">
-              <td class="text-right text-right_cart_sum checkout_cart_text-right_cart_sum long "><strong><?php echo $total['title']; ?>:</strong><hr></td>
+              <td class="text-right text-right_cart_sum checkout_cart_text-right_cart_sum long "><span><?php echo $total['title']; ?>:</span><hr></td>
               <td class="text-right text-right_cart_sum checkout_cart_text-right_cart_sum"><?php echo $total['text']; ?><hr></td>
             </tr>
             <?php } ?>

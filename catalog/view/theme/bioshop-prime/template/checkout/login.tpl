@@ -82,13 +82,14 @@
                       <label class="col-sm-2 control-label" for="input-email"><span data-toggle="tooltip" title="Эл.почта">Эл.почта</span></label>
                       <div class="col-sm-10 form-group_login">
                           <input type="text" name="email" value="" placeholder="" id="input-email" class="form-control" />
-                          <span id="input_error_email"></span>
+                          <span class="input_error_email_two"></span>
                       </div>
                   </div>
                   <div class="form-group">
                       <label class="col-sm-2 control-label" for="input-password"><span data-toggle="tooltip" title="Пароль">Пароль</span></label>
                       <div class="col-sm-10">
                           <input type="password" name="password" value="" placeholder="" id="input-phone" class="form-control" />
+                          <span class="input_error_pass_two"></span>
                       </div>
                   </div>
                   <div class="form-group">

@@ -2078,9 +2078,16 @@ header{
         margin-right: 20px;
     }
     .checkout_cart_input_cupon{
+        display: inline-block;
         width: 115px;
         height: 40px;
         margin-bottom: 10px;
+    }
+    .input_error_cupon{
+        display: block;
+    }
+    .input_error_sertificat{
+        display: block;
     }
     .checkout_cart_input_sertificat{
         width: 115px;
@@ -2108,16 +2115,21 @@ header{
         font-size: 16px;
     }
     .checkout_cart_cart_sum{
-        width: 390px;
-        margin-left: 155px !important;
+        width: 450px;
+        margin-left: 100px !important;
+    }
+    .checkout_cart_text-right_cart_sum{
+        height: 50px !important;
+        line-height: 0 !important;
+        //width: 350px !important;
     }
     .checkout_cart_text-right_cart_sum{
         height: 50px !important;
         line-height: 0 !important;
     }
-    .checkout_cart_text-right_cart_sum{
-        height: 50px !important;
-        line-height: 0 !important;
+    .checkout_cart_text-right_cart_sum span{
+        //word-wrap: break-word !important;
+        font-size: 14px;
     }
 
     /*-----END_checkout_cart.tpl----*/
@@ -2275,6 +2287,7 @@ footer{
     background-color: rgb(142,169,232);
     line-height: 40px;
     text-align: center;
+    cursor: pointer;
 }
 
 .footer_news_butten p{
@@ -2445,6 +2458,7 @@ footer{
     background-color: rgb(142,169,232);
     line-height: 40px;
     text-align: center;
+    cursor: pointer;
 }
 
 .footer_news_butten p{
@@ -2463,7 +2477,7 @@ footer{
 }
 
 .footer_news_sec p{
-    padding-top: 10px;
+   // padding-top: 10px;
 }
 
 .footer_geeker_logo{
@@ -2608,4 +2622,8 @@ width: 300px;
 .show_text_under:after{
     content: "test";
 
+}
+
+.viber{
+    border: 1px solid #cccccc;
 }

@@ -1,24 +1,35 @@
 <div id="subscribe<?= $module ?>">
   <div class="subscribe-section">
-    <h5><?php echo $heading_title; ?></h5>
+    <!--<h5><?php echo $heading_title; ?></h5>-->
   </div>
   <div class="subscribe-section clearfix">
     <form class="form-inline" name="subscribe<?= $module ?>">
-      <div class="form-group">
+      <div class="form-group footer_news_pole">
         <label class="sr-only" for="exampleInputEmail3">Email address</label>
-        <input type="email" id="subscribe_email" name="subscribe_email" class="form-control subscribe my-top-banner-mail-input" placeholder="<?php echo $entry_email; ?>">
+        <input type="email" id="subscribe_email" name="subscribe_email" class="subscribe my-top-banner-mail-input footer_news_pole_input" placeholder="<?php echo $entry_email; ?>">
       </div>
       <?php if ($option_unsubscribe) { ?>
+        <div id="subscribe-btn" class="footer_news_butten" onclick="email_subscribe<?= $module ?>()">
+            <p><?php echo $entry_button; ?></p>
+        </div>
+        <!--
         <button type="button" class="btn btn-primary" id="subscribe-btn" onclick="email_subscribe<?= $module ?>()"><?php echo $entry_button; ?></button>
         <button type="button" class="btn btn-primary" id="subscribe-btn" onclick="email_unsubscribe<?= $module ?>()"><?php echo $entry_unbutton; ?></button>
+        -->
       <?php } else { ?>
+        <div id="subscribe-btn" class="footer_news_butten" onclick="email_subscribe<?= $module ?>()">
+            <p>подпишитесь</p>
+        </div>
+        <!--
         <button type="button" class="btn btn-primary" id="subscribe-btn" onclick="email_subscribe<?= $module ?>()"><?php echo $entry_button; ?></button>
+        -->
       <?php } ?>
       <p class="col-sm-12" id="subscribe_result<?= $module ?>"></p>
     </form>
   </div>
 </div><!-- /#subscribe -->
 <script language="javascript">
+  function test(){console.log("dd");};
   function email_subscribe<?= $module ?>() {
     $.ajax({
       type: 'post',

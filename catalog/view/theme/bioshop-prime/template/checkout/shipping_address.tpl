@@ -5,7 +5,8 @@
                   <?php if (empty($delivery_net)) { ?>
                   <div class="form-group">
                       <div class="col-sm-12 checkout_address_deliveri">
-                          <input type="text" name="address_2" value="" placeholder="" id="select-shipping-address" class="form-control" />
+                          <input type="text" name="address_2" value="" placeholder="" id="select-shipping-address" class="form-control viber" />
+                          <span id="input_error_address_2"></span>
                       </div>
                   </div>
                   <?php } else { ?>

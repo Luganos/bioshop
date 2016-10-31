@@ -36,7 +36,7 @@
                       <label class="col-sm-2 control-label" for="input-firstname"><span data-toggle="tooltip" title="Имя и фамилия">Имя и фамилия</span></label>
                       <div class="col-sm-12 checkout_login_input">
                           <input type="text" name="firstname" value="" placeholder="Иван Иванов " id="input-firstname" class="form-control" />
-                          <span id="input_error_name">55</span>
+                          <span id="input_error_name"></span>
                       </div>
 
                   </div>
@@ -151,7 +151,8 @@
           <p class="control-label">Адрес доставки</p>
           <div class="form-group">
                <div class="col-sm-12 checkout_address_deliveri">
-                   <input type="text" name="address_2" value="" placeholder="" id="input-address_2" class="form-control" />
+                   <input type="text" name="address_2" value="" placeholder="" id="input-address_2" class="form-control viber" />
+                   <span id="input_error_address_2"></span>
                </div>
           </div>
       </div>
@@ -296,9 +297,16 @@ var showcart = {
     },
 
     showError: function(id, errors){
+        if(id == ".checkout_cart_input_cupon"){
+          $('.input_error_cupon').html(errors);
+          $(id).addClass('has-error');
+        }else{
+          $('.input_error_sertificat').html(errors);
+          $(id).addClass('has-error');
+        }
 
 
-        $(id).addClass('has-error');
+
 
 
     },
@@ -366,7 +374,8 @@ var showcart = {
                 }
 
             } else if (showcart.data.coupon) {
-
+                //console.log(json['error']);
+                //$('.input_error_cupon').html(error);
                 showcart.MainCase(4);
 
                 if(showcart.data.error === null) {
@@ -465,6 +474,7 @@ var showcart = {
 
                              if (callback !== null) {
                                 showcart.MainCase(callback);
+
                              }
                          }
 
@@ -472,6 +482,7 @@ var showcart = {
                         if (json['redirect'] && redirect) {
                            showcart.data.path = json['redirect'];
                            showcart.redirect();
+
                         }
 
 
@@ -1059,6 +1070,18 @@ var checkout = {
       $('.input_error_password').html(error.password);
       $('.input_error_tel').html(error.phone);
 
+      $('.input_error_email_two').html(error.email);
+      $('.input_error_pass_two').html("44");
+
+      $('#input_error_address_2').html(error.address_2);
+      //$('.viber',id).parent().addClass('has-error');
+      //$('#select-shipping-address',id).addClass("viber");
+      $('.viber').css({"border":"1px solid red"})
+
+
+
+
+
 
 
       },
@@ -1066,6 +1089,7 @@ var checkout = {
   showHtml: function(id, html) {
 
       $(id).html(html);
+
   },
 
     ajaxChange: function(url, data, callback, id, progress, redirect) {

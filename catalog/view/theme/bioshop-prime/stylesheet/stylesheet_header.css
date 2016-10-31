@@ -1890,9 +1890,16 @@ textarea {
   margin-right: 20px;
 }
 .checkout_cart_input_cupon {
+  display: inline-block;
   width: 115px;
   height: 40px;
   margin-bottom: 10px;
+}
+.input_error_cupon {
+  display: block;
+}
+.input_error_sertificat {
+  display: block;
 }
 .checkout_cart_input_sertificat {
   width: 115px;
@@ -1919,8 +1926,8 @@ textarea {
   font-size: 16px;
 }
 .checkout_cart_cart_sum {
-  width: 390px;
-  margin-left: 155px !important;
+  width: 450px;
+  margin-left: 100px !important;
 }
 .checkout_cart_text-right_cart_sum {
   height: 50px !important;
@@ -1929,6 +1936,9 @@ textarea {
 .checkout_cart_text-right_cart_sum {
   height: 50px !important;
   line-height: 0 !important;
+}
+.checkout_cart_text-right_cart_sum span {
+  font-size: 14px;
 }
 /*-----END_checkout_cart.tpl----*/
 /*-----END_checkout.tpl---------*/
@@ -2055,6 +2065,7 @@ textarea {
     background-color: #8ea9e8;
     line-height: 40px;
     text-align: center;
+    cursor: pointer;
   }
   .footer_news_butten p {
     font-size: 12px;
@@ -2191,6 +2202,7 @@ textarea {
     background-color: #8ea9e8;
     line-height: 40px;
     text-align: center;
+    cursor: pointer;
   }
   .footer_news_butten p {
     font-size: 12px;
@@ -2203,9 +2215,6 @@ textarea {
     color: #bcbec2;
     font-size: 14px;
     text-decoration: underline;
-  }
-  .footer_news_sec p {
-    padding-top: 10px;
   }
   .footer_geeker_logo {
     display: none;
@@ -2329,6 +2338,9 @@ width: 300px;
 /*-----END_Loading------*/
 .show_text_under:after {
   content: "test";
+}
+.viber {
+  border: 1px solid #cccccc;
 }
 
 /* This beautiful CSS-File has been crafted with LESS (lesscss.org) and compiled by simpLESS (wearekiss.com/simpless) */

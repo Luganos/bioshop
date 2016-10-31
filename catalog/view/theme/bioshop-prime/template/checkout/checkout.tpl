@@ -486,8 +486,11 @@ var checkout = {
 
                         checkout.changeShippingMethod();
                     }
+                    else{
+                      checkout.showSocialLogin();
+                    }
 
-                    checkout.showSocialLogin();
+
                     checkout.confirmEasyCustomer();
                     checkout.forbiddenBuy();
 

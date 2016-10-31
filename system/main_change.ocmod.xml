@@ -281,6 +281,14 @@
           <![CDATA[$_['text_write']                              = 'будь первым, кто оставил отзыв об этом товаре';]]>
          </add>  
       </operation>
+      <operation>
+	 <search>
+         <![CDATA[$_['tab_attribute']                           = 'Характеристики';]]>
+         </search>
+         <add position ="replace">
+          <![CDATA[$_['tab_attribute']                           = 'Доставка и оплата';]]>
+         </add>  
+      </operation>
   </file>
    <file path="catalog/language/russian/checkout/checkout.php">
    </file>

@@ -247,7 +247,6 @@
           <?php } ?>
         </div>
       </div>
-
       <ul class="nav nav-tabs product_nav-tabs">
             <li class="active product_nav-tabs_one"><a href="#tab-description" data-toggle="tab"><?php echo $tab_description; ?></a></li>
             <?php if ($attribute_groups) { ?>
@@ -263,19 +262,20 @@
             <div class="tab-pane" id="tab-specification">
               <table class="table table-bordered">
                 <?php foreach ($attribute_groups as $attribute_group) { ?>
+                <?php if((strtolower($attribute_group['name']) == strtolower("Доставка")) || (strtolower($attribute_group['name']) == strtolower("Оплата"))) { ?> 
                 <thead>
                   <tr>
                     <td colspan="2"><strong><?php echo $attribute_group['name']; ?></strong></td>
                   </tr>
-                </thead>
+                </thead>                 
                 <tbody>
                   <?php foreach ($attribute_group['attribute'] as $attribute) { ?>
                   <tr>
                     <td><?php echo $attribute['name']; ?></td>
-                    <td><?php echo $attribute['text']; ?></td>
                   </tr>
                   <?php } ?>
                 </tbody>
+                <?php } ?>
                 <?php } ?>
               </table>
             </div>

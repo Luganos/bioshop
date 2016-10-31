@@ -4,17 +4,14 @@
       <div class="footer_c_net col-lg-3 col-xs-6">
         <span>Мы в социальных сетях:</span>
         <div class="footer_c_net_img">
-        <a href="">
+        <a href="https://www.instagram.com/bioshop.com.ua/">
         <img class="footer_twitter" src="catalog/view/theme/bioshop-prime/image/Twitter.png" alt="">
         </a>
-        <a href="">
+        <a href="https://www.facebook.com/Bioshop-интернет-магазин-1013339885407927/">
         <img class="footer_fb" src="catalog/view/theme/bioshop-prime/image/fb.png" alt="">
         </a>
-        <a href="">
+        <a href="https://vk.com/club114411123">
         <img class="footer_vk" src="catalog/view/theme/bioshop-prime/image/vk.png" alt="">
-        </a>
-        <a href="">
-        <img class="footer_t" src="catalog/view/theme/bioshop-prime/image/t.png" alt="">
         </a>
         </div>
       </div>
@@ -28,15 +25,16 @@
       <div class="footer_news col-lg-4 col-xs-12">
         <div class="footer_news_text">
           <p>Подписка на новости</p>
+          <?php echo $modules['newslettersubscribe']; ?>
         </div>
-        <div class="footer_news_pole">
+        <!--<div class="footer_news_pole">
             <input class="footer_news_pole_input"  type="text">
         </div>
         <div class="footer_news_butten">
             <a href="">
             <p>подпишитесь</p>
             </a>
-        </div>
+        </div>-->
         <div class="footer_news_sec">
             <?php foreach ($informations as $information) { ?>
             <?php if (strtolower($information['title']) == strtolower("Соглашение о конфиденциальности")) { ?>

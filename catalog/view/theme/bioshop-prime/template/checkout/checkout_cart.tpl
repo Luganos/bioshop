@@ -39,11 +39,11 @@
                   <div class="you_order_inform_col_and_sum">
                     <div class="text-left text_left_cart_col you_order_text_left_cart_col">
                       <div class="input-group btn-block input-group_cart" style="max-width: 120px;">
-                          <input id="refresh_input_cart" type="number" autofocus name="quantity[<?php echo $product['cart_id']; ?>]" value="<?php echo $product['quantity']; ?>" size="1" class="form-control you_order_form-control" />
+                          <input type="number" autofocus name="quantity[<?php echo $product['cart_id']; ?>]" value="<?php echo $product['quantity']; ?>" size="1" class="form-control you_order_form-control" />
                           <span class="you_order_price"><?php echo $product['price']; ?></span>
                           <span class="you_order_all"><?php echo $product['total']; ?></span>
                           <span class="input-group-btn">
-                            <button type="button" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger cart_del you_order_cart_del" onclick="cart.remove('<?php echo $product['cart_id']; ?>');">
+                            <button type="button" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger cart_del you_order_cart_del" onclick="showcart.remove('<?php echo $product['cart_id']; ?>');">
                               <i class="fa fa-times-circle"></i>
                             </button>
                           </span>
@@ -75,12 +75,12 @@
       <div class="checkout_cart_coupon_and_certificat">
       <form action="">
         <p>Купон</p>
-        <input class="checkout_cart_input_cupon" type="text">
+        <input class="checkout_cart_input_cupon" name ="coupon" value = "<?php echo $coupon_value; ?>" type="text">
         <br>
         <p >Подарочный сертификат</p>
-        <input class="checkout_cart_input_sertificat" type="text">
+        <input class="checkout_cart_input_sertificat" name = "voucher" value ="<?php echo $voucher_value; ?>" type="text">
         <br>
-        <input class="checkout_cart_input_submit" type="submit" value="Обновить"></input>
+        <input class="checkout_cart_input_submit" type="button" value="Обновить"></input>
       </form>
       </div>
       <?php } ?>

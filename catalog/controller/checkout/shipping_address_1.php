@@ -160,9 +160,10 @@ class ControllerCheckoutShippingAddress1 extends Controller {
                                         $this->session->data['shipping_address']['address_2'] = trim($this->request->post['address_2']);
                                                 
 					unset($this->session->data['shipping_method']);
+                                        $json['success'] = 1;
 				}
                                 
-                                $json['success'] = 1;
+                                
 			} else {
                             
                             $json['error']['address_2'] = $this->language->get('error_address_1');

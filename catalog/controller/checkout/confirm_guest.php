@@ -1,5 +1,5 @@
 <?php
-class ControllerCheckoutConfirmGuest1 extends Controller {
+class ControllerCheckoutConfirmGuest extends Controller {
 	public function index() {
 		$redirect = '';
 

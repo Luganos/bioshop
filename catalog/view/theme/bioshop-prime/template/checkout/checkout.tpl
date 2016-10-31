@@ -677,15 +677,7 @@ var checkout = {
                         
                         checkout.showSocialLogin();
                     }
-                    else{
-                      checkout.showSocialLogin();
-                    }
 
-
-<<<<<<< HEAD
-=======
-                    
->>>>>>> 2d2c2c26d4c2e77b61b01622db036804def8f7f7
                     checkout.confirmEasyCustomer();
                     checkout.forbiddenBuy();
 
@@ -720,7 +712,7 @@ var checkout = {
             //Wait for shipping
             case 13:
 
-                  alert('Please wait');
+                  //alert('Please wait');
 
             break;
 
@@ -760,7 +752,7 @@ var checkout = {
 
   guestSave: function() {
 
-         checkout.data.url = 'index.php?route=checkout/guest_1/save';
+         checkout.data.url = 'index.php?route=checkout/guest/save';
          checkout.data.id = '#easy-customer';
          checkout.data.value = $('#easy-customer :input');
          checkout.data.redirect = true;
@@ -772,7 +764,7 @@ var checkout = {
 
   guestConfirm: function() {
 
-         checkout.data.url = 'index.php?route=checkout/confirm_guest_1';
+         checkout.data.url = 'index.php?route=checkout/confirm_guest';
          checkout.data.id = null;
          checkout.data.value = null;
          checkout.data.redirect = true;
@@ -784,14 +776,14 @@ var checkout = {
 
   guestSuccess: function() {
 
-        window.location.href = 'index.php?route=checkout/success_guest_1';
+        window.location.href = 'index.php?route=checkout/success_guest';
 
   },
 
 
   savePaymentMethodFirst: function () {
 
-      checkout.data.url = 'index.php?route=checkout/payment_method_1/save';
+      checkout.data.url = 'index.php?route=checkout/payment_method/save';
       checkout.data.id = '#select-payment-method';
       checkout.data.value = { "payment_method": checkout.data.payment_method };
       checkout.data.redirect = true;
@@ -841,7 +833,7 @@ var checkout = {
 
   shippingAddressSave: function() {
 
-      checkout.data.url = 'index.php?route=checkout/shipping_address_1/save';
+      checkout.data.url = 'index.php?route=checkout/shipping_address/save';
       checkout.data.id = '#select-shipping-address';
       checkout.data.value = checkout.data.shipping_address;
       checkout.data.redirect = true;
@@ -852,7 +844,7 @@ var checkout = {
 
   shippingMethodSave: function() {
 
-      checkout.data.url = 'index.php?route=checkout/shipping_method_1/save';
+      checkout.data.url = 'index.php?route=checkout/shipping_method/save';
       checkout.data.id = '#select-shipping-method';
       checkout.data.value = { "shipping_method": checkout.data.shipping_method };
       checkout.data.redirect = true;
@@ -862,7 +854,7 @@ var checkout = {
 
   paymentMethodSave: function() {
 
-      checkout.data.url = 'index.php?route=checkout/payment_method_1/save';
+      checkout.data.url = 'index.php?route=checkout/payment_method/save';
       checkout.data.id = '#select-payment-method';
       checkout.data.value = { "payment_method": checkout.data.payment_method};
       checkout.data.redirect = true;
@@ -887,7 +879,7 @@ var checkout = {
 
   login: function() {
 
-       checkout.data.url = 'index.php?route=checkout/login_1';
+       checkout.data.url = 'index.php?route=checkout/login';
        checkout.data.id = '#for-customer-type';
        checkout.ajaxHtml(checkout.data.url, 2, checkout.data.id);
 
@@ -896,7 +888,7 @@ var checkout = {
 
   payment: function() {
 
-       checkout.data.url = 'index.php?route=checkout/payment_address_1';
+       checkout.data.url = 'index.php?route=checkout/payment_address';
        checkout.data.id = '#for-payment-address';
        checkout.ajaxHtml(checkout.data.url, 4, checkout.data.id);
 
@@ -904,7 +896,7 @@ var checkout = {
 
   paymentSave: function() {
 
-            checkout.data.url = 'index.php?route=checkout/payment_address_1/save';
+            checkout.data.url = 'index.php?route=checkout/payment_address/save';
             checkout.data.id = null;
             checkout.data.value = $('#payment-address-input :input');
             checkout.data.progress = null;
@@ -916,7 +908,7 @@ var checkout = {
 
         $('#button-login').on('click', function() {
 
-            checkout.data.url = 'index.php?route=checkout/login_1/save';
+            checkout.data.url = 'index.php?route=checkout/login/save';
             checkout.data.id = '#old-customer';
             checkout.data.value = $('#old-customer :input');
             checkout.data.progress = '#button-login';
@@ -929,7 +921,7 @@ var checkout = {
 
         $('#button-register').on('click', function() {
 
-            checkout.data.url = 'index.php?route=checkout/register_1/save';
+            checkout.data.url = 'index.php?route=checkout/register/save';
             checkout.data.id = '#new-customer';
             checkout.data.value = $('#new-customer :input');
             checkout.data.progress = '#button-register';
@@ -942,7 +934,7 @@ var checkout = {
   //Load all existing shipping method
   shippingMethod: function() {
 
-       checkout.data.url = 'index.php?route=checkout/shipping_method_1';
+       checkout.data.url = 'index.php?route=checkout/shipping_method';
        checkout.data.id = '#for-shipping-method';
        checkout.ajaxHtml(checkout.data.url, 6, checkout.data.id);
   },
@@ -950,7 +942,7 @@ var checkout = {
   //Load all existing address for chose shipping method
   shippingAddress: function() {
 
-       checkout.data.url = 'index.php?route=checkout/shipping_address_1';
+       checkout.data.url = 'index.php?route=checkout/shipping_address';
        checkout.data.id = '#for-shipping-address';
        checkout.ajaxHtml(checkout.data.url, 7, checkout.data.id);
   },
@@ -958,7 +950,7 @@ var checkout = {
   //Load all existing payment method
   paymentMethod: function() {
 
-       checkout.data.url = 'index.php?route=checkout/payment_method_1';
+       checkout.data.url = 'index.php?route=checkout/payment_method';
        checkout.data.id = '#for-payment-method';
        checkout.ajaxHtml(checkout.data.url, 8, checkout.data.id);
   },
@@ -976,7 +968,7 @@ var checkout = {
             value = value.substr(0, value.indexOf('.') === -1 ? value.length : value.indexOf('.'));
 
             showcart.MainCase(2);
-            checkout.data.url = 'index.php?route=checkout/shipping_address_1/change';
+            checkout.data.url = 'index.php?route=checkout/shipping_address/change';
             checkout.data.id = '#for-shipping-address';
             checkout.data.value = { "shipping_method" : value };
             checkout.data.progress = null;
@@ -988,7 +980,7 @@ var checkout = {
 
   confirmBuy: function() {
 
-       checkout.data.url = 'index.php?route=checkout/confirm_1/index';;
+       checkout.data.url = 'index.php?route=checkout/confirm/index';;
        checkout.data.id = '#for-confirm-button';
        checkout.ajaxHtml(checkout.data.url, 13, checkout.data.id);
   },

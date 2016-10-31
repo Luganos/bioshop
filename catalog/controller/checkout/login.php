@@ -30,6 +30,13 @@ class ControllerCheckoutLogin extends Controller {
 		}
 
 		$data['forgotten'] = $this->url->link('account/forgotten', '', 'SSL');
+                
+                $register = $this->load->controller('checkout/register');
+                
+                $data['customer_group_id'] = $register['customer_group_id'];
+                $data['postcode'] = $register['postcode'];
+                $data['country_id'] = $register['country_id'];
+                $data['zone_id'] = $register['zone_id'];
 
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/checkout/login.tpl')) {
 			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/checkout/login.tpl', $data));
@@ -66,6 +73,14 @@ class ControllerCheckoutLogin extends Controller {
 
 			if ($customer_info && !$customer_info['approved']) {
 				$json['error']['warning'] = $this->language->get('error_approved');
+			}
+                        
+                        if ((utf8_strlen($this->request->post['email']) > 96) || !preg_match('/^[^\@]+@.*.[a-z]{2,15}$/i', $this->request->post['email'])) {
+				$json['error']['email'] = $this->language->get('error_email');
+			}
+                        
+                        if ((utf8_strlen($this->request->post['password']) < 4) || (utf8_strlen($this->request->post['password']) > 20)) {
+				$json['error']['password'] = $this->language->get('error_password');
 			}
 
 			if (!isset($json['error'])) {

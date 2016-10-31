@@ -28,6 +28,7 @@
       <div class="footer_news col-lg-4 col-xs-12">
         <div class="footer_news_text">
           <p>Подписка на новости</p>
+          <?php echo $modules['newslettersubscribe']; ?>
         </div>
         <div class="footer_news_pole">
             <input class="footer_news_pole_input"  type="text">

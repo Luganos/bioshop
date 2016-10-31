@@ -1,6 +1,6 @@
 <?php
 // Heading
-$_['heading_title']    = 'Бесплатная доставка';
+$_['heading_title']    = 'Курьером предприятия по Днепру бесплатно';
 
 // Text
 $_['text_shipping']    = 'Доставка';

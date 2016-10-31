@@ -116,6 +116,7 @@
        </li>
   	</ul>
     </div>
+    <?php if ($categories) { ?>
     <div class="hrader_menu_small">
       <img id="open_small_menu" src="catalog/view/theme/bioshop-prime/image/menu_small.png" alt="">
       <div class="open_header_menu_small">
@@ -138,6 +139,7 @@
         </ul>
       </div>
     </div>
+    <?php } ?>
   </div>
 </header>
 

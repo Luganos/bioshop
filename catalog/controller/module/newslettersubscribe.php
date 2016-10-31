@@ -42,6 +42,8 @@ class ControllerModuleNewslettersubscribe extends Controller {
     $this->language->load('module/newslettersubscribe');
 
     $this->load->model('account/newslettersubscribe');
+    
+    $this->model_account_newslettersubscribe->check_db();
 
     if (isset($this->request->post['subscribe_email']) && filter_var($this->request->post['subscribe_email'], FILTER_VALIDATE_EMAIL)) {
 
@@ -107,6 +109,8 @@ class ControllerModuleNewslettersubscribe extends Controller {
   public function unsubscribe() {
     $this->language->load('module/newslettersubscribe');
     $this->load->model('account/newslettersubscribe');
+    
+    $this->model_account_newslettersubscribe->check_db();
 
     if (isset($this->request->post['subscribe_email']) and filter_var($this->request->post['subscribe_email'], FILTER_VALIDATE_EMAIL)) {
       if ($this->config->get('newslettersubscribe_registered') and $this->model_account_newslettersubscribe->checkRegisteredUser($this->request->post)) {

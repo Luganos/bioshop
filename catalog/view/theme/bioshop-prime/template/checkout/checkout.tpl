@@ -233,37 +233,37 @@ var showcart = {
                      showcart.pushButtonCoupon();
                      showcart.edit();
              break;
-             
+
              //Was changed shipping method
              case 2:
                      showcart.changeShippingMethod();
              break;
-            
+
              //Send request to voucher API
              case 3:
-                       
+
                      showcart.voucher();
-            
+
              break;
-             
+
              //Send request to coupon API
              case 4:
-                     showcart.coupon(); 
-             
+                     showcart.coupon();
+
              break;
-             
+
              //Update small cart
              case 5:
                      showcart.pushButtonCoupon();
-                     showcart.smallCartUpdate(); 
+                     showcart.smallCartUpdate();
                      showcart.edit();
-             
+
              break;
-             
+
              //Update small cart icon
              case 6:
                      showcart.iconCartUpdate();
-             
+
              break;
 
              default:
@@ -275,32 +275,32 @@ var showcart = {
 
 
     },
-    
+
     iconCartUpdate: function() {
-        
-       $('#cart > button').html('<span id="cart-total" class="cart_small_js"><i><img src="catalog/view/theme/bioshop-prime/image/basket_bg.png" alt=""></i><div class="header_pay_circle header_pay_circle_js"><span >' + showcart.data.json.quantity + '</span></div>' + '<p class="wert">' +showcart.data.json.total+ '<span class="wert">' + '</span>'); 
+
+       $('#cart > button').html('<span id="cart-total" class="cart_small_js"><i><img src="catalog/view/theme/bioshop-prime/image/basket_bg.png" alt=""></i><div class="header_pay_circle header_pay_circle_js"><span >' + showcart.data.json.quantity + '</span></div>' + '<p class="wert">' +showcart.data.json.total+ '<span class="wert">' + '</span>');
        $('#cart > ul').load('index.php?route=common/cart/info ul li');
     },
-    
+
     smallCartUpdate: function() {
-        
+
             showcart.data.url = 'index.php?route=checkout/checkout_cart/info';
             showcart.data.id = null;
             showcart.data.value = { "info" : "info" };;
             showcart.data.progress = null;
             showcart.data.redirect = false;
             showcart.ajaxJson(showcart.data.url, showcart.data.value, 6, showcart.data.id, showcart.data.progress);
-        
-            
-        
+
+
+
     },
-    
+
     showError: function(id, errors){
-        
-        
+
+
         $(id).addClass('has-error');
-        
-        
+
+
     },
 
     startLoad: function() {
@@ -310,120 +310,120 @@ var showcart = {
          showcart.ajaxHtml(showcart.data.url, 1, showcart.data.id);
     },
 
-    
+
     changeShippingMethod: function() {
-        
+
             showcart.data.url = 'index.php?route=checkout/checkout_cart';
             showcart.data.id = '.for-customer-cart';
             showcart.data.value = { "shipping_method" : checkout.data.shipping_method };
             showcart.data.progress = null;
             showcart.ajaxChange(showcart.data.url, showcart.data.value, 1, showcart.data.id, showcart.data.progress);
-        
+
     },
-    
+
     coupon: function() {
-        
+
             showcart.data.url = 'index.php?route=total/coupon/coupon';
             showcart.data.id = '.checkout_cart_input_cupon';
             showcart.data.value = { 'coupon': showcart.data.coupon };
             showcart.data.progress = null;
             showcart.data.redirect = false;
             showcart.ajaxJson(showcart.data.url, showcart.data.value, null, showcart.data.id, showcart.data.progress);
-        
-            
+
+
     },
-    
+
     voucher: function() {
-        
+
             showcart.data.url = 'index.php?route=total/voucher/voucher';
             showcart.data.id = '.checkout_cart_input_sertificat';
             showcart.data.value = { 'voucher': showcart.data.voucher };
             showcart.data.progress = null;
             showcart.data.redirect = false;
             showcart.ajaxJson(showcart.data.url, showcart.data.value, null, showcart.data.id, showcart.data.progress);
-        
-        
-        
+
+
+
     },
-    
+
     pushButtonCoupon: function() {
-        
+
         $('.checkout_cart_input_submit').on('click', function() {
-            
+
             showcart.data.voucher = $('input[name=\'voucher\']').val();
-            
+
             showcart.data.coupon = $('input[name=\'coupon\']').val();
-            
+
             showcart.data.error = null;
-            
+
             if (showcart.data.voucher) {
-                
+
                 showcart.MainCase(3);
-                
+
                 if(showcart.data.error === null) {
-                    
-                    showcart.MainCase(2);
-                }  
-                
-            } else if (showcart.data.coupon) {
-                
-                showcart.MainCase(4);
-                
-                if(showcart.data.error === null) {
-                    
+
                     showcart.MainCase(2);
                 }
-                
-                
-            } else if (showcart.data.coupon && showcart.data.voucher) {
-                
-                showcart.MainCase(3);
-                
+
+            } else if (showcart.data.coupon) {
+
+                showcart.MainCase(4);
+
                 if(showcart.data.error === null) {
-                    
+
+                    showcart.MainCase(2);
+                }
+
+
+            } else if (showcart.data.coupon && showcart.data.voucher) {
+
+                showcart.MainCase(3);
+
+                if(showcart.data.error === null) {
+
                     showcart.MainCase(4);
-                    
+
                     if(showcart.data.error === null) {
-                    
+
                         showcart.MainCase(2);
                     }
-                    
-                    
+
+
                 }
-                
-                
+
+
             }
 
         });
-        
+
     },
-    
+
     edit: function() {
-        
+
         $('.you_order_form-control').on('click', function() {
-            
+
             showcart.data.url = 'index.php?route=checkout/checkout_cart/edit';
             showcart.data.id = '.for-customer-cart';
             showcart.data.value = $('#send_col_product_big_cart :input');
             showcart.data.progress = null;
             showcart.data.redirect = false;
-            showcart.ajaxChange(showcart.data.url, showcart.data.value, 5, showcart.data.id, showcart.data.progress, showcart.data.redirect);   
-            
-          
-        
+            showcart.ajaxChange(showcart.data.url, showcart.data.value, 5, showcart.data.id, showcart.data.progress, showcart.data.redirect);
+
+
+
         });
-        
+
     },
-    
+
     remove: function(product_id) {
-        
+
             showcart.data.url = 'index.php?route=checkout/checkout_cart/remove';
             showcart.data.id = '.for-customer-cart';
             showcart.data.value = { "key" : product_id };
             showcart.data.progress = null;
             showcart.data.redirect = false;
             showcart.ajaxChange(showcart.data.url, showcart.data.value, 5, showcart.data.id, showcart.data.progress, showcart.data.redirect);
-        
+
     },
 
     showHtml: function(id, html) {
@@ -550,12 +550,12 @@ var showcart = {
                          } else {
 
                              if (callback !== null) {
-                                 
+
                                 if(json !== undefined) {
-                                    
-                                  showcart.data.json = json;  
+
+                                  showcart.data.json = json;
                                 }
-                                
+
                                 showcart.MainCase(callback);
                              }
                          }
@@ -670,11 +670,11 @@ var checkout = {
              //Hook action after change field
              case 8:
                     if (checkout.data.logged) {
-                        
-                        
+
+
                         checkout.changeShippingMethod();
                     } else {
-                        
+
                         checkout.showSocialLogin();
                     }
 

@@ -1167,6 +1167,7 @@ textarea {
     margin-bottom: 50px;
   }
   .table-responsive {
+    width: 96% !important;
     overflow-x: hidden;
   }
   .table-bordered {
@@ -1388,6 +1389,16 @@ textarea {
   }
 }
 /*-----END_cart_big-------*/
+/*-----cart_small-----------*/
+@media (min-width: 1280px) {
+  
+}
+@media (max-width: 1279px) {
+  .cart_small_position {
+    right: 50px !important;
+  }
+}
+/*-----END_cart_small-------*/
 /*------product.tpl---------*/
 @media (min-width: 1280px) {
   .product_row {
@@ -1823,124 +1834,324 @@ textarea {
   #select-shipping-address {
     width: 460px;
   }
+  /*-----END_login----*/
+  /*-----checkout_cart.tpl--------*/
+  .you_order {
+    border: 1px solid #e2e2e2;
+  }
+  .you_order_img {
+    float: left;
+    margin: 20px;
+  }
+  .you_order_img img {
+    min-width: 145px;
+    min-height: 145px;
+    max-width: 145px;
+    max-height: 145px;
+  }
+  .you_order_inform_descroptoin {
+    float: left;
+    width: 60%;
+    margin-top: 40px;
+    margin-bottom: 10px;
+  }
+  .you_order_inform_descroptoin a {
+    display: inline;
+    color: #0c76bb;
+    font-size: 16px;
+  }
+  .you_order_inform_descroptoin small {
+    display: inline;
+    color: #0c76bb;
+    font-size: 16px;
+  }
+  .you_order_text_left_cart_col {
+    width: 100%;
+  }
+  .you_order_cart_del {
+    left: 240px;
+    bottom: 20px;
+  }
+  .you_order_form-control {
+    display: inline;
+    width: 70px !important;
+  }
+  .you_order_price {
+    display: inline;
+    position: relative;
+    left: 100px;
+    bottom: 35px;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+  }
+  .you_order_all {
+    display: inline;
+    position: absolute;
+    left: 220px;
+    bottom: 37px;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+  }
+  .checkout_cart_coupon_and_certificat {
+    text-align: right;
+    margin-right: 20px;
+  }
+  .checkout_cart_input_cupon {
+    display: inline-block;
+    width: 115px;
+    height: 40px;
+    margin-bottom: 10px;
+  }
+  .input_error_cupon {
+    display: block;
+  }
+  .input_error_sertificat {
+    display: block;
+  }
+  .checkout_cart_input_sertificat {
+    width: 115px;
+    height: 40px;
+    margin-bottom: 10px;
+  }
+  .checkout_cart_input_submit {
+    width: 115px;
+    height: 40px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #8ea9e8;
+    margin-bottom: 30px;
+  }
+  .checkout_cart_panel-group {
+    width: 100% !important;
+  }
+  .checkout_cart_panel-group p {
+    display: inline;
+    color: #333333;
+    font-size: 16px;
+  }
+  .checkout_cart_cart_sum {
+    width: 450px;
+    margin-left: 100px !important;
+  }
+  .checkout_cart_text-right_cart_sum {
+    height: 50px !important;
+    line-height: 0 !important;
+  }
+  .checkout_cart_text-right_cart_sum {
+    height: 50px !important;
+    line-height: 0 !important;
+  }
+  .checkout_cart_text-right_cart_sum span {
+    font-size: 14px;
+  }
+  /*-----END_checkout_cart.tpl----*/
 }
 @media (max-width: 1279px) {
-  
+  .checkout_h1 {
+    margin-top: 30px;
+    margin-left: 15px;
+    color: #0c76bb !important;
+    border-left: 2px solid #ff0024;
+    padding-left: 20px;
+    color: #8ea9e8;
+    font-size: 18px !important;
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+  }
+  .checkout_login_h1 {
+    color: #0c76bb;
+    font-size: 21px;
+    font-weight: bold;
+    margin-bottom: 25px;
+  }
+  .show-new-customer {
+    width: 90% !important;
+    padding: 0px;
+    margin-bottom: 30px;
+    margin-top: 0px !important;
+  }
+  .checkout_nav-tabs_one a {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+  .checkout_tab-content {
+    width: 100% !important;
+  }
+  .checkout_login_input {
+    width: 100%;
+    float: none;
+  }
+  .checkout_login_input textarea {
+    width: 444px;
+  }
+  .alert-warning {
+    color: black;
+    background-color: transparent;
+    border-color: transparent;
+  }
+  .checkout_address_deliveri {
+    width: 80%;
+    float: none;
+    padding: 0px;
+    padding-right: 15px;
+  }
+  #for-shipping-address {
+    margin-top: 15px;
+  }
+  #button-register {
+    float: left !important;
+    margin-right: 150px;
+  }
+  #button-forbid-buy {
+    margin-left: 15px !important;
+    margin-bottom: 50px;
+  }
+  .form-group_login {
+    float: none;
+  }
+  #forget_pas {
+    background-color: white !important;
+    color: black !important;
+  }
+  .button_red_input_login {
+    float: right;
+    margin-right: 132px;
+  }
+  #button-confirm-easy-buy {
+    width: 205px;
+  }
+  #select-shipping-method {
+    margin: 0 15px 0 15px;
+    width: 460px;
+  }
+  #select-payment-method {
+    margin: 0 15px 0 15px;
+    width: 460px;
+  }
+  #select-shipping-address {
+    margin: 0 15px 0 15px;
+    width: 460px;
+  }
+  /*-----END_login----*/
+  /*-----checkout_cart.tpl--------*/
+  .you_order {
+    border: 1px solid #e2e2e2;
+  }
+  .you_order_img {
+    float: left;
+    margin: 20px;
+  }
+  .you_order_img img {
+    min-width: 145px;
+    min-height: 145px;
+    max-width: 145px;
+    max-height: 145px;
+  }
+  .you_order_inform_descroptoin {
+    float: left;
+    width: 60%;
+    margin-top: 40px;
+    margin-bottom: 10px;
+  }
+  .you_order_inform_descroptoin a {
+    display: inline;
+    color: #0c76bb;
+    font-size: 16px;
+  }
+  .you_order_inform_descroptoin small {
+    display: inline;
+    color: #0c76bb;
+    font-size: 16px;
+  }
+  .you_order_text_left_cart_col {
+    width: 100%;
+  }
+  .you_order_cart_del {
+    left: 240px;
+    bottom: 20px;
+  }
+  .you_order_form-control {
+    display: inline;
+    width: 70px !important;
+  }
+  .you_order_price {
+    display: inline;
+    position: relative;
+    left: 100px;
+    bottom: 35px;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+  }
+  .you_order_all {
+    display: inline;
+    position: absolute;
+    left: 220px;
+    bottom: 37px;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+  }
+  .checkout_cart_coupon_and_certificat {
+    text-align: right;
+    margin-right: 30px;
+  }
+  .checkout_cart_input_cupon {
+    display: inline-block;
+    width: 115px;
+    height: 40px;
+    margin-bottom: 10px;
+  }
+  .input_error_cupon {
+    display: block;
+  }
+  .input_error_sertificat {
+    display: block;
+  }
+  .checkout_cart_input_sertificat {
+    width: 115px;
+    height: 40px;
+    margin-bottom: 10px;
+  }
+  .checkout_cart_input_submit {
+    width: 115px;
+    height: 40px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #8ea9e8;
+    margin-bottom: 30px;
+  }
+  .checkout_cart_panel-group {
+    width: 100% !important;
+  }
+  .checkout_cart_panel-group p {
+    display: inline;
+    color: #333333;
+    font-size: 16px;
+  }
+  .checkout_cart_cart_sum {
+    width: 450px;
+    margin-left: 240px !important;
+  }
+  .checkout_cart_text-right_cart_sum {
+    height: 50px !important;
+    line-height: 0 !important;
+  }
+  .checkout_cart_text-right_cart_sum {
+    height: 50px !important;
+    line-height: 0 !important;
+  }
+  .checkout_cart_text-right_cart_sum span {
+    font-size: 14px;
+  }
+  /*-----END_checkout_cart.tpl----*/
 }
-/*-----END_login----*/
-/*-----checkout_cart.tpl--------*/
-.you_order {
-  border: 1px solid #e2e2e2;
-}
-.you_order_img {
-  float: left;
-  margin: 20px;
-}
-.you_order_img img {
-  min-width: 145px;
-  min-height: 145px;
-}
-.you_order_inform_descroptoin {
-  float: left;
-  width: 60%;
-  margin-top: 40px;
-  margin-bottom: 10px;
-}
-.you_order_inform_descroptoin a {
-  display: inline;
-  color: #0c76bb;
-  font-size: 16px;
-}
-.you_order_inform_descroptoin small {
-  display: inline;
-  color: #0c76bb;
-  font-size: 16px;
-}
-.you_order_text_left_cart_col {
-  width: 100%;
-}
-.you_order_cart_del {
-  left: 240px;
-  bottom: 20px;
-}
-.you_order_form-control {
-  display: inline;
-  width: 70px !important;
-}
-.you_order_price {
-  display: inline;
-  position: relative;
-  left: 100px;
-  bottom: 35px;
-  font-size: 18px;
-  font-weight: bold;
-  color: black;
-}
-.you_order_all {
-  display: inline;
-  position: absolute;
-  left: 220px;
-  bottom: 37px;
-  font-size: 18px;
-  font-weight: bold;
-  color: black;
-}
-.checkout_cart_coupon_and_certificat {
-  text-align: right;
-  margin-right: 20px;
-}
-.checkout_cart_input_cupon {
-  display: inline-block;
-  width: 115px;
-  height: 40px;
-  margin-bottom: 10px;
-}
-.input_error_cupon {
-  display: block;
-}
-.input_error_sertificat {
-  display: block;
-}
-.checkout_cart_input_sertificat {
-  width: 115px;
-  height: 40px;
-  margin-bottom: 10px;
-}
-.checkout_cart_input_submit {
-  width: 115px;
-  height: 40px;
-  color: white;
-  font-size: 14px;
-  font-weight: bold;
-  text-transform: uppercase;
-  background-color: #8ea9e8;
-  margin-right: 4px;
-  margin-bottom: 30px;
-}
-.checkout_cart_panel-group {
-  width: 100% !important;
-}
-.checkout_cart_panel-group p {
-  display: inline;
-  color: #333333;
-  font-size: 16px;
-}
-.checkout_cart_cart_sum {
-  width: 450px;
-  margin-left: 100px !important;
-}
-.checkout_cart_text-right_cart_sum {
-  height: 50px !important;
-  line-height: 0 !important;
-}
-.checkout_cart_text-right_cart_sum {
-  height: 50px !important;
-  line-height: 0 !important;
-}
-.checkout_cart_text-right_cart_sum span {
-  font-size: 14px;
-}
-/*-----END_checkout_cart.tpl----*/
 /*-----END_checkout.tpl---------*/
 /*-----Social_net-----------*/
 @media (min-width: 1280px) {
@@ -1978,7 +2189,38 @@ textarea {
   }
 }
 @media (max-width: 1279px) {
-  
+  h5 {
+    width: 120px;
+    position: absolute !important;
+    top: 25px !important;
+    left: 550px !important;
+    color: #999999;
+  }
+  #loggin-by-social-network {
+    display: inline;
+    width: 220px;
+    height: 80px !important;
+  }
+  #branding {
+    width: 10px !important;
+    display: none !important;
+  }
+  #branding a {
+    width: 10px !important;
+    height: 0px !important;
+    display: none !important;
+  }
+  .plugin_title {
+    color: red !important;
+  }
+  #social_login {
+    width: 220px;
+  }
+  #show-social-login {
+    position: absolute !important;
+    top: 20px !important;
+    left: 530px !important;
+  }
 }
 /*-----END_Social_net-------*/
 /*----footer-----*/
@@ -2342,5 +2584,10 @@ width: 300px;
 .viber {
   border: 1px solid #cccccc;
 }
-
+/*-----hidden_search------*/
+.btn-default {
+  border-color: #C3C3C5 !important;
+  box-shadow: inset 0 0px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+}
+/*-----END_hidden_search------*/
 /* This beautiful CSS-File has been crafted with LESS (lesscss.org) and compiled by simpLESS (wearekiss.com/simpless) */

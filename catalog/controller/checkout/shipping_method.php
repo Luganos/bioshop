@@ -4,6 +4,17 @@ class ControllerCheckoutShippingMethod extends Controller {
 		$this->load->language('checkout/checkout');
 
 		if (isset($this->session->data['shipping_address']) || $this->customer->isLogged()) {
+                    
+                        if (!isset($this->session->data['shipping_address'])) {
+                            
+                            $address_id = $this->customer->getAddressId();
+                            
+			    $this->load->model('account/address');
+
+			    $this->session->data['shipping_address'] = $this->model_account_address->getAddress($address_id);
+                            
+                        }
+                        
 			// Shipping Methods
 			$method_data = array();
 

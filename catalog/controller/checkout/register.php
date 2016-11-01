@@ -23,6 +23,12 @@ class ControllerCheckoutRegister extends Controller {
 		} else {
 			$data['zone_id'] = $this->config->get('config_zone_id');
 		}
+                
+                if (isset($this->session->data['shipping_address']['fax'])) {
+			$data['fax'] = $this->session->data['shipping_address']['fax'];
+		} else {
+			$data['fax'] = '';
+		}
 
 		$data['shipping_required'] = $this->cart->hasShipping();
                 

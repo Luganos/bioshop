@@ -64,13 +64,13 @@
                       </div>
                   </div>
                   <input type="hidden" name="lastname"  value="" placeholder="" id="input-lastname" class="form-control" />
-                  <input type="hidden" name="address_2"  value="" placeholder="" id="input-lastname" class="form-control" />
+                  <input type="hidden" name="address_2"  value="" placeholder="" id="input-address_2" class="form-control" />
                   <input type="hidden" name="customer_group_id"  value="<?php echo $customer_group_id; ?>" placeholder="" id="input-customer_group_id" class="form-control" />
                   <input type="hidden" name="country_id"  value="<?php echo $country_id; ?>" placeholder="" id="input-country_id" class="form-control" />
                   <input type="hidden" name="postcode"  value="<?php echo $postcode; ?>" placeholder="" id="input-postcode" class="form-control" />
                   <input type="hidden" name="zone_id"  value="<?php echo $zone_id; ?>" placeholder="" id="input-zone_id" class="form-control" />
                   <input type="hidden" name="agree"  value="1" placeholder="" id="input-zone_id" class="form-control" />
-                  <input type="hidden" name="fax"  value="" placeholder="" id="input-fax" class="form-control" />
+                  <input type="hidden" name="fax"  value="<?php echo $fax; ?>" placeholder="" id="input-fax" class="form-control" />
                   <input type="hidden" name="company"  value="" placeholder="" id="input-company" class="form-control" />
                   <div class ="row">
                          <button type="button" style ="margin-top: 20px !important; margin-left: 25px !important" id="button-register" data-loading-text="Загрузка" class="button_red_input">Регистрация</button>

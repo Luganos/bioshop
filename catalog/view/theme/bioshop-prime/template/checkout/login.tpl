@@ -119,7 +119,7 @@
                   <div class="form-group">
                       <label class="col-sm-2 control-label" for="input-phone"><span data-toggle="tooltip" title="Телефон">Телефон</span></label>
                       <div class="col-sm-10">
-                          <input id="phone" type="text" name="phone" value="" placeholder="067-1234-568"  class="form-control" />
+                          <input type="text" name="phone" value=""   placeholder="067-123-4567" id="phone-for-easy-customer" class="form-control" />
                           <span  class="input_error_tel"></span>
                       </div>
                   </div>
@@ -132,5 +132,7 @@
        <script>
           $(function($){
             $("#phone").mask("+38(999) 999-9999");
+            $("#phone-for-easy-customer").mask("+38(999) 999-9999");
+            
           });
        </script>

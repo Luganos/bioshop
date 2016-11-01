@@ -79,6 +79,14 @@ class ControllerCheckoutCheckout extends Controller {
 		}
 
 		$data['shipping_required'] = $this->cart->hasShipping();
+                
+                if (!empty($this->session->data['vouchers']) && empty($data['shipping_required'])) {
+                    
+                    $data['voucher'] = 1;
+                } else {
+                    
+                    $data['voucher'] = 0;
+                }
 
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['column_right'] = $this->load->controller('common/column_right');

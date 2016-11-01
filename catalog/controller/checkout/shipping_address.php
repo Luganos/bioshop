@@ -31,6 +31,8 @@ class ControllerCheckoutShippingAddress extends Controller {
 		}
                 
                 $data['delivery_net'] = NULL;
+                
+                $data['shipping_required'] = $this->cart->hasShipping();
 
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/checkout/shipping_address.tpl')) {
 			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/checkout/shipping_address.tpl', $data));
@@ -71,6 +73,8 @@ class ControllerCheckoutShippingAddress extends Controller {
                 
                 
                 $data['delivery_net'] = NULL;
+                
+                $data['shipping_required'] = $this->cart->hasShipping();
                 
 		if ($this->config->get($this->request->post['shipping_method'] . '_status')) {
                     

@@ -59,11 +59,11 @@
                 <td></td>
                 <td class="text-left"><?php echo $vouchers['description']; ?></td>
                 <td class="text-left"></td>
-                <td class="text-left"><div class="input-group btn-block" style="max-width: 200px;">
+                <td class="text-left"><div class="input-group btn-block input-group_cart" style="max-width: 120px;">
                     <input type="text" name="" value="1" size="1" disabled="disabled" class="form-control" />
                     <span class="input-group-btn"><button type="button" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger" onclick="voucher.remove('<?php echo $vouchers['key']; ?>');"><i class="fa fa-times-circle"></i></button></span></div></td>
-                <td class="text-right"><?php echo $vouchers['amount']; ?>55</td>
-                <td class="text-right"><?php echo $vouchers['amount']; ?></td>
+                <td class="text-right text_right_cart"><?php echo $vouchers['amount']; ?></td>
+                <td class="text-right text_right_cart text_right_cart_end"><?php echo $vouchers['amount']; ?></td>
               </tr>
               <?php } ?>
             </tbody>

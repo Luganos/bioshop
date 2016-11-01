@@ -181,22 +181,31 @@
  $(function(){
 
      showcart.MainCase(0);
+     
+   <?php if ($voucher) { ?>
+       
+      checkout.data.voucher = true; 
+       
+   <?php } else { ?>
+   
+      checkout.data.voucher = false; 
+      
+   <?php } ?>
 
     //Is user login?
     <?php if (!$logged) { ?>                      //No
 
-
-       checkout.MainCase(0);
-       checkout.data.redirect = true;
-       checkout.data.logged = false;
-
+          checkout.MainCase(0);
+          checkout.data.redirect = true;
+          checkout.data.logged = false;
+ 
     <?php } else { ?>                             //Yes
 
-       checkout.data.redirect = false;
-       checkout.data.logged = true;
-       checkout.MainCase(1);
-       checkout.MainCase(5);
-
+          checkout.data.redirect = false;
+          checkout.data.logged = true;
+          checkout.MainCase(1);
+          checkout.MainCase(5);
+ 
     <?php } ?>
 
 });
@@ -604,6 +613,7 @@ var checkout = {
               shipping_address: null,
               shipping_method: null,
               payment_method: null,
+              voucher: null,
               logged: 0
 	},
 
@@ -650,9 +660,10 @@ var checkout = {
 
              //Save data for payment address
              case 4:
-
-                  checkout.paymentSave();
-                  checkout.confirmCustomer();
+ 
+                    checkout.paymentSave();
+                    checkout.confirmCustomer();
+   
 
 	     break;
 
@@ -748,8 +759,6 @@ var checkout = {
 
             break;
 
-
-
              default: break;
 
       }
@@ -834,9 +843,18 @@ var checkout = {
 
   confirmCustomer: function() {
       $('#button-confirm').on('click', function(){
+          
+          if (checkout.data.voucher) {
+              
+              checkout.collectData();
+              checkout.MainCase(11); 
+              
+          } else {
+              
+             checkout.collectData();
+             checkout.MainCase(9);  
+          }
 
-           checkout.collectData();
-           checkout.MainCase(9);
 
       });
 

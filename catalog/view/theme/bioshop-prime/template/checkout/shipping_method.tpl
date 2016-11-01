@@ -1,6 +1,7 @@
 <?php if ($shipping_methods) { ?>
 <h1 class="checkout_login_h1">Доставка</h1>
 <p class="control-label">Способ доставки</p>
+<?php if (!empty($shipping_required)) { ?>
 <select name="shipping_method" class="form-control" id ="select-shipping-method">
 <?php foreach ($shipping_methods as $shipping_method) { ?>
 <p><strong><?php echo $shipping_method['title']; ?></strong></p>
@@ -18,6 +19,13 @@
 <?php } ?>
 <?php } ?>
 </select>
+<?php } else { ?>
+ <div class="form-group">
+       <div class="col-sm-12 checkout_address_deliveri">
+            <input type="text"  value="" placeholder="Не требуется" class="form-control" />
+       </div>
+ </div>
+<?php } ?>
 <?php } else { ?>
 <h1 class="checkout_login_h1">Доставка</h1>
 <p class="control-label">Способ доставки</p>

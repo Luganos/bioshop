@@ -28,6 +28,8 @@ class ControllerCheckoutPaymentAddress extends Controller {
 		} else {
 			$data['zone_id'] = $this->config->get('config_zone_id');
 		}
+                
+                $data['shipping_required'] = $this->cart->hasShipping();
 
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/checkout/payment_address.tpl')) {
 			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/checkout/payment_address.tpl', $data));

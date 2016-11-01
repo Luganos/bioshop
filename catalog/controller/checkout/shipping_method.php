@@ -3,7 +3,7 @@ class ControllerCheckoutShippingMethod extends Controller {
 	public function index() {
 		$this->load->language('checkout/checkout');
 
-		if (isset($this->session->data['shipping_address'])) {
+		if (isset($this->session->data['shipping_address']) || $this->customer->isLogged()) {
 			// Shipping Methods
 			$method_data = array();
 

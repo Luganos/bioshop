@@ -37,6 +37,7 @@ class ControllerCheckoutLogin extends Controller {
                 $data['postcode'] = $register['postcode'];
                 $data['country_id'] = $register['country_id'];
                 $data['zone_id'] = $register['zone_id'];
+                $data['fax'] = $register['fax'];
 
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/checkout/login.tpl')) {
 			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/checkout/login.tpl', $data));

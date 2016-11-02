@@ -2,6 +2,8 @@ $(function(){
 
 $("#spin").on("click",function(){console.log("ttt")});
 $('.sl').slick({
+    prevArrow: '<button type="button"><img src="right-slid.png"></button>',
+    nextArrow: '<button type="button"><img src="left-slid.png"></button>'
     /*vertical:true,
     verticalSwiping:true,
     autoplaySpeed:3000,
@@ -58,6 +60,28 @@ var opts = {
 
 var spinner = new Spinner(opts).spin(target);
 
+/*
+//-----Border_volume-----------
+
+var click = 1;
+
+function Click(){
+    if(click){
+        $('.img-thumbnail').css({"border": "3px solid white"});
+        $(this).css({"border": "3px solid rgb(201,230,238)"});
+        click = 1;
+    }
+    else{
+        $(this).css({"border": "3px solid white"});
+        click = 0;
+    }
+};
+
+
+$('.img-thumbnail').on("click", Click);
+
+//-----END_Border_volume-------
+*/
 
 
 });

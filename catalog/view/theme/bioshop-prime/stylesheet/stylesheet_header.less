@@ -455,7 +455,7 @@ header{
 
 .header_tel_text_number{
     display: block;
-    max-height: 25px;
+    max-height: 16px;
     font-size: 11px;
     font-weight: bold;
     color:rgb(0,30,150);
@@ -589,8 +589,8 @@ header{
 }
 
 .hrader_menu_small img{
-    float: right;
-    margin-right: 22px;
+    //float: right;
+    margin-left: 9px;
     position: relative;
     bottom: 25px;
     z-index: 10;
@@ -610,7 +610,7 @@ header{
 
 .open_header_menu_small_ul{
     //margin-left: 35px;
-    padding-bottom: 30px;
+    //padding-bottom: 30px;
     list-style-type:none;
 
 }
@@ -619,6 +619,7 @@ header{
     font-size: 14px;
     color: white;
     padding-left: 35px;
+    line-height: 45px !important;
 }
 .open_header_menu_small_ul li:hover{
     background-color: rgb(90,120,193);
@@ -732,9 +733,20 @@ header{
         display: inline;
         width:350px;
         padding-left: 0px;
+        font-family: 'Tahoma';
         font-size: 24px;
         font-weight: bold;
         color: rgb(12,118,187);
+    }
+    #input-sort, #input-limit{
+        //max-width: 160px;
+        font-size: 14px;
+        font-family: "Arial";
+        color: rgb(152,152,152);
+    }
+    #input-search, #category_id{
+        max-width: 200px;
+        margin-bottom: 10px;
     }
     .category_cort{
         width: 350px;
@@ -935,7 +947,7 @@ header{
         color: rgb(253,252,252);
         text-transform: uppercase;
     }
-    .slick-prev{
+    .slick-prev, {
         line-height: 50% !important;
         top: 105% !important;
         left: 580px !important;
@@ -957,11 +969,27 @@ header{
         color: rgb(81,98,111) !important;
         font-size: 30px !important;
     }
-    .slick-next{
+    .slick-next, {
         line-height: 50% !important;
         top: 105% !important;
         right: 590px !important;
     }
+    /*.slick-arrow::before{
+        position: absolute !important;
+        top: 0px !important;
+        right: 0px !important;
+    }*/
+    .slick-arrow{
+        position: absolute !important;
+        line-height: 50% !important;
+        top: 105% !important;
+        right: 590px !important;
+        background-color: transparent !important;
+        border: 0px !important;
+        margin-left: 10px;
+        padding-left: 10px;
+    }
+
 }
 
 @media (max-width: 1279px) {
@@ -2941,3 +2969,12 @@ width: 300px;
 }
 
 /*-----END_hidden_search------*/
+/*
+.img-thumbnail:hover{
+    border: 1px solid red !important;
+}*/
+
+.slick-arrow{
+    background-color: transparent !important;
+    border: 0px !important;
+}

@@ -377,7 +377,7 @@ textarea {
   }
   .header_tel_text_number {
     display: block;
-    max-height: 25px;
+    max-height: 16px;
     font-size: 11px;
     font-weight: bold;
     color: #001e96;
@@ -492,8 +492,7 @@ textarea {
     padding: 0px;
   }
   .hrader_menu_small img {
-    float: right;
-    margin-right: 22px;
+    margin-left: 9px;
     position: relative;
     bottom: 25px;
     z-index: 10;
@@ -510,7 +509,6 @@ textarea {
     border-radius: 5px;
   }
   .open_header_menu_small_ul {
-    padding-bottom: 30px;
     list-style-type: none;
   }
   .open_header_menu_small_ul li {
@@ -518,6 +516,7 @@ textarea {
     font-size: 14px;
     color: white;
     padding-left: 35px;
+    line-height: 45px !important;
   }
   .open_header_menu_small_ul li:hover {
     background-color: #5a78c1;
@@ -619,9 +618,21 @@ textarea {
     display: inline;
     width: 350px;
     padding-left: 0px;
+    font-family: 'Tahoma';
     font-size: 24px;
     font-weight: bold;
     color: #0c76bb;
+  }
+  #input-sort,
+  #input-limit {
+    font-size: 14px;
+    font-family: "Arial";
+    color: #989898;
+  }
+  #input-search,
+  #category_id {
+    max-width: 200px;
+    margin-bottom: 10px;
   }
   .category_cort {
     width: 350px;
@@ -828,6 +839,21 @@ textarea {
     line-height: 50% !important;
     top: 105% !important;
     right: 590px !important;
+  }
+  /*.slick-arrow::before{
+          position: absolute !important;
+          top: 0px !important;
+          right: 0px !important;
+      }*/
+  .slick-arrow {
+    position: absolute !important;
+    line-height: 50% !important;
+    top: 105% !important;
+    right: 590px !important;
+    background-color: transparent !important;
+    border: 0px !important;
+    margin-left: 10px;
+    padding-left: 10px;
   }
 }
 @media (max-width: 1279px) {
@@ -2636,4 +2662,13 @@ width: 300px;
   box-shadow: inset 0 0px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05) !important;
 }
 /*-----END_hidden_search------*/
+/*
+.img-thumbnail:hover{
+    border: 1px solid red !important;
+}*/
+.slick-arrow {
+  background-color: transparent !important;
+  border: 0px !important;
+}
+
 /* This beautiful CSS-File has been crafted with LESS (lesscss.org) and compiled by simpLESS (wearekiss.com/simpless) */

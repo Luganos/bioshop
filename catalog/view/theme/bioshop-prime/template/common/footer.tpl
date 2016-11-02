@@ -39,7 +39,9 @@
         </div>
         <div class="footer_geeker_logo">
              <span>Разработано в</span>
+             <a href="http://geeker.pro">
              <img src="catalog/view/theme/bioshop-prime/image/geeker.png" alt="">
+             </a>
         </div>
     </div>
    </div>
@@ -58,7 +60,7 @@
                       <a href="<?php echo $contact; ?>">
                          <li>Контакты</li>
                       </a>
-                  <?php } ?> 
+                  <?php } ?>
 				  <?php if (strtolower($information['title']) == strtolower("Сотрудничество")) { ?>
 				      <a href="<?php echo $affiliate; ?>">
                          <li>Сотрудничество</li>

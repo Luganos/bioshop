@@ -59,11 +59,11 @@
                          <li>Контакты</li>
                       </a>
                   <?php } ?> 
-				  <?php if (strtolower($information['title']) == strtolower("Сотрудничество")) { ?>
-				      <a href="<?php echo $affiliate; ?>">
+	          <?php if (strtolower($information['title']) == strtolower("Сотрудничество")) { ?>
+		     <a href="<?php echo $affiliate; ?>">
                          <li>Сотрудничество</li>
                       </a>
-				  <?php } ?>
+		<?php } ?>
                <?php } ?>
         <?php } ?>
         </ul>

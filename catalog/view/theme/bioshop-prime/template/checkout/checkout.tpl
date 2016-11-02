@@ -419,10 +419,25 @@ var showcart = {
     edit: function() {
 
         $('.you_order_form-control').on('click', function() {
-
+   
+            
+            
+            var elem = document.getElementsByClassName("you_order_form-control");
+            var names = [];
+            
+            for (var i = 0; i < elem.length; ++i) {
+                
+                      names[elem[i].name] = elem[i].value;
+            }
+       
+            var quantity = $.extend({}, names);
+  
+            var shipping_method = $('#select-shipping-method :selected').val();
+  
+                     
             showcart.data.url = 'index.php?route=checkout/checkout_cart/edit';
             showcart.data.id = '.for-customer-cart';
-            showcart.data.value = $('#send_col_product_big_cart :input');
+            showcart.data.value = { 'quantity' : quantity, 'shipping_method': shipping_method };
             showcart.data.progress = null;
             showcart.data.redirect = false;
             showcart.ajaxChange(showcart.data.url, showcart.data.value, 5, showcart.data.id, showcart.data.progress, showcart.data.redirect);
@@ -434,10 +449,12 @@ var showcart = {
     },
 
     remove: function(product_id) {
+        
+            var shipping_method = $('#select-shipping-method :selected').val();
 
             showcart.data.url = 'index.php?route=checkout/checkout_cart/remove';
             showcart.data.id = '.for-customer-cart';
-            showcart.data.value = { "key" : product_id };
+            showcart.data.value = { key: product_id, shipping_method: shipping_method };
             showcart.data.progress = null;
             showcart.data.redirect = false;
             showcart.ajaxChange(showcart.data.url, showcart.data.value, 5, showcart.data.id, showcart.data.progress, showcart.data.redirect);

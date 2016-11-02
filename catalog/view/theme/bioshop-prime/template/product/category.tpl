@@ -83,7 +83,7 @@
        <?php if ($products) { ?>
         <div class="row category_row">
         <?php foreach ($products as $product) { ?>
-          <div class="product-layout product-grid col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <div class="product-layout product-grid col-lg-4 col-md-4 col-sm-4 col-xs-4">
             <div class="cart_product">
                 <div class="cart_product_img">
                     <a href ="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>"></a>

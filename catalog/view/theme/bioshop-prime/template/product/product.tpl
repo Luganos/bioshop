@@ -18,7 +18,7 @@
         <?php if ($column_left || $column_right) { ?>
         <?php $class = 'col-sm-6'; ?>
         <?php } else { ?>
-        <?php $class = 'col-sm-6 col-lg-4'; ?>
+        <?php $class = 'col-xs-6 col-lg-4'; ?>
         <?php } ?>
         <div class="<?php echo $class; ?>">
           <?php if ($thumb || $images) { ?>
@@ -54,7 +54,7 @@
           <ul class="list-unstyled product_list-unstyled">
             <?php if (!$special) { ?>
             <li>
-              <h2><?php echo $price; ?></h2>
+              <h2 class="product_sum_small"><?php echo $price; ?></h2>
             </li>
             <?php } else { ?>
             <li><span style="text-decoration: line-through;"><?php echo $price; ?></span></li>
@@ -250,7 +250,7 @@
       <ul class="nav nav-tabs product_nav-tabs">
             <li class="active product_nav-tabs_one"><a href="#tab-description" data-toggle="tab"><?php echo $tab_description; ?></a></li>
             <?php if ($attribute_groups) { ?>
-            <li class=""><a href="#tab-specification" data-toggle="tab"><?php echo $tab_attribute; ?></a></li>
+            <li class="product_nav-tabs_one"><a href="#tab-specification" data-toggle="tab"><?php echo $tab_attribute; ?></a></li>
             <?php } ?>
             <?php if ($review_status) { ?>
             <li class="product_nav-tabs_one"><a href="#tab-review" data-toggle="tab"><?php echo $tab_review; ?></a></li>
@@ -262,12 +262,12 @@
             <div class="tab-pane" id="tab-specification">
               <table class="table table-bordered">
                 <?php foreach ($attribute_groups as $attribute_group) { ?>
-                <?php if((strtolower($attribute_group['name']) == strtolower("Доставка")) || (strtolower($attribute_group['name']) == strtolower("Оплата"))) { ?> 
+                <?php if((strtolower($attribute_group['name']) == strtolower("Доставка")) || (strtolower($attribute_group['name']) == strtolower("Оплата"))) { ?>
                 <thead>
                   <tr>
                     <td colspan="2"><strong><?php echo $attribute_group['name']; ?></strong></td>
                   </tr>
-                </thead>                 
+                </thead>
                 <tbody>
                   <?php foreach ($attribute_group['attribute'] as $attribute) { ?>
                   <tr>

@@ -120,8 +120,9 @@
     <div class="hrader_menu_small">
       <img id="open_small_menu" src="catalog/view/theme/bioshop-prime/image/menu_small.png" alt="">
       <div class="open_header_menu_small">
-      <ul class="open_header_menu_small_ul">    
-      <?php foreach ($categories as $category) { ?>   
+      <ul class="open_header_menu_small_ul">
+      <p>Меню</p>
+      <?php foreach ($categories as $category) { ?>
       <a href="<?php echo $category['href']; ?>"><li><?php echo $category['name']; ?></li></a>
        <?php } ?>
        </ul>

@@ -39,7 +39,7 @@
                   <div class="you_order_inform_col_and_sum">
                     <div class="text-left text_left_cart_col you_order_text_left_cart_col">
                       <div class="input-group btn-block input-group_cart" style="max-width: 120px;">
-                          <input type="number" autofocus name="quantity[<?php echo $product['cart_id']; ?>]" value="<?php echo $product['quantity']; ?>" size="1" class="form-control you_order_form-control" />
+                          <input type="number" autofocus name="<?php echo $product['cart_id']; ?>" value="<?php echo $product['quantity']; ?>" size="1" class="form-control you_order_form-control" />
                           <span class="you_order_price"><?php echo $product['price']; ?></span>
                           <span class="you_order_all"><?php echo $product['total']; ?></span>
                           <span class="input-group-btn">

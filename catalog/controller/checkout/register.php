@@ -72,6 +72,16 @@ class ControllerCheckoutRegister extends Controller {
 
 		if (!$json) {
 			$this->load->model('account/customer');
+                        
+                        if (isset($this->request->post['comment'])) {
+                            
+                            $this->session->data['comment'] = $this->request->post['comment'];
+                        } else {
+                            
+                            $this->session->data['comment'] = '';
+                        }
+                        
+                        
 
 			if ((utf8_strlen(trim($this->request->post['firstname'])) < 1) || (utf8_strlen(trim($this->request->post['firstname'])) > 32)) {
 				$json['error']['firstname'] = $this->language->get('error_firstname');

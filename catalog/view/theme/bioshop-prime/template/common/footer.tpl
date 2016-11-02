@@ -60,15 +60,9 @@
                       <a href="<?php echo $contact; ?>">
                          <li>Контакты</li>
                       </a>
-<<<<<<< HEAD
-                  <?php } ?>
-				  <?php if (strtolower($information['title']) == strtolower("Сотрудничество")) { ?>
-				      <a href="<?php echo $affiliate; ?>">
-=======
                   <?php } ?> 
 	          <?php if (strtolower($information['title']) == strtolower("Сотрудничество")) { ?>
 		     <a href="<?php echo $affiliate; ?>">
->>>>>>> 0adab1bcc6eb176014716b1658445a19b7eca938
                          <li>Сотрудничество</li>
                       </a>
 		<?php } ?>

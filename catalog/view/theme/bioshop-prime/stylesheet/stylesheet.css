@@ -345,10 +345,10 @@ footer h5 {
 	font-size: 15px;
 }
 .breadcrumb > li {
-	text-shadow: 0 1px 0 #FFF;
+	//text-shadow: 0 1px 0 #FFF;
 	padding: 0 15px;
 	position: relative;
-	white-space: nowrap;
+	//white-space: nowrap;
 }
 .breadcrumb > li + li:before {
 	content: '';

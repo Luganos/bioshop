@@ -27,14 +27,6 @@
           <p>Подписка на новости</p>
           <?php echo $modules['newslettersubscribe']; ?>
         </div>
-        <!--<div class="footer_news_pole">
-            <input class="footer_news_pole_input"  type="text">
-        </div>
-        <div class="footer_news_butten">
-            <a href="">
-            <p>подпишитесь</p>
-            </a>
-        </div>-->
         <div class="footer_news_sec">
             <?php foreach ($informations as $information) { ?>
             <?php if (strtolower($information['title']) == strtolower("Соглашение о конфиденциальности")) { ?>
@@ -58,7 +50,7 @@
         <ul class="footer_bottom_text_ul">
             <?php foreach ($informations as $information) { ?>
                <?php if (strtolower($information['title']) !== strtolower("Соглашение о конфиденциальности")) { ?>
-                  <?php if (strtolower($information['title']) !== strtolower("Контакты")) { ?>
+                  <?php if (strtolower($information['title']) !== strtolower("Контакты") && strtolower($information['title']) !== strtolower("Сотрудничество")) { ?>
                       <a href="<?php echo $information['href']; ?>">
                          <li><?php echo $information['title']; ?></li>
                       </a>
@@ -66,7 +58,12 @@
                       <a href="<?php echo $contact; ?>">
                          <li>Контакты</li>
                       </a>
-                  <?php } ?>
+                  <?php } ?> 
+				  <?php if (strtolower($information['title']) == strtolower("Сотрудничество")) { ?>
+				      <a href="<?php echo $affiliate; ?>">
+                         <li>Сотрудничество</li>
+                      </a>
+				  <?php } ?>
                <?php } ?>
         <?php } ?>
         </ul>

@@ -430,14 +430,14 @@ var showcart = {
                       names[elem[i].name] = elem[i].value;
             }
        
-            var quantity = names;
+            var quantity = $.extend({}, names);
   
             var shipping_method = $('#select-shipping-method :selected').val();
-
+  
                      
             showcart.data.url = 'index.php?route=checkout/checkout_cart/edit';
             showcart.data.id = '.for-customer-cart';
-            showcart.data.value = { 'quantity' : JSON.stringify(quantity), 'shipping_method': shipping_method };
+            showcart.data.value = { 'quantity' : quantity, 'shipping_method': shipping_method };
             showcart.data.progress = null;
             showcart.data.redirect = false;
             showcart.ajaxChange(showcart.data.url, showcart.data.value, 5, showcart.data.id, showcart.data.progress, showcart.data.redirect);

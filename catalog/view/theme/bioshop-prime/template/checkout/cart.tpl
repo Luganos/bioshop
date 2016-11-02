@@ -105,7 +105,7 @@
       <br />
       <div class="row row_cart">
 
-        <div class="col-lg-6 col-sm-4 col-sm-offset-8 cart_sum">
+        <div class="col-lg-6 col-sm-12 cart_sum">
         <p>общая сумма</p>
           <table class="table table-bordered">
             <?php foreach ($totals as $total) { ?>

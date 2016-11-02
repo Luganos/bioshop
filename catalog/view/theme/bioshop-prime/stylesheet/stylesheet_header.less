@@ -120,7 +120,7 @@ header{
 
 #search{
     width: 260px;
-
+    bottom: 10px;
     float: right;
 }
 
@@ -1050,7 +1050,7 @@ header{
     .slick-next::before{
         position: absolute;
         top: 210px;
-        right: 340px;
+        right: 320px;
         color: rgb(81,98,111) !important;
         font-size: 30px !important;
     }
@@ -1334,8 +1334,10 @@ header{
         margin-bottom: 50px;
     }
     .table-responsive{
-        width: 96% !important;
+        width: 100% !important;
+        min-width: 705px;
         overflow-x:hidden;
+        border: 0px solid #ddd !important;
     }
     .table-bordered{
         border: 0px;
@@ -1427,7 +1429,7 @@ header{
     }
     .cart_del{
         position: absolute;
-        left: 230px;
+        left: 224px;
         background-color: transparent;
         background-image: none !important;
         border-color: none !important;
@@ -1467,6 +1469,7 @@ header{
     .cart_sum{
         //width: 460px;
         margin-left: 25px !important;
+        padding: 0px;
     }
     .cart_sum p{
         color: @text_blue;
@@ -1480,7 +1483,7 @@ header{
     }
     .buttons{
         clear: both;
-        margin-right: 90px;
+        margin-right: 75px;//old 90px;
     }
     .text-right_cart_sum{
         padding: 0px !important;

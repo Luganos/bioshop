@@ -15,9 +15,72 @@ public function calculateProduct() {
 		      }
             
                       return intval($product_total);
-                  }
+        }
+        
+        
+        /*Upgrade list of payment method after changed amount of goods in the cart
+         * 
+         * input null
+         * output @mixed
+        */
+        public function getShippingMethods() {
+            
+            
+            		if (isset($this->session->data['shipping_address']) || $this->customer->isLogged()) {
+                    
+                        if (!isset($this->session->data['shipping_address'])) {
+                            
+                            $address_id = $this->customer->getAddressId();
+                            
+			    $this->load->model('account/address');
+
+			    $this->session->data['shipping_address'] = $this->model_account_address->getAddress($address_id);
+                            
+                        }
+                        
+			// Shipping Methods
+			$method_data = array();
+
+			$this->load->model('extension/extension');
+
+			$results = $this->model_extension_extension->getExtensions('shipping');
+
+			foreach ($results as $result) {
+				if ($this->config->get($result['code'] . '_status')) {
+					$this->load->model('shipping/' . $result['code']);
+
+					$quote = $this->{'model_shipping_' . $result['code']}->getQuote($this->session->data['shipping_address']);
+
+					if ($quote) {
+						$method_data[$result['code']] = array(
+							'title'      => $quote['title'],
+							'quote'      => $quote['quote'],
+							'sort_order' => $quote['sort_order'],
+                                                        'houses'     => (empty($quote['houses']))? array(): $quote['houses'],
+							'error'      => $quote['error']
+						);
+					}
+				}
+			}
+
+			$sort_order = array();
+
+			foreach ($method_data as $key => $value) {
+				$sort_order[$key] = $value['sort_order'];
+			}
+
+			array_multisort($sort_order, SORT_ASC, $method_data);
+
+			$this->session->data['shipping_methods'] = $method_data;
+		}    
+        }
+                  
+                  
 	public function index() {
 		$this->load->language('checkout/cart');
+                
+                //Upgrade shipping price for cart               
+                $this->getShippingMethods();
                 
                 if (isset($this->request->post['shipping_method'])) {
 		

@@ -83,13 +83,16 @@ textarea {
     text-transform: uppercase;
   }
   .header_top_text_servic {
+    letter-spacing: 5pt;
     padding-right: 40px;
     border-right: 2px solid white;
   }
   .header_top_text_enter {
+    letter-spacing: 5pt;
     margin-left: 40px;
   }
   .header_top_text_reg {
+    letter-spacing: 5pt;
     margin-right: 20px;
   }
   .header_center {
@@ -156,7 +159,7 @@ textarea {
   .header_pay_circle {
     width: 20px;
     height: 20px;
-    background-color: red;
+    background-color: #6fa1ce;
     border-radius: 50%;
     position: absolute;
     top: 42px;
@@ -327,13 +330,16 @@ textarea {
     text-transform: uppercase;
   }
   .header_top_text_servic {
+    letter-spacing: 5pt;
     padding-right: 40px;
     border-right: 2px solid white;
   }
   .header_top_text_enter {
+    letter-spacing: 5pt;
     margin-left: 40px;
   }
   .header_top_text_reg {
+    letter-spacing: 5pt;
     margin-right: 20px;
   }
   .header_center {
@@ -397,7 +403,7 @@ textarea {
   .header_pay_circle {
     width: 20px;
     height: 20px;
-    background-color: red;
+    background-color: #6fa1ce;
     border-radius: 50%;
     position: absolute;
     top: 42px;
@@ -855,6 +861,10 @@ textarea {
     margin-left: 10px;
     padding-left: 10px;
   }
+  .slick-arrow_left {
+    position: absolute !important;
+    left: 560px !important;
+  }
 }
 @media (max-width: 1279px) {
   .buy-item {
@@ -942,6 +952,24 @@ textarea {
     right: 320px;
     color: #51626f !important;
     font-size: 30px !important;
+  }
+  .slick-arrow {
+    position: absolute !important;
+    line-height: 50% !important;
+    top: 105% !important;
+    right: 590px !important;
+    background-color: transparent !important;
+    border: 0px !important;
+    margin-left: 10px;
+    padding-left: 10px;
+  }
+  .slick-arrow_left {
+    position: absolute !important;
+    left: 300px !important;
+  }
+  .slick-arrow_right {
+    position: absolute !important;
+    right: 300px !important;
   }
 }
 /*-----END_small_slider_and_card_product-------*/
@@ -1960,6 +1988,7 @@ textarea {
   .you_order_all {
     display: inline;
     position: absolute;
+    min-width: 90px;
     left: 220px;
     bottom: 37px;
     font-size: 18px;
@@ -2010,6 +2039,7 @@ textarea {
     margin-left: 100px !important;
   }
   .checkout_cart_text-right_cart_sum {
+    min-width: 90px;
     height: 50px !important;
     line-height: 0 !important;
   }
@@ -2162,6 +2192,7 @@ textarea {
   .you_order_all {
     display: inline;
     position: absolute;
+    min-width: 90px;
     left: 220px;
     bottom: 37px;
     font-size: 18px;
@@ -2212,6 +2243,7 @@ textarea {
     margin-left: 240px !important;
   }
   .checkout_cart_text-right_cart_sum {
+    min-width: 90px;
     height: 50px !important;
     line-height: 0 !important;
   }
@@ -2314,12 +2346,11 @@ textarea {
   }
   .footer_c_net {
     height: 184px;
-    margin: 30px 0 0 60px;
+    margin: 30px 10px 0 60px;
   }
   .footer_c_net span {
     color: white;
-    font-size: 14px;
-    font-weight: bold;
+    font-size: 18px;
   }
   .footer_c_net_img {
     margin-top: 15px;
@@ -2329,18 +2360,17 @@ textarea {
   }
   .footer_tel {
     height: 184px;
-    margin: 30px 0 0 60px;
+    margin: 30px 40px 0 15px;
+    padding: 0px;
   }
   .footer_tel_text {
     color: white;
-    font-size: 14px;
-    font-weight: bold;
+    font-size: 18px;
     margin-bottom: 20px;
   }
   .footer_tel_tel {
     color: white;
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 28px;
     margin-bottom: 10px;
   }
   .footer_tel_we_recall {
@@ -2350,23 +2380,25 @@ textarea {
     text-decoration: underline;
   }
   .footer_news {
+    width: 485px;
     height: 184px;
-    margin: 30px 0 0 60px;
+    margin: 30px 0 0 0px;
+    padding: 0px;
   }
   .footer_news_text {
     color: white;
-    font-size: 14px;
-    font-weight: bold;
+    font-size: 18px;
+    font-family: 'Tahoma';
   }
   .footer_news_pole {
     float: left;
-    width: 250px;
+    width: 340px;
     height: 50;
     border: 2px solid #bcbec2;
   }
   .footer_news_pole input {
     border: 0px;
-    width: 250px;
+    width: 338px;
     height: 35px !important;
     background-image: url('../image/backgraund_footer.png');
     border-right: 2px solid #bcbec2;
@@ -2393,20 +2425,26 @@ textarea {
     font-size: 14px;
     text-decoration: underline;
   }
-  .footer_news_sec p {
-    padding-top: 10px;
-  }
   .footer_geeker_logo {
+    max-width: 100px;
     margin-right: 15px;
-    margin-top: 30px;
     float: right;
+    text-align: right;
+    padding-right: 30px;
   }
   .footer_geeker_logo span {
     display: inline;
     width: 200px;
     color: #bcbec2;
-    font-size: 12px;
+    font-size: 10px;
+    text-transform: uppercase;
     text-decoration: none !important;
+    text-align: right;
+  }
+  .footer_geeker_logo_img {
+    position: absolute;
+    left: 445px;
+    bottom: 36px;
   }
   .footer_bottom_text {
     text-align: center;
@@ -2453,8 +2491,7 @@ textarea {
   }
   .footer_c_net span {
     color: white;
-    font-size: 14px;
-    font-weight: bold;
+    font-size: 18px;
   }
   .footer_c_net_img {
     margin-top: 15px;
@@ -2469,14 +2506,12 @@ textarea {
   }
   .footer_tel_text {
     color: white;
-    font-size: 14px;
-    font-weight: bold;
+    font-size: 18px;
     margin-bottom: 20px;
   }
   .footer_tel_tel {
     color: white;
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 32px;
     margin-bottom: 10px;
   }
   .footer_tel_we_recall {

@@ -438,8 +438,8 @@
 
         if (_.options.arrows === true ) {
 
-            _.$prevArrow = $(_.options.prevArrow).addClass('slick-arrow');
-            _.$nextArrow = $(_.options.nextArrow).addClass('slick-arrow');
+            _.$prevArrow = $(_.options.prevArrow).addClass('slick-arrow slick-arrow_left');
+            _.$nextArrow = $(_.options.nextArrow).addClass('slick-arrow slick-arrow_right');
 
             if( _.slideCount > _.options.slidesToShow ) {
 

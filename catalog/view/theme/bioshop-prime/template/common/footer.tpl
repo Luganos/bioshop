@@ -1,11 +1,18 @@
 <footer>
   <div class="container_footer">
     <div class="footer_top">
+      <div class="footer_tel col-lg-3 col-xs-6">
+        <p class="footer_tel_text">Есть вопросы? Звоните!</p>
+        <a href ="tel:<?php echo $telephone; ?>" ><p class="footer_tel_tel"><?php echo $telephone; ?></p></a>
+        <a href="<?php echo $contact; ?>">
+        <p class="footer_tel_we_recall">Мы перезвоним</p>
+        </a>
+      </div>
       <div class="footer_c_net col-lg-3 col-xs-6">
         <span>Мы в социальных сетях:</span>
         <div class="footer_c_net_img">
         <a href="https://www.instagram.com/bioshop.com.ua/">
-        <img class="footer_twitter" src="catalog/view/theme/bioshop-prime/image/Twitter.png" alt="">
+        <img class="footer_twitter" src="catalog/view/theme/bioshop-prime/image/instagram.png" alt="">
         </a>
         <a href="https://www.facebook.com/Bioshop-интернет-магазин-1013339885407927/">
         <img class="footer_fb" src="catalog/view/theme/bioshop-prime/image/fb.png" alt="">
@@ -15,13 +22,13 @@
         </a>
         </div>
       </div>
-      <div class="footer_tel col-lg-3 col-xs-6">
+      <!-- <div class="footer_tel col-lg-3 col-xs-6">
         <p class="footer_tel_text">Есть вопросы? Звоните!</p>
         <a href ="tel:<?php echo $telephone; ?>" ><p class="footer_tel_tel"><?php echo $telephone; ?></p></a>
         <a href="<?php echo $contact; ?>">
         <p class="footer_tel_we_recall">Мы перезвоним</p>
         </a>
-      </div>
+      </div> -->
       <div class="footer_news col-lg-4 col-xs-12">
         <div class="footer_news_text">
           <p>Подписка на новости</p>
@@ -38,9 +45,9 @@
 
         </div>
         <div class="footer_geeker_logo">
-             <span>Разработано в</span>
+             <span>разработано geeker</span>
              <a href="http://geeker.pro">
-             <img src="catalog/view/theme/bioshop-prime/image/geeker.png" alt="">
+             <img class="footer_geeker_logo_img" src="catalog/view/theme/bioshop-prime/image/geeker.png" alt="">
              </a>
         </div>
     </div>
@@ -60,7 +67,7 @@
                       <a href="<?php echo $contact; ?>">
                          <li>Контакты</li>
                       </a>
-                  <?php } ?> 
+                  <?php } ?>
 	          <?php if (strtolower($information['title']) == strtolower("Сотрудничество")) { ?>
 		     <a href="<?php echo $affiliate; ?>">
                          <li>Сотрудничество</li>

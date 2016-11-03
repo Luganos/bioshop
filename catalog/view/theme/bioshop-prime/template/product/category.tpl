@@ -125,12 +125,12 @@
     <?php echo $column_right; ?></div>
 
 </div>
-     <!-- <div class="row">
+<div class="row">
         <?php if ($thumb) { ?>
         <div class="col-sm-2"><img src="<?php echo $thumb; ?>" alt="<?php echo $heading_title; ?>" title="<?php echo $heading_title; ?>" class="img-thumbnail" /></div>
         <?php } ?>
         <?php if ($description) { ?>
         <div class="col-sm-10"><?php echo $description; ?></div>
         <?php } ?>
-      </div>-->
+</div>
 <?php echo $footer; ?>

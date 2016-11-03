@@ -263,6 +263,7 @@
             <li><a href="#tab-reward" data-toggle="tab"><?php echo $tab_reward; ?></a></li>
             <li><a href="#tab-design" data-toggle="tab"><?php echo $tab_design; ?></a></li>
             <li><a href="#tab-relation" data-toggle="tab">Изображение цвета продукта</a></li>
+            <li><a href="#tab-relation" data-toggle="tab">Маркетинг</a></li>
           </ul>]]>
       </add>
     </operation>  

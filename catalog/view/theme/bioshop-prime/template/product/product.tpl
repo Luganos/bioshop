@@ -300,7 +300,7 @@
                   </div>
                 </div>
                 <div class="form-group required">
-                  <div class="col-sm-12">
+                  <div class="col-sm-12" hidden="true">
                     <label class="control-label"><?php echo $entry_rating; ?></label>
                     &nbsp;&nbsp;&nbsp; <?php echo $entry_bad; ?>&nbsp;
                     <input type="radio" name="rating" value="1" />
@@ -311,14 +311,14 @@
                     &nbsp;
                     <input type="radio" name="rating" value="4" />
                     &nbsp;
-                    <input type="radio" name="rating" value="5" />
+                    <input type="radio" checked name="rating" value="5" />
                     &nbsp;<?php echo $entry_good; ?></div>
                 </div>
                 <?php echo $captcha; ?>
                 <div class="buttons clearfix">
-                  <div class="pull-right">
-                    <button type="button" id="button-review" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary"><?php echo $button_continue; ?></button>
-                  </div>
+                  <div class ="row">
+                         <button type="button" id="button-review" style ="margin-top: 20px !important; margin-left: 12px !important" data-loading-text="<?php echo $text_loading; ?>" class="button_red_input"><?php echo $button_continue; ?></button>
+                  </div>  
                 </div>
                 <?php } else { ?>
                 <?php echo $text_login; ?>

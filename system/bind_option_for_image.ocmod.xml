@@ -148,9 +148,14 @@
              
                 $data['marketing'] = array();
               
-                foreach ($this->model_catalog_product->getMarketingSign($this->request->get['product_id']) as $key => $value) {
+                foreach ($this->model_catalog_product->getMarketingSign($this->request->get['product_id']) as $marketing) {
 
-                    $data['marketing'][$key] = $value;
+                   foreach ($marketing as $key => $value) {
+                   
+                         $data['marketing'][$key] = $value;
+                   } 
+
+
 
                 }
 
@@ -291,7 +296,11 @@
                       <td class="text-left col-sm-6">
                          <div class="checkbox">
                             <label> 
+                              <?php if (empty($marketing['top_sales'])) { ?>
                               <input type="checkbox" name="marketing[sale]" value="1"  />
+                              <?php } else { ?>
+                              <input type="checkbox" name="marketing[sale]" checked="checked" value="1"  />
+                              <?php } ?>
                             </label>
                          </div>
                      </td>
@@ -301,7 +310,11 @@
                       <td class="text-left col-sm-6">
                          <div class="checkbox">
                             <label> 
+                              <?php if (empty($marketing['new_product'])) { ?> 
                               <input type="checkbox" name="marketing[new]" value="1"  />
+                              <?php } else { ?>
+                              <input type="checkbox" name="marketing[new]" checked="checked" value="1"  />
+                              <?php } ?>
                             </label>
                          </div>
                      </td>
@@ -311,7 +324,11 @@
                       <td class="text-left col-sm-6">
                          <div class="checkbox">
                             <label> 
+                              <?php if (empty($marketing['discount'])) { ?>   
                               <input type="checkbox" name="marketing[discount]" value="1"  />
+                              <?php } else { ?>
+                              <input type="checkbox" name="marketing[discount]" checked="checked" value="1"  />
+                              <?php } ?>
                             </label>
                          </div>
                      </td>

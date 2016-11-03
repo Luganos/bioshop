@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+  <name>Modification for checkout</name>
+  <code>default</code>
+  <version>1.0</version>
+  <author>OpenCart Ltd</author>
+  <link>http://www.full-chip.com</link>
+  <file path="catalog/language/russian/account/register.php">
+	<operation>
+      <search>
+        <![CDATA[$_['entry_email']          = 'E-Mail';]]>
+      </search>
+      <add position="replace">
+        <![CDATA[$_['entry_email']          = 'Эл.почта';]]>
+      </add>
+    </operation>
+    <operation>
+      <search>
+        <![CDATA[$_['entry_address_1']      = 'Адрес 1';]]>
+      </search>
+      <add position="replace">
+        <![CDATA[$_['entry_address_1']      = 'Адрес';]]>
+      </add>
+    </operation>
+    <operation>
+      <search>
+        <![CDATA[$_['entry_confirm']        = 'Подтверждение пароля';]]>
+      </search>
+      <add position="replace">
+        <![CDATA[$_['entry_confirm']        = 'Подтвердить пароль';]]>
+      </add>
+    </operation>
+  </file>
+</modification>

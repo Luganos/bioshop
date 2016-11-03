@@ -106,47 +106,37 @@
         </div>
       </div>
       <br />
-      <div class="row">
+       <!--Begin of loop-->
+       <?php if ($products) { ?>
+        <div class="row category_row">
         <?php foreach ($products as $product) { ?>
-        <div class="product-layout product-list col-xs-12">
-          <div class="product-thumb">
-            <div class="image"><a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-responsive" /></a></div>
-            <div class="caption">
-              <h4><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></h4>
-              <p><?php echo $product['description']; ?></p>
-              <?php if ($product['price']) { ?>
-              <p class="price">
-                <?php if (!$product['special']) { ?>
-                <?php echo $product['price']; ?>
-                <?php } else { ?>
-                <span class="price-new"><?php echo $product['special']; ?></span> <span class="price-old"><?php echo $product['price']; ?></span>
-                <?php } ?>
-                <?php if ($product['tax']) { ?>
-                <span class="price-tax"><?php echo $text_tax; ?> <?php echo $product['tax']; ?></span>
-                <?php } ?>
-              </p>
-              <?php } ?>
-              <?php if ($product['rating']) { ?>
-              <div class="rating">
-                <?php for ($i = 1; $i <= 5; $i++) { ?>
-                <?php if ($product['rating'] < $i) { ?>
-                <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
-                <?php } else { ?>
-                <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
-                <?php } ?>
-                <?php } ?>
-              </div>
-              <?php } ?>
-            </div>
-            <div class="button-group">
-              <button type="button" onclick="cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $button_cart; ?></span></button>
-              <button type="button" data-toggle="tooltip" title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-heart"></i></button>
-              <button type="button" data-toggle="tooltip" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-exchange"></i></button>
+          <div class="product-layout product-grid col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <div class="cart_product">
+                <div class="cart_product_img">
+                    <a href ="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>"></a>
+                </div>
+                <div class="cart_product_price">
+                       <?php if ($product['price']) { ?>
+                           <?php if (!$product['special']) { ?>
+                           <span class="cart_product_price_discont"><?php echo $product['price']; ?></span>
+                           <?php } else { ?>
+                           <span class="cart_product_price_pay"><?php echo $product['special']; ?></span>
+                           <span class="cart_product_price_discont"><?php echo $product['price']; ?></span>
+                           <?php } ?>
+                        <?php } ?>
+                    <span class="cart_product_price_text"><?php echo $product['name']; ?></span>
+                </div>
+                <div class="cart_product_price_button" onclick="cart.add('<?php echo $product['product_id']; ?>');">
+                    <img src="catalog/view/theme/bioshop-prime/image/577845.png" alt="">
+                        <span><?php echo $button_cart; ?></span>
+                    </img>
+                </div>
             </div>
           </div>
-        </div>
         <?php } ?>
       </div>
+	  <?php } ?>
+	  <!--end of loop -->
       <div class="row">
         <div class="col-sm-6 text-left"><?php echo $pagination; ?></div>
         <div class="col-sm-6 text-right"><?php echo $results; ?></div>

@@ -20,7 +20,7 @@
 	    <h1><?php echo $heading_title; ?></h1>
         <p><?php echo $text_account_already; ?></p>
 		<form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" class="form-horizontal">
-	      <fieldset id="account">  
+	      <fieldset id="account">
 		   <div class="form-group required">
             <label class="col-sm-2 control-label" for="input-firstname"><?php echo $entry_firstname; ?></label>
             <div class="col-sm-10">
@@ -69,7 +69,7 @@
 		  <div class="form-group required">
             <label class="col-sm-2 control-label" for="input-address-1"><?php echo $entry_address_1; ?></label>
             <div class="col-sm-10">
-              <input type="text" name="address_1" value="<?php echo $address_1; ?>" placeholder="<?php echo $entry_address_1; ?>" id="input-address-1" class="form-control" />
+              <input type="text" name="address_1" value="<?php echo $address_1; ?>" placeholder="Улица Дом Квартира" id="input-address-1" class="form-control" />
               <?php if ($error_address_1) { ?>
               <div class="text-danger"><?php echo $error_address_1; ?></div>
               <?php } ?>
@@ -104,7 +104,7 @@
             <input type="hidden" name="newsletter" value="0" />
             <div class ="row">
                 <input type="submit" style ="margin-top: 20px !important; margin-left: 260px !important; margin-bottom: 20px;"  data-loading-text="Загрузка" value ="Регистрация" class="button_red_input"/>
-           </div> 
+           </div>
        </fieldset>
       </form>
       <?php echo $content_bottom; ?></div>

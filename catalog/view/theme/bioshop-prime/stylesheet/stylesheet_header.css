@@ -698,10 +698,16 @@ textarea {
     font-family: "Arial";
     color: #989898;
   }
+  .category_seo_text {
+    margin: 90px 0 0 305px;
+  }
 }
 @media (max-width: 1279px) {
   .control-label_category {
     display: none;
+  }
+  .category_seo_text {
+    margin: 90px 0 0 0px;
   }
 }
 /*-----END_category.tpl-------*/
@@ -763,6 +769,7 @@ textarea {
     width: 300px;
     height: 430px;
     border: 1px solid #ebebeb;
+    margin-bottom: 20px;
   }
   .cart_product_img img {
     max-width: 267px;
@@ -881,6 +888,7 @@ textarea {
     width: 230px;
     height: 355px;
     border: 1px solid #ebebeb;
+    margin-bottom: 20px;
   }
   .cart_product_img img {
     max-width: 205px;
@@ -984,6 +992,15 @@ textarea {
   font-weight: bold;
   color: black;
   border-bottom: 3px solid #385dae;
+}
+.index_text_top_grey {
+  width: 230px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333333;
+  border-bottom: 3px solid #385dae;
+  margin-bottom: 40px;
+  margin-left: 15px;
 }
 .index_text_main {
   margin-top: 40px;
@@ -2327,6 +2344,64 @@ textarea {
   }
 }
 /*-----END_Social_net-------*/
+/*-----search.tpl----------*/
+@media (min-width: 1280px) {
+  .search_control_label {
+    margin-top: 17px;
+  }
+  .search_form-control {
+    max-width: 150px !important;
+  }
+  .input-limit_form-control {
+    margin-top: 12px;
+  }
+}
+@media (max-width: 1279px) {
+  .search_control_label {
+    max-width: 100px !important;
+    margin-top: 17px;
+  }
+  .search_form-control {
+    min-width: 120px !important;
+    max-width: 175px !important;
+  }
+  .input-limit_form-control {
+    margin-top: 12px;
+  }
+}
+/*-----END_search.tpl------*/
+/*----pagination------*/
+@media (min-width: 1280px) {
+  .pagination li span {
+    color: white !important;
+    font-size: 18px;
+    margin-right: 8px;
+    border-radius: 0px !important;
+  }
+  .pagination li a {
+    margin-right: 8px;
+    color: #a9a9a9;
+    font-size: 18px;
+    margin-right: 8px;
+    border-radius: 0px !important;
+  }
+}
+@media (max-width: 1279px) {
+  .pagination li span {
+    color: white !important;
+    font-size: 18px;
+    margin-right: 8px;
+    border-radius: 0px !important;
+  }
+  .pagination li a {
+    margin-right: 8px;
+    color: #a9a9a9;
+    font-size: 18px;
+    margin-right: 8px;
+    border-radius: 0px !important;
+  }
+}
+/*----END_pagination--*/
 /*----footer-----*/
 @media (min-width: 1280px) {
   footer {
@@ -2502,7 +2577,6 @@ textarea {
   .footer_tel {
     height: 130px;
     margin: 30px 0 0 0px;
-    padding-left: 130px;
   }
   .footer_tel_text {
     color: white;

@@ -65,22 +65,22 @@
           <?php } ?>
           <?php echo $entry_description; ?></label>
       </p>
-      <input type="button" value="<?php echo $button_search; ?>" id="button-search" class="btn btn-primary" />
+      <input type="button" value="<?php echo $button_search; ?>" id="button-search" class="button_red_input" />
       <h2><?php echo $text_search; ?></h2>
       <?php if ($products) { ?>
-      <p><a href="<?php echo $compare; ?>" id="compare-total"><?php echo $text_compare; ?></a></p>
+      <!--<p><a href="<?php echo $compare; ?>" id="compare-total"><?php echo $text_compare; ?></a></p>-->
       <div class="row">
-        <div class="col-sm-3 hidden-xs">
+        <div class="col-sm-3 hidden">
           <div class="btn-group">
             <button type="button" id="list-view" class="btn btn-default" data-toggle="tooltip" title="<?php echo $button_list; ?>"><i class="fa fa-th-list"></i></button>
             <button type="button" id="grid-view" class="btn btn-default" data-toggle="tooltip" title="<?php echo $button_grid; ?>"><i class="fa fa-th"></i></button>
           </div>
         </div>
-        <div class="col-sm-1 col-sm-offset-2 text-right">
-          <label class="control-label" for="input-sort"><?php echo $text_sort; ?></label>
+        <div class="col-sm-2 col-md-1 text-right">
+          <label class="control-label search_control_label" for="input-sort"><?php echo $text_sort; ?></label>
         </div>
-        <div class="col-sm-3 text-right">
-          <select id="input-sort" class="form-control col-sm-3" onchange="location = this.value;">
+        <div class="col-sm-3 text-right" style="width: 175px">
+          <select id="input-sort" class="form-control col-sm-3 search_form-control" onchange="location = this.value;">
             <?php foreach ($sorts as $sorts) { ?>
             <?php if ($sorts['value'] == $sort . '-' . $order) { ?>
             <option value="<?php echo $sorts['href']; ?>" selected="selected"><?php echo $sorts['text']; ?></option>
@@ -91,10 +91,10 @@
           </select>
         </div>
         <div class="col-sm-1 text-right">
-          <label class="control-label" for="input-limit"><?php echo $text_limit; ?></label>
+          <label class="control-label search_control_label" for="input-limit"><?php echo $text_limit; ?></label>
         </div>
-        <div class="col-sm-2 text-right">
-          <select id="input-limit" class="form-control" onchange="location = this.value;">
+        <div class="col-sm-2 col-md-1 text-right">
+          <select id="input-limit" class="form-control input-limit_form-control" onchange="location = this.value;">
             <?php foreach ($limits as $limits) { ?>
             <?php if ($limits['value'] == $limit) { ?>
             <option value="<?php echo $limits['href']; ?>" selected="selected"><?php echo $limits['text']; ?></option>

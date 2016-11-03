@@ -816,7 +816,9 @@ header{
         font-family: "Arial";
         color: rgb(152,152,152);
     }
-
+    .category_seo_text{
+        margin: 90px 0 0 305px;
+    }
 
 
 }
@@ -824,6 +826,9 @@ header{
 @media (max-width: 1279px) {
     .control-label_category{
         display: none;
+    }
+    .category_seo_text{
+        margin: 90px 0 0 0px;
     }
 }
 /*-----END_category.tpl-------*/
@@ -893,6 +898,7 @@ header{
         width: 300px;
         height:430px;
         border:1px solid rgb(235,235,235);
+        margin-bottom: 20px;
     }
     .cart_product_img{
 
@@ -1017,6 +1023,7 @@ header{
         width: 230px;
         height:355px;
         border:1px solid rgb(235,235,235);
+        margin-bottom: 20px;
     }
     .cart_product_img{
 
@@ -1127,6 +1134,15 @@ header{
     font-weight: bold;
     color: black;
     border-bottom: 3px solid rgb(56,93,174);
+}
+.index_text_top_grey{
+    width: 230px;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(51,51,51);
+    border-bottom: 3px solid rgb(56,93,174);
+    margin-bottom: 40px;
+    margin-left: 15px;
 }
 
 .index_text_main{
@@ -2550,6 +2566,76 @@ h5{
 
 /*-----END_Social_net-------*/
 
+/*-----search.tpl----------*/
+@media (min-width: 1280px) {
+    .search_control_label{
+        margin-top: 17px;
+    }
+
+    .search_form-control{
+        max-width: 150px !important;
+    }
+    .input-limit_form-control{
+        margin-top: 12px;
+    }
+}
+
+@media (max-width: 1279px) {
+    .search_control_label{
+        max-width: 100px !important;
+        margin-top: 17px;
+    }
+    .search_form-control{
+        min-width: 120px !important;
+        max-width: 175px !important;
+    }
+    .input-limit_form-control{
+        margin-top: 12px;
+    }
+
+}
+/*-----END_search.tpl------*/
+
+/*----pagination------*/
+@media (min-width: 1280px) {
+    .pagination{
+    }
+    .pagination li span{
+        color: white !important;
+        font-size: 18px;
+        margin-right: 8px;
+        border-radius: 0px !important;
+    }
+    .pagination li a{
+        margin-right: 8px;
+        color: rgb(169,169,169);
+        font-size: 18px;
+        margin-right: 8px;
+        border-radius: 0px !important;
+    }
+
+}
+
+@media (max-width: 1279px) {
+    .pagination{
+    }
+    .pagination li span{
+        color: white !important;
+        font-size: 18px;
+        margin-right: 8px;
+        border-radius: 0px !important;
+    }
+    .pagination li a{
+        margin-right: 8px;
+        color: rgb(169,169,169);
+        font-size: 18px;
+        margin-right: 8px;
+        border-radius: 0px !important;
+    }
+
+}
+/*----END_pagination--*/
+
 
 /*----footer-----*/
 
@@ -2780,7 +2866,7 @@ footer{
 .footer_tel{
     height: 130px;
     margin: 30px 0 0 0px;
-    padding-left: 130px;
+    //padding-left: 130px;
 
 }
 

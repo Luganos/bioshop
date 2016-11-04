@@ -24,7 +24,7 @@ class ControllerModuleTopsale extends Controller {
 
 		$product_data = array();
 		
-		$query = $this->db->query("SELECT o.order_id,op.product_id,SUM(op.quantity) AS total FROM " . DB_PREFIX . "order o LEFT JOIN " . DB_PREFIX . "order_product op ON (o.order_id = op.order_id) WHERE o.order_status_id = 1 OR o.order_status_id = 5 GROUP BY op.product_id ORDER BY total DESC LIMIT " . (int)$setting['limit']);
+		$query = $this->db->query("SELECT m.product_id FROM " . DB_PREFIX . "marketing_sign m INNER JOIN " . DB_PREFIX . "product p ON(m.product_id = p.product_id) WHERE status = 1 AND quantity >= 1 AND top_sales = 1 ORDER BY date_added ASC LIMIT " . (int)$setting['limit']);
 		
 		
 		foreach ($query->rows as $result) { 		

@@ -24,7 +24,7 @@ class ControllerModuleNewgoods extends Controller {
 
 		$product_data = array();
 		
-		$query = $this->db->query("SELECT product_id FROM " . DB_PREFIX . "product WHERE status = 1 AND quantity >= 1 ORDER BY date_added ASC LIMIT " . (int)$setting['limit']);
+		$query = $this->db->query("SELECT m.product_id FROM " . DB_PREFIX . "marketing_sign m INNER JOIN " . DB_PREFIX . "product p ON(m.product_id = p.product_id) WHERE status = 1 AND quantity >= 1 AND new_product = 1 ORDER BY date_added ASC LIMIT " . (int)$setting['limit']);
 		
 		
 		foreach ($query->rows as $result) { 		

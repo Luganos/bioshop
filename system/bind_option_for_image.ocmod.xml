@@ -145,9 +145,7 @@
       <add position="replace">
       <![CDATA[	
                 $this->load->model('catalog/product'); 
-             
-		$this->load->model('catalog/product'); 
-             
+                        
                 $data['marketing'] = array();
                 
                 if (isset($this->request->get['product_id'])) {

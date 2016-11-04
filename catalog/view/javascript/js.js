@@ -60,6 +60,18 @@ var opts = {
 
 var spinner = new Spinner(opts).spin(target);
 
+/*------popup_one-----*/
+$('.popup_one').on('click',function(){
+             $('.popup_one').css({'visibility':'hidden'});
+});
+/*------END_popup_one-----*/
+
+/*------popup_two-----*/
+$('.popup_two').on('click',function(){
+             $('.popup_two').css({'visibility':'hidden'});
+});
+/*------END_popup_two-----*/
+
 /*
 //-----Border_volume-----------
 

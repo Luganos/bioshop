@@ -177,19 +177,47 @@
       <?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
 </div>
+<div class="popup_two">
+    <div class="popup_two_content">
+        <p>You must log in or register before</p>
+    </div>
+</div>
+<!--<div class="popup_one">
+    <div class="popup_one_content">
+        <p>Менеджер свяжется с вами</p>
+        <div class="form-group" style="margin-top: 30px !important; margin-left: 73px !important">
+            <label class="col-sm-2 control-label" for="input-firstname"><span data-toggle="tooltip" title="Имя и фамилия">Имя и фамилия</span></label>
+            <div class="col-sm-12 checkout_login_input">
+                <input type="text" name="firstname" value="" placeholder="Иван Иванов " id="input-firstname" class="form-control" />
+                <span id="input_error_name"></span>
+             </div>
+        </div>
+        <div class="form-group" style="margin-top: 30px !important; margin-left: 73px !important">
+            <label class="col-sm-2 control-label" for="input-telephone"><span data-toggle="tooltip" title="Телефон">Телефон</span></label>
+            <div class="col-sm-12 checkout_login_input">
+                 <input type="text" name="telephone" value="" placeholder="067-123-4567" id="phone" class="form-control" />
+            </div>
+        </div>
+        <div class ="row">
+             <button type="button" style ="margin-top: 20px !important; margin-left: 0px !important" id="button-forbid-easy-buy" data-loading-text="Загрузка" class="button_red_input">Оформить заказ</button>
+        </div>
+
+    </div>
+</div>-->
+
 <script type="text/javascript"><!--
  $(function(){
 
      showcart.MainCase(0);
-     
+
    <?php if ($voucher) { ?>
-       
-      checkout.data.voucher = true; 
-       
+
+      checkout.data.voucher = true;
+
    <?php } else { ?>
-   
-      checkout.data.voucher = false; 
-      
+
+      checkout.data.voucher = false;
+
    <?php } ?>
 
     //Is user login?
@@ -198,14 +226,14 @@
           checkout.MainCase(0);
           checkout.data.redirect = true;
           checkout.data.logged = false;
- 
+
     <?php } else { ?>                             //Yes
 
           checkout.data.redirect = false;
           checkout.data.logged = true;
           checkout.MainCase(1);
           checkout.MainCase(5);
- 
+
     <?php } ?>
 
 });
@@ -419,22 +447,22 @@ var showcart = {
     edit: function() {
 
         $('.you_order_form-control').on('click', function() {
-   
-            
-            
+
+
+
             var elem = document.getElementsByClassName("you_order_form-control");
             var names = [];
-            
+
             for (var i = 0; i < elem.length; ++i) {
-                
+
                       names[elem[i].name] = elem[i].value;
             }
-       
+
             var quantity = $.extend({}, names);
-  
+
             var shipping_method = $('#select-shipping-method :selected').val();
-  
-                     
+
+
             showcart.data.url = 'index.php?route=checkout/checkout_cart/edit';
             showcart.data.id = '.for-customer-cart';
             showcart.data.value = { 'quantity' : quantity, 'shipping_method': shipping_method };
@@ -449,7 +477,7 @@ var showcart = {
     },
 
     remove: function(product_id) {
-        
+
             var shipping_method = $('#select-shipping-method :selected').val();
 
             showcart.data.url = 'index.php?route=checkout/checkout_cart/remove';
@@ -677,10 +705,10 @@ var checkout = {
 
              //Save data for payment address
              case 4:
- 
+
                     checkout.paymentSave();
                     checkout.confirmCustomer();
-   
+
 
 	     break;
 
@@ -851,8 +879,10 @@ var checkout = {
   forbiddenBuy: function() {
 
       $('#button-forbid-buy').on('click', function(){
+          $('.popup_two').css({'visibility':'visible'});
 
-          alert('You must log in or register before');
+
+          //alert('You must log in or register before');
 
      });
   },
@@ -860,16 +890,16 @@ var checkout = {
 
   confirmCustomer: function() {
       $('#button-confirm').on('click', function(){
-          
+
           if (checkout.data.voucher) {
-              
+
               checkout.collectData();
-              checkout.MainCase(11); 
-              
+              checkout.MainCase(11);
+
           } else {
-              
+
              checkout.collectData();
-             checkout.MainCase(9);  
+             checkout.MainCase(9);
           }
 
 

@@ -318,7 +318,7 @@
                 <div class="buttons clearfix">
                   <div class ="row">
                          <button type="button" id="button-review" style ="margin-top: 20px !important; margin-left: 12px !important" data-loading-text="<?php echo $text_loading; ?>" class="button_red_input"><?php echo $button_continue; ?></button>
-                  </div>  
+                  </div>
                 </div>
                 <?php } else { ?>
                 <?php echo $text_login; ?>
@@ -341,7 +341,7 @@
                 <div class="cart_product_price">
                         <?php if ($product['price']) { ?>
                            <?php if (!$product['special']) { ?>
-                           <span class="cart_product_price_discont"><?php echo $product['price']; ?></span>
+                           <span class="cart_product_price_center"><?php echo $product['price']; ?></span>
                            <?php } else { ?>
                            <span class="cart_product_price_pay"><?php echo $product['special']; ?></span>
                            <span class="cart_product_price_discont"><?php echo $product['price']; ?></span>

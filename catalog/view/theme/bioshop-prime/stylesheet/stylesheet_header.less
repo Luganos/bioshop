@@ -27,6 +27,7 @@
     padding: 0px;
 }
 
+
 a { text-decoration: none !important; }
 
 
@@ -923,6 +924,12 @@ header{
         text-decoration:line-through;
         font-family: "Arial";
     }
+    .cart_product_price_center{
+        font-size: 14px;
+        color: rgb(242,23,23);
+        //text-decoration:line-through;
+        font-family: "Arial";
+    }
     .cart_product_price_text{
         display: block;
         font-size: 16px;
@@ -1046,6 +1053,12 @@ header{
         font-size: 14px;
         color: rgb(242,23,23);
         text-decoration:line-through;
+        font-family: "Arial";
+    }
+    .cart_product_price_center{
+        font-size: 14px;
+        color: rgb(242,23,23);
+        //text-decoration:line-through;
         font-family: "Arial";
     }
     .cart_product_price_text{
@@ -1733,6 +1746,7 @@ header{
     .product_nav-tabs_one a{
         //background-color: transparent !important;
         //color: rgb(201,208,222) !important;
+        top: 4px !important;
         font-size: 14px;
         font-weight: bold;
         padding-left: 45px !important;
@@ -1744,8 +1758,8 @@ header{
     }
     .product_nav-tabs_one a:hover{
        // background-color: transparent !important;
-        top: 4px !important;
-        border: 0px !important;
+        //top: 4px !important;
+        border-bottom: 4px solid rgb(0,30,150) !important;
     }
     .product_h3{
         margin-top: 80px;
@@ -2636,6 +2650,117 @@ h5{
 }
 /*----END_pagination--*/
 
+
+/*------popup_one-----*/
+@media (min-width: 1280px) {
+    /*.popup_one_window{
+        width: 100%;
+        height: 100%;
+        background-color: red;
+        z-index: 9999999;
+        //visibility: hidden;
+    }*/
+    .popup_one {
+    top: 50%; /* Отступ в процентах от верхнего края окна */
+    left: 50%; /* Отступ в процентах от левого края окна */
+    width: 480px; /* Ширина блока */
+    height: 350px; /* Высота блока */
+    position: absolute; /* Абсолютное позиционирование блока */
+    margin-top: -225px; /* Отрицательный отступ от верхнего края страницы, должен равняться половине высоты блока со знаком минус */
+    margin-left: -225px; /* Отрицательный отступ от левого края страницы, должен равняться половине высоты блока со знаком минус */
+    background-color: rgb(230,230,230);
+    //opacity:0.6;
+    z-index: 99999;
+    border-radius: 20px;
+    //visibility: hidden;
+    //visibility: visible;
+    text-align: center;
+    }
+    .popup_one_content{
+        margin-top: 50px;
+        font-size: 21px;
+        font-weight: bold;
+        color: @text_blue;
+    }
+
+}
+
+@media (max-width: 1279px) {
+    /*.popup_one_window{
+        width: 100%;
+        height: 100%;
+        background-color: red;
+        z-index: 9999999;
+        //visibility: hidden;
+    }*/
+    .popup_one {
+    top: 50%; /* Отступ в процентах от верхнего края окна */
+    left: 50%; /* Отступ в процентах от левого края окна */
+    width: 480px; /* Ширина блока */
+    height: 350px; /* Высота блока */
+    position: absolute; /* Абсолютное позиционирование блока */
+    margin-top: -225px; /* Отрицательный отступ от верхнего края страницы, должен равняться половине высоты блока со знаком минус */
+    margin-left: -225px; /* Отрицательный отступ от левого края страницы, должен равняться половине высоты блока со знаком минус */
+    background-color: rgb(230,230,230);
+    //opacity:0.6;
+    z-index: 99999;
+    border-radius: 20px;
+    //visibility: hidden;
+    //visibility: visible;
+    text-align: center;
+    }
+    .popup_one_content{
+        margin-top: 50px;
+        font-size: 21px;
+        font-weight: bold;
+        color: @text_blue;
+    }
+
+}
+
+/*--END_popup_one-----*/
+
+/*------popup_two-----*/
+@media (min-width: 1280px) {
+    /*.popup_one_window{
+        width: 100%;
+        height: 100%;
+        background-color: red;
+        z-index: 9999999;
+        //visibility: hidden;
+    }*/
+    .popup_two {
+    top: 50%; /* Отступ в процентах от верхнего края окна */
+    left: 50%; /* Отступ в процентах от левого края окна */
+    width: 480px; /* Ширина блока */
+    height: 350px; /* Высота блока */
+    position: absolute; /* Абсолютное позиционирование блока */
+    margin-top: -225px; /* Отрицательный отступ от верхнего края страницы, должен равняться половине высоты блока со знаком минус */
+    margin-left: -225px; /* Отрицательный отступ от левого края страницы, должен равняться половине высоты блока со знаком минус */
+    background-color: rgb(230,230,230);
+    //opacity:0.6;
+    z-index: 99999;
+    border-radius: 20px;
+    visibility: hidden;
+    //visibility: visible;
+    text-align: center;
+    line-height: 350px;
+    }
+    .popup_two_content{
+        font-size: 21px;
+        font-weight: bold;
+        color: @text_blue;
+    }
+
+}
+
+@media (max-width: 1279px) {
+
+
+}
+
+
+/*--END_popup_two-----*/
 
 /*----footer-----*/
 

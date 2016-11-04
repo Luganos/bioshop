@@ -12,7 +12,7 @@
                 <div class="cart_product_price">
                         <?php if ($product['price']) { ?>
                            <?php if (!$product['special']) { ?>
-                           <span class="cart_product_price_discont"><?php echo $product['price']; ?></span>
+                           <span class="cart_product_price_center"><?php echo $product['price']; ?></span>
                            <?php } else { ?>
                            <span class="cart_product_price_pay"><?php echo $product['special']; ?></span>
                            <span class="cart_product_price_discont"><?php echo $product['price']; ?></span>
@@ -29,13 +29,13 @@
         </div>
         <?php } ?>
     </div>
-    <?php } ?>    
+    <?php } ?>
 </div>
 <script>
 var width = document.documentElement.clientWidth;
 
     if(width < 1280){
-    
+
     teg = document.getElementById('srcoll');
     teg.setAttribute('data-slick','{"slidesToShow": 3, "slidesToScroll": 3}')
 }

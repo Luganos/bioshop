@@ -2,8 +2,8 @@ $(function(){
 
 $("#spin").on("click",function(){console.log("ttt")});
 $('.sl').slick({
-    prevArrow: '<button type="button"><img src="right-slid.png"></button>',
-    nextArrow: '<button type="button"><img src="left-slid.png"></button>'
+    prevArrow: '<button type="button"><img src="catalog/view/theme/bioshop-prime/image/right-slid.png"></button>',
+    nextArrow: '<button type="button"><img src="catalog/view/theme/bioshop-prime/image/left-slid.png"></button>'
     /*vertical:true,
     verticalSwiping:true,
     autoplaySpeed:3000,

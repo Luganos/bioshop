@@ -179,7 +179,7 @@
 </div>
 <div class="popup_two">
     <div class="popup_two_content">
-        <p>You must log in or register before</p>
+        <p>Вы должны войти или зарегистрироваться!</p>
     </div>
 </div>
 <!--<div class="popup_one">
@@ -541,13 +541,7 @@ var showcart = {
 
 
 
-              },
-              error: function(xhr, ajaxOptions, thrownError) {
-                     //alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
-
-
-
-    }
+              }
     });
 
   },
@@ -573,11 +567,7 @@ var showcart = {
                                 showcart.MainCase(callback);
                              }
                          }
-           },
-           error: function(xhr, ajaxOptions, thrownError) {
-                //alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
-
-    }
+           }
     });
   },
 
@@ -632,12 +622,8 @@ var showcart = {
 
 
 
-              },
-              error: function(xhr, ajaxOptions, thrownError) {
-                   //alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
-
-    }
-    });
+              }
+       });
   }
 
 };
@@ -880,10 +866,6 @@ var checkout = {
 
       $('#button-forbid-buy').on('click', function(){
           $('.popup_two').css({'visibility':'visible'});
-
-
-          //alert('You must log in or register before');
-
      });
   },
 
@@ -1141,7 +1123,7 @@ var checkout = {
       $('#input_error_address_2').html(error.address_2);
       //$('.viber',id).parent().addClass('has-error');
       //$('#select-shipping-address',id).addClass("viber");
-      $('.viber').css({"border":"1px solid #A94442"})
+      $('.viber').css({"border":"1px solid #A94442"});
 
 
 
@@ -1201,13 +1183,7 @@ var checkout = {
 
 
 
-              },
-              error: function(xhr, ajaxOptions, thrownError) {
-                     //alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
-
-
-
-    }
+              }
     });
 
   },
@@ -1232,11 +1208,7 @@ var checkout = {
                                 checkout.MainCase(callback);
                              }
                          }
-           },
-           error: function(xhr, ajaxOptions, thrownError) {
-                //alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
-
-    }
+           }
     });
   },
 
@@ -1281,11 +1253,7 @@ var checkout = {
 
 
 
-              },
-              error: function(xhr, ajaxOptions, thrownError) {
-                   //alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
-
-    }
+              }
     });
   }
 };

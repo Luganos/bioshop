@@ -1,6 +1,6 @@
 <?php
 // Heading
-$_['heading_title']		 = 'Бесплатный заказ';
+$_['heading_title']		 = 'Наложенный платеж';
 
 // Text
 $_['text_payment']		 = 'Оплата';

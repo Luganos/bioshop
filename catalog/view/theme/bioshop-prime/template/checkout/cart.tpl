@@ -50,7 +50,12 @@
                 <td class="text-center text_center_img"><?php if ($product['thumb']) { ?>
                   <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-thumbnail" /></a>
                   <?php } ?></td>
-                <td class="text-left text_left_text "><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
+                <td class="text-left text_left_text "><a href="<?php echo $product['href']; ?>">
+                    <?php echo mb_strimwidth(strval($product['name']), 0, 25); ?>
+                    <?php if (strlen(strval($product['name'])) > 25) { ?>
+                    <?php echo '...'; ?>
+                    <?php } ?>
+                    </a>
                   <?php if (!$product['stock']) { ?>
                   <span class="text-danger">***</span>
                   <?php } ?>

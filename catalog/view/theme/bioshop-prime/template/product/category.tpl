@@ -97,7 +97,12 @@
                            <span class="cart_product_price_discont"><?php echo $product['price']; ?></span>
                            <?php } ?>
                         <?php } ?>
-                    <span class="cart_product_price_text"><?php echo $product['name']; ?></span>
+                    <span class="cart_product_price_text">
+                    <?php echo mb_strimwidth(strval($product['name']), 0, 90); ?>
+                    <?php if (strlen(strval($product['name'])) > 90) { ?>
+                    <?php echo '...'; ?>
+                    <?php } ?>
+                    </span>
                 </div>
                 <div class="cart_product_price_button" onclick="cart.add('<?php echo $product['product_id']; ?>');">
                     <img src="catalog/view/theme/bioshop-prime/image/577845.png" alt="">

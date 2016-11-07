@@ -28,7 +28,12 @@
                 </div>
                 <div class="you_order_inform">
                   <div class="you_order_inform_descroptoin">
-                    <a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
+                    <a href="<?php echo $product['href']; ?>">
+                    <?php echo mb_strimwidth(strval($product['name']), 0, 25); ?>
+                    <?php if (strlen(strval($product['name'])) > 25) { ?>
+                    <?php echo '...'; ?>
+                    <?php } ?>   
+                    </a>
                   <?php if (!$product['stock']) { ?>
                   <span class="text-danger">***</span>
                   <?php } ?>

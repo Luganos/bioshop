@@ -2,7 +2,12 @@
 <div class="container">
   <ul class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
-    <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
+    <li><a href="<?php echo $breadcrumb['href']; ?>">
+    <?php echo mb_strimwidth(strval($breadcrumb['text']), 0, 50); ?>
+    <?php if (strlen(strval($breadcrumb['text'])) > 50) { ?>
+    <?php echo '...'; ?>
+    <?php } ?>       
+    </a></li>
     <?php } ?>
   </ul>
   <div class="row product_row"><?php echo $column_left; ?>
@@ -35,7 +40,12 @@
         <?php $class = 'col-sm-6 col-lg-8'; ?>
         <?php } ?>
         <div class="<?php echo $class; ?>">
-          <h1 class="product_h1"><?php echo $heading_title; ?></h1>
+          <h1 class="product_h1">
+          <?php echo mb_strimwidth(strval($heading_title), 0, 25); ?>
+          <?php if (strlen(strval($heading_title)) > 25) { ?>
+          <?php echo '...'; ?>
+          <?php } ?>   
+          </h1>
           <hr>
           <ul class="list-unstyled product_list-unstyled">
             <?php if ($manufacturer) { ?>
@@ -347,7 +357,12 @@
                            <span class="cart_product_price_discont"><?php echo $product['price']; ?></span>
                            <?php } ?>
                         <?php } ?>
-                    <span class="cart_product_price_text"><?php echo $product['name']; ?></span>
+                    <span class="cart_product_price_text">
+                    <?php echo mb_strimwidth(strval($product['name']), 0, 100); ?>
+                    <?php if (strlen(strval($product['name'])) > 100) { ?>
+                    <?php echo '...'; ?>
+                    <?php } ?>
+                    </span>
                 </div>
                 <div class="cart_product_price_button" onclick="cart.add('<?php echo $product['product_id']; ?>');">
                   <img src="catalog/view/theme/bioshop-prime/image/577845.png" alt="">

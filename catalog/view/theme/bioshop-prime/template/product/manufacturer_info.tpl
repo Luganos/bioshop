@@ -73,8 +73,8 @@
                            <?php } ?>
                         <?php } ?>
                     <span class="cart_product_price_text">
-                    <?php echo mb_strimwidth(strval($product['name']), 0, 90); ?>
-                    <?php if (strlen(strval($product['name'])) > 90) { ?>
+                    <?php echo mb_strimwidth(strval($product['name']), 0, 80); ?>
+                    <?php if (strlen(strval($product['name'])) > 80) { ?>
                     <?php echo '...'; ?>
                     <?php } ?>
                     </span>

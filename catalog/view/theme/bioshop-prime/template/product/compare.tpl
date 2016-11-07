@@ -33,8 +33,8 @@
             <?php foreach ($products as $product) { ?>
             <td><a href="<?php echo $product['href']; ?>">
                <strong>
-               <?php echo mb_strimwidth(strval($product['name']), 0, 90); ?>
-               <?php if (strlen(strval($product['name'])) > 90) { ?>
+               <?php echo mb_strimwidth(strval($product['name']), 0, 80); ?>
+               <?php if (strlen(strval($product['name'])) > 80) { ?>
                <?php echo '...'; ?>
                <?php } ?>
                </strong></a></td>

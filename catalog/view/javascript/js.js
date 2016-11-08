@@ -61,16 +61,54 @@ var opts = {
 var spinner = new Spinner(opts).spin(target);
 
 /*------popup_one-----*/
-$('.popup_one').on('click',function(){
-             $('.popup_one').css({'visibility':'hidden'});
+$('#close-windows-send').on('click',function(){
+       $('.popup_one').css({'visibility':'hidden'});
+});
+
+//Send form to API
+$('#send-form-for-contact').on('click',function(){
+     
+          $.ajax({
+               url: 'index.php?route=information/contact',
+               type: 'post',
+               data: $(".popup_one_content :input"),
+               dataType: 'json',
+               beforeSend: function() {
+
+                   $("#send-form-for-contact").button('loading');
+
+
+               },
+               complete: function() {
+                  
+                   $("#send-form-for-contact").button('reset');
+
+               },
+              success: function(json) {
+
+                         if (json['error']) {
+                            
+                            alert(json['error']);
+
+                         } 
+                         
+                         if (json['success'] == 1) {
+                             
+                           alert('Success');
+  
+                         }
+
+              }
+    });
 });
 /*------END_popup_one-----*/
 
 /*------popup_two-----*/
 $('#click_footer').on('click',function(){
-            console.log("ddd");
-             $('.popup_one').css({'visibility':'visible'});
-});
+
+        $('.popup_one').css({'visibility':'visible'});
+                     
+});                        
 /*------END_popup_two-----*/
 
 /*

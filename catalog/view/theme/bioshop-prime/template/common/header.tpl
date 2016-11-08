@@ -79,9 +79,7 @@
       </div>
       <div class="header_tel col-lg-2 col-xs-2">
           <a href ="tel:<?php echo $telephone; ?>" ><span class="header_tel_text_number"><?php echo $telephone; ?></span></a>
-          <a href="<?php echo $contact; ?>">
-          <span class="header_tel_text_we">Мы перезвоним</span>
-          </a>
+          <span class="header_tel_text_we" id="click_footer" >Мы перезвоним</span>
       </div>
       <div class="header_pay col-lg-2 col-xs-3">
       <?php echo $cart; ?>

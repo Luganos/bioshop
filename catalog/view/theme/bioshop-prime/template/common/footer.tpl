@@ -59,15 +59,11 @@
         <ul class="footer_bottom_text_ul">
             <?php foreach ($informations as $information) { ?>
                <?php if (strtolower($information['title']) !== strtolower("Соглашение о конфиденциальности")) { ?>
-                  <?php if (strtolower($information['title']) !== strtolower("Контакты") && strtolower($information['title']) !== strtolower("Сотрудничество")) { ?>
+                  <?php if (strtolower($information['title']) !== strtolower("Сотрудничество")) { ?>
                       <a href="<?php echo $information['href']; ?>">
                          <li><?php echo $information['title']; ?></li>
                       </a>
-                  <?php } else if (strtolower($information['title']) == strtolower("Контакты")) { ?>
-                      <!--<a href="<?php echo $contact; ?>">-->
-                         <li id="click_footer">Контакты</li>
-                      </a>
-                  <?php } ?>
+                  <?php }  ?>
 	          <?php if (strtolower($information['title']) == strtolower("Сотрудничество")) { ?>
 		     <a href="<?php echo $affiliate; ?>">
                          <li>Сотрудничество</li>
@@ -84,21 +80,24 @@
     <div class="popup_one">
     <div class="popup_one_content">
         <p>Менеджер свяжется с вами</p>
+        <button type="button" style="margin-left: -25px !important; margin-top: -80px;" class="close" id ="close-windows-send" >&times;</button>
         <div class="form-group" style="margin-top: 30px !important; margin-left: 73px !important">
             <label class="col-sm-2 control-label" for="input-firstname"><span data-toggle="tooltip" title="Имя и фамилия">Имя и фамилия</span></label>
             <div class="col-sm-12 checkout_login_input">
-                <input type="text" name="firstname" value="" placeholder="Иван Иванов " id="input-firstname" class="form-control" />
+                <input type="text" name="name" value="" placeholder="Иван Иванов " id="name" class="form-control" />
                 <span id="input_error_name"></span>
              </div>
         </div>
         <div class="form-group" style="margin-top: 30px !important; margin-left: 73px !important">
             <label class="col-sm-2 control-label" for="input-telephone"><span data-toggle="tooltip" title="Телефон">Телефон</span></label>
             <div class="col-sm-12 checkout_login_input">
-                 <input type="text" name="telephone" value="" placeholder="067-123-4567" id="phone" class="form-control" />
+                 <input type="text" name="email" value="" placeholder="067-123-4567" id="email" class="form-control" />
             </div>
         </div>
+        <input type="hidden" name="enquiry" value="Перезвоните мне пожалуйста по номеру "  class="form-control" />
+        <input type="hidden" name="redirect" value="1"  class="form-control" />
         <div class ="row">
-             <button type="button" style ="margin-top: 20px !important; margin-left: 0px !important" id="button-forbid-easy-buy" data-loading-text="Загрузка" class="button_red_input">Оформить заказ</button>
+             <button type="button" style ="margin-top: 20px !important; margin-left: 0px !important" id="send-form-for-contact" data-loading-text="Загрузка" class="button_red_input">Отправить</button>
         </div>
 
     </div>

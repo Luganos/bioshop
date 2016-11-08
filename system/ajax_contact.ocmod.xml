@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+  <name>Ajax question</name>
+  <code>default</code>
+  <version>1.0</version>
+  <author>Lugano</author>
+  <link>http://www.full-chip.com</link>
+  <file path="catalog/controller/information/contact.php">
+    <operation>
+      <search>
+      <![CDATA[if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {]]>
+      </search>
+      <add position="replace">
+      <![CDATA[if ($this->request->server['REQUEST_METHOD'] == 'POST') {]]>
+      </add>
+    </operation>
+    <operation>
+      <search>
+      <![CDATA[$mail->setText($this->request->post['enquiry']);]]>
+      </search>
+      <add position="replace">
+      <![CDATA[
+       
+         if (!isset($this->request->post['redirect'])) {
+         
+             $mail->setText($this->request->post['enquiry']);
+             
+         } else {
+         
+             $mail->setText($this->request->post['enquiry'] . $this->request->post['email']);
+         }
+      ]]>
+      </add>
+    </operation>
+    <operation>
+      <search regex ="true" quote = "true">
+      <![CDATA[~if (!preg_match('/^[^\@]+@.*.[a-z]{2,15}$/i', $this->request->post['email'])) {
+			$this->error['email'] = $this->language->get('error_email');
+		}~]]>
+      </search>
+      <add position="replace">
+      <![CDATA[
+            if(isset($this->request->post['redirect'])) {
+            
+		if ((utf8_strlen($this->request->post['email']) < 3) || (utf8_strlen($this->request->post['email']) > 32)) {
+			$this->error['email'] = 'Имя должно быть от 3 до 32 символов';
+		}
+                
+
+            } else {
+            
+		if (!preg_match('/^[^\@]+@.*.[a-z]{2,15}$/i', $this->request->post['email'])) {
+			$this->error['email'] = $this->language->get('error_email');
+		}
+                
+            }            
+      ]]>
+      </add>
+    </operation>
+    <operation>
+      <search>
+      <![CDATA[$mail->setFrom($this->request->post['email']);]]>
+      </search>
+      <add position="replace">
+      <![CDATA[$mail->setFrom($this->config->get('config_email'));]]>
+      </add>
+    </operation>
+    <operation>
+      <search>
+      <![CDATA[$mail = new Mail();]]>
+      </search>
+      <add position="before">
+<![CDATA[
+
+       $json = array();
+       
+       if (!$this->validate()) {
+       
+          if (isset($this->error['name'])) {
+		$json['error']['name'] = $this->error['name'];
+	  } 
+
+	  if (isset($this->error['email'])) {
+		$json['error']['email'] = $this->error['email'];
+	  } 
+          
+       } 
+       
+       if (!$json) {
+]]>
+      </add>
+    </operation>
+    <operation>
+      <search>
+        <![CDATA[$this->response->redirect($this->url->link('information/contact/success'));]]>
+      </search>
+      <add position="replace">
+      <![CDATA[} 
+      
+                   if (!isset($this->request->post['redirect'])) {
+                   
+                       $this->response->redirect($this->url->link('information/contact/success'));
+                   }
+       ]]>
+      </add>
+    </operation>
+    <operation>
+      <search regex ="true" quote = "true">
+      <![CDATA[~if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/information/contact.tpl')) {
+			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/information/contact.tpl', $data));
+		} else {
+			$this->response->setOutput($this->load->view('default/template/information/contact.tpl', $data));
+		}~]]>
+      </search>
+      <add position="replace">
+      <![CDATA[
+
+            if (!isset($this->request->post['redirect'])) {
+            
+               if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/information/contact.tpl')) {
+			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/information/contact.tpl', $data));
+		} else {
+			$this->response->setOutput($this->load->view('default/template/information/contact.tpl', $data));
+		}
+            
+            } else {
+            
+                if (!$json) {
+              
+                  $json['success'] = 1;
+                           
+                  $this->response->addHeader('Content-Type: application/json');
+	          $this->response->setOutput(json_encode($json));
+              
+                } else {
+                        
+                    $json['success'] = 0;
+              
+                    $this->response->addHeader('Content-Type: application/json');
+	            $this->response->setOutput(json_encode($json));
+                }
+            }
+
+]]>
+      </add>
+    </operation>
+  </file>
+</modification>

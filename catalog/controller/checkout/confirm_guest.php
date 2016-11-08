@@ -312,6 +312,8 @@ class ControllerCheckoutConfirmGuest extends Controller {
 			$this->load->model('checkout/order');
 
 			$this->session->data['order_id'] = $this->model_checkout_order->addOrder($order_data);
+                        
+                        $this->model_checkout_order->addOrderHistory($this->session->data['order_id'], $this->session->data['payment_method']);
 
 			$data['text_recurring_item'] = $this->language->get('text_recurring_item');
 			$data['text_payment_recurring'] = $this->language->get('text_payment_recurring');

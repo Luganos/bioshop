@@ -41,10 +41,7 @@
         <?php } ?>
         <div class="<?php echo $class; ?>">
           <h1 class="product_h1">
-          <?php echo mb_strimwidth(strval($heading_title), 0, 25); ?>
-          <?php if (strlen(strval($heading_title)) > 25) { ?>
-          <?php echo '...'; ?>
-          <?php } ?>   
+          <?php echo $heading_title; ?>      
           </h1>
           <hr>
           <ul class="list-unstyled product_list-unstyled">

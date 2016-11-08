@@ -67,8 +67,9 @@ $('.popup_one').on('click',function(){
 /*------END_popup_one-----*/
 
 /*------popup_two-----*/
-$('.popup_two').on('click',function(){
-             $('.popup_two').css({'visibility':'hidden'});
+$('#click_footer').on('click',function(){
+            console.log("ddd");
+             $('.popup_one').css({'visibility':'visible'});
 });
 /*------END_popup_two-----*/
 

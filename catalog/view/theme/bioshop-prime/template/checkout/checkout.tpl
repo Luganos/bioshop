@@ -182,29 +182,6 @@
         <p>Вы должны войти или зарегистрироваться!</p>
     </div>
 </div>
-<!--<div class="popup_one">
-    <div class="popup_one_content">
-        <p>Менеджер свяжется с вами</p>
-        <div class="form-group" style="margin-top: 30px !important; margin-left: 73px !important">
-            <label class="col-sm-2 control-label" for="input-firstname"><span data-toggle="tooltip" title="Имя и фамилия">Имя и фамилия</span></label>
-            <div class="col-sm-12 checkout_login_input">
-                <input type="text" name="firstname" value="" placeholder="Иван Иванов " id="input-firstname" class="form-control" />
-                <span id="input_error_name"></span>
-             </div>
-        </div>
-        <div class="form-group" style="margin-top: 30px !important; margin-left: 73px !important">
-            <label class="col-sm-2 control-label" for="input-telephone"><span data-toggle="tooltip" title="Телефон">Телефон</span></label>
-            <div class="col-sm-12 checkout_login_input">
-                 <input type="text" name="telephone" value="" placeholder="067-123-4567" id="phone" class="form-control" />
-            </div>
-        </div>
-        <div class ="row">
-             <button type="button" style ="margin-top: 20px !important; margin-left: 0px !important" id="button-forbid-easy-buy" data-loading-text="Загрузка" class="button_red_input">Оформить заказ</button>
-        </div>
-
-    </div>
-</div>-->
-
 <script type="text/javascript"><!--
  $(function(){
 

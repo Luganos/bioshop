@@ -101,6 +101,9 @@ $('#send-form-for-contact').on('click',function(){
               }
     });
 });
+
+$("#phone").mask("+38(999) 999-9999");
+
 /*------END_popup_one-----*/
 
 /*------popup_two-----*/

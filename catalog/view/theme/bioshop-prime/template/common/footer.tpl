@@ -91,7 +91,7 @@
         <div class="form-group" style="margin-top: 30px !important; margin-left: 73px !important">
             <label class="col-sm-2 control-label" for="input-telephone"><span data-toggle="tooltip" title="Телефон">Телефон</span></label>
             <div class="col-sm-12 checkout_login_input">
-                 <input type="text" name="email" value="" placeholder="067-123-4567" id="email" class="form-control" />
+                 <input type="text" name="email" value="" placeholder="067-123-4567" id="phone" class="form-control" />
             </div>
         </div>
         <input type="hidden" name="enquiry" value="Перезвоните мне пожалуйста по номеру "  class="form-control" />

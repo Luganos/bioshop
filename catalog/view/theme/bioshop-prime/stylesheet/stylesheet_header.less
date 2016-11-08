@@ -42,6 +42,8 @@ body{
     min-height:100%;
 }
 
+/*------idtop------*/
+@media (min-width: 1280px) {
 .idTop {
  position: fixed; /*позиционирование кнопки фиксированное*/
  z-index: 9999; /*отображаем поверх всех элементов*/
@@ -55,7 +57,25 @@ body{
 textarea {
     resize:none;
 }
+}
+@media (max-width: 1279px) {
+    .idTop {
+ position: fixed; /*позиционирование кнопки фиксированное*/
+ z-index: 9999; /*отображаем поверх всех элементов*/
+ bottom: 2%; /*положение снизу*/
+ right: 5%; /*положение справа*/
+ margin-bottom: 50px;
+}
+.idTop:hover {
+ opacity: 1;
+}
 
+textarea {
+    resize:none;
+}
+}
+
+/*------END_idtop------*/
 /*-----Header-------*/
 @media (min-width: 1280px) {
 
@@ -225,7 +245,7 @@ header{
     color: rgb(165,165,166) !important;
 }
 #cart-total_two{
-    min-width: 57px !important;
+    min-width: 65px !important;
     font-size: 12px !important;
     font-weight: bold !important;
     color: rgb(165,165,166) !important;
@@ -295,10 +315,11 @@ header{
     right: 110px;
     top: 0px;
     left:46px !important;
+    min-width: 65px !important;
 }
 #cart-total_two{
     position: absolute;
-    min-width: 57px !important;
+    min-width: 65px !important;
     right: 0px !important;
     top: -42px;
     left:-85px !important;
@@ -526,7 +547,7 @@ header{
 }
 #cart-total_two{
     position: absolute;
-    min-width: 57px !important;
+    min-width: 65px !important;
     right: 0px !important;
     top: -42px;
     left:-85px !important;
@@ -1389,6 +1410,7 @@ header{
         margin-right: 308px;
     }
     .text-right_cart_sum{
+        min-width: 90px !important;
         padding: 0px !important;
         text-align: left !important;
         color: black;
@@ -1637,6 +1659,7 @@ header{
         margin-right: 75px;//old 90px;
     }
     .text-right_cart_sum{
+        min-width: 90px !important;
         padding: 0px !important;
         text-align: left !important;
         color: black;
@@ -2250,7 +2273,7 @@ header{
     }
     .you_order_cart_del{
         left: 240px;
-        bottom: 20px;
+        bottom: 16px;
     }
     .you_order_form-control{
         //float: left;
@@ -2470,7 +2493,7 @@ header{
     }
     .you_order_cart_del{
         left: 240px;
-        bottom: 20px;
+        bottom: 16px;
     }
     .you_order_form-control{
         //float: left;
@@ -2739,7 +2762,7 @@ h5{
     //opacity:0.6;
     z-index: 99999;
     border-radius: 20px;
-    //visibility: hidden;
+    visibility: hidden;
     //visibility: visible;
     text-align: center;
     }
@@ -2796,6 +2819,7 @@ h5{
         z-index: 9999999;
         //visibility: hidden;
     }*/
+
     .popup_two {
     top: 50%; /* Отступ в процентах от верхнего края окна */
     left: 50%; /* Отступ в процентах от левого края окна */
@@ -2828,6 +2852,20 @@ h5{
 
 
 /*--END_popup_two-----*/
+
+/*----register----------*/
+@media (min-width: 1280px) {
+
+}
+
+@media (max-width: 1279px) {
+    .row_register{
+        padding-left: 30px;
+    }
+
+}
+
+/*----END_register------*/
 
 /*----footer-----*/
 
@@ -2969,7 +3007,7 @@ footer{
 .footer_geeker_logo span{
     display: inline;
     width: 200px;
-    color: rgb(188,190,194);
+    color: rgb(177,180,183);
     font-size: 10px;
     text-transform: uppercase;
     text-decoration: none !important;
@@ -2977,6 +3015,7 @@ footer{
 
 }
 .footer_geeker_logo_img{
+    min-width: 29px;
     position: absolute;
     left: 445px;
     bottom: 36px;
@@ -3141,7 +3180,20 @@ footer{
 }
 
 .footer_geeker_logo{
-    display: none;
+    position: absolute !important;
+    left: 600px !important;
+    bottom: 55px;
+    color: rgb(177,180,183);
+    font-size: 10px;
+    text-transform: uppercase;
+    text-decoration: none !important;
+   // max-width: 107px !important;
+    //text-align: right;
+}
+
+.footer_geeker_logo_img{
+    padding-bottom: 1px;
+    margin-left: 5px;
 }
 
 .footer_geeker_logo span{
@@ -3303,4 +3355,9 @@ width: 300px;
 .slick-arrow{
     background-color: transparent !important;
     border: 0px !important;
+}
+
+.br{
+    font-size: 1px !important;
+    max-height: 5px !important;
 }

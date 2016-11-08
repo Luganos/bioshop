@@ -1,4 +1,4 @@
-/*-----Header-------*/
+/*------idtop------*/
 .clearfix:after {
   content: "";
   display: table;
@@ -31,26 +31,53 @@ body {
   height: 100%;
   min-height: 100%;
 }
-.idTop {
-  position: fixed;
-  /*позиционирование кнопки фиксированное*/
-
-  z-index: 9999;
-  /*отображаем поверх всех элементов*/
-
-  bottom: 2%;
-  /*положение снизу*/
-
-  right: 5%;
-  /*положение справа*/
-
+/*------idtop------*/
+@media (min-width: 1280px) {
+  .idTop {
+    position: fixed;
+    /*позиционирование кнопки фиксированное*/
+  
+    z-index: 9999;
+    /*отображаем поверх всех элементов*/
+  
+    bottom: 2%;
+    /*положение снизу*/
+  
+    right: 5%;
+    /*положение справа*/
+  
+  }
+  .idTop:hover {
+    opacity: 1;
+  }
+  textarea {
+    resize: none;
+  }
 }
-.idTop:hover {
-  opacity: 1;
+@media (max-width: 1279px) {
+  .idTop {
+    position: fixed;
+    /*позиционирование кнопки фиксированное*/
+  
+    z-index: 9999;
+    /*отображаем поверх всех элементов*/
+  
+    bottom: 2%;
+    /*положение снизу*/
+  
+    right: 5%;
+    /*положение справа*/
+  
+    margin-bottom: 50px;
+  }
+  .idTop:hover {
+    opacity: 1;
+  }
+  textarea {
+    resize: none;
+  }
 }
-textarea {
-  resize: none;
-}
+/*------END_idtop------*/
 /*-----Header-------*/
 @media (min-width: 1280px) {
   header {
@@ -187,7 +214,7 @@ textarea {
     color: #a5a5a6 !important;
   }
   #cart-total_two {
-    min-width: 57px !important;
+    min-width: 65px !important;
     font-size: 12px !important;
     font-weight: bold !important;
     color: #a5a5a6 !important;
@@ -246,10 +273,11 @@ textarea {
     right: 110px;
     top: 0px;
     left: 46px !important;
+    min-width: 65px !important;
   }
   #cart-total_two {
     position: absolute;
-    min-width: 57px !important;
+    min-width: 65px !important;
     right: 0px !important;
     top: -42px;
     left: -85px !important;
@@ -439,7 +467,7 @@ textarea {
   }
   #cart-total_two {
     position: absolute;
-    min-width: 57px !important;
+    min-width: 65px !important;
     right: 0px !important;
     top: -42px;
     left: -85px !important;
@@ -1243,6 +1271,7 @@ textarea {
     margin-right: 308px;
   }
   .text-right_cart_sum {
+    min-width: 90px !important;
     padding: 0px !important;
     text-align: left !important;
     color: black;
@@ -1487,6 +1516,7 @@ textarea {
     margin-right: 75px;
   }
   .text-right_cart_sum {
+    min-width: 90px !important;
     padding: 0px !important;
     text-align: left !important;
     color: black;
@@ -2063,7 +2093,7 @@ textarea {
   }
   .you_order_cart_del {
     left: 240px;
-    bottom: 20px;
+    bottom: 16px;
   }
   .you_order_form-control {
     display: inline;
@@ -2267,7 +2297,7 @@ textarea {
   }
   .you_order_cart_del {
     left: 240px;
-    bottom: 20px;
+    bottom: 16px;
   }
   .you_order_form-control {
     display: inline;
@@ -2512,6 +2542,7 @@ textarea {
     background-color: #e6e6e6;
     z-index: 99999;
     border-radius: 20px;
+    visibility: hidden;
     text-align: center;
   }
   .popup_one_content {
@@ -2612,6 +2643,16 @@ textarea {
   
 }
 /*--END_popup_two-----*/
+/*----register----------*/
+@media (min-width: 1280px) {
+  
+}
+@media (max-width: 1279px) {
+  .row_register {
+    padding-left: 30px;
+  }
+}
+/*----END_register------*/
 /*----footer-----*/
 @media (min-width: 1280px) {
   footer {
@@ -2720,13 +2761,14 @@ textarea {
   .footer_geeker_logo span {
     display: inline;
     width: 200px;
-    color: #bcbec2;
+    color: #b1b4b7;
     font-size: 10px;
     text-transform: uppercase;
     text-decoration: none !important;
     text-align: right;
   }
   .footer_geeker_logo_img {
+    min-width: 29px;
     position: absolute;
     left: 445px;
     bottom: 36px;
@@ -2850,7 +2892,17 @@ textarea {
     text-decoration: underline;
   }
   .footer_geeker_logo {
-    display: none;
+    position: absolute !important;
+    left: 600px !important;
+    bottom: 55px;
+    color: #b1b4b7;
+    font-size: 10px;
+    text-transform: uppercase;
+    text-decoration: none !important;
+  }
+  .footer_geeker_logo_img {
+    padding-bottom: 1px;
+    margin-left: 5px;
   }
   .footer_geeker_logo span {
     display: inline !important;
@@ -2988,6 +3040,10 @@ width: 300px;
 .slick-arrow {
   background-color: transparent !important;
   border: 0px !important;
+}
+.br {
+  font-size: 1px !important;
+  max-height: 5px !important;
 }
 
 /* This beautiful CSS-File has been crafted with LESS (lesscss.org) and compiled by simpLESS (wearekiss.com/simpless) */

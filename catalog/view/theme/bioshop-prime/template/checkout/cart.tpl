@@ -66,7 +66,7 @@
                   <?php } ?>
                   <?php } ?>
                   <?php if ($product['reward']) { ?>
-                  <br />
+                  <br class="br" />
                   <small><?php echo $product['reward']; ?></small>
                   <?php } ?>
                   <?php if ($product['recurring']) { ?>

@@ -86,20 +86,20 @@
             <div class="col-sm-12 checkout_login_input">
                 <input type="text" name="name" value="" placeholder="Иван Иванов " id="name" class="form-control" />
                 <span id="input_error_name"></span>
-             </div>
+            </div>
         </div>
-        <div class="form-group" style="margin-top: 30px !important; margin-left: 73px !important">
+        <div class="form-group" style="margin-top: 10px !important; margin-left: 73px !important">
             <label class="col-sm-2 control-label" for="input-telephone"><span data-toggle="tooltip" title="Телефон">Телефон</span></label>
             <div class="col-sm-12 checkout_login_input">
                  <input type="text" name="email" value="" placeholder="067-123-4567" id="phone" class="form-control" />
+                  <span id="input_error_tel"></span>
             </div>
         </div>
         <input type="hidden" name="enquiry" value="Перезвоните мне пожалуйста по номеру "  class="form-control" />
         <input type="hidden" name="redirect" value="1"  class="form-control" />
         <div class ="row">
-             <button type="button" style ="margin-top: 20px !important; margin-left: 0px !important" id="send-form-for-contact" data-loading-text="Загрузка" class="button_red_input">Отправить</button>
+             <button type="button" style ="margin-top: 5px !important; margin-left: 0px !important" id="send-form-for-contact" data-loading-text="Загрузка" class="button_red_input">Отправить</button>
         </div>
-
     </div>
 </div>
 <!--

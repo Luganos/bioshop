@@ -50,7 +50,7 @@
                 <td class="text-center text_center_img"><?php if ($product['thumb']) { ?>
                   <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-thumbnail" /></a>
                   <?php } ?></td>
-                <td class="text-left text_left_text "><a href="<?php echo $product['href']; ?>">
+                <td class="text-left text_left_text "><a class="ldpr" href="<?php echo $product['href']; ?>">
                     <?php echo mb_strimwidth(strval($product['name']), 0, 25); ?>
                     <?php if (strlen(strval($product['name'])) > 25) { ?>
                     <?php echo '...'; ?>
@@ -61,16 +61,16 @@
                   <?php } ?>
                   <?php if ($product['option']) { ?>
                   <?php foreach ($product['option'] as $option) { ?>
-                  <br />
+                  <!--<br />-->
                   <small><?php echo $option['name']; ?>: <?php echo $option['value']; ?></small>
                   <?php } ?>
                   <?php } ?>
                   <?php if ($product['reward']) { ?>
-                  <br class="br" />
+                 <!-- <br class="br" />-->
                   <small><?php echo $product['reward']; ?></small>
                   <?php } ?>
                   <?php if ($product['recurring']) { ?>
-                  <br />
+                  <!--<br />-->
                   <span class="label label-info"><?php echo $text_recurring_item; ?></span> <small><?php echo $product['recurring']; ?></small>
                   <?php } ?></td>
                 <td class="text-left text_left_text"><?php echo $product['model']; ?></td>

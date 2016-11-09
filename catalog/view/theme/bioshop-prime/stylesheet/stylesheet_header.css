@@ -745,6 +745,11 @@ body {
     top: 380px;
     left: 18px;
   }
+  .cart_product_price_button_category {
+    position: absolute;
+    top: 380px;
+    left: 32px;
+  }
   .cart_product_price_button img {
     max-width: 30px;
     max-height: 30px;
@@ -901,6 +906,11 @@ body {
     position: absolute;
     top: 305px;
     left: 12px;
+  }
+  .cart_product_price_button_category {
+    position: absolute;
+    top: 305px;
+    left: 28px;
   }
   .cart_product_price_button img {
     max-width: 30px;

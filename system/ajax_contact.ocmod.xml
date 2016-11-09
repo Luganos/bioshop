@@ -42,8 +42,8 @@
       <![CDATA[
             if(isset($this->request->post['redirect'])) {
             
-		if ((utf8_strlen($this->request->post['email']) < 3) || (utf8_strlen($this->request->post['email']) > 32)) {
-			$this->error['email'] = 'Имя должно быть от 3 до 32 символов';
+		if ((utf8_strlen($this->request->post['email']) < 9) || (utf8_strlen($this->request->post['email']) > 32)) {
+			$this->error['email'] = 'Телефон должен быть от 9 до 32 символов';
 		}
                 
 

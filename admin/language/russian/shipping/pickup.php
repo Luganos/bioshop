@@ -1,6 +1,6 @@
 <?php
 // Heading
-$_['heading_title']    = 'Самовывоз';
+$_['heading_title']    = 'Быстрый заказ';
 
 // Text
 $_['text_shipping']    = 'Доставка';

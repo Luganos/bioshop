@@ -23,7 +23,7 @@ class ControllerCheckoutShippingMethod extends Controller {
 			$results = $this->model_extension_extension->getExtensions('shipping');
 
 			foreach ($results as $result) {
-				if ($this->config->get($result['code'] . '_status')) {
+				if ($this->config->get($result['code'] . '_status') && strtolower(strval($result['code'])) !== 'pickup' ) {
 					$this->load->model('shipping/' . $result['code']);
 
 					$quote = $this->{'model_shipping_' . $result['code']}->getQuote($this->session->data['shipping_address']);

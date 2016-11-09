@@ -161,7 +161,17 @@ class ControllerCheckoutShippingAddress extends Controller {
 					$this->load->model('account/address');
 
 					$this->session->data['shipping_address'] = $this->model_account_address->getAddress($this->request->post['address_id']);
-                                        $this->session->data['shipping_address']['address_2'] = trim($this->request->post['address_2']);
+                                        
+                                        if (trim($this->request->post['address_2']) == trim($this->session->data['shipping_address']['address_1'])) {
+                                            
+                                            $this->session->data['shipping_address']['address_2'] = '';
+                                        } else {
+                                            
+                                            $this->session->data['shipping_address']['address_1'] = '';
+                                            $this->session->data['shipping_address']['address_2'] = trim($this->request->post['address_2']);
+                                        }
+                                        
+                                        
                                                 
 					unset($this->session->data['shipping_method']);
                                         $json['success'] = 1;

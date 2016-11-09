@@ -179,6 +179,7 @@
 </div>
 <div class="popup_two">
     <div class="popup_two_content">
+        <button type="button" style="margin-right: 10px !important; margin-top: 0px;" class="close" id ="close-windows-send_checkout" >&times;</button>
         <p>Вы должны войти или зарегистрироваться!</p>
     </div>
 </div>

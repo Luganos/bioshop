@@ -828,8 +828,9 @@ body {
     font-family: "Arial";
   }
   .cart_product_price_center {
-    font-size: 14px;
-    color: #f21717;
+    font-size: 18px;
+    color: black;
+    font-weight: bold;
     font-family: "Arial";
   }
   .cart_product_price_text {
@@ -979,8 +980,9 @@ body {
     font-family: "Arial";
   }
   .cart_product_price_center {
-    font-size: 14px;
-    color: #f21717;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
     font-family: "Arial";
   }
   .cart_product_price_text {
@@ -2629,7 +2631,7 @@ body {
     height: 350px;
     /* Высота блока */
   
-    position: absolute;
+    position: fixed;
     /* Абсолютное позиционирование блока */
   
     margin-top: -225px;
@@ -2649,6 +2651,9 @@ body {
     font-size: 21px;
     font-weight: bold;
     color: #6fa1ce;
+  }
+  .popup_two_content p {
+    font-size: 18px;
   }
 }
 @media (max-width: 1279px) {
@@ -3060,6 +3065,15 @@ width: 300px;
 .ldpr {
   display: block !important;
   max-height: 35px !important;
+}
+.alert-info {
+  max-width: 500px;
+}
+.alert-success {
+  max-width: 500px;
+}
+.alert-danger {
+  max-width: 500px;
 }
 
 /* This beautiful CSS-File has been crafted with LESS (lesscss.org) and compiled by simpLESS (wearekiss.com/simpless) */

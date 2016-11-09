@@ -954,8 +954,9 @@ header{
         font-family: "Arial";
     }
     .cart_product_price_center{
-        font-size: 14px;
-        color: rgb(242,23,23);
+        font-size: 18px;
+        color: black;
+        font-weight: bold;
         //text-decoration:line-through;
         font-family: "Arial";
     }
@@ -1112,8 +1113,9 @@ header{
         font-family: "Arial";
     }
     .cart_product_price_center{
-        font-size: 14px;
-        color: rgb(242,23,23);
+        font-size: 18px;
+        font-weight: bold;
+        color: black;
         //text-decoration:line-through;
         font-family: "Arial";
     }
@@ -2836,7 +2838,7 @@ h5{
     left: 50%; /* Отступ в процентах от левого края окна */
     width: 480px; /* Ширина блока */
     height: 350px; /* Высота блока */
-    position: absolute; /* Абсолютное позиционирование блока */
+    position: fixed; /* Абсолютное позиционирование блока */
     margin-top: -225px; /* Отрицательный отступ от верхнего края страницы, должен равняться половине высоты блока со знаком минус */
     margin-left: -225px; /* Отрицательный отступ от левого края страницы, должен равняться половине высоты блока со знаком минус */
     background-color: rgb(230,230,230);
@@ -2852,6 +2854,9 @@ h5{
         font-size: 21px;
         font-weight: bold;
         color: @text_blue;
+    }
+    .popup_two_content p{
+        font-size: 18px;
     }
 
 }
@@ -3376,4 +3381,16 @@ width: 300px;
 .ldpr{
     display: block !important;
     max-height: 35px !important;
+}
+
+.alert-info{
+    max-width: 500px;
+}
+
+.alert-success{
+    max-width: 500px;
+}
+
+.alert-danger{
+    max-width: 500px;
 }

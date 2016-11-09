@@ -90,8 +90,8 @@ $('#send-form-for-contact').on('click',function(){
 
                            // alert(json['error']);
                            // alert(json['error']['name']);
-                            $('#input_error_name').html(json['error']['name']);
-                            $('#input_error_tel').html(json['error']['email']);
+                            $('#input_error_name_footer').html(json['error']['name']);
+                            $('#input_error_tel_footer').html(json['error']['email']);
                          }
 
                          if (json['success'] == 1) {
@@ -109,6 +109,10 @@ $("#phone").mask("+38(999) 999-9999");
 /*------END_popup_one-----*/
 
 /*------popup_two-----*/
+$('#close-windows-send_checkout').on('click',function(){
+       $('.popup_two').css({'visibility':'hidden'});
+});
+
 $('#click_footer').on('click',function(){
 
         $('.popup_one').css({'visibility':'visible'});

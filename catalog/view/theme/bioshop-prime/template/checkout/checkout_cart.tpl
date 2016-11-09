@@ -32,7 +32,7 @@
                     <?php echo mb_strimwidth(strval($product['name']), 0, 25); ?>
                     <?php if (strlen(strval($product['name'])) > 25) { ?>
                     <?php echo '...'; ?>
-                    <?php } ?>   
+                    <?php } ?>
                     </a>
                   <?php if (!$product['stock']) { ?>
                   <span class="text-danger">***</span>

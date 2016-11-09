@@ -85,14 +85,14 @@
             <label class="col-sm-2 control-label" for="input-firstname"><span data-toggle="tooltip" title="Имя и фамилия">Имя и фамилия</span></label>
             <div class="col-sm-12 checkout_login_input">
                 <input type="text" name="name" value="" placeholder="Иван Иванов " id="name" class="form-control" />
-                <span id="input_error_name"></span>
+                <span id="input_error_name_footer"></span>
             </div>
         </div>
         <div class="form-group" style="margin-top: 10px !important; margin-left: 73px !important">
             <label class="col-sm-2 control-label" for="input-telephone"><span data-toggle="tooltip" title="Телефон">Телефон</span></label>
             <div class="col-sm-12 checkout_login_input">
                  <input type="text" name="email" value="" placeholder="067-123-4567" id="phone" class="form-control" />
-                  <span id="input_error_tel"></span>
+                  <span id="input_error_tel_footer"></span>
             </div>
         </div>
         <input type="hidden" name="enquiry" value="Перезвоните мне пожалуйста по номеру "  class="form-control" />

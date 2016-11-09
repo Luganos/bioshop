@@ -291,7 +291,7 @@
             <div class="tab-pane" id="tab-review">
               <form class="form-horizontal" id="form-review">
                 <div id="review"></div>
-                <h2><?php echo $text_write; ?></h2>
+                <h2 id ="wait-write-review"><?php echo $text_write; ?></h2>
                 <?php if ($review_guest) { ?>
                 <div class="form-group required">
                   <div class="col-sm-12">
@@ -537,7 +537,14 @@ $('#review').delegate('.pagination a', 'click', function(e) {
     $('#review').fadeIn('slow');
 });
 
-$('#review').load('index.php?route=product/product/review&product_id=<?php echo $product_id; ?>');
+$('#review').load('index.php?route=product/product/review&product_id=<?php echo $product_id; ?>', function(data) {
+    if (/Нет отзывов о данном товаре./i.test(data)) {
+
+       $("#wait-write-review").css("visibility", "visible");
+    } else {
+        $("#wait-write-review").css("visibility", "hidden");
+    }
+});
 
 $('#button-review').on('click', function() {
 	$.ajax({

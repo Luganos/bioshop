@@ -80,7 +80,7 @@
     <div class="popup_one">
     <div class="popup_one_content">
         <p>Менеджер свяжется с вами</p>
-        <button type="button" style="margin-left: -25px !important; margin-top: -80px;" class="close" id ="close-windows-send" >&times;</button>
+        <button type="button" style="margin-right: 10px !important; margin-top: -70px;" class="close" id ="close-windows-send" >&times;</button>
         <div class="form-group" style="margin-top: 30px !important; margin-left: 73px !important">
             <label class="col-sm-2 control-label" for="input-firstname"><span data-toggle="tooltip" title="Имя и фамилия">Имя и фамилия</span></label>
             <div class="col-sm-12 checkout_login_input">

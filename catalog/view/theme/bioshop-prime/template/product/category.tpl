@@ -52,7 +52,7 @@
         <div class="col-lg-2 col-md-2 text-right category_text-right">
           <label class="control-label control-label_category hidden-md" for="input-sort"><?php echo $text_sort; ?></label>
         </div>
-        <div class="col-lg-3 col-md-3 text-right category_text-right_two">
+        <div class="col-lg-2 col-md-3 text-right category_text-right_two">
           <select id="input-sort" class="form-control" onchange="location = this.value;">
             <?php foreach ($sorts as $sorts) { ?>
             <?php if ($sorts['value'] == $sort . '-' . $order) { ?>

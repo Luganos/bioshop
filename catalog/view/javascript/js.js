@@ -112,6 +112,11 @@ $("#phone").mask("+38(999) 999-9999");
 $('#close-windows-send_checkout').on('click',function(){
        $('.popup_two').css({'visibility':'hidden'});
 });
+/*
+$('#send-form-for-contact').on('click',function(){
+       $('.popup_two').css({'visibility':'hidden'});
+});*/
+
 
 $('#click_footer').on('click',function(){
 

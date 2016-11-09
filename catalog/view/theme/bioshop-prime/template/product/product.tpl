@@ -6,7 +6,7 @@
     <?php echo mb_strimwidth(strval($breadcrumb['text']), 0, 50); ?>
     <?php if (strlen(strval($breadcrumb['text'])) > 50) { ?>
     <?php echo '...'; ?>
-    <?php } ?>       
+    <?php } ?>
     </a></li>
     <?php } ?>
   </ul>
@@ -41,7 +41,7 @@
         <?php } ?>
         <div class="<?php echo $class; ?>">
           <h1 class="product_h1">
-          <?php echo $heading_title; ?>      
+          <?php echo $heading_title; ?>
           </h1>
           <hr>
           <ul class="list-unstyled product_list-unstyled">
@@ -64,9 +64,9 @@
               <h2 class="product_sum_small"><?php echo $price; ?></h2>
             </li>
             <?php } else { ?>
-            <li><span style="text-decoration: line-through;"><?php echo $price; ?></span></li>
+            <li><span class="price_product"><?php echo $price; ?></span></li>
             <li>
-              <h2><?php echo $special; ?></h2>
+              <h2 class="product_h2"><?php echo $special; ?></h2>
             </li>
             <?php } ?>
             <?php if ($tax) { ?>

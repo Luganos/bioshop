@@ -39,7 +39,7 @@ class ControllerCheckoutPaymentMethod extends Controller {
 			$recurring = $this->cart->hasRecurringProducts();
 
 			foreach ($results as $result) {
-				if ($this->config->get($result['code'] . '_status')) {
+				if ($this->config->get($result['code'] . '_status') && strtolower(strval($result['code'])) !== 'quick') {
 					$this->load->model('payment/' . $result['code']);
 
 					$method = $this->{'model_payment_' . $result['code']}->getMethod($this->session->data['payment_address'], $total);

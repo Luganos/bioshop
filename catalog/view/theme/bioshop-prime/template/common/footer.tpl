@@ -45,8 +45,8 @@
 
         </div>
         <div class="footer_geeker_logo">
-             <span>разработано geeker</span>
              <a href="http://geeker.pro">
+             <span>разработано geeker</span>
              <img class="footer_geeker_logo_img" src="catalog/view/theme/bioshop-prime/image/geeker.png" alt="">
              </a>
         </div>

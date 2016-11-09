@@ -2174,7 +2174,7 @@ body {
     line-height: 0 !important;
   }
   .checkout_cart_text-right_cart_sum span {
-    font-size: 14px;
+    font-size: 13px;
   }
   /*-----END_checkout_cart.tpl----*/
 }
@@ -3055,7 +3055,11 @@ width: 300px;
 }
 .br {
   font-size: 1px !important;
-  max-height: 5px !important;
+  min-height: 50px !important;
+}
+.ldpr {
+  display: block !important;
+  max-height: 35px !important;
 }
 
 /* This beautiful CSS-File has been crafted with LESS (lesscss.org) and compiled by simpLESS (wearekiss.com/simpless) */

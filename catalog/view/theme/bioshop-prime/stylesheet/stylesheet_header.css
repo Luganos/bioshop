@@ -173,6 +173,7 @@ body {
     margin-left: 0px;
   }
   .header_tel_text_we {
+    cursor: pointer;
     font-family: "Tahoma";
     font-size: 14px;
     font-weight: bold;
@@ -420,6 +421,7 @@ body {
     margin-left: 5px;
   }
   .header_tel_text_we {
+    cursor: pointer;
     font-family: "Tahoma";
     font-size: 12px;
     font-weight: bold;
@@ -1669,6 +1671,7 @@ body {
     border-bottom: 5px solid #d5ddee;
   }
   .product_tab-content {
+    margin-top: 30px;
     width: 945px !important;
   }
   .active a {
@@ -2420,7 +2423,7 @@ body {
     width: 120px;
     position: absolute !important;
     top: 25px !important;
-    left: 550px !important;
+    left: 280px !important;
     color: #999999;
   }
   #loggin-by-social-network {
@@ -2446,7 +2449,7 @@ body {
   #show-social-login {
     position: absolute !important;
     top: 20px !important;
-    left: 530px !important;
+    left: 350px !important;
   }
 }
 /*-----END_Social_net-------*/
@@ -2551,6 +2554,10 @@ body {
     font-weight: bold;
     color: #6fa1ce;
   }
+  .popup_one_content span {
+    color: #666;
+    font-size: 12px;
+  }
 }
 @media (max-width: 1279px) {
   /*.popup_one_window{
@@ -2585,6 +2592,7 @@ body {
     background-color: #e6e6e6;
     z-index: 99999;
     border-radius: 20px;
+    visibility: hidden;
     text-align: center;
   }
   .popup_one_content {
@@ -2592,6 +2600,10 @@ body {
     font-size: 21px;
     font-weight: bold;
     color: #6fa1ce;
+  }
+  .popup_one_content span {
+    color: #666;
+    font-size: 12px;
   }
 }
 /*--END_popup_one-----*/

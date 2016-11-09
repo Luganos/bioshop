@@ -67,7 +67,7 @@ $('#close-windows-send').on('click',function(){
 
 //Send form to API
 $('#send-form-for-contact').on('click',function(){
-     
+
           $.ajax({
                url: 'index.php?route=information/contact',
                type: 'post',
@@ -80,22 +80,24 @@ $('#send-form-for-contact').on('click',function(){
 
                },
                complete: function() {
-                  
+
                    $("#send-form-for-contact").button('reset');
 
                },
               success: function(json) {
 
                          if (json['error']) {
-                            
-                            alert(json['error']);
 
-                         } 
-                         
+                           // alert(json['error']);
+                           // alert(json['error']['name']);
+                            $('#input_error_name').html(json['error']['name']);
+                            $('#input_error_tel').html(json['error']['email']);
+                         }
+
                          if (json['success'] == 1) {
-                             
+
                            alert('Success');
-  
+
                          }
 
               }
@@ -110,8 +112,8 @@ $("#phone").mask("+38(999) 999-9999");
 $('#click_footer').on('click',function(){
 
         $('.popup_one').css({'visibility':'visible'});
-                     
-});                        
+
+});
 /*------END_popup_two-----*/
 
 /*

@@ -31,6 +31,30 @@ class ControllerCheckoutPaymentMethod extends Controller {
 
 			// Payment Methods
 			$method_data = array();
+                        
+                        $permitted = array();
+                        
+                        //Permitted payment method
+                        if (isset($this->request->get['shipping_method'])) {
+                                            
+                            if ($this->request->get['shipping_method'] == 'free') {
+                                                        
+                                 $permitted['cod'] = 'cod'; 
+                                 $permitted['liqpay_checkout'] = 'liqpay_checkout';
+                            } 
+                            
+                            if ($this->request->get['shipping_method'] == 'novaposhta') {
+                                                        
+                                 $permitted['cod'] = 'cod'; 
+                                 $permitted['liqpay_checkout'] = 'liqpay_checkout';
+                                 $permitted['free_checkout'] = 'free_checkout';
+                            }
+                            
+                            
+                        } else {
+                            
+                            $permitted['liqpay_checkout'] = 'liqpay_checkout';
+                        }
 
 			$this->load->model('extension/extension');
 
@@ -42,9 +66,12 @@ class ControllerCheckoutPaymentMethod extends Controller {
 				if ($this->config->get($result['code'] . '_status') && strtolower(strval($result['code'])) !== 'quick') {
 					$this->load->model('payment/' . $result['code']);
 
+
+                                        
 					$method = $this->{'model_payment_' . $result['code']}->getMethod($this->session->data['payment_address'], $total);
 
-					if ($method) {
+					if ($method && in_array( $method['code'] , $permitted )) {
+                                           
 						if ($recurring) {
 							if (method_exists($this->{'model_payment_' . $result['code']}, 'recurringPayments') && $this->{'model_payment_' . $result['code']}->recurringPayments()) {
 								$method_data[$result['code']] = $method;

@@ -389,8 +389,7 @@ var showcart = {
                 }
 
             } else if (showcart.data.coupon) {
-                //console.log(json['error']);
-                //$('.input_error_cupon').html(error);
+
                 showcart.MainCase(4);
 
                 if(showcart.data.error === null) {
@@ -766,10 +765,32 @@ var checkout = {
                   checkout.guestSuccess();
 
             break;
+            
+           //Check permitted payment method for this shipping method
+            case 17:
+
+                  checkout.checkPermittedMethod();
+
+            break;
 
              default: break;
 
       }
+  },
+  
+  checkPermittedMethod: function() {
+      
+      var value = $('#select-shipping-method :selected').val();
+
+      value = value.substr(0, value.indexOf('.') === -1 ? value.length : value.indexOf('.'));
+      
+       checkout.collectData();
+       checkout.data.url = 'index.php?route=checkout/payment_method';
+       checkout.data.id = '#for-payment-method';
+       checkout.data.value = { "shipping_method":  value };
+       checkout.ajaxHtml(checkout.data.url, null, checkout.data.id, checkout.data.value); 
+      
+      
   },
 
   showSocialLogin: function() {
@@ -984,10 +1005,15 @@ var checkout = {
 
   //Load all existing payment method
   paymentMethod: function() {
+      
+       var value = $('#select-shipping-method :selected').val();
+
+       value = value.substr(0, value.indexOf('.') === -1 ? value.length : value.indexOf('.'));
 
        checkout.data.url = 'index.php?route=checkout/payment_method';
        checkout.data.id = '#for-payment-method';
-       checkout.ajaxHtml(checkout.data.url, 8, checkout.data.id);
+       checkout.data.value = { "shipping_method":  value };
+       checkout.ajaxHtml(checkout.data.url, 8, checkout.data.id, checkout.data.value);
   },
 
 
@@ -1002,7 +1028,11 @@ var checkout = {
 
             value = value.substr(0, value.indexOf('.') === -1 ? value.length : value.indexOf('.'));
 
+            //Check permitted method for current shipping method
+            checkout.MainCase(17); 
+            
             showcart.MainCase(2);
+            
             checkout.data.url = 'index.php?route=checkout/shipping_address/change';
             checkout.data.id = '#for-shipping-address';
             checkout.data.value = { "shipping_method" : value };
@@ -1165,12 +1195,13 @@ var checkout = {
 
   },
 
-  ajaxHtml: function(url, callback, id) {
+  ajaxHtml: function(url, callback, id, data = null) {
 
       var url, callback, id;
 
      $.ajax({
            url: url,
+           data: data,
            dataType: 'html',
            success: function(html) {
 

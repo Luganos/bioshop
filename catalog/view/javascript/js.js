@@ -1,3 +1,4 @@
+console.log("ter");
 $(function(){
 
 $("#spin").on("click",function(){console.log("ttt")});
@@ -89,10 +90,13 @@ $('#send-form-for-contact').on('click',function(){
                            // alert(json['error']['name']);
                             $('#input_error_name_footer').html(json['error']['name']);
                             $('#input_error_tel_footer').html(json['error']['email']);
-                            //$('.popup_one').css({'visibility':'hidden'});
+
+                            $('#name').parent().addClass('has-error');
+                            $('#phone').parent().addClass('has-error');
+
                          }
                          if (json['success'] == 1) {
-                            alert('Success');
+                            //alert('Success');
                             $('.popup_one').css({'visibility':'hidden'});
                             console.log("hidden ok");
                          }

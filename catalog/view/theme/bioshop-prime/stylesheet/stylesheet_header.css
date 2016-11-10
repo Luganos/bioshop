@@ -856,7 +856,7 @@ body {
   }
   .cart_product {
     width: 230px;
-    height: 355px;
+    height: 385px;
     border: 1px solid #ebebeb;
     margin-bottom: 20px;
   }
@@ -888,6 +888,7 @@ body {
   }
   .cart_product_price_text {
     display: block;
+    min-height: 80px;
     font-size: 16px;
     color: #646167;
   }
@@ -902,15 +903,13 @@ body {
     background-color: #8EA9E8;
   }
   .cart_product_price_button {
-    position: absolute;
-    top: 305px;
-    left: 12px;
+    margin: 5px 0 0 10px;
   }
-  .cart_product_price_button_category {
-    position: absolute;
-    top: 305px;
-    left: 28px;
-  }
+  /* .cart_product_price_button_category{
+          position: absolute;
+          top: 335px;
+          left: 28px;
+      }*/
   .cart_product_price_button img {
     max-width: 30px;
     max-height: 30px;
@@ -2481,7 +2480,7 @@ body {
     margin-left: -225px;
     /* Отрицательный отступ от левого края страницы, должен равняться половине высоты блока со знаком минус */
   
-    background-color: #e6e6e6;
+    background-color: white;
     z-index: 99999;
     border-radius: 20px;
     visibility: hidden;
@@ -2491,11 +2490,17 @@ body {
     margin-top: 50px;
     font-size: 21px;
     font-weight: bold;
-    color: #6fa1ce;
+    color: #0c76bb;
+  }
+  #input_error_tel_footer,
+  #input_error_name_footer {
+    color: red;
+    font-size: 12px;
   }
   .popup_one_content span {
-    color: #666;
-    font-size: 12px;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
   }
 }
 @media (max-width: 1279px) {
@@ -2528,7 +2533,7 @@ body {
     margin-left: -225px;
     /* Отрицательный отступ от левого края страницы, должен равняться половине высоты блока со знаком минус */
   
-    background-color: #e6e6e6;
+    background-color: white;
     z-index: 99999;
     border-radius: 20px;
     visibility: hidden;
@@ -2538,11 +2543,23 @@ body {
     margin-top: 50px;
     font-size: 21px;
     font-weight: bold;
-    color: #6fa1ce;
+    color: #0c76bb;
   }
   .popup_one_content span {
-    color: #666;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  #input_error_tel_footer,
+  #input_error_name_footer {
+    color: red;
     font-size: 12px;
+  }
+  .popup_one_content label {
+    margin-left: 17px;
+  }
+  .popup_one_content input {
+    width: 285px;
   }
 }
 /*--END_popup_one-----*/

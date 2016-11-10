@@ -82,7 +82,7 @@
         <p>Менеджер свяжется с вами</p>
         <button type="button" style="margin-right: 10px !important; margin-top: -70px;" class="close" id ="close-windows-send" >&times;</button>
         <div class="form-group" style="margin-top: 30px !important; margin-left: 73px !important">
-            <label class="col-sm-2 control-label" for="input-firstname"><span data-toggle="tooltip" title="Имя и фамилия">Имя и фамилия</span></label>
+            <label class="col-sm-2 control-label" for="input-firstname"><span class="popup_one_text" data-toggle="tooltip" title="Имя и фамилия">Имя и фамилия</span></label>
             <div class="col-sm-12 checkout_login_input">
                 <input type="text" name="name" value="" placeholder="Иван Иванов " id="name" class="form-control" />
                 <span id="input_error_name_footer"></span>
@@ -114,7 +114,7 @@ Please donate via PayPal to donate@opencart.com
     (function(){
     var widget_id = 857921;
     _shcp =[{widget_id : widget_id}];
-    var lang =(navigator.language || navigator.systemLanguage 
+    var lang =(navigator.language || navigator.systemLanguage
     || navigator.userLanguage ||"en")
     .substr(0,2).toLowerCase();
     var url ="widget.siteheart.com/widget/sh/"+ widget_id +"/"+ lang +"/widget.js";

@@ -77,7 +77,6 @@ $('#send-form-for-contact').on('click',function(){
 
                    $("#send-form-for-contact").button('loading');
 
-
                },
                complete: function() {
 
@@ -85,20 +84,17 @@ $('#send-form-for-contact').on('click',function(){
 
                },
               success: function(json) {
-
                          if (json['error']) {
-
                            // alert(json['error']);
                            // alert(json['error']['name']);
                             $('#input_error_name_footer').html(json['error']['name']);
                             $('#input_error_tel_footer').html(json['error']['email']);
                          }
-
                          if (json['success'] == 1) {
-
+                            $('.popup_one').css({'visibility':'hidden'});
                            alert('Success');
-
                          }
+
 
               }
     });

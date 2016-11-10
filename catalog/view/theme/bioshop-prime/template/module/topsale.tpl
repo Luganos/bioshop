@@ -25,7 +25,7 @@
                     <?php } ?>
                     </span>
                 </div>
-                <div class="cart_product_price_button" onclick="cart.add('<?php echo $product['product_id']; ?>');">
+                <div class="cart_product_price_button cart_product_price_button_topsale" onclick="cart.add('<?php echo $product['product_id']; ?>');">
                   <img src="catalog/view/theme/bioshop-prime/image/577845.png" alt="">
                     <span><?php echo $button_cart; ?></span>
                   </img>

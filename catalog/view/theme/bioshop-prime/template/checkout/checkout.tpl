@@ -429,14 +429,13 @@ var showcart = {
 
 
             var elem = document.getElementsByClassName("you_order_form-control");
-            var names = [];
-
+        
+            var quantity = { };
+            
             for (var i = 0; i < elem.length; ++i) {
 
-                      names[elem[i].name] = elem[i].value;
+                      quantity[elem[i].name] = elem[i].value;
             }
-
-            var quantity = $.extend({}, names);
 
             var shipping_method = $('#select-shipping-method :selected').val();
 

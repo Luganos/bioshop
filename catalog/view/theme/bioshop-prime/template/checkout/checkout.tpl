@@ -131,7 +131,7 @@
                       </div>
                   </div>
                   <div class ="row" >
-                        <button type="button" style ="margin-top: 40px !important; margin-left: 290px !important" id="button-forbid-easy-buy" data-loading-text="Загрузка" class="button_red_input">Оформить заказ</button>
+                        <button type="button" style ="margin-top: 40px !important; margin-left: 308px !important" id="button-forbid-easy-buy" data-loading-text="Загрузка" class="button_red_input">Оформить заказ</button>
                  </div>
               </div>
           </div>
@@ -429,9 +429,9 @@ var showcart = {
 
 
             var elem = document.getElementsByClassName("you_order_form-control");
-        
+
             var quantity = { };
-            
+
             for (var i = 0; i < elem.length; ++i) {
 
                       quantity[elem[i].name] = elem[i].value;

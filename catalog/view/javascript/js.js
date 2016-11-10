@@ -29,10 +29,11 @@ $("#open_small_menu").on("click", function(){
 }
 });
 
-$('#refresh_input_cart').on("click", function(){
+$('.refresh_input_cart').on("click", function(){
             $("#send_col_product_big_cart").submit();
             //console.log($('#refresh_input_cart').val());
             //location.reload();
+            console.log('trali vali');
     });
 
 

@@ -3168,13 +3168,7 @@ width: 300px;
   display: block !important;
   max-height: 35px !important;
 }
-.alert-info {
-  max-width: 500px;
-}
-.alert-success {
-  max-width: 500px;
-}
-.alert-danger {
+.alert_shot {
   max-width: 500px;
 }
 

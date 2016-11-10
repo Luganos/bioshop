@@ -46,7 +46,7 @@
           <hr>
           <ul class="list-unstyled product_list-unstyled">
             <?php if ($manufacturer) { ?>
-            <li><?php echo $text_manufacturer; ?> <a href="<?php echo $manufacturers; ?>"><?php echo $manufacturer; ?></a></li>
+            <li><?php echo $text_manufacturer; ?> <span><?php echo $manufacturer; ?></span></li>
             <?php } ?>
             <?php if ($sku) { ?>
             <li><?php echo $text_sku; ?> <span><?php echo $sku; ?></span></li>

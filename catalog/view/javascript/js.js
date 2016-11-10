@@ -89,13 +89,13 @@ $('#send-form-for-contact').on('click',function(){
                            // alert(json['error']['name']);
                             $('#input_error_name_footer').html(json['error']['name']);
                             $('#input_error_tel_footer').html(json['error']['email']);
+                            //$('.popup_one').css({'visibility':'hidden'});
                          }
                          if (json['success'] == 1) {
+                            alert('Success');
                             $('.popup_one').css({'visibility':'hidden'});
-                           alert('Success');
+                            console.log("hidden ok");
                          }
-
-
               }
     });
 });
@@ -157,3 +157,5 @@ $(window).load(function(){
         });*/
     });
 });
+
+

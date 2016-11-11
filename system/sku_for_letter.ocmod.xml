@@ -302,6 +302,14 @@
    </operation> 
    <operation>
       <search>
+        <![CDATA[<td></td>]]>
+      </search>
+      <add position="after">
+        <![CDATA[<td></td>]]>
+      </add>
+   </operation> 
+   <operation>
+      <search>
         <![CDATA[<td><?php echo $product['model']; ?></td>]]>
       </search>
       <add position="after">
@@ -316,6 +324,14 @@
       </search>
       <add position="after">
         <![CDATA[<td class="text-left"><?php echo $column_sku; ?></td>]]>
+      </add>
+   </operation> 
+   <operation>
+      <search>
+        <![CDATA[<td class="text-left"></td>]]>
+      </search>
+      <add position="after">
+        <![CDATA[<td class="text-left"></td>]]>
       </add>
    </operation> 
    <operation>

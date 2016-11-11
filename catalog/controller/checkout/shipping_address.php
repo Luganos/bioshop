@@ -107,11 +107,6 @@ class ControllerCheckoutShippingAddress extends Controller {
 			$json['redirect'] = $this->url->link('checkout/checkout', '', 'SSL');
 		}
 
-		// Validate if shipping is required. If not the customer should not have reached this page.
-		if (!$this->cart->hasShipping()) {
-			$json['redirect'] = $this->url->link('checkout/checkout', '', 'SSL');
-		}
-
 		// Validate cart has products and has stock.
 		if ((!$this->cart->hasProducts() && empty($this->session->data['vouchers'])) || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
 			$json['redirect'] = $this->url->link('checkout/cart');
@@ -135,8 +130,10 @@ class ControllerCheckoutShippingAddress extends Controller {
 				break;
 			}
 		}
+                
+                if ($this->cart->hasShipping()) {
 
-		if (!$json) {
+		   if (!$json) {
                     
                         
                         
@@ -184,7 +181,11 @@ class ControllerCheckoutShippingAddress extends Controller {
                             $json['success'] = 0;     
 
                         }
-		}
+		    }
+                } else {
+                    
+                    $json['success'] = 1; 
+                }
 
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));

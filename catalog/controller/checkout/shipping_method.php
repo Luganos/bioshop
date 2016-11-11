@@ -98,13 +98,9 @@ class ControllerCheckoutShippingMethod extends Controller {
 
 		$json = array();
 
-		// Validate if shipping is required. If not the customer should not have reached this page.
-		if (!$this->cart->hasShipping()) {
-			$json['redirect'] = $this->url->link('checkout/checkout', '', 'SSL');
-		}
 
 		// Validate if shipping address has been set.
-		if (!isset($this->session->data['shipping_address'])) {
+		if (!isset($this->session->data['shipping_address']) && $this->cart->hasShipping()) {
 			$json['redirect'] = $this->url->link('checkout/checkout', '', 'SSL');
 		}
 
@@ -131,21 +127,25 @@ class ControllerCheckoutShippingMethod extends Controller {
 				break;
 			}
 		}
+                
+                if ($this->cart->hasShipping()) {
 
-		if (!isset($this->request->post['shipping_method'])) {
+		   if (!isset($this->request->post['shipping_method'])) {
 			$json['error']['warning'] = $this->language->get('error_shipping');
-		} else {
+		   } else {
 			$shipping = explode('.', $this->request->post['shipping_method']);
 
 			if (!isset($shipping[0]) || !isset($shipping[1]) || !isset($this->session->data['shipping_methods'][$shipping[0]]['quote'][$shipping[1]])) {
 				$json['error']['warning'] = $this->language->get('error_shipping');
 			}
-		}
+		   }
 
-		if (!$json) {
+		   if (!$json) {
 			$this->session->data['shipping_method'] = $this->session->data['shipping_methods'][$shipping[0]]['quote'][$shipping[1]];
 
-		}
+		   }
+                
+                }
 
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));

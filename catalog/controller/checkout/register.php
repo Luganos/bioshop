@@ -75,7 +75,7 @@ class ControllerCheckoutRegister extends Controller {
                         
                         if (isset($this->request->post['comment'])) {
                             
-                            $this->session->data['comment'] = $this->request->post['comment'];
+                            $this->session->data['comment'] = strip_tags($this->request->post['comment']);
                         } else {
                             
                             $this->session->data['comment'] = '';

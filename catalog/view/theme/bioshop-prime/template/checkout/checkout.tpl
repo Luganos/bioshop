@@ -781,19 +781,15 @@ var checkout = {
   checkPermittedMethod: function() {
 
       var value = $('#select-shipping-method :selected').val();
-<<<<<<< HEAD
 
-      value = value.substr(0, value.indexOf('.') === -1 ? value.length : value.indexOf('.'));
 
-=======
-      
       if (value !== undefined && value !== null) {
-          value = value.substr(0, value.indexOf('.') === -1 ? value.length : value.indexOf('.')); 
+          value = value.substr(0, value.indexOf('.') === -1 ? value.length : value.indexOf('.'));
       } else {
           value = null;
-      } 
-      
->>>>>>> 3972763f81f979e06de01599660094951799a92a
+      }
+
+
        checkout.collectData();
        checkout.data.url = 'index.php?route=checkout/payment_method';
        checkout.data.id = '#for-payment-method';
@@ -1019,10 +1015,10 @@ var checkout = {
        var value = $('#select-shipping-method :selected').val();
 
        if (value !== undefined && value !== null) {
-          value = value.substr(0, value.indexOf('.') === -1 ? value.length : value.indexOf('.')); 
+          value = value.substr(0, value.indexOf('.') === -1 ? value.length : value.indexOf('.'));
        } else {
           value = null;
-       } 
+       }
 
        checkout.data.url = 'index.php?route=checkout/payment_method';
        checkout.data.id = '#for-payment-method';
@@ -1039,14 +1035,14 @@ var checkout = {
             checkout.collectData();
 
             var value = checkout.data.shipping_method;
-            
+
             if (value !== undefined && value !== null) {
-               value = value.substr(0, value.indexOf('.') === -1 ? value.length : value.indexOf('.')); 
+               value = value.substr(0, value.indexOf('.') === -1 ? value.length : value.indexOf('.'));
             } else {
                 value = null;
-            }    
+            }
 
-            
+
 
             //Check permitted method for current shipping method
             checkout.MainCase(17);

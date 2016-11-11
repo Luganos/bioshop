@@ -781,8 +781,12 @@ var checkout = {
   checkPermittedMethod: function() {
       
       var value = $('#select-shipping-method :selected').val();
-
-      value = value.substr(0, value.indexOf('.') === -1 ? value.length : value.indexOf('.'));
+      
+      if (value !== undefined && value !== null) {
+          value = value.substr(0, value.indexOf('.') === -1 ? value.length : value.indexOf('.')); 
+      } else {
+          value = null;
+      } 
       
        checkout.collectData();
        checkout.data.url = 'index.php?route=checkout/payment_method';
@@ -1008,7 +1012,11 @@ var checkout = {
       
        var value = $('#select-shipping-method :selected').val();
 
-       value = value.substr(0, value.indexOf('.') === -1 ? value.length : value.indexOf('.'));
+       if (value !== undefined && value !== null) {
+          value = value.substr(0, value.indexOf('.') === -1 ? value.length : value.indexOf('.')); 
+       } else {
+          value = null;
+       } 
 
        checkout.data.url = 'index.php?route=checkout/payment_method';
        checkout.data.id = '#for-payment-method';
@@ -1025,8 +1033,14 @@ var checkout = {
             checkout.collectData();
 
             var value = checkout.data.shipping_method;
+            
+            if (value !== undefined && value !== null) {
+               value = value.substr(0, value.indexOf('.') === -1 ? value.length : value.indexOf('.')); 
+            } else {
+                value = null;
+            }    
 
-            value = value.substr(0, value.indexOf('.') === -1 ? value.length : value.indexOf('.'));
+            
 
             //Check permitted method for current shipping method
             checkout.MainCase(17); 

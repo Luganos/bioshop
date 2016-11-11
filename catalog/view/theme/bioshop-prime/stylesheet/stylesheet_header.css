@@ -2208,8 +2208,8 @@ body {
     width: 205px;
   }
   #select-shipping-method {
-    margin: 0 15px 0 15px;
-    width: 460px;
+    margin: 0 0px 0 0px;
+    width: 560px;
   }
   #select-payment-method {
     margin: 0 0px 0 0px;

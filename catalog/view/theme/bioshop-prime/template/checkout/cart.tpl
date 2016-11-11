@@ -33,7 +33,7 @@
       </h1>
       <form id="send_col_product_big_cart" action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
         <div class="table-responsive">
-          <table class="table table-bordered">
+          <table class="table table-bordered ">
             <thead class="cart_table_line">
               <tr>
                 <td class="text-center text_center_one"><?php echo $column_image; ?></td>
@@ -84,8 +84,8 @@
               <?php } ?>
               <?php foreach ($vouchers as $vouchers) { ?>
               <tr>
-                <td></td>
-                <td class="text-left text_left_cupon">5<?php echo $vouchers['description']; ?></td>
+
+                <td class="text-left text_left_cupon"><?php echo $vouchers['description']; ?></td>
                 <td class="text-left"></td>
                 <td class="text-left text_left_cart_col"><div class="input-group btn-block" style="max-width: 120px;">
                     <input type="text" name="" value="1" size="1" disabled="disabled" class="form-control" />

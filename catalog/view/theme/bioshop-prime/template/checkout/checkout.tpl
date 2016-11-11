@@ -272,7 +272,6 @@ var showcart = {
              case 5:
                      showcart.pushButtonCoupon();
                      showcart.smallCartUpdate();
-                     checkout.MainCase(5);
                      showcart.edit();
 
              break;
@@ -782,13 +781,15 @@ var checkout = {
   checkPermittedMethod: function() {
 
       var value = $('#select-shipping-method :selected').val();
-      
+
+
       if (value !== undefined && value !== null) {
-          value = value.substr(0, value.indexOf('.') === -1 ? value.length : value.indexOf('.')); 
+          value = value.substr(0, value.indexOf('.') === -1 ? value.length : value.indexOf('.'));
       } else {
           value = null;
+
       } 
-      
+ 
        checkout.collectData();
        checkout.data.url = 'index.php?route=checkout/payment_method';
        checkout.data.id = '#for-payment-method';
@@ -851,7 +852,7 @@ var checkout = {
 
       var html = '';
       html += '<div class ="row" >';
-      html +=    '<button type="button" style ="margin-top: 40px !important; margin-left: 260px !important"  id = "button-confirm" data-loading-text="Загрузка" class="button_red_input">Оформить заказ</button>';
+      html +=    '<button type="button" style ="margin-top: 40px !important; margin-left: 15px !important"  id = "button-confirm" data-loading-text="Загрузка" class="button_red_input">Оформить заказ</button>';
       html += '</div>';
       var id = '#for-confirm-button';
       checkout.showHtml(id, html);
@@ -1014,10 +1015,10 @@ var checkout = {
        var value = $('#select-shipping-method :selected').val();
 
        if (value !== undefined && value !== null) {
-          value = value.substr(0, value.indexOf('.') === -1 ? value.length : value.indexOf('.')); 
+          value = value.substr(0, value.indexOf('.') === -1 ? value.length : value.indexOf('.'));
        } else {
           value = null;
-       } 
+       }
 
        checkout.data.url = 'index.php?route=checkout/payment_method';
        checkout.data.id = '#for-payment-method';
@@ -1034,14 +1035,14 @@ var checkout = {
             checkout.collectData();
 
             var value = checkout.data.shipping_method;
-            
+
             if (value !== undefined && value !== null) {
-               value = value.substr(0, value.indexOf('.') === -1 ? value.length : value.indexOf('.')); 
+               value = value.substr(0, value.indexOf('.') === -1 ? value.length : value.indexOf('.'));
             } else {
                 value = null;
-            }    
+            }
 
-            
+
 
             //Check permitted method for current shipping method
             checkout.MainCase(17);

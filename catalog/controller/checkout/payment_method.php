@@ -35,7 +35,7 @@ class ControllerCheckoutPaymentMethod extends Controller {
                         $permitted = array();
                         
                         //Permitted payment method
-                        if (isset($this->request->get['shipping_method'])) {
+                        if (isset($this->request->get['shipping_method']) && !empty($this->request->get['shipping_method'])) {
                                             
                             if ($this->request->get['shipping_method'] == 'free') {
                                                         

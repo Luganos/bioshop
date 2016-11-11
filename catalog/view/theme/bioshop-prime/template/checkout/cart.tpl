@@ -85,7 +85,7 @@
               <?php foreach ($vouchers as $vouchers) { ?>
               <tr>
                 <td></td>
-                <td class="text-left"><?php echo $vouchers['description']; ?></td>
+                <td class="text-left text_left_cupon">5<?php echo $vouchers['description']; ?></td>
                 <td class="text-left"></td>
                 <td class="text-left text_left_cart_col"><div class="input-group btn-block" style="max-width: 120px;">
                     <input type="text" name="" value="1" size="1" disabled="disabled" class="form-control" />

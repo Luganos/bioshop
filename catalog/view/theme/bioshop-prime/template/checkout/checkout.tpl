@@ -766,7 +766,7 @@ var checkout = {
                   checkout.guestSuccess();
 
             break;
-            
+
            //Check permitted payment method for this shipping method
             case 17:
 
@@ -778,10 +778,15 @@ var checkout = {
 
       }
   },
-  
+
   checkPermittedMethod: function() {
-      
+
       var value = $('#select-shipping-method :selected').val();
+<<<<<<< HEAD
+
+      value = value.substr(0, value.indexOf('.') === -1 ? value.length : value.indexOf('.'));
+
+=======
       
       if (value !== undefined && value !== null) {
           value = value.substr(0, value.indexOf('.') === -1 ? value.length : value.indexOf('.')); 
@@ -789,13 +794,14 @@ var checkout = {
           value = null;
       } 
       
+>>>>>>> 3972763f81f979e06de01599660094951799a92a
        checkout.collectData();
        checkout.data.url = 'index.php?route=checkout/payment_method';
        checkout.data.id = '#for-payment-method';
        checkout.data.value = { "shipping_method":  value };
-       checkout.ajaxHtml(checkout.data.url, null, checkout.data.id, checkout.data.value); 
-      
-      
+       checkout.ajaxHtml(checkout.data.url, null, checkout.data.id, checkout.data.value);
+
+
   },
 
   showSocialLogin: function() {
@@ -1010,7 +1016,7 @@ var checkout = {
 
   //Load all existing payment method
   paymentMethod: function() {
-      
+
        var value = $('#select-shipping-method :selected').val();
 
        if (value !== undefined && value !== null) {
@@ -1044,10 +1050,10 @@ var checkout = {
             
 
             //Check permitted method for current shipping method
-            checkout.MainCase(17); 
-            
+            checkout.MainCase(17);
+
             showcart.MainCase(2);
-            
+
             checkout.data.url = 'index.php?route=checkout/shipping_address/change';
             checkout.data.id = '#for-shipping-address';
             checkout.data.value = { "shipping_method" : value };

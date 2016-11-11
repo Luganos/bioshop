@@ -272,7 +272,6 @@ var showcart = {
              case 5:
                      showcart.pushButtonCoupon();
                      showcart.smallCartUpdate();
-                     checkout.MainCase(5);
                      showcart.edit();
 
              break;
@@ -853,7 +852,7 @@ var checkout = {
 
       var html = '';
       html += '<div class ="row" >';
-      html +=    '<button type="button" style ="margin-top: 40px !important; margin-left: 260px !important"  id = "button-confirm" data-loading-text="Загрузка" class="button_red_input">Оформить заказ</button>';
+      html +=    '<button type="button" style ="margin-top: 40px !important; margin-left: 15px !important"  id = "button-confirm" data-loading-text="Загрузка" class="button_red_input">Оформить заказ</button>';
       html += '</div>';
       var id = '#for-confirm-button';
       checkout.showHtml(id, html);

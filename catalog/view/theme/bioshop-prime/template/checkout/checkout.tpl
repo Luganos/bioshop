@@ -272,6 +272,7 @@ var showcart = {
              case 5:
                      showcart.pushButtonCoupon();
                      showcart.smallCartUpdate();
+                     checkout.MainCase(5);
                      showcart.edit();
 
              break;

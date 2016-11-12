@@ -143,12 +143,9 @@ class ControllerCheckoutShippingAddress extends Controller {
 				if (empty($this->request->post['address_id'])) {
 					$json['error']['warning'] = $this->language->get('error_address');
 				        $json['success'] = 0;
-                                } elseif (!in_array($this->request->post['address_id'], array_keys($this->model_account_address->getAddresses()))) {
-					$json['error']['warning'] = $this->language->get('error_address');
-				        $json['success'] = 0;
                                 }
                                 
-                                if ((utf8_strlen(trim($this->request->post['address_2'])) < 3) || (utf8_strlen(trim($this->request->post['address_2'])) > 128)) {
+                                if ((utf8_strlen(trim($this->request->post['address_2'])) < 3) || (utf8_strlen(trim($this->request->post['address_2'])) > 200)) {
 					$json['error']['address_2'] = $this->language->get('error_address_1');
 				        $json['success'] = 0;                                       
                                 }
@@ -156,8 +153,17 @@ class ControllerCheckoutShippingAddress extends Controller {
 				if (!$json) {
 					// Default Shipping Address
 					$this->load->model('account/address');
+                                        
+                                        $address = $this->model_account_address->getAddress($this->request->post['address_id']);
+                                        
+                                        if (!$address) {
+                                            
+                                           $address = $this->model_account_address->getAddress($this->customer->getAddressId()); 
+                                           
+                                        }
+                                                
 
-					$this->session->data['shipping_address'] = $this->model_account_address->getAddress($this->request->post['address_id']);
+					$this->session->data['shipping_address'] = $address;
                                         
                                         if (trim($this->request->post['address_2']) == trim($this->session->data['shipping_address']['address_1'])) {
                                             

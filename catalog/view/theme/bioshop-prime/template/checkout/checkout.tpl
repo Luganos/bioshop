@@ -1068,52 +1068,66 @@ var checkout = {
 
 
   showAllField: function() {
-
-          $('#for-shipping-method').show();
-          $('#for-shipping-address').show();
-          $('#for-payment-method').show();
-          $('#for-confirm-button').show();
+      
+          if (checkout.data.logged) {
+              
+             $('#for-shipping-method').show();
+             $('#for-shipping-address').show();
+             $('#for-payment-method').show();
+             $('#for-confirm-button').show();
+   
+          }
+          
           $('#for-customer-type').show();
-
-
   },
 
   showField: function() {
+      
+          if (checkout.data.logged) {
 
-          $('#for-shipping-method').show();
-          $('#for-shipping-address').show();
-          $('#for-confirm-button').show();
-          $('#for-payment-method').show();
+             $('#for-shipping-method').show();
+             $('#for-shipping-address').show();
+             $('#for-confirm-button').show();
+             $('#for-payment-method').show();
+         }   
 
   },
 
   hiddenField: function() {
 
       $('#show-new-customer').on('click', function() {
+          
+          if (checkout.data.logged) {
 
-          $('#for-shipping-method').show();
-          $('#for-shipping-address').show();
-          $('#for-payment-method').show();
-          $('#for-confirm-button').show();
+             $('#for-shipping-method').show();
+             $('#for-shipping-address').show();
+             $('#for-payment-method').show();
+             $('#for-confirm-button').show();
+          
+          }
 
       });
 
       $('#show-old-customer').on('click', function() {
-
-          $('#for-shipping-method').show();
-          $('#for-shipping-address').show();
-          $('#for-payment-method').show();
-          $('#for-confirm-button').show();
-
+          
+          if (checkout.data.logged) {
+              
+             $('#for-shipping-method').show();
+             $('#for-shipping-address').show();
+             $('#for-payment-method').show();
+             $('#for-confirm-button').show();
+              
+          }
       });
 
       $('#show-easy-customer').on('click', function() {
 
-          $('#for-shipping-method').hide();
-          $('#for-shipping-address').hide();
-          $('#for-payment-method').hide();
-          $('#for-confirm-button').hide();
-
+          if (checkout.data.logged) {
+             $('#for-shipping-method').hide();
+             $('#for-shipping-address').hide();
+             $('#for-payment-method').hide();
+             $('#for-confirm-button').hide();
+         }
       });
 
   },

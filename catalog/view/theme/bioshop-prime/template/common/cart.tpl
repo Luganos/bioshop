@@ -9,7 +9,7 @@
           <td class="text-center"><?php if ($product['thumb']) { ?>
             <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-thumbnail" /></a>
             <?php } ?></td>
-          <td class="text-left"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
+          <td class="text-left text-right_cart_small_text"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
             <?php if ($product['option']) { ?>
             <?php foreach ($product['option'] as $option) { ?>
             <br />
@@ -20,8 +20,8 @@
             <br />
             - <small><?php echo $text_recurring; ?> <?php echo $product['recurring']; ?></small>
             <?php } ?></td>
-          <td class="text-right">x <?php echo $product['quantity']; ?></td>
-          <td class="text-right text-right_price"><?php echo $product['total']; ?></td>
+          <td class="text-right text-right_cart_small_col">x <?php echo $product['quantity']; ?></td>
+          <td class="text-right text-right_price text-right_cart_small_col"><?php echo $product['total']; ?></td>
           <td class="text-center"><button type="button" onclick="cart.remove('<?php echo $product['cart_id']; ?>');" title="<?php echo $button_remove; ?>" class="btn btn-danger btn-xs"><i class="fa fa-times"></i></button></td>
         </tr>
         <?php } ?>
@@ -44,7 +44,7 @@
             <td class="text-right"><?php echo $text_items; ?></td>
           </tr>
         </table>
-        <p class="text-right"><a href="<?php echo $cart; ?>"><strong><i><img src="catalog/view/theme/bioshop-prime/image/noun.png" alt=""></i> <?php echo $text_cart; ?></strong></a>&nbsp;&nbsp;&nbsp;<a href="<?php echo $checkout; ?>"><strong><i class="fa fa-share"></i> <?php echo $text_checkout; ?></strong></a></p>
+        <p class="text-right text-right_small_cart"><a href="<?php echo $cart; ?>"><strong><i><img src="catalog/view/theme/bioshop-prime/image/noun.png" alt=""></i> <?php echo $text_cart; ?></strong></a>&nbsp;&nbsp;&nbsp;<a href="<?php echo $checkout; ?>"><strong><i class="fa fa-share"></i> <?php echo $text_checkout; ?></strong></a></p>
       </div>
     </li>
     <?php } else { ?>

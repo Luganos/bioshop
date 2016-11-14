@@ -23,4 +23,4 @@
  */
 
 // Text
-$_['text_title'] = 'Liqpay CHECKOUT';
+$_['text_title'] = 'Оплата на расчетный счет';

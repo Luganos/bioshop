@@ -1,6 +1,6 @@
 <?php
 // Heading
-$_['heading_title']		 = 'LIQPAY CHECKOUT';
+$_['heading_title']		 = 'Оплата на расчетный счет';
 
 // Text
 $_['text_payment']		 = 'Payment';

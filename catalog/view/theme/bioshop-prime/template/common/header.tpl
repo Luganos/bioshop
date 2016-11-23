@@ -55,8 +55,8 @@
   <div class="container_header">
     <div class="header_top">
        <ul class="header_top_text">
-         <a href="">
-         <li class="header_top_text_servic">Сервис</li></a>
+         <!--<a href="">
+         <li class="header_top_text_servic">Сервис</li></a>-->
          <?php if ($logged) { ?>
          <a href ="<?php echo $logout; ?>"><li class="header_top_text_enter"><?php echo $text_logout; ?>/</li></a>
          <a href ="<?php echo $account; ?>"><li class="header_top_text_reg"><?php echo $text_account; ?></li></a>

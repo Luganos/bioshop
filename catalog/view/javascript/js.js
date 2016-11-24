@@ -12,11 +12,11 @@ $('.sl').slick({
 });
 
 
-/*
+
 $('.idTop').click(function(){
        $('html, body').animate({scrollTop:10}, 'slow');
    });
-*/
+
 var open_small_menu = 0;
 
 $("#open_small_menu").on("click", function(){

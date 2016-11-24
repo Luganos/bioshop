@@ -40,10 +40,10 @@ body {
     z-index: 9999;
     /*отображаем поверх всех элементов*/
   
-    bottom: 30%;
+    bottom: 5%;
     /*положение снизу*/
   
-    right: 5%;
+    right: 90%;
     /*положение справа*/
   
   }
@@ -62,10 +62,10 @@ body {
     z-index: 9999;
     /*отображаем поверх всех элементов*/
   
-    bottom: 20%;
+    bottom: 2%;
     /*положение снизу*/
   
-    right: 5%;
+    right: 90%;
     /*положение справа*/
   
     margin-bottom: 50px;
@@ -569,6 +569,7 @@ body {
   }
   .blue_line {
     clear: both;
+    width: 762px;
     height: 40px;
     margin-bottom: 15px;
     background-color: #8ea9e8;
@@ -653,7 +654,7 @@ body {
 }
 @media (max-width: 1279px) {
   .container {
-    width: 750px;
+    width: 758px;
     padding: 0px;
   }
   .owl-pagination {
@@ -2950,6 +2951,9 @@ body {
     display: inline !important;
     width: 200px !important;
     text-decoration: none !important;
+  }
+  .footer_bottom {
+    width: 762px !important;
   }
   .footer_bottom_text {
     text-align: center;

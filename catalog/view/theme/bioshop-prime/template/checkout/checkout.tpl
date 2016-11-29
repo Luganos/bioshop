@@ -1225,7 +1225,7 @@ var checkout = {
 
   },
 
-  ajaxHtml: function(url, callback, id, data = null) {
+  ajaxHtml: function(url, callback, id, data) {
 
       var url, callback, id;
 

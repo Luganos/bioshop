@@ -149,10 +149,6 @@ $('.img-thumbnail').on("click", Click);
 //-----END_Border_volume-------
 */
 
-
-});
-
-
 $(window).load(function(){
     $("#loader").fadeOut(300, function(){
        // spinner.stop(); // останавливаем лоадер

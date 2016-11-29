@@ -218,7 +218,7 @@ body {
     color: #a5a5a6 !important;
   }
   #cart-total_two {
-    min-width: 65px !important;
+    min-width: 75px !important;
     font-size: 12px !important;
     font-weight: bold !important;
     color: #a5a5a6 !important;
@@ -277,7 +277,7 @@ body {
     right: 110px;
     top: 0px;
     left: 46px !important;
-    min-width: 65px !important;
+    min-width: 75px !important;
   }
   #cart-total_two {
     position: absolute;
@@ -319,7 +319,7 @@ body {
     padding: 0 46px 0 46px;
     border-right: 2px solid #a1b0d3;
   }
-  .hrader_menu_start_6 {
+  .hrader_menu_start_5 {
     padding-left: 40px;
   }
   .blue_line {
@@ -1099,7 +1099,8 @@ body {
     width: 150px;
   }
   .text_left_cart_col input {
-    line-height: 58px !important;
+    line-height: 52px !important;
+    min-width: 12px !important;
   }
   .form-control {
     top: 12px;
@@ -1273,6 +1274,12 @@ body {
     opacity: 1 !important;
     pointer-events: auto !important;
   }
+  .input-group .form-control[name^=quantity] {
+    min-width: 50px !important;
+  }
+  #refresh_input_cart {
+    min-width: 50px !important;
+  }
 }
 @media (max-width: 1279px) {
   .content_cart {
@@ -1349,7 +1356,8 @@ body {
     padding: 0px !important;
   }
   .text_left_cart_col input {
-    line-height: 58px !important;
+    min-width: 12px !important;
+    line-height: 52px !important;
   }
   .form-control {
     top: 12px;
@@ -1516,6 +1524,22 @@ body {
     text-transform: uppercase;
     margin-bottom: 60px;
   }
+  #spin {
+    width: 12px !important;
+    min-width: 12px !important;
+    line-height: 52px !important;
+    z-index: 8 !important;
+  }
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    min-width: 12px !important;
+  }
+  /*.input-group .form-control[name^=quantity] {
+      min-width: 81px !important;
+      }
+      #refresh_input_cart{
+       min-width: 81px !important;
+      }*/
 }
 /*-----END_cart_big-------*/
 /*-----cart_small-----------*/
@@ -3234,6 +3258,11 @@ width: 300px;
   }
   .t {
     color: red !important;
+  }
+  #spin {
+    min-width: 22px !important;
+    line-height: 48px !important;
+    z-index: 8 !important;
   }
 }
 /*---END_404-----*/

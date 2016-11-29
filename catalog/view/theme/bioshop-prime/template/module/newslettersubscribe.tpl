@@ -6,7 +6,7 @@
     <form class="form-inline" name="subscribe<?= $module ?>">
       <div class="form-group footer_news_pole">
         <label class="sr-only" for="exampleInputEmail3">Email address</label>
-        <input type="email" id="subscribe_email" name="subscribe_email" class="subscribe my-top-banner-mail-input footer_news_pole_input" placeholder="<?php echo $entry_email; ?>">
+        <input type="email" id="subscribe_email" name="subscribe_email" class="subscribe my-top-banner-mail-input footer_news_pole_input" placeholder="  <?php echo $entry_email; ?>">
       </div>
       <?php if ($option_unsubscribe) { ?>
         <div id="subscribe-btn" class="footer_news_butten" onclick="email_subscribe<?= $module ?>()">

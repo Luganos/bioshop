@@ -115,11 +115,11 @@ body {
     border-right: 2px solid white;
   }
   .header_top_text_enter {
-    letter-spacing: 5pt;
+    letter-spacing: 2pt;
     margin-left: 40px;
   }
   .header_top_text_reg {
-    letter-spacing: 5pt;
+    letter-spacing: 2pt;
     margin-right: 20px;
   }
   .header_center {
@@ -369,11 +369,11 @@ body {
     border-right: 2px solid white;
   }
   .header_top_text_enter {
-    letter-spacing: 5pt;
+    letter-spacing: 2pt;
     margin-left: 40px;
   }
   .header_top_text_reg {
-    letter-spacing: 5pt;
+    letter-spacing: 2pt;
     margin-right: 20px;
   }
   .header_center {
@@ -1514,7 +1514,7 @@ body {
     display: inline;
   }
   .cart_coupon {
-    width: 150px;
+    width: 165px;
     height: 40px;
     background-color: #6fa1ce;
     border: 0px;

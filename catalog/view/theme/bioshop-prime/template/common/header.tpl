@@ -109,9 +109,6 @@
        <?php $n++; ?>
        <?php } ?>
        <?php } ?>
-       <li class="hrader_menu_start_<?php echo $n + 1; ?> dropdown">
-       <a href="<?php echo $category['href']; ?>" class="menu_link_<?php echo $n + 1; ?>"><span>Акции и скидки</span></a>
-       </li>
   	</ul>
     </div>
     <?php if ($categories) { ?>

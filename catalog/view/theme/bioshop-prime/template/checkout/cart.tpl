@@ -75,7 +75,7 @@
                   <?php } ?></td>
                 <td class="text-left text_left_text"><?php echo $product['model']; ?></td>
                 <td class="text-left text_left_cart_col"><div class="input-group btn-block input-group_cart" style="max-width: 120px;">
-                    <input id="refresh_input_cart" type="number" autofocus name="quantity[<?php echo $product['cart_id']; ?>]" value="<?php echo $product['quantity']; ?>" size="1" class="form-control refresh_input_cart" />
+                    <input id="refresh_input_cart" type="number" autofocus name="quantity[<?php echo $product['cart_id']; ?>]" value="<?php echo $product['quantity']; ?>" size="1" class="form-control refresh_input_cart" style="height: 44px" />
                     <span class="input-group-btn">
                     <button type="button" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger cart_del" onclick="cart.remove('<?php echo $product['cart_id']; ?>');"><i class="fa fa-times-circle"></i></button></span></div></td>
                 <td class="text-right text_right_cart"><?php echo $product['price']; ?></td>

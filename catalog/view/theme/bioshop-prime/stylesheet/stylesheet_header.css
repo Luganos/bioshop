@@ -1282,7 +1282,7 @@ body {
     min-width: 50px !important;
     min-height: 30px !important;
     vertical-align: middle;
-    padding: 0px !important;
+    padding: 0 0 0 5px !important;
   }
   #refresh_input_cart::-webkit-inner-spin-button {
     opacity: 1;
@@ -1540,6 +1540,13 @@ body {
   input[type=number]::-webkit-inner-spin-button,
   input[type=number]::-webkit-outer-spin-button {
     min-width: 12px !important;
+  }
+  #refresh_input_cart {
+    font-size: 14px !important;
+    min-width: 50px !important;
+    min-height: 30px !important;
+    vertical-align: middle;
+    padding: 0 0 0 5px !important;
   }
   #refresh_input_cart::-webkit-inner-spin-button {
     opacity: 1;

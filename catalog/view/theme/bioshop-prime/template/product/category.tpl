@@ -130,9 +130,6 @@
     <?php echo $column_right; ?></div>
 
     <div class="row category_seo_text">
-      <div class="index_text_top_grey">
-          <p>Необычный SEO - текст</p>
-      </div>
         <?php if ($thumb) { ?>
         <div class="col-sm-2"><img src="<?php echo $thumb; ?>" alt="<?php echo $heading_title; ?>" title="<?php echo $heading_title; ?>" class="img-thumbnail" /></div>
         <?php } ?>

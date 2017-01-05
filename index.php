@@ -7,7 +7,7 @@ if (is_file('config.php')) {
 	require_once('config.php');
 }
 
-// Install
+// Install   
 if (!defined('DIR_APPLICATION')) {
 	header('Location: install/index.php');
 	exit;
